@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SeniorProjectHealthApplication.Models.Database_Structure
 {
-    public class RecipesList
+    internal class RecipesList
     {
     }
 }
