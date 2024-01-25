@@ -5,7 +5,7 @@ using SQLite;
 
 namespace SeniorProjectHealthApplication.Models.Database_Structure
 {
-    internal class FoodLog
+    public class FoodLog
     {
     }
 }
