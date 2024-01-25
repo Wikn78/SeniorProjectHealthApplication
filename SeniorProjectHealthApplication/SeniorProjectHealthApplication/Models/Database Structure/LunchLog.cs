@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SeniorProjectHealthApplication.Models.Database_Structure
 {
-    internal class LunchLog
+    public class LunchLog
     {
     }
 }
