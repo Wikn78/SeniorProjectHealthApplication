@@ -5,7 +5,11 @@ using SQLite;
 
 namespace SeniorProjectHealthApplication.Models.Database_Structure
 {
-    internal class FoodLog
+    public class FoodLog
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public int UID { get; set; }
+        public string Date { get; set; }    
     }
 }
