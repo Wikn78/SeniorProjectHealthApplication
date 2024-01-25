@@ -12,11 +12,6 @@ namespace SeniorProjectHealthApplication.Models.Database_Structure
         public string Exercise_Name { get; set; }
         public string Difficulity { get; set; }
         public string Exercise_Explanation { get; set; }
-
-
-
-
-
-
+        
     }
 }
