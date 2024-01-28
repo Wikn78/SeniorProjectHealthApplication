@@ -6,15 +6,8 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
 
-            <Label Text=""
-               VerticalOptions="Start"
-               HorizontalOptions="CenterAndExpand"
-                FontSize="15"
-              />
-
-            <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-
-                <Image Source="HealthApplicationLogo.png" Aspect="AspectFill" HeightRequest="200" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.5"/>
+    
+                <Image Source="Health_Application_Logo.png" Aspect="AspectFill" HeightRequest="200" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.5"/>
 
                 <Label Text="Privacy and Security"
                VerticalOptions="Start"
@@ -83,7 +76,7 @@
                    HeightRequest="{Binding Path=ContentHeight}"/>
                 </Frame>
 
-                <Button Text="Submit"
+            <Button Text="Submit"
                 VerticalOptions="Start"
                 HorizontalOptions="Center"
                 BackgroundColor="#FDB836"
@@ -91,7 +84,6 @@
                 FontSize="18"
                 FontAttributes="Bold"
                 Margin="0,10,0,0"/>
-            </AbsoluteLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
