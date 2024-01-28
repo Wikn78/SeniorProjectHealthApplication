@@ -9,7 +9,8 @@ namespace SeniorProjectHealthApplication.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         public Command LoginCommand { get; }
-
+        public Command ForgotPassword { get; }
+        public Command CreateAccount { get; }
         private string username;
         public string Username
         {
@@ -41,6 +42,8 @@ namespace SeniorProjectHealthApplication.ViewModels
         public LoginViewModel()
         {
             LoginCommand = new Command(OnLoginClicked);
+            ForgotPassword = new Command(OnForgotPassword);
+            CreateAccount = new Command(OnCreateAccount);
         }
 
         private async void OnLoginClicked(object obj)
@@ -50,6 +53,19 @@ namespace SeniorProjectHealthApplication.ViewModels
             //await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
             Console.WriteLine(Password + Username);
         }
+        
+        private async void OnCreateAccount(object obj)
+        {
+            //Functionality Here
+            Console.WriteLine("Creating an account =e-=r=w=-2=-231=-4-21=3-21=-4-=213-=4");
+        }
+        
+        private async void OnForgotPassword(object obj)
+        {
+            //Functionality Here
+            Console.WriteLine("Frogot password =e-=r=w=-2=-231=-4-21=3-21=-4-=213-=4");
+        }
+        
     }
 
 }

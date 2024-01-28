@@ -1,16 +1,63 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SeniorProjectHealthApplication.Views.LoginPage"
+             BackgroundColor="#80130B"
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
+        
+        
+     
+        
+        
+        
+        <!-- USERNAME AND PASSWORD BOX -->
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Entry VerticalOptions="Center" Placeholder="username..." Text="{Binding Username}"></Entry>
-            <Entry VerticalOptions="Center" Placeholder="password..." Text="{Binding Password}" IsPassword="True"></Entry>
-            <Button VerticalOptions="Center" Text="Sign-in" Command="{Binding LoginCommand}"/>
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                <Label  FontAttributes="Bold" TextColor="#ED9C28" FontSize="33" Text="UMC HEALTH APPLICATION" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+            </StackLayout>
+            
+            <Label></Label>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Label Text="UserID: " TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="100"/>
+                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="{Binding Username}"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Label Text="Password: " TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="100"/>
+                <Entry  TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="{Binding Password}" IsPassword="True"></Entry>
+                
+            </StackLayout>
+            
+            <Label Text=""></Label>
+            <Label Text=""></Label>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                
+               <Image Source="icon_about.png" ></Image> 
+                <Label Text="Sign up for account " TextColor="White" FontSize="20" FontAttributes="Bold"  HorizontalOptions="FillAndExpand" />
+                
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Path=CreateAccount}"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+                
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                
+                <Image Source="icon_about.png" ></Image> 
+                <Label Text="Forgot Password? "  TextColor="White" FontSize="20" FontAttributes="Bold"  HorizontalOptions="FillAndExpand" />
+                
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Path=ForgotPassword}"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <Label Text=""></Label>
+            <Label Text=""></Label>
+            <Button TextColor="Black" BackgroundColor="#ED9C28" VerticalOptions="Center" Text="Submit" Command="{Binding LoginCommand}"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
