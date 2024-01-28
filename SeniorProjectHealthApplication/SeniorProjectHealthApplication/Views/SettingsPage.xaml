@@ -4,9 +4,28 @@
              x:Class="SeniorProjectHealthApplication.Views.SettingsPage">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#80130B">
+            <!--Back Button and Log off Button-->
+            <Grid>
+                <ImageButton VerticalOptions="CenterAndExpand" Aspect="AspectFit" Grid.Column="0" Grid.Row="1" Source="" HeightRequest="50" WidthRequest="50"/>
+                <ImageButton VerticalOptions="CenterAndExpand" Aspect="AspectFit" Grid.Column="1" Grid.Row="1" Source="" HeightRequest="50" WidthRequest="50"/>
+            </Grid>
+
+            <!--Logo and Title-->
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image HorizontalOptions="Center" Source="Health_Application_Logo.png"  Grid.Row="0" Grid.Column="0" Opacity="0.1" HeightRequest="121" WidthRequest="212"/>
+                <Label HorizontalOptions="Center" Text="SETTINGS" TextColor="#FDB836" Grid.Row="0" Grid.Column="0" FontSize="37" FontFamily="Arial" FontAttributes = "Bold" Margin="0,100, 0,100"/>
+            </Grid>
+            
+            <!--Settings Links-->
             <StackLayout>
-                <Image Source="" />
-                <Label Text="SETTINGS" TextColor="#FDB836" HorizontalTextAlignment="Center" FontSize="37" FontFamily="Arial" FontAttributes = "Bold" Margin="0,20, 0,100"/>
                 <Button Text="Notifications" TextColor="#FDB836" FontSize="25" BackgroundColor="#80130B" FontFamily="Arial" BorderColor="Transparent"  Margin="0,20, 0, 20" />
                 <Button Text="Help and Support" TextColor="#FDB836" FontSize="25" BackgroundColor="#80130B" FontFamily="Arial" BorderColor="Transparent"  Margin="0,20, 0, 20" />
                 <Button Text="Privacy and Security" TextColor="#FDB836" FontSize="25" BackgroundColor="#80130B" FontFamily="Arial" BorderColor="Transparent"  Margin="0,20, 0, 20" />
