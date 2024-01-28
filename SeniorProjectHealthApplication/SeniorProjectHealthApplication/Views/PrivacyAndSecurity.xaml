@@ -5,69 +5,93 @@
                 BackgroundColor="#80130B">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-            <Label Text="Privacy and Security"
+
+            <Label Text=""
                VerticalOptions="Start"
                HorizontalOptions="CenterAndExpand"
-                TextColor="White"
+                FontSize="15"
+              />
+
+            <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                <Image Source="HealthApplicationLogo.png" Aspect="AspectFill" HeightRequest="200" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.5"/>
+
+                <Label Text="Privacy and Security"
+               VerticalOptions="Start"
+               HorizontalOptions="CenterAndExpand"
+                TextColor="#FDB836"
                 FontSize="25"
                 FontAttributes="Bold"/>
 
-            <Label Text="The Software Development Team"
+                <Label Text=""
+               VerticalOptions="Start"
+               HorizontalOptions="CenterAndExpand"
+                FontSize="5"
+              />
+
+                <Label Text="The Software Development Team"
+                LineBreakMode="WordWrap"
+               VerticalOptions="Start"
+               HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    />
+
+                <Label Text="is not responsible for any security"
                 LineBreakMode="WordWrap"
                VerticalOptions="Start"
                HorizontalOptions="CenterAndExpand"
                     TextColor="White"/>
 
-            <Label Text="is not responsible for any security"
+                <Label Text="breaches. There will be efforts to"
                 LineBreakMode="WordWrap"
                VerticalOptions="Start"
                HorizontalOptions="CenterAndExpand"
                     TextColor="White"/>
 
-            <Label Text="breaches. There will be efforts to"
+                <Label Text="respond to any major security"
                 LineBreakMode="WordWrap"
                VerticalOptions="Start"
                HorizontalOptions="CenterAndExpand"
                     TextColor="White"/>
 
-            <Label Text="respond to any major security"
+                <Label Text="breaches within 24 hours."
                 LineBreakMode="WordWrap"
                VerticalOptions="Start"
                HorizontalOptions="CenterAndExpand"
                     TextColor="White"/>
 
-            <Label Text="breaches within 24 hours."
-                LineBreakMode="WordWrap"
+                <Label Text=""
+               VerticalOptions="Start"
+               HorizontalOptions="CenterAndExpand"
+                FontSize="5"
+              />
+
+                <Label Text="Brief description of security concern:"
                VerticalOptions="Start"
                HorizontalOptions="CenterAndExpand"
                     TextColor="White"/>
 
-            <Label Text="Brief description of security concern:"
-               VerticalOptions="Start"
-               HorizontalOptions="CenterAndExpand"
-                    TextColor="White"/>
-     
-            
-            <Frame BackgroundColor="White" CornerRadius="0" Padding="80" Margin="0,10,0,10">
-                <Entry Placeholder="Enter security concern here"
+
+                <Frame BackgroundColor="White" CornerRadius="0" Padding="60" Margin="0,10,0,10">
+                    <Entry Placeholder="Enter security concern here"
                    VerticalOptions="Start"
-                   HorizontalOptions="FillAndExpand"
+                   HorizontalOptions="Center"
                    VerticalTextAlignment="Start"
                    TextColor="Black"
                    FontSize="16"
                    FontAttributes="Italic"
                    HeightRequest="{Binding Path=ContentHeight}"/>
-            </Frame>
+                </Frame>
 
-            <Button Text="Submit"
+                <Button Text="Submit"
                 VerticalOptions="Start"
-                HorizontalOptions="FillAndExpand"
+                HorizontalOptions="Center"
                 BackgroundColor="#FDB836"
                 TextColor="White"
                 FontSize="18"
                 FontAttributes="Bold"
                 Margin="0,10,0,0"/>
-            
+            </AbsoluteLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
