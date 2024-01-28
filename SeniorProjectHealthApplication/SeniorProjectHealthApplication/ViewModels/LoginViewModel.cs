@@ -57,8 +57,8 @@ namespace SeniorProjectHealthApplication.ViewModels
         private async void OnCreateAccount(object obj)
         {
             //Functionality Here
-            await Shell.Current.GoToAsync($"//{nameof(CreateAccountPage)}");
-            await new NavigationPage(new CreateAccountPage());
+            //await Shell.Current.GoToAsync($"//{nameof(CreateAccountPage)}");
+             new NavigationPage(new CreateAccountPage());
         }
         
         private async void OnForgotPassword(object obj)
