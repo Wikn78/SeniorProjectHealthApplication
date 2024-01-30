@@ -3,7 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
-
+using System.Collections.Generic;  
+using System.Linq;  
+using System.Text;  
+using System.Threading.Tasks;  
+using Xamarin.Forms;  
+using Xamarin.Forms.Xaml;
 namespace SeniorProjectHealthApplication.ViewModels
 {
     public class LoginViewModel : BaseViewModel
@@ -11,29 +16,29 @@ namespace SeniorProjectHealthApplication.ViewModels
         public Command LoginCommand { get; }
         public Command ForgotPassword { get; }
         public Command CreateAccount { get; }
-        private string username;
+        private string _username;
         public string Username
         {
-            get => username;
+            get => _username;
             set
             {
-                if (username != value)
+                if (_username != value)
                 {
-                    username = value;
+                    _username = value;
                     OnPropertyChanged(nameof(Username));
                 }
             }
         }
 
-        private string password;
+        private string _password;
         public string Password
         {
-            get => password;
+            get => _password;
             set
             {
-                if (password != value)
+                if (_password != value)
                 {
-                    password = value;
+                    _password = value;
                     OnPropertyChanged(nameof(Password));
                 }
             }
@@ -57,8 +62,19 @@ namespace SeniorProjectHealthApplication.ViewModels
         private async void OnCreateAccount(object obj)
         {
             //Functionality Here
-            //await Shell.Current.GoToAsync($"//{nameof(CreateAccountPage)}");
-             new NavigationPage(new CreateAccountPage());
+            try
+            {
+               // await Navigation.PushAsync(new CreateAccountPage());
+            }
+            catch (NullReferenceException ex)
+            {
+                // Log the exception or handle it gracefully
+                Console.WriteLine("Null reference exception: " + ex.Message);
+                // Optionally, you can throw the exception further if needed
+                throw;
+            }
+
+           //  new NavigationPage(new CreateAccountPage());
         }
         
         private async void OnForgotPassword(object obj)
