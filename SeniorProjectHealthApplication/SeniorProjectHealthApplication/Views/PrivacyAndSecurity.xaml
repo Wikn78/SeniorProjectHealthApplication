@@ -20,16 +20,22 @@
          Source="Health_Application_Logo.png"
          Opacity="0.5"
          Grid.Row="0"
+         HeightRequest="200"
+        WidthRequest="300"
          Grid.Column="0"/>
-                <Label HorizontalOptions="Center"
-                Text="PRIVACY AND SECURITY"
-                TextColor="#FDB836"
-                FontSize="25"
-                FontAttributes="Bold"
-                Grid.Row="0"
-         Grid.Column="0"/>
-                <Image HorizontalOptions="CenterAndExpand"
-                       Source="Turn_off_Button.png"/>
+                <RelativeLayout Grid.Row="0" Grid.Column="0">
+                    <Label Text="PRIVACY AND SECURITY"
+               TextColor="#FDB836"
+               FontSize="25"
+               FontAttributes="Bold"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}"/>
+                </RelativeLayout>
+                <Image HorizontalOptions="End" VerticalOptions="Start" Source="Turn_off_Button.png" Margin="0,15,15,0" HeightRequest="30"
+                WidthRequest="30"/>
+                <Image HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="0,15,15,0" HeightRequest="30"
+                WidthRequest="30"/>
+
             </Grid>
 
             <Label Text=""
