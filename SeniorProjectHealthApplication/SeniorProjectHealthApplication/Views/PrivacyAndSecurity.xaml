@@ -6,20 +6,36 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
 
-    
-                <Image Source="Health_Application_Logo.png" Aspect="AspectFill" HeightRequest="200" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.5"/>
+            <Grid HorizontalOptions="Center"
+      VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-                <Label Text="Privacy and Security"
-               VerticalOptions="Start"
-               HorizontalOptions="CenterAndExpand"
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image HorizontalOptions="Center"
+         Source="Health_Application_Logo.png"
+         Opacity="0.5"
+         Grid.Row="0"
+         Grid.Column="0"/>
+                <Label HorizontalOptions="Center"
+                Text="PRIVACY AND SECURITY"
                 TextColor="#FDB836"
                 FontSize="25"
-                FontAttributes="Bold"/>
+                FontAttributes="Bold"
+                Grid.Row="0"
+         Grid.Column="0"/>
+                <Image HorizontalOptions="CenterAndExpand"
+                       Source="Turn_off_Button.png"/>
+            </Grid>
 
-                <Label Text=""
+            <Label Text=""
                VerticalOptions="Start"
                HorizontalOptions="CenterAndExpand"
-                FontSize="5"
+                FontSize="10"
               />
 
                 <Label Text="The Software Development Team"
@@ -56,7 +72,7 @@
                 <Label Text=""
                VerticalOptions="Start"
                HorizontalOptions="CenterAndExpand"
-                FontSize="5"
+                FontSize="10"
               />
 
                 <Label Text="Brief description of security concern:"
@@ -64,8 +80,14 @@
                HorizontalOptions="CenterAndExpand"
                     TextColor="White"/>
 
+            <Label Text=""
+               VerticalOptions="Start"
+               HorizontalOptions="CenterAndExpand"
+                FontSize="10"
+              />
 
-                <Frame BackgroundColor="White" CornerRadius="0" Padding="60" Margin="0,10,0,10">
+
+            <Frame BackgroundColor="White" CornerRadius="0" Padding="60" Margin="0,10,0,10">
                     <Entry Placeholder="Enter security concern here"
                    VerticalOptions="Start"
                    HorizontalOptions="Center"
@@ -75,6 +97,13 @@
                    FontAttributes="Italic"
                    HeightRequest="{Binding Path=ContentHeight}"/>
                 </Frame>
+
+
+            <Label Text=""
+               VerticalOptions="Start"
+               HorizontalOptions="CenterAndExpand"
+                FontSize="10"
+              />
 
             <Button Text="Submit"
                 VerticalOptions="Start"
