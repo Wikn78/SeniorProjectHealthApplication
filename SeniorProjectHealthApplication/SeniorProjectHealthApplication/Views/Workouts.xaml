@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.Workouts">
+    <ContentPage.Content>
+        <StackLayout>
+            <BoxView Color="White" WidthRequest="100" HeightRequest="100" CornerRadius="50"/>
+            <Label Text="1750 Calories left" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
