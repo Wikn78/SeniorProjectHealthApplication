@@ -9,14 +9,19 @@ using System.Text;
 using System.Threading.Tasks;  
 using Xamarin.Forms;  
 using Xamarin.Forms.Xaml;
+
 namespace SeniorProjectHealthApplication.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        public Command LoginCommand { get; }
-        public Command ForgotPassword { get; }
-        public Command CreateAccount { get; }
+        // Commands for user actions
+        public Command Login { get; }
+        public Command RecoverPassword { get; }
+        public Command Register { get; }
+
         private string _username;
+
+        // Public property for user's username
         public string Username
         {
             get => _username;
@@ -31,6 +36,8 @@ namespace SeniorProjectHealthApplication.ViewModels
         }
 
         private string _password;
+
+        // Public property for user's password
         public string Password
         {
             get => _password;
@@ -44,45 +51,42 @@ namespace SeniorProjectHealthApplication.ViewModels
             }
         }
 
-        public LoginViewModel()
+        private INavigation _navigation;
+
+        public LoginViewModel(INavigation navigation)
         {
-            LoginCommand = new Command(OnLoginClicked);
-            ForgotPassword = new Command(OnForgotPassword);
-            CreateAccount = new Command(OnCreateAccount);
+            _navigation = navigation;
+            Register = new Command(ExecuteRegister);
+            Login = new Command(ExecuteLogin);
+            RecoverPassword = new Command(ExecuteRecoverPassword);
+
         }
 
-        private async void OnLoginClicked(object obj)
-        {
-            // Access username and password here: this.Username, this.Password
-            // Rest of your login logic
-            //await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
-            Console.WriteLine(Password + Username);
-        }
-        
-        private async void OnCreateAccount(object obj)
-        {
-            //Functionality Here
-            try
+        private async void ExecuteLogin(object obj)
             {
-               // await Navigation.PushAsync(new CreateAccountPage());
-            }
-            catch (NullReferenceException ex)
-            {
-                // Log the exception or handle it gracefully
-                Console.WriteLine("Null reference exception: " + ex.Message);
-                // Optionally, you can throw the exception further if needed
-                throw;
+                //Execute login logic here
+                Console.WriteLine(Password + Username);
             }
 
-           //  new NavigationPage(new CreateAccountPage());
+            private async void ExecuteRegister(object obj)
+            {
+                // Execute account creation logic here
+                try
+                {
+                    await _navigation.PushAsync(new CreateAccountPage());
+                }
+                catch (NullReferenceException ex)
+                {
+                    Console.WriteLine("Null reference exception: " + ex.Message);
+                    throw;
+                }
+            }
+
+            private async void ExecuteRecoverPassword(object obj)
+            {
+                // Execute password recovery logic here
+            }
         }
-        
-        private async void OnForgotPassword(object obj)
-        {
-            //Functionality Here
-            Console.WriteLine("Frogot password =e-=r=w=-2=-231=-4-21=3-21=-4-=213-=4");
-        }
-        
+
     }
 
-}

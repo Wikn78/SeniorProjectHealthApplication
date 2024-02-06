@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.QuickNavBar"
+             >
+            
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        
+        
+        <!-- Your BoxViews and Labels go here as you have defined them -->
+        
+        <BoxView Grid.Column="0" Color="{Binding LogButtonColor}" />
+        <Label Text="LOG" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Log_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+                    
+        <!-- Progress -->
+        <BoxView Grid.Column="1" Grid.Row="1"  Color="{Binding ProgressButtonColor}"  />
+        <Label Grid.Column="1" TextColor="White" Text="PROGRESS" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Progress_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <!-- Quick Add -->
+        <BoxView Grid.Column="2" Grid.Row="1" Color="{Binding QuickAddButton}"/>
+        <Label Grid.Column="2" TextColor="White" Text="+" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="QuickAdd_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <!-- Workouts -->
+        <BoxView Grid.Column="3" Grid.Row="1" Color="{Binding WorkoutsButtonColor}" />
+        <Label Grid.Column="3" TextColor="White" Text="WORKOUTS" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Workouts_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <!-- Recipes -->
+        <BoxView Grid.Column="4" Grid.Row="1" Color="{Binding RecipesButtonColor}" />
+        <Label Grid.Column="4" TextColor="White" Text="RECIPES" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Recipes_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+                    
+        
+    </Grid>
+</ContentView>

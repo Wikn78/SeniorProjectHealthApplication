@@ -14,52 +14,36 @@
         
         
         <!-- USERNAME AND PASSWORD BOX -->
-        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            
-            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
-                <Image Source="Health_Application_Logo.png" Scale="1"></Image>
+       
+                <!-- USERNAME AND PASSWORD BOX -->
+                <StackLayout Padding="20" VerticalOptions="Center">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
+                        <Image Source="Health_Application_Logo.png" VerticalOptions="Center"/>
+                        <Label  FontAttributes="Bold" TextColor="#ED9C28" FontSize="33" Text="UMC HEALTH APPLICATION" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+        
+                    <StackLayout Orientation="Horizontal" Padding="10, 30, 10, 10" VerticalOptions="Center">
+                        <Label Text="UserID: " TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="Center" WidthRequest="100"/>
+                        <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="{Binding Username}"/>
+                    </StackLayout>
+        
+                    <StackLayout Orientation="Horizontal" Padding="10, 0, 10, 30" VerticalOptions="Center">
+                        <Label Text="Password: " TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="Center" WidthRequest="100"/>
+                        <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="{Binding Password}" IsPassword="True"/>
+                    </StackLayout>
+        
+                    <Button Text="Sign up for account " TextColor="White" FontSize="20" FontAttributes="Bold"  HorizontalOptions="FillAndExpand" Command="{Binding Path=Register}">
+                        <Button.ImageSource>
+                            <FontImageSource Glyph="&#xf234;" FontFamily="FontAwesome" />
+                        </Button.ImageSource>
+                    </Button>
+                    <Button Text="Forgot Password? " TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Command="{Binding Path=RecoverPassword}">
+                        <Button.ImageSource>
+                            <FontImageSource Glyph="&#xf234;" FontFamily="FontAwesome" />
+                        </Button.ImageSource>
+                    </Button>
                     
-                <Label  FontAttributes="Bold" TextColor="#ED9C28" FontSize="33" Text="UMC HEALTH APPLICATION" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
-            </StackLayout>
-            
-            <Label></Label>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                <Label Text="UserID: " TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="100"/>
-                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="{Binding Username}"/>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                <Label Text="Password: " TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="100"/>
-                <Entry  TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="{Binding Password}" IsPassword="True"></Entry>
-                
-            </StackLayout>
-            
-            <Label Text=""></Label>
-            <Label Text=""></Label>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
-                
-               <Image Source="icon_about.png" ></Image> 
-                <Label Text="Sign up for account " TextColor="White" FontSize="20" FontAttributes="Bold"  HorizontalOptions="FillAndExpand" />
-                
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding Path=CreateAccount}"></TapGestureRecognizer>
-                </StackLayout.GestureRecognizers>
-                
-            </StackLayout>
-            
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
-                
-                <Image Source="icon_about.png" ></Image> 
-                <Label Text="Forgot Password? "  TextColor="White" FontSize="20" FontAttributes="Bold"  HorizontalOptions="FillAndExpand" />
-                
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding Path=ForgotPassword}"></TapGestureRecognizer>
-                </StackLayout.GestureRecognizers>
-            </StackLayout>
-            <Label Text=""></Label>
-            <Label Text=""></Label>
-            <Button TextColor="Black" BackgroundColor="#ED9C28" VerticalOptions="Center" Text="Submit" Command="{Binding LoginCommand}"/>
-            
-        </StackLayout>
-    </ContentPage.Content>
+                    <Button TextColor="Black" BackgroundColor="#ED9C28" VerticalOptions="Center" Text="Submit" Command="{Binding Login}"/>
+                </StackLayout>
+            </ContentPage.Content>
 </ContentPage>
