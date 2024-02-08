@@ -49,7 +49,7 @@
                             <RowDefinition Height="100"/>
                         </Grid.RowDefinitions>
 
-                        <Image Source="Health_Application_Logo.png" HorizontalOptions="Center" ></Image>
+                        <Image Source="Health_Application_Logo.png" VerticalOptions="Center"/>
                         <BoxView Color="#80130B"  />   
                         
                         <BoxView Color="#E6A240" Grid.Row="1" />
