@@ -30,7 +30,7 @@
             
             
             <!-- Background Color -->
-            <BoxView Color="Green" 
+            <BoxView Color="#80130B" 
                      Grid.ColumnSpan="5" />
             
             
@@ -41,7 +41,7 @@
                     <!-- Top header of page -->
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="250"/>
+                            <RowDefinition Height="350"/>
                             <RowDefinition Height="100"/>
                             <RowDefinition Height="100"/>
                             <RowDefinition Height="100"/>
@@ -49,11 +49,13 @@
                             <RowDefinition Height="100"/>
                         </Grid.RowDefinitions>
 
-                        <BoxView Color="Blue" Grid.Row="0" />
-                        <BoxView Color="Pink" Grid.Row="1" />
-                        <BoxView Color="Purple" Grid.Row="2" />
-                        <BoxView Color="Yellow" Grid.Row="3" />
-                        <BoxView Color="Orange" Grid.Row="4" />
+                        <Image Source="Health_Application_Logo.png" HorizontalOptions="Center" ></Image>
+                        <BoxView Color="#80130B"  />   
+                        
+                        <BoxView Color="#E6A240" Grid.Row="1" />
+                        <BoxView Color="#E6A240" Grid.Row="2" />
+                        <BoxView Color="#E6A240" Grid.Row="3" />
+                        <BoxView Color="#E6A240" Grid.Row="4" />
                     </Grid>
                     
                    
