@@ -7,11 +7,15 @@
             <ScrollView>
                 <!--Food Name and Image-->
                 <StackLayout Margin="0,0,0,50">
-                    <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="35" TextColor="White" FontAttributes="Bold" Margin="0, 30, 0, 0">Food Name Here</Label>
-                    <Image BackgroundColor="white" HeightRequest="250" Margin="40, 0, 40, 0"/>
+                    <Grid>
+                        <Image  WidthRequest="70" HeightRequest="70" HorizontalOptions="Start" Source="exitbutton.png"/>
+                        <Label  HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="30" TextColor="White" FontAttributes="Bold" Margin="0, 30, 0, 0">Food Name Here</Label>
+                    </Grid>
+                    
+                        <Image Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="white" HeightRequest="250" Margin="40, 0, 40, 0"/>
 
 
-                    <!--Nutritional Facts-->
+                        <!--Nutritional Facts-->
                     <Grid>
                         <Label Grid.Row="0" Grid.ColumnSpan="4" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">Nutritional Facts</Label>
                         <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="#ED9C28" Margin="5, 10, 5, 0">
