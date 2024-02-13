@@ -39,7 +39,7 @@
               
                     
                     <!-- Top header of page -->
-                    <Grid>
+                    <Grid Padding="10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="350"/>
                             <RowDefinition Height="100"/>
@@ -47,15 +47,17 @@
                             <RowDefinition Height="100"/>
                             <RowDefinition Height="100"/>
                             <RowDefinition Height="100"/>
+                            <RowDefinition Height="100"/>
                         </Grid.RowDefinitions>
 
-                        <Image Source="Health_Application_Logo.png" VerticalOptions="Center"/>
+                        <Image Source="Health_Application_Logo.png" VerticalOptions="Center" />
                         <BoxView Color="#80130B"  />   
                         
-                        <BoxView Color="#E6A240" Grid.Row="1" />
-                        <BoxView Color="#E6A240" Grid.Row="2" />
-                        <BoxView Color="#E6A240" Grid.Row="3" />
-                        <BoxView Color="#E6A240" Grid.Row="4" />
+                        <local:DashboardCategory Grid.Row="1" Padding="2" CategoryName="Breakfast" ImagePath="breakfest_icon.png"  CategoryID="breakfast"/>
+                        <local:DashboardCategory Grid.Row="2" Padding="2" CategoryName="Lunch" ImagePath="lunch_icon.png" CategoryID="lunch"/>
+                        <local:DashboardCategory Grid.Row="3" Padding="2" CategoryName="Dinner" ImagePath="dinner_icon.png" CategoryID="dinner"/>
+                        <local:DashboardCategory Grid.Row="4" Padding="2" CategoryName="Snack" ImagePath="snack_icon.png" CategoryID="snack"/>
+                        <local:DashboardCategory Grid.Row="5" Padding="2" CategoryName="Water"/>
                     </Grid>
                     
                    
@@ -63,7 +65,7 @@
             </ScrollView>
             
             <!-- Log Button-->
-            <local:QuickNavBar Grid.Row="1" Grid.ColumnSpan="5" CurrentPage="Logs"/>
+            <local:QuickNavBar VerticalOptions="Center" Grid.Row="1" Grid.ColumnSpan="5" CurrentPage="Logs"/>
             <!-- Bottom part of page -->
             
             

@@ -7,7 +7,7 @@
             
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
+            <RowDefinition Height="80" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -21,7 +21,7 @@
         <!-- Your BoxViews and Labels go here as you have defined them -->
         
         <BoxView Grid.Column="0" Color="{Binding LogButtonColor}" />
-        <Label Text="LOG" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="LOG" TextColor="White" FontSize="12" HorizontalOptions="Center" VerticalOptions="Center">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="Log_Tapped"/>
             </Label.GestureRecognizers>
@@ -29,7 +29,7 @@
                     
         <!-- Progress -->
         <BoxView Grid.Column="1" Grid.Row="1"  Color="{Binding ProgressButtonColor}"  />
-        <Label Grid.Column="1" TextColor="White" Text="PROGRESS" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Grid.Column="1" TextColor="White"  FontSize="12" Text="PROGRESS" HorizontalOptions="Center" VerticalOptions="Center">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="Progress_Tapped"/>
             </Label.GestureRecognizers>
@@ -45,7 +45,7 @@
 
         <!-- Workouts -->
         <BoxView Grid.Column="3" Grid.Row="1" Color="{Binding WorkoutsButtonColor}" />
-        <Label Grid.Column="3" TextColor="White" Text="WORKOUTS" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Grid.Column="3" TextColor="White"  FontSize="12" Text="WORKOUTS" HorizontalOptions="Center" VerticalOptions="Center">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="Workouts_Tapped"/>
             </Label.GestureRecognizers>
@@ -53,7 +53,7 @@
 
         <!-- Recipes -->
         <BoxView Grid.Column="4" Grid.Row="1" Color="{Binding RecipesButtonColor}" />
-        <Label Grid.Column="4" TextColor="White" Text="RECIPES" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Grid.Column="4" TextColor="White" FontSize="12" Text="RECIPES" HorizontalOptions="Center" VerticalOptions="Center">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="Recipes_Tapped"/>
             </Label.GestureRecognizers>
