@@ -3,8 +3,14 @@
              x:Class="SeniorProjectHealthApplication.Views.DashboardCategory" 
              BackgroundColor="#E6A240">
     <ContentView.Content>
+        
         <Grid>
 
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapGestureTapped"/>
+            </Grid.GestureRecognizers>
+            
+            
             <!-- Define the rows for the Grid -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="20" />

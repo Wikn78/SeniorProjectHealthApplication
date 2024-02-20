@@ -59,6 +59,7 @@
     <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
     <PackageReference Include="Xamarin.AndroidX.Core" Version="1.12.0.3" />
     <PackageReference Include="Xamarin.AndroidX.Navigation.Runtime" Version="2.7.6" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
     <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
   </ItemGroup>

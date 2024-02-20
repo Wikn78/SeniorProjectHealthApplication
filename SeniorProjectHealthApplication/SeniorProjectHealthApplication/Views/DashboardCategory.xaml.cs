@@ -48,21 +48,21 @@ namespace SeniorProjectHealthApplication.Views
         public DashboardCategory()
         {
             InitializeComponent();
-
-            /*var tapGesture = new TapGestureRecognizer();
-            tapGesture.Tapped += (s, e) => CategoryClicked?.Invoke(this, new EventArgs());
-            this.GestureRecognizers.Add(tapGesture);
-            
-            var category = new DashboardCategory { CategoryID = "<YourCategoryID>", CategoryName = "<YourCategoryName>", ImagePath = "<YourImagePath>" };
-            category.CategoryClicked += async (s, e) => 
-            {
-                var categoryControl = s as DashboardCategory;
-                var categoryID = categoryControl.CategoryID; // Here is your categoryID which was clicked
-                var nextPage = new MealPage(categoryID);
-                await Navigation.PushAsync(nextPage);
-            };*/
+            CategoryClicked += OpenFoodPage;
         }
         
+        public void OpenFoodPage(object sender, EventArgs e)
+        {
+            // Your code
+            Console.WriteLine(CategoryID + " was clicked");
+        }
+
+        // Method to invoke the event
+        private void OnTapGestureTapped(object sender, EventArgs e) 
+        {
+            // Invoke your custom event here
+            CategoryClicked?.Invoke(this, EventArgs.Empty);
+        }
         
     }
 }
