@@ -22,7 +22,7 @@
         WidthRequest="300"
          Grid.Column="0"/>
                 <RelativeLayout Grid.Row="0" Grid.Column="0">
-                    <Label Text="           SUPERMAN"
+                    <Label Text="BODYWEIGHT WORKOUT"
                TextColor="#FDB836"
                FontSize="25"
                FontAttributes="Bold"
@@ -35,6 +35,42 @@
                 WidthRequest="30"/>
 
             </Grid>
+            <Label Text=""/>
+            <Button Text="SUPERMAN"
+                    TextColor="White"
+                    BackgroundColor="#FDB836"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+            <Label Text=""/>
+            <Button Text="ABDOMINAL CRUNCH"
+                    TextColor="White"
+                    BackgroundColor="#FDB836"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+            <Label Text=""/>
+            <Button Text="PLANK"
+                    TextColor="White"
+                    BackgroundColor="#FDB836"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+            <Label Text=""/>
+            <Button Text="MOUNTAIN CLIMBER"
+                    TextColor="White"
+                    BackgroundColor="#FDB836"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+            <Label Text=""/>
+            <Button Text="REVERSE LUNGES"
+                    TextColor="White"
+                    BackgroundColor="#FDB836"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+            <Label Text=""/>
+            <Button Text="DONKEY KICKS"
+                    TextColor="White"
+                    BackgroundColor="#FDB836"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
 
         </StackLayout>
     </ContentPage.Content>
