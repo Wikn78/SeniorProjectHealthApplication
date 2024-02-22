@@ -1,9 +1,13 @@
 ﻿<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SeniorProjectHealthApplication.Views.DashboardCategory" 
-             BackgroundColor="#E6A240">
-    <ContentView.Content>
+             BackgroundColor="#E6A240"
+             >
+    
         
+    <ContentView.Content>
+       
+
         <Grid>
 
             <Grid.GestureRecognizers>
@@ -79,4 +83,5 @@
 
         </Grid>
     </ContentView.Content>
+        
 </ContentView>
