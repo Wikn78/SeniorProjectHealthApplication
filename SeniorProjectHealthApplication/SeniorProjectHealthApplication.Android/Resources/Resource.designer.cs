@@ -21986,6 +21986,12 @@ namespace SeniorProjectHealthApplication.Droid
 			// aapt resource value: 0x7F07006E
 			public const int icon_feed = 2131165294;
 			
+			// aapt resource value: 0x7F07006D
+			public const int icon_about = 2131165293;
+			
+			// aapt resource value: 0x7F07006E
+			public const int icon_feed = 2131165294;
+			
 			// aapt resource value: 0x7F070066
 			public const int ic_arrow_down_24dp = 2131165286;
 			public const int Health_Application_Logo = 2131165286;
