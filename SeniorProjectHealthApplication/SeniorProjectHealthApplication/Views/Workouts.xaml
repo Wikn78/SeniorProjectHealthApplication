@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:SeniorProjectHealthApplication.Views;assembly=SeniorProjectHealthApplication"
              x:Class="SeniorProjectHealthApplication.Views.Workouts"
                    BackgroundColor="#80130B">
     <ContentPage.Content>
@@ -22,6 +23,8 @@
             <Button Text="FLEXIBILITY AND BALANCE" WidthRequest="250" HeightRequest="60" BackgroundColor="#FDB836" />
             <Label Text="" FontSize="5"/>
             <Button Text="BODYWEIGHT" WidthRequest="250" HeightRequest="60" BackgroundColor="#FDB836"/>
+            <views:QuickNavBar  Margin="0,10,0,0" VerticalOptions="End" HorizontalOptions='Center' CurrentPage="Logs" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

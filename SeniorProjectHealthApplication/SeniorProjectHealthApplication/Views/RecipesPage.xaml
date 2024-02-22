@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:SeniorProjectHealthApplication.Views;assembly=SeniorProjectHealthApplication"
              x:Class="SeniorProjectHealthApplication.Views.RecipesPage">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#80130B">
@@ -74,10 +75,15 @@
                         </StackLayout>
                     </Grid>
 
+                    
+                        
+                    
                 </StackLayout>
             </ScrollView>
             <!--Bottom Navigation Bar-->
             <StackLayout>
+                <views:QuickNavBar  Margin="0,10,0,0" VerticalOptions="End" HorizontalOptions='Center' CurrentPage="Logs" />
+
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

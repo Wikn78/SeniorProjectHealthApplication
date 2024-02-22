@@ -18,22 +18,22 @@ namespace SeniorProjectHealthApplication.Views
         }
         private async void Progress_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new Progress());
         }
 
-        private void QuickAdd_Tapped(object sender, EventArgs e)
+        private async void QuickAdd_Tapped(object sender, EventArgs e)
         {
-            // Handle quick add tap
+            await Navigation.PushAsync(new AboutPage());
         }
 
-        private void Workouts_Tapped(object sender, EventArgs e)
+        private async  void Workouts_Tapped(object sender, EventArgs e)
         {
-            // Handle workouts tap
+            await Navigation.PushAsync(new Workouts());
         }
 
-        private void Recipes_Tapped(object sender, EventArgs e)
+        private async void Recipes_Tapped(object sender, EventArgs e)
         {
-            // Handle recipes tap
+            await Navigation.PushAsync(new RecipesPage());
         }
         
         public enum ActivePage
