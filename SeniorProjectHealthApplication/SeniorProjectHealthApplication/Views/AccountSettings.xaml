@@ -61,31 +61,31 @@
                 <!-- Field 1 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="textField1" Placeholder="First Name" PlaceholderColor="White"  WidthRequest="250" />
-                    <Button Text="Update" Clicked="OnUpdateButtonClicked" WidthRequest="150" BackgroundColor="#FDB836"/>
+                    <Button Text="Update" WidthRequest="150" BackgroundColor="#FDB836"/>
                 </StackLayout>
 
                 <!-- Field 2 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="textField2" Placeholder="Last Name" PlaceholderColor="White"  WidthRequest="250" />
-                    <Button Text="Update" Clicked="OnUpdateButtonClicked" WidthRequest="150" BackgroundColor="#FDB836"/>
+                    <Button Text="Update"  WidthRequest="150" BackgroundColor="#FDB836"/>
                 </StackLayout>
 
                 <!-- Field 3 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="textField3" Placeholder="Email" PlaceholderColor="White"  WidthRequest="250"/>
-                    <Button Text="Update" Clicked="OnUpdateButtonClicked"  WidthRequest="150"  BackgroundColor="#FDB836"/>
+                    <Button Text="Update"   WidthRequest="150"  BackgroundColor="#FDB836"/>
                 </StackLayout>
 
                 <!-- Field 4 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="textField4" Placeholder="Birthdate" PlaceholderColor="White"  WidthRequest="250" />
-                    <Button Text="Update 4" Clicked="OnUpdateButtonClicked" WidthRequest="150"  BackgroundColor="#FDB836"/>
+                    <Button Text="Update" WidthRequest="150"  BackgroundColor="#FDB836"/>
                 </StackLayout>
 
                 <!-- Field 5 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="textField5" Placeholder="Gender" PlaceholderColor="White"  WidthRequest="250" />
-                    <Button Text="Update 5" Clicked="OnUpdateButtonClicked" WidthRequest="150"  BackgroundColor="#FDB836"/>
+                    <Button Text="Update" WidthRequest="150"  BackgroundColor="#FDB836"/>
                 </StackLayout>
             </StackLayout>
 

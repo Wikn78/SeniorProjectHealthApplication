@@ -14,7 +14,7 @@ namespace SeniorProjectHealthApplication
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new AccountSettings();
+            MainPage = new WelcomePage();
         }
 
         protected override void OnStart()
