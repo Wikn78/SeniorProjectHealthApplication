@@ -16,5 +16,10 @@ namespace SeniorProjectHealthApplication.Views
         {
             InitializeComponent();
         }
+        
+        private async void Submit_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LoginPage());
+        }
     }
 }

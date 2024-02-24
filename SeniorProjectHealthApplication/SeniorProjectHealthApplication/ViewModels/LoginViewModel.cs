@@ -84,7 +84,7 @@ namespace SeniorProjectHealthApplication.ViewModels
 
             private async void ExecuteRecoverPassword(object obj)
             {
-                // Execute password recovery logic here
+                await _navigation.PushAsync(new ForgotPasswordPage());
             }
         }
 
