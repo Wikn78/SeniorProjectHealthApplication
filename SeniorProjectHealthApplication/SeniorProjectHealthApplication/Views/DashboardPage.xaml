@@ -49,10 +49,12 @@
                         <RowDefinition Height="100" />
                     </Grid.RowDefinitions>
 
-                    <Image Source="Health_Application_Logo.png" VerticalOptions="Center" />
+                    
                     <BoxView Color="{StaticResource UMCMaroon}" />
 
-
+                    
+                   
+                    
                     <Grid Grid.Row="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -69,9 +71,18 @@
 
                         <Label Grid.Row="1" Grid.Column="1" TextColor="White" VerticalOptions="Center"
                                HorizontalOptions="Center" Text="1750 cals left" />
-
-                        <Image Grid.Column="1" Source="Health_Application_Logo.PNG" />
-                        <Label Grid.Row="1" FontSize="20" HorizontalTextAlignment="Center" Text="300 consumed" TextColor="White" VerticalOptions="CenterAndExpand"
+                        
+                        <ImageButton Grid.Row="0"
+                                Grid.Column="2"
+                                HeightRequest="50"
+                                VerticalOptions="Start"
+                                HorizontalOptions="End"
+                                Source="account_icon.png"
+                                BackgroundColor="Transparent"
+                                Clicked="Account_Clicked"/>
+                        
+                        <Image Grid.Row="0" Grid.Column="1" Source="Health_Application_Logo.PNG" />
+                        <Label Grid.Row="1" Grid.Column="0" FontSize="20" HorizontalTextAlignment="Center" Text="300 consumed" TextColor="White" VerticalOptions="CenterAndExpand"
                                HorizontalOptions="CenterAndExpand" />
                         <Label Grid.Column="2" Grid.Row="1" FontSize="20" HorizontalTextAlignment="Center" Text="50 burned" TextColor="White" VerticalOptions="CenterAndExpand"
                                HorizontalOptions="CenterAndExpand" />

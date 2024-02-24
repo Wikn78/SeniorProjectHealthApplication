@@ -23,7 +23,7 @@ namespace SeniorProjectHealthApplication.Views
 
         private async void QuickAdd_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AboutPage());
+            await Navigation.PushAsync(new Progress());
         }
 
         private async  void Workouts_Tapped(object sender, EventArgs e)

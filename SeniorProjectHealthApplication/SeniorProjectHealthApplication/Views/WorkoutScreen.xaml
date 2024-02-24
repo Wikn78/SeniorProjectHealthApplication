@@ -41,7 +41,8 @@
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand"/>
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="Superman_Clicked"/>
             <Label Text=""/>
             <Button Text="ABDOMINAL CRUNCH"
                     TextColor="White"

@@ -15,6 +15,9 @@
                     <Grid>
                         <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">Breakfast</Label>
                         <StackLayout Grid.Row="1" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Recipe_Tapped" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
                         </StackLayout>
 
                         <StackLayout Grid.Row="2" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">

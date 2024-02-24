@@ -65,7 +65,7 @@ namespace SeniorProjectHealthApplication.ViewModels
         private async void ExecuteLogin(object obj)
             {
                 //Execute login logic here
-                Console.WriteLine(Password + Username);
+                await _navigation.PushAsync(new DashboardPage());
             }
 
             private async void ExecuteRegister(object obj)

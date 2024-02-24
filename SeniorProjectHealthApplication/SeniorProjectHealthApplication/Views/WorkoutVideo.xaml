@@ -5,4 +5,5 @@
           xmlns:ctl="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
               BackgroundColor="{StaticResource UMCMaroon}">
     <WebView x:Name="webView" />
+    
 </ContentPage>

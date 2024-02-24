@@ -22,7 +22,7 @@
             <Label Text="" FontSize="5"/>
             <Button Text="FLEXIBILITY AND BALANCE" WidthRequest="250" HeightRequest="60" BackgroundColor="{StaticResource UMCGold}" />
             <Label Text="" FontSize="5"/>
-            <Button Text="BODYWEIGHT" WidthRequest="250" HeightRequest="60" BackgroundColor="{StaticResource UMCGold}"/>
+            <Button Text="BODYWEIGHT" WidthRequest="250" HeightRequest="60" BackgroundColor="{StaticResource UMCGold}" Clicked="BodyWeight_Clicked" />
             <views:QuickNavBar  Margin="0,10,0,0" VerticalOptions="End" HorizontalOptions='Center' CurrentPage="Logs" />
 
         </StackLayout>

@@ -15,7 +15,9 @@ namespace SeniorProjectHealthApplication.Views
         public CreateAccountPage()
         {
             InitializeComponent();
-            this.BindingContext = new CreateAccountViewModel();
+            this.BindingContext = new CreateAccountViewModel(Navigation);
         }
+        
+        
     }
 }

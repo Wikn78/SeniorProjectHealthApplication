@@ -1,4 +1,5 @@
 ﻿using System;
+using SeniorProjectHealthApplication.Views;
 using Xamarin.Forms;
 
 namespace SeniorProjectHealthApplication.ViewModels
@@ -84,9 +85,11 @@ namespace SeniorProjectHealthApplication.ViewModels
 
         #endregion
 
-        public CreateAccountViewModel()
-        {
 
+        private INavigation _navigation;
+        public CreateAccountViewModel(INavigation navigation)
+        {
+            _navigation = navigation;
             CreateAccount = new Command(OnCreateAccount);
         }
         
@@ -107,6 +110,7 @@ namespace SeniorProjectHealthApplication.ViewModels
             if (_confirmedPassword == _password)
             {
                 Console.WriteLine("Account Created");
+                await _navigation.PushAsync(new WelcomePage());
                 
             }
             else

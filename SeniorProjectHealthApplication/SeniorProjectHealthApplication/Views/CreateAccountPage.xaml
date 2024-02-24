@@ -48,7 +48,7 @@
             <Label></Label>
             <Label></Label>
             
-            <Button Text="Submit" BackgroundColor="{StaticResource UMCMaroon}" Command="{Binding CreateAccount}"></Button>
+            <Button Text="Submit" BackgroundColor="{StaticResource UMCGold}" Command="{Binding CreateAccount}"/>
             
         </StackLayout>
     </ContentPage.Content>
