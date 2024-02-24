@@ -3,7 +3,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SeniorProjectHealthApplication.Views.CreateAccountPage"
-             BackgroundColor="#80130B"
+             BackgroundColor="{StaticResource UMCMaroon}"
              Title="Create Account"
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
@@ -14,7 +14,7 @@
             <Label></Label>
             
             
-            <Label  FontAttributes="Bold" TextColor="#ED9C28" FontSize="25" Text="REGISTER FOR HEALTH APPLICATION" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+            <Label  FontAttributes="Bold" TextColor="{StaticResource UMCGold}" FontSize="25" Text="REGISTER FOR HEALTH APPLICATION" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
             <Label></Label>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
                 <Label Text="First Name: " TextColor="White" FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150"/>
@@ -48,7 +48,7 @@
             <Label></Label>
             <Label></Label>
             
-            <Button Text="Submit" BackgroundColor="#ED9C28" Command="{Binding CreateAccount}"></Button>
+            <Button Text="Submit" BackgroundColor="{StaticResource UMCMaroon}" Command="{Binding CreateAccount}"></Button>
             
         </StackLayout>
     </ContentPage.Content>

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SeniorProjectHealthApplication.Views.AccountSettings"
-                  BackgroundColor="#80130B">
+                  BackgroundColor="{StaticResource UMCMaroon}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
           <Grid HorizontalOptions="Center" VerticalOptions="Center">
@@ -23,7 +23,7 @@
          Grid.Column="0"/>
                 <RelativeLayout Grid.Row="0" Grid.Column="0">
                     <Label Text="   ACCOUNT SETTINGS"
-               TextColor="#FDB836"
+               TextColor="{StaticResource UMCGold}"
                FontSize="25"
                FontAttributes="Bold"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
@@ -61,31 +61,31 @@
                 <!-- Field 1 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="textField1" Placeholder="First Name" PlaceholderColor="White"  WidthRequest="250" />
-                    <Button Text="Update" WidthRequest="150" BackgroundColor="#FDB836"/>
+                    <Button Text="Update" WidthRequest="150" BackgroundColor="{StaticResource UMCGold}"/>
                 </StackLayout>
 
                 <!-- Field 2 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="textField2" Placeholder="Last Name" PlaceholderColor="White"  WidthRequest="250" />
-                    <Button Text="Update"  WidthRequest="150" BackgroundColor="#FDB836"/>
+                    <Button Text="Update"  WidthRequest="150" BackgroundColor="{StaticResource UMCGold}"/>
                 </StackLayout>
 
                 <!-- Field 3 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="textField3" Placeholder="Email" PlaceholderColor="White"  WidthRequest="250"/>
-                    <Button Text="Update"   WidthRequest="150"  BackgroundColor="#FDB836"/>
+                    <Button Text="Update"   WidthRequest="150"  BackgroundColor="{StaticResource UMCGold}"/>
                 </StackLayout>
 
                 <!-- Field 4 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="textField4" Placeholder="Birthdate" PlaceholderColor="White"  WidthRequest="250" />
-                    <Button Text="Update" WidthRequest="150"  BackgroundColor="#FDB836"/>
+                    <Button Text="Update" WidthRequest="150"  BackgroundColor="{StaticResource UMCGold}"/>
                 </StackLayout>
 
                 <!-- Field 5 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="textField5" Placeholder="Gender" PlaceholderColor="White"  WidthRequest="250" />
-                    <Button Text="Update" WidthRequest="150"  BackgroundColor="#FDB836"/>
+                    <Button Text="Update" WidthRequest="150"  BackgroundColor="{StaticResource UMCGold}"/>
                 </StackLayout>
             </StackLayout>
 

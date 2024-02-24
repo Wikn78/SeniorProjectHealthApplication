@@ -4,7 +4,7 @@
              xmlns:views="clr-namespace:SeniorProjectHealthApplication.Views;assembly=SeniorProjectHealthApplication"
              x:Class="SeniorProjectHealthApplication.Views.RecipesPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#80130B">
+        <StackLayout BackgroundColor="{StaticResource UMCMaroon}">
             <ScrollView>
                 <!--Search Bar-->
                 <StackLayout Margin="0,0,0,50">
@@ -14,64 +14,64 @@
                     <!--Breakfast List-->
                     <Grid>
                         <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">Breakfast</Label>
-                        <StackLayout Grid.Row="1" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="1" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="2" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="2" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="3" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="3" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="4" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="4" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
                     </Grid>
 
                     <!--Lunch List-->
                     <Grid>
                         <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">Lunch</Label>
-                        <StackLayout Grid.Row="1" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="1" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="2" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="2" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="3" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="3" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="4" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="4" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
                     </Grid>
 
                     <!--Dinner List-->
                     <Grid>
                         <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">Dinner</Label>
-                        <StackLayout Grid.Row="1" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="1" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="2" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="2" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="3" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="3" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="4" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="4" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
                     </Grid>
 
                     <!--Snack List-->
                     <Grid>
                         <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">Snack</Label>
-                        <StackLayout Grid.Row="1" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="1" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="2" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="2" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="3" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="3" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
 
-                        <StackLayout Grid.Row="4" BackgroundColor="#ED9C28" HeightRequest="40" Margin="20, 10, 20, 0">
+                        <StackLayout Grid.Row="4" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40" Margin="20, 10, 20, 0">
                         </StackLayout>
                     </Grid>
 

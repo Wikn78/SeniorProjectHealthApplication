@@ -5,7 +5,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="SeniorProjectHealthApplication.Views.DashboardPage"
-             BackgroundColor="#80130B"
+             BackgroundColor="{StaticResource UMCMaroon}"
              Shell.NavBarIsVisible="False">
 
     <ContentPage.Content>
@@ -29,7 +29,7 @@
 
 
             <!-- Background Color -->
-            <BoxView Color="#80130B"
+            <BoxView Color="{StaticResource UMCMaroon}"
                      Grid.ColumnSpan="5" />
 
 
@@ -50,7 +50,7 @@
                     </Grid.RowDefinitions>
 
                     <Image Source="Health_Application_Logo.png" VerticalOptions="Center" />
-                    <BoxView Color="#80130B" />
+                    <BoxView Color="{StaticResource UMCMaroon}" />
 
 
                     <Grid Grid.Row="0">
@@ -86,10 +86,10 @@
                                 <pancake:Border Color="Black" Thickness="2" />
                             </pancake:PancakeView.Border>
                         </pancake:PancakeView>
-                        <BoxView CornerRadius="20" VerticalOptions="Start" BackgroundColor="#E6A240" Grid.Row="3"
+                        <BoxView CornerRadius="20" VerticalOptions="Start" BackgroundColor="{StaticResource UMCGold}" Grid.Row="3"
                                  Grid.ColumnSpan="3" />
 
-                        <BoxView CornerRadius="20" VerticalOptions="Center" BackgroundColor="#E6A240" Grid.Row="3"
+                        <BoxView CornerRadius="20" VerticalOptions="Center" BackgroundColor="{StaticResource UMCGold}" Grid.Row="3"
                                  Grid.ColumnSpan="3" Margin="0,0,0,20" />
                         <!-- Bottom part of page -->
                         <Label

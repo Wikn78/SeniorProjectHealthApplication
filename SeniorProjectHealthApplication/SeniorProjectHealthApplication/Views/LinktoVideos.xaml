@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SeniorProjectHealthApplication.Views.LinktoVideos"
-                BackgroundColor="#80130B">
+                BackgroundColor="{StaticResource UMCMaroon}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
             <Grid HorizontalOptions="Center" VerticalOptions="Center">
@@ -23,7 +23,7 @@
          Grid.Column="0"/>
                 <RelativeLayout Grid.Row="0" Grid.Column="0">
                     <Label Text="           SUPERMAN"
-               TextColor="#FDB836"
+               TextColor="{StaticResource UMCGold}"
                FontSize="25"
                FontAttributes="Bold"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
@@ -36,7 +36,7 @@
 
             </Grid>
 
-            <Frame BackgroundColor="#FDB836"
+            <Frame BackgroundColor="{StaticResource UMCGold}"
                CornerRadius="20"
                Padding="20"
                Margin="20"
@@ -80,7 +80,7 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Margin="20,10"
-                    BackgroundColor="#FDB836"/>
+                    BackgroundColor="{StaticResource UMCGold}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:SeniorProjectHealthApplication.Views;assembly=SeniorProjectHealthApplication"
              x:Class="SeniorProjectHealthApplication.Views.Progress"
-                         BackgroundColor="#80130B">
+                         BackgroundColor="{StaticResource UMCMaroon}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
             <Grid HorizontalOptions="Center" VerticalOptions="Center">
@@ -24,7 +24,7 @@
          Grid.Column="0"/>
                 <RelativeLayout Grid.Row="0" Grid.Column="0">
                     <Label Text="            PROGRESS"
-               TextColor="#FDB836"
+               TextColor="{StaticResource UMCGold}"
                FontSize="25"
                FontAttributes="Bold"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
@@ -36,10 +36,10 @@
                 WidthRequest="30"/>
 
             </Grid>
-            <Label Text="   WEIGHT"  TextColor="#FDB836" FontSize="25"/>
+            <Label Text="   WEIGHT"  TextColor="{StaticResource UMCGold}" FontSize="25"/>
            
             
-            <Label Text="   CALORIE INTAKE"  TextColor="#FDB836" FontSize="25"/>
+            <Label Text="   CALORIE INTAKE"  TextColor="{StaticResource UMCGold}" FontSize="25"/>
             
             <views:QuickNavBar  Margin="0,10,0,0" VerticalOptions="End" HorizontalOptions='Center' CurrentPage="Logs" />
 

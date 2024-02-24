@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SeniorProjectHealthApplication.Views.HelpAndSupport_Page">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#80130B">
+        <StackLayout BackgroundColor="{StaticResource UMCMaroon}">
             <!--Back Button and Log off Button-->
             <Grid>
                 <Image VerticalOptions="CenterAndExpand" Aspect="AspectFit" Grid.Column="0" Grid.Row="0" Source="backArrow.png" HeightRequest="50" WidthRequest="10"/>
@@ -18,7 +18,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Image HorizontalOptions="Center" Source="Health_Application_Logo.png"  Grid.Row="0" Grid.Column="0" Opacity="0.1" HeightRequest="121" WidthRequest="250"/>
-                    <Label HorizontalOptions="Center" Text="HELP AND SUPPORT" TextColor="#FDB836" Grid.Row="0" Grid.Column="0" FontSize="25" FontFamily="Arial" FontAttributes = "Bold" Margin="0,30, 0,0"/>
+                    <Label HorizontalOptions="Center" Text="HELP AND SUPPORT" TextColor="{StaticResource UMCGold}" Grid.Row="0" Grid.Column="0" FontSize="25" FontFamily="Arial" FontAttributes = "Bold" Margin="0,30, 0,0"/>
                 </Grid>
                 <Image VerticalOptions="CenterAndExpand" Aspect="AspectFit" Grid.Column="2" Grid.Row="0" Source="logOff.png" HeightRequest="50" WidthRequest="30"/>
             </Grid>
@@ -32,7 +32,7 @@
             <Editor BackgroundColor="#fff" HeightRequest="250" Margin="30, 0, 30, 0" />
 
             <!--Submit Button-->
-            <Button Text="Submit" BackgroundColor="#FDB836" Margin="100, 20, 100, 20" />
+            <Button Text="Submit" BackgroundColor="{StaticResource UMCGold}" Margin="100, 20, 100, 20" />
             <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="25" TextColor="White">Disclaimer: Response of Software Development Team will occur in 7 business days.</Label>
 
             <!--Bottom Navigation Bar-->

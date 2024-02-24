@@ -9,6 +9,8 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
+            <Color x:Key="UMCGold">#ffcc33</Color>
+            <Color x:Key="UMCMaroon">#7a0019</Color>
             <Color x:Key="Primary">#2196F3</Color>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
