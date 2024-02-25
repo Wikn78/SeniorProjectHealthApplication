@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.Food.ViewFoodItemPage"
+             BackgroundColor="{StaticResource UMCMaroon}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button Text="←"
+                        BackgroundColor="Transparent"
+                        FontSize="Large"
+                        Clicked="GoBack_Clicked"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start" />
+
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="Breakfast"
+                       TextColor="White"
+                       FontSize="24"
+                       x:Name="Lbl_CatagoryId"
+                       Margin="40, 40, 0, 0"
+                       VerticalOptions="Start"
+                       Grid.ColumnSpan="2"
+                       HorizontalOptions="Start" />
+
+                <Entry Grid.Row="1" Grid.Column="0"
+                       Margin="5"
+                       Text="1"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       BackgroundColor="{StaticResource UMCGold}"
+                       WidthRequest="40" />
+
+                <Picker Grid.Row="1" Grid.Column="1"
+                        Title="Select a value"
+                        SelectedIndex="0"
+                        BackgroundColor="{StaticResource UMCGold}"
+                        VerticalOptions="Center"
+                        HorizontalOptions="FillAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>1 Egg</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+            </Grid>
+
+            <!-- Food Items -->
+
+            <Frame BackgroundColor="{StaticResource UMCGold}" HeightRequest="150" Margin="0, 40, 0, 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="18" /> <!-- Reduced height -->
+                        <RowDefinition Height="18" /> <!-- Reduced height -->
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           TextColor="White"
+                           Text="Calories"
+                           FontAttributes="Bold"
+                           VerticalOptions="Start" />
+                    <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="White"
+                           Text="140 cal"
+                           x:Name="Lbl_FoodCalories"
+                           VerticalOptions="Start"
+                           HorizontalOptions="End" />
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           TextColor="White"
+                           Text="Protein"
+                           FontAttributes="Bold"
+                           VerticalOptions="Start" />
+                    <Label Grid.Row="1" Grid.Column="1"
+                           TextColor="White"
+                           Text="18 g"
+                           x:Name="Lbl_Protein"
+                           VerticalOptions="Start"
+                           HorizontalOptions="End" />
+
+                    <Label Grid.Row="2" Grid.Column="0"
+                           TextColor="White"
+                           Text="Carbs"
+                           FontAttributes="Bold"
+                           VerticalOptions="Start" />
+                    <Label Grid.Row="2" Grid.Column="1"
+                           TextColor="White"
+                           Text="2 g"
+                           x:Name="Lbl_Carbs"
+                           VerticalOptions="Start"
+                           HorizontalOptions="End" />
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           TextColor="White"
+                           Text="Fiber"
+                           VerticalOptions="Start" />
+                    <Label Grid.Row="3" Grid.Column="1"
+                           TextColor="White"
+                           Text="0 g"
+                           x:Name="Lbl_Fiber"
+                           VerticalOptions="Start"
+                           HorizontalOptions="End" />
+
+                    <Label Grid.Row="4" Grid.Column="0"
+                           TextColor="White"
+                           Text="Added Sugar"
+                           VerticalOptions="Start" />
+                    <Label Grid.Row="4" Grid.Column="1"
+                           TextColor="White"
+                           Text="0 g"
+                           x:Name="Lbl_AddedSugar"
+                           VerticalOptions="Start"
+                           HorizontalOptions="End" />
+
+                    <Label Grid.Row="5" Grid.Column="0"
+                           TextColor="White"
+                           Text="Fat"
+                           FontAttributes="Bold"
+                           VerticalOptions="Start" />
+                    <Label Grid.Row="5" Grid.Column="1"
+                           TextColor="White"
+                           Text="2 g"
+                           x:Name="Lbl_Fat"
+                           VerticalOptions="Start"
+                           HorizontalOptions="End" />
+
+
+                </Grid>
+            </Frame>
+
+
+            <StackLayout VerticalOptions="FillAndExpand">
+
+                <Button
+                    x:Name="Button_ItemUpdate"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    Text="Add Item"
+                    Margin="5"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    CornerRadius="10"
+                    Clicked="Track_Clicked" />
+
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

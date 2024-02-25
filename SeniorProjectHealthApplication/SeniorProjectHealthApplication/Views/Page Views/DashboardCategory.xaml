@@ -1,20 +1,19 @@
 ﻿<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SeniorProjectHealthApplication.Views.DashboardCategory" 
-             BackgroundColor="{StaticResource UMCGold}"
-             >
-    
-        
+             x:Class="SeniorProjectHealthApplication.Views.DashboardCategory"
+             BackgroundColor="{StaticResource UMCGold}">
+
+
     <ContentView.Content>
-       
+
 
         <Grid>
 
             <Grid.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnTapGestureTapped"/>
+                <TapGestureRecognizer Tapped="OnTapGestureTapped" />
             </Grid.GestureRecognizers>
-            
-            
+
+
             <!-- Define the rows for the Grid -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="20" />
@@ -24,64 +23,63 @@
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
             <!-- Category title -->
-            <Label x:Name="CategoryNameLabel"  Grid.Column="1"
-                   Grid.Row="0" 
-                   Grid.ColumnSpan="2" 
-                   HorizontalOptions="Start" 
-                   VerticalOptions="Center" 
-                   />
+            <Label x:Name="CategoryNameLabel" Grid.Column="1"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center" />
 
             <!-- Category Image and Cross Add Button -->
             <Image x:Name="CategoryImage"
-                   Grid.Row="0" 
-                   Grid.Column="0" 
+                   Grid.Row="0"
+                   Grid.Column="0"
                    Grid.RowSpan="2"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="StartAndExpand" 
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand"
                    WidthRequest="60"
-                   HeightRequest="60"/>
+                   HeightRequest="60" />
 
-            <ImageButton Source="cross_button.png" 
-                         Grid.Row="0" 
-                         Grid.Column="2" 
+            <ImageButton Source="cross_button.png"
+                         Grid.Row="0"
+                         Grid.Column="2"
                          Grid.RowSpan="2"
-                         VerticalOptions="Center" 
-                         HorizontalOptions="EndAndExpand" 
-                         WidthRequest="40" 
-                         HeightRequest="40" 
-                         BackgroundColor="Transparent"/>
+                         VerticalOptions="Center"
+                         HorizontalOptions="EndAndExpand"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         BackgroundColor="Transparent" />
 
 
             <!-- Separator -->
-            <BoxView Grid.Row="1" 
-                     Grid.ColumnSpan="3" 
-                     Color="Black" 
-                     HeightRequest="1" 
-                     VerticalOptions="End" 
+            <BoxView Grid.Row="1"
+                     Grid.ColumnSpan="3"
+                     Color="Black"
+                     HeightRequest="1"
+                     VerticalOptions="End"
                      HorizontalOptions="FillAndExpand" />
 
             <!-- Description -->
-            <Label Text="Description" 
+            <Label Text="Description"
                    Grid.ColumnSpan="2"
                    Grid.Column="1"
-                   Grid.Row="1" 
+                   Grid.Row="1"
                    HorizontalOptions="Start"
-                   VerticalOptions="StartAndExpand"/>
+                   VerticalOptions="StartAndExpand" />
 
             <!-- Calorie info -->
-            <Label Text="Calories: XYZ" 
+            <Label Text="Calories: XYZ"
                    Grid.ColumnSpan="3"
-                   Grid.Row="2" 
-                   HorizontalOptions="Start" 
+                   Grid.Row="2"
+                   HorizontalOptions="Start"
                    VerticalOptions="Center" />
 
         </Grid>
     </ContentView.Content>
-        
+
 </ContentView>

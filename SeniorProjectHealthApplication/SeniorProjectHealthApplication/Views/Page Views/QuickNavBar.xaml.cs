@@ -7,35 +7,6 @@ namespace SeniorProjectHealthApplication.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QuickNavBar : ContentView
     {
-        public QuickNavBar()
-        {
-            InitializeComponent();
-        }
-        
-        private async void Log_Tapped(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new DashboardPage());
-        }
-        private async void Progress_Tapped(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Progress());
-        }
-
-        private async void QuickAdd_Tapped(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Progress());
-        }
-
-        private async  void Workouts_Tapped(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Workouts());
-        }
-
-        private async void Recipes_Tapped(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new RecipesPage());
-        }
-        
         public enum ActivePage
         {
             Logs,
@@ -48,20 +19,60 @@ namespace SeniorProjectHealthApplication.Views
         public static readonly BindableProperty CurrentPageProperty = BindableProperty.Create(
             nameof(CurrentPage),
             typeof(ActivePage),
-            typeof(QuickNavBar), 
-            ActivePage.Logs, 
+            typeof(QuickNavBar),
+            ActivePage.Logs,
             propertyChanged: OnCurrentPageChanged);
+
+        public QuickNavBar()
+        {
+            InitializeComponent();
+        }
 
         public ActivePage CurrentPage
         {
-            get { return (ActivePage)GetValue(CurrentPageProperty); }
-            set { SetValue(CurrentPageProperty, value); }
+            get => (ActivePage)GetValue(CurrentPageProperty);
+            set => SetValue(CurrentPageProperty, value);
+        }
+
+        // Add these properties to QuickNavBar.xaml.cs
+        public Color LogButtonColor => CurrentPage == ActivePage.Logs ? Color.Green : Color.FromHex("#80130B");
+
+        public Color ProgressButtonColor => CurrentPage == ActivePage.Progress ? Color.Green : Color.FromHex("#80130B");
+
+        public Color QuickAddButtonColor => CurrentPage == ActivePage.QuickAdd ? Color.Green : Color.FromHex("#80130B");
+
+        public Color WorkoutsButtonColor => CurrentPage == ActivePage.Workouts ? Color.Green : Color.FromHex("#80130B");
+
+        public Color RecipesButtonColor => CurrentPage == ActivePage.Recipes ? Color.Green : Color.FromHex("#80130B");
+
+        private async void Log_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DashboardPage());
+        }
+
+        private async void Progress_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Progress());
+        }
+
+        private async void QuickAdd_Tapped(object sender, EventArgs e)
+        {
+        }
+
+        private async void Workouts_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Workouts());
+        }
+
+        private async void Recipes_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RecipesPage());
         }
 
         private static void OnCurrentPageChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (QuickNavBar) bindable;
-    
+            var control = (QuickNavBar)bindable;
+
             // Call OnPropertyChanged to notify the view that colors have changed
             control.OnPropertyChanged(nameof(LogButtonColor));
             control.OnPropertyChanged(nameof(ProgressButtonColor));
@@ -69,47 +80,9 @@ namespace SeniorProjectHealthApplication.Views
             control.OnPropertyChanged(nameof(WorkoutsButtonColor));
             control.OnPropertyChanged(nameof(RecipesButtonColor));
         }
-        
-        // Add these properties to QuickNavBar.xaml.cs
-        public Color LogButtonColor
-        {
-            get
-            {
-                return CurrentPage == ActivePage.Logs ? Color.Green : Color.FromHex("#80130B"); 
-            }
-        }
 
-        public Color ProgressButtonColor
+        private void OnOverlayTapped(object sender, EventArgs e)
         {
-            get
-            {
-                return CurrentPage == ActivePage.Progress ? Color.Green : Color.FromHex("#80130B"); 
-            }
         }
-
-        public Color QuickAddButtonColor
-        {
-            get
-            {
-                return CurrentPage == ActivePage.QuickAdd ? Color.Green : Color.FromHex("#80130B"); 
-            }
-        }
-
-        public Color WorkoutsButtonColor
-        {
-            get
-            {
-                return CurrentPage == ActivePage.Workouts ? Color.Green : Color.FromHex("#80130B"); 
-            }
-        }
-
-        public Color RecipesButtonColor
-        {
-            get
-            {
-                return CurrentPage == ActivePage.Recipes ? Color.Green : Color.FromHex("#80130B"); 
-            }
-        }
-        
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SeniorProjectHealthApplication.Models
+﻿namespace SeniorProjectHealthApplication.Models
 {
     public class Item
     {

@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SeniorProjectHealthApplication.Views.BrowseRecipePage">
@@ -8,61 +9,106 @@
                 <!--Food Name and Image-->
                 <StackLayout Margin="0,0,0,50">
                     <Grid>
-                        <Image  WidthRequest="70" HeightRequest="70" HorizontalOptions="Start" Source="exitbutton.png"/>
-                        <Label  HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="30" TextColor="White" FontAttributes="Bold" Margin="0, 30, 0, 0">Food Name Here</Label>
+                        <Image WidthRequest="70" HeightRequest="70" HorizontalOptions="Start" Source="exitbutton.png" />
+                        <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="30"
+                               TextColor="White" FontAttributes="Bold" Margin="0, 30, 0, 0">
+                            Food Name Here
+                        </Label>
                     </Grid>
-                    
-                        <Image Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="white" HeightRequest="250" Margin="40, 0, 40, 0"/>
+
+                    <Image BackgroundColor="white" HeightRequest="250" Margin="40, 0, 40, 0" />
 
 
-                        <!--Nutritional Facts-->
+                    <!--Nutritional Facts-->
                     <Grid>
-                        <Label Grid.Row="0" Grid.ColumnSpan="4" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">Nutritional Facts</Label>
-                        <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="{StaticResource UMCGold}" Margin="5, 10, 5, 0">
-                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18">Calories</Label>
+                        <Label Grid.Row="0" Grid.ColumnSpan="4" HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center" Margin="0,50,0,0" FontSize="32" TextColor="White"
+                               FontAttributes="Bold">
+                            Nutritional Facts
+                        </Label>
+                        <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18">
+                                Calories
+                            </Label>
                         </StackLayout>
 
-                        <StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="{StaticResource UMCGold}" Margin="5, 10, 5, 0">
-                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18">Carbs</Label>
+                        <StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18">
+                                Carbs
+                            </Label>
                         </StackLayout>
 
-                        <StackLayout Grid.Row="1" Grid.Column="2" BackgroundColor="{StaticResource UMCGold}" Margin="5, 10, 5, 0">
-                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18">Protein</Label>
+                        <StackLayout Grid.Row="1" Grid.Column="2" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18">
+                                Protein
+                            </Label>
                         </StackLayout>
 
-                        <StackLayout Grid.Row="1" Grid.Column="3" BackgroundColor="{StaticResource UMCGold}"  Margin="5, 10, 5, 0">
-                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18">Fat</Label>
+                        <StackLayout Grid.Row="1" Grid.Column="3" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18">
+                                Fat
+                            </Label>
                         </StackLayout>
 
 
-
-
-                        <StackLayout Grid.Row="2" Grid.Column="0" BackgroundColor="{StaticResource UMCGold}" Margin="5, 10, 5, 0">
-                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18">Saturated Fat</Label>
+                        <StackLayout Grid.Row="2" Grid.Column="0" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18">
+                                Saturated Fat
+                            </Label>
                         </StackLayout>
 
-                        <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="{StaticResource UMCGold}" Margin="5, 10, 5, 0">
-                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18">Sodium</Label>
+                        <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18">
+                                Sodium
+                            </Label>
                         </StackLayout>
 
-                        <StackLayout Grid.Row="2" Grid.Column="2" BackgroundColor="{StaticResource UMCGold}" Margin="5, 10, 5, 0">
-                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18">Fiber</Label>
+                        <StackLayout Grid.Row="2" Grid.Column="2" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18">
+                                Fiber
+                            </Label>
                         </StackLayout>
 
-                        <StackLayout Grid.Row="2" Grid.Column="3" BackgroundColor="{StaticResource UMCGold}"  Margin="5, 10, 5, 0">
-                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18">Sugar</Label>
+                        <StackLayout Grid.Row="2" Grid.Column="3" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18">
+                                Sugar
+                            </Label>
                         </StackLayout>
 
 
                         <!--Ingredients-->
-                        <StackLayout Grid.Row="3" Grid.ColumnSpan="4" BackgroundColor="{StaticResource UMCGold}" Margin="5, 50, 10, 0">
-                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18">Ingredients</Label>
+                        <StackLayout Grid.Row="3" Grid.ColumnSpan="4" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 50, 10, 0">
+                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18">
+                                Ingredients
+                            </Label>
                         </StackLayout>
 
 
                         <!--Instructions-->
-                        <StackLayout Grid.Row="4" Grid.ColumnSpan="4" BackgroundColor="{StaticResource UMCGold}" Margin="5, 50, 10, 0">
-                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18">Instructions</Label>
+                        <StackLayout Grid.Row="4" Grid.ColumnSpan="4" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 50, 10, 0">
+                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18">
+                                Instructions
+                            </Label>
                         </StackLayout>
 
 

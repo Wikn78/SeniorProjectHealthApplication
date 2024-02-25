@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.Page_Views.FoodItem"
+             BackgroundColor="{StaticResource UMCGold}">
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer Tapped="ViewFoodItem_Tapped" NumberOfTapsRequired="1" />
+    </ContentView.GestureRecognizers>
+
+    <ContentView.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0">
+                <Label
+                    Margin="4, 0, 0, 0"
+                    Text="{Binding FoodName}"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand" />
+                <Label
+                    Margin="4, 0, 0, 0"
+                    Text="{Binding Calories}"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand" />
+                <Label
+                    Margin="4, 0, 0, 0"
+                    Text="{Binding Quantity}"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand" />
+            </StackLayout>
+
+            <Button Grid.Column="1"
+                    Margin="5, 0"
+                    Text="+"
+                    BackgroundColor="#333333"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    BorderRadius="25"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

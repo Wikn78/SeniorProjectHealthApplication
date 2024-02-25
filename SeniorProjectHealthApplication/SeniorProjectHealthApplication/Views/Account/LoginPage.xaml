@@ -7,43 +7,47 @@
              BackgroundColor="{StaticResource UMCMaroon}"
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
-        
-        
-     
-        
-        
-        
+
+
         <!-- USERNAME AND PASSWORD BOX -->
-       
-                <!-- USERNAME AND PASSWORD BOX -->
-                <StackLayout Padding="20" VerticalOptions="Center">
-                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
-                        <Image Source="Health_Application_Logo.png" HeightRequest="100" VerticalOptions="Start"/>
-                        <Label  FontAttributes="Bold" TextColor="{StaticResource UMCGold}" FontSize="40" Text="UMC HEALTH APPLICATION" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
-                    </StackLayout>
-        
-                    <StackLayout Orientation="Horizontal" Padding="10, 30, 10, 10" VerticalOptions="Center">
-                        <Label Text="UserID: " TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="Center" WidthRequest="100"/>
-                        <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="{Binding Username}"/>
-                    </StackLayout>
-        
-                    <StackLayout Orientation="Horizontal" Padding="10, 0, 10, 30" VerticalOptions="Center">
-                        <Label Text="Password: " TextColor="White"  FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="Center" WidthRequest="100"/>
-                        <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="{Binding Password}" IsPassword="True"/>
-                    </StackLayout>
-        
-                    <Button Text="Sign up for account " TextColor="White" BackgroundColor="Transparent" FontSize="20" FontAttributes="Bold"  HorizontalOptions="FillAndExpand" Command="{Binding Path=Register}">
-                        <Button.ImageSource>
-                            <FileImageSource File="icon_about.PNG"/>
-                        </Button.ImageSource>
-                    </Button>
-                    <Button Text="Forgot Password? " TextColor="White" BackgroundColor="Transparent" FontSize="20" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Command="{Binding Path=RecoverPassword}">
-                        <Button.ImageSource>
-                            <FileImageSource File="icon_about.PNG"/>
-                        </Button.ImageSource>
-                    </Button>
-                    
-                    <Button TextColor="Black" BackgroundColor="{StaticResource UMCGold}" VerticalOptions="Center" Text="Submit" Command="{Binding Login}"/>
-                </StackLayout>
-            </ContentPage.Content>
+
+        <!-- USERNAME AND PASSWORD BOX -->
+        <StackLayout Padding="20" VerticalOptions="Center">
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Image Source="Health_Application_Logo.png" HeightRequest="100" VerticalOptions="Start" />
+                <Label FontAttributes="Bold" TextColor="{StaticResource UMCGold}" FontSize="40"
+                       Text="UMC HEALTH APPLICATION" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="10, 30, 10, 10" VerticalOptions="Center">
+                <Label Text="UserID: " TextColor="White" FontSize="20" FontAttributes="Bold"
+                       HorizontalTextAlignment="End" VerticalOptions="Center" WidthRequest="100" />
+                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand" Text="{Binding Username}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="10, 0, 10, 30" VerticalOptions="Center">
+                <Label Text="Password: " TextColor="White" FontSize="20" FontAttributes="Bold"
+                       HorizontalTextAlignment="End" VerticalOptions="Center" WidthRequest="100" />
+                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand" Text="{Binding Password}" IsPassword="True" />
+            </StackLayout>
+
+            <Button Text="Sign up for account " TextColor="White" BackgroundColor="Transparent" FontSize="20"
+                    FontAttributes="Bold" HorizontalOptions="FillAndExpand" Command="{Binding Path=Register}">
+                <Button.ImageSource>
+                    <FileImageSource File="icon_about.PNG" />
+                </Button.ImageSource>
+            </Button>
+            <Button Text="Forgot Password? " TextColor="White" BackgroundColor="Transparent" FontSize="20"
+                    FontAttributes="Bold" HorizontalOptions="FillAndExpand" Command="{Binding Path=RecoverPassword}">
+                <Button.ImageSource>
+                    <FileImageSource File="icon_about.PNG" />
+                </Button.ImageSource>
+            </Button>
+
+            <Button TextColor="Black" BackgroundColor="{StaticResource UMCGold}" VerticalOptions="Center" Text="Submit"
+                    Command="{Binding Login}" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

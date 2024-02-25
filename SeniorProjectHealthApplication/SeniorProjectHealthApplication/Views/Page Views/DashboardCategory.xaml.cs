@@ -9,29 +9,40 @@ namespace SeniorProjectHealthApplication.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DashboardCategory : ContentView
     {
-        public event CategoryClickedEventHandler CategoryClicked;
+        public static readonly BindableProperty CategoryNameProperty = BindableProperty.Create(nameof(CategoryName),
+            typeof(string), typeof(DashboardCategory), propertyChanged: OnCategoryNameChanged);
 
-        public static readonly BindableProperty CategoryNameProperty = BindableProperty.Create(nameof(CategoryName), typeof(string), typeof(DashboardCategory), default(string), propertyChanged: OnCategoryNameChanged);
-        public static readonly BindableProperty ImagePathProperty = BindableProperty.Create(nameof(ImagePath), typeof(string), typeof(DashboardCategory), default(string), propertyChanged: OnImagePathChanged);
-        public static readonly BindableProperty CategoryIDProperty = BindableProperty.Create(nameof(CategoryID), typeof(string), typeof(DashboardCategory), default(string));
+        public static readonly BindableProperty ImagePathProperty = BindableProperty.Create(nameof(ImagePath),
+            typeof(string), typeof(DashboardCategory), propertyChanged: OnImagePathChanged);
+
+        public static readonly BindableProperty CategoryIDProperty =
+            BindableProperty.Create(nameof(CategoryID), typeof(string), typeof(DashboardCategory));
+
+        public DashboardCategory()
+        {
+            InitializeComponent();
+            CategoryClicked += OpenFoodPage;
+        }
 
         public string CategoryName
         {
-            get { return (string)GetValue(CategoryNameProperty); }
-            set { SetValue(CategoryNameProperty, value); }
+            get => (string)GetValue(CategoryNameProperty);
+            set => SetValue(CategoryNameProperty, value);
         }
-    
+
         public string ImagePath
         {
-            get { return (string)GetValue(ImagePathProperty); }
-            set { SetValue(ImagePathProperty, value); }
+            get => (string)GetValue(ImagePathProperty);
+            set => SetValue(ImagePathProperty, value);
         }
 
         public string CategoryID
         {
-            get { return (string)GetValue(CategoryIDProperty); }
-            set { SetValue(CategoryIDProperty, value); }
+            get => (string)GetValue(CategoryIDProperty);
+            set => SetValue(CategoryIDProperty, value);
         }
+
+        public event CategoryClickedEventHandler CategoryClicked;
 
         private static void OnCategoryNameChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -45,24 +56,17 @@ namespace SeniorProjectHealthApplication.Views
             control.CategoryImage.Source = ImageSource.FromFile(newValue?.ToString());
         }
 
-        public DashboardCategory()
-        {
-            InitializeComponent();
-            CategoryClicked += OpenFoodPage;
-        }
-        
         public void OpenFoodPage(object sender, EventArgs e)
         {
             // Your code
-            Navigation.PushAsync(new MealPage(CategoryID));
+            Navigation.PushAsync(new FoodCatagoryPage(CategoryID));
         }
 
         // Method to invoke the event
-        private void OnTapGestureTapped(object sender, EventArgs e) 
+        private void OnTapGestureTapped(object sender, EventArgs e)
         {
             // Invoke your custom event here
             CategoryClicked?.Invoke(this, EventArgs.Empty);
         }
-        
     }
 }

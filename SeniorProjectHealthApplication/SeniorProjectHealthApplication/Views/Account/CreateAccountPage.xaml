@@ -8,48 +8,57 @@
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="10,0,10,0">
-            
-            
-            
-            <Label></Label>
-            
-            
-            <Label  FontAttributes="Bold" TextColor="{StaticResource UMCGold}" FontSize="25" Text="REGISTER FOR HEALTH APPLICATION" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
-            <Label></Label>
+
+
+               <Label />
+
+
+               <Label FontAttributes="Bold" TextColor="{StaticResource UMCGold}" FontSize="25"
+                      Text="REGISTER FOR HEALTH APPLICATION" HorizontalTextAlignment="Center"
+                      VerticalOptions="CenterAndExpand" />
+               <Label />
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                <Label Text="First Name: " TextColor="White" FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150"/>
-                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="{Binding FirstName}"/>
+                   <Label Text="First Name: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                          HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                   <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                          HorizontalOptions="FillAndExpand" Text="{Binding FirstName}" />
             </StackLayout>
-                
+
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                <Label Text="Last Name: " TextColor="White" FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150"/>
-                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="{Binding LastName}"/>
+                   <Label Text="Last Name: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                          HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                   <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                          HorizontalOptions="FillAndExpand" Text="{Binding LastName}" />
             </StackLayout>
-            
+
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                <Label Text="Email: " TextColor="White" FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150"/>
-                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="{Binding Email}"/>
+                   <Label Text="Email: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                          HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                   <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                          HorizontalOptions="FillAndExpand" Text="{Binding Email}" />
             </StackLayout>
-            
+
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                <Label Text="Password: " TextColor="White" FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150"/>
-                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" IsPassword="True" Text="{Binding Password}"/>
+                   <Label Text="Password: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                          HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                   <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                          HorizontalOptions="FillAndExpand" IsPassword="True" Text="{Binding Password}" />
             </StackLayout>
-            
+
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                <Label Text="Confirm Password: " TextColor="White" FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150"/>
-                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" IsPassword="True" Text="{Binding ConfirmedPassword}"/>
+                   <Label Text="Confirm Password: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                          HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                   <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                          HorizontalOptions="FillAndExpand" IsPassword="True" Text="{Binding ConfirmedPassword}" />
             </StackLayout>
-            
-            
-            
-            
-            <Label></Label>
-            <Label></Label>
-            <Label></Label>
-            
-            <Button Text="Submit" BackgroundColor="{StaticResource UMCGold}" Command="{Binding CreateAccount}"/>
-            
+
+
+               <Label />
+               <Label />
+               <Label />
+
+               <Button Text="Submit" BackgroundColor="{StaticResource UMCGold}" Command="{Binding CreateAccount}" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

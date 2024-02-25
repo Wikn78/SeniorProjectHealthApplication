@@ -1,12 +1,11 @@
-﻿using System;
-using SQLite;
+﻿using SQLite;
 
 namespace SeniorProjectHealthApplication.Models.Database_Structure
 {
     public class Users
     {
-        [PrimaryKey, AutoIncrement]
-        public int UID { get; set; }
+        [PrimaryKey] [AutoIncrement] public int UID { get; set; }
+
         public string Username { get; set; }
         public string Password { get; set; }
         public string First_Name { get; set; }

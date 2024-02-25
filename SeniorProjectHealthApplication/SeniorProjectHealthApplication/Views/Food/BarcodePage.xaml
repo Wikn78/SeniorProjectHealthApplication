@@ -1,0 +1,71 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.Food.BarcodePage">
+    <ContentPage.Content>
+
+
+        <StackLayout>
+
+            <Button Text="←"
+                    BackgroundColor="Transparent"
+                    FontSize="Large"
+                    TextColor="Black"
+                    Clicked="GoBack_Clicked"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center" />
+
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="0">
+
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <!-- Top Left L -->
+                    <StackLayout>
+                        <BoxView WidthRequest="20" HeightRequest="2" BackgroundColor="Black" />
+                        <BoxView WidthRequest="2" HeightRequest="18" BackgroundColor="Black" />
+                    </StackLayout>
+
+                    <BoxView WidthRequest="100" HeightRequest="0" />
+
+                    <!-- Top Right L -->
+                    <StackLayout>
+                        <BoxView WidthRequest="20" HeightRequest="2" BackgroundColor="Black" />
+                        <BoxView WidthRequest="2" HeightRequest="18" BackgroundColor="Black" HorizontalOptions="End" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <!-- Your Frame -->
+                    <BoxView WidthRequest="2" HeightRequest="100" BackgroundColor="Black" />
+                    <Frame
+                        x:Name="frame"
+                        BackgroundColor="Transparent"
+                        WidthRequest="96"
+                        HeightRequest="100">
+                        <!-- Content of your frame -->
+                    </Frame>
+                    <BoxView WidthRequest="2" HeightRequest="100" BackgroundColor="Black" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <!-- Bottom Left L -->
+                    <StackLayout>
+                        <BoxView WidthRequest="2" HeightRequest="18" BackgroundColor="Black" />
+                        <BoxView WidthRequest="20" HeightRequest="2" BackgroundColor="Black" />
+                    </StackLayout>
+
+                    <BoxView WidthRequest="100" HeightRequest="0" />
+
+                    <!-- Bottom Right L -->
+                    <StackLayout>
+                        <BoxView WidthRequest="2" HeightRequest="18" BackgroundColor="Black" HorizontalOptions="End" />
+                        <BoxView WidthRequest="20" HeightRequest="2" BackgroundColor="Black" />
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

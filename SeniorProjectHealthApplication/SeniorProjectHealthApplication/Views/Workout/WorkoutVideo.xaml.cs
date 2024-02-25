@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace SeniorProjectHealthApplication.Views
@@ -17,7 +11,7 @@ namespace SeniorProjectHealthApplication.Views
             InitializeComponent();
 
 
-            WebView webView = new WebView
+            var webView = new WebView
             {
                 Source = new UrlWebViewSource
                 {
@@ -29,11 +23,11 @@ namespace SeniorProjectHealthApplication.Views
 
             Content = new StackLayout
             {
-                Children = { webView
-            }
+                Children =
+                {
+                    webView
+                }
             };
         }
     }
 }
-
-        
