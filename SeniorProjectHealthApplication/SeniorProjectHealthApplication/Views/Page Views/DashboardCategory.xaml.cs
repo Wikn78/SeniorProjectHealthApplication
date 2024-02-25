@@ -54,7 +54,7 @@ namespace SeniorProjectHealthApplication.Views
         public void OpenFoodPage(object sender, EventArgs e)
         {
             // Your code
-            Console.WriteLine(CategoryID + " was clicked");
+            Navigation.PushAsync(new MealPage(CategoryID));
         }
 
         // Method to invoke the event

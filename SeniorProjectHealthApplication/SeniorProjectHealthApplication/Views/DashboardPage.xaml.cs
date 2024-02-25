@@ -21,7 +21,7 @@ namespace SeniorProjectHealthApplication.Views
         
         private async void Account_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AccountSettings());
+            await Navigation.PushAsync(new SettingsPage());
         }
         
     }

@@ -144,6 +144,6 @@
       <Name>SeniorProjectHealthApplication</Name>
     </ProjectReference>
   </ItemGroup>
-  <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  
 
 </Project>
