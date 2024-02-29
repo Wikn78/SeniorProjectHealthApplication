@@ -2,7 +2,6 @@
 using System.IO;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
-using SeniorProjectHealthApplication.Views;
 using Xamarin.Forms;
 
 namespace SeniorProjectHealthApplication.ViewModels
@@ -40,15 +39,22 @@ namespace SeniorProjectHealthApplication.ViewModels
                 string dbPath = Path.Combine(folderPath, fileName);
 
                 var userRepo = new DatabaseManager<Users>(dbPath);
+                /*
+                               var newUser = new Users
+                               {
+                                   Username = _firstName + _lastName, Password = _password, First_Name = _firstName,
+                                   Last_Name = _lastName, Email = _email, Gender = _selectedGender,
+                                   Birthday = _birthdate.ToShortDateString()
+                               };
+                               userRepo.AddItem(newUser);
 
-                var newUser = new Users
-                {
-                    Username = _firstName + _lastName, Password = _password, First_Name = _firstName,
-                    Last_Name = _lastName, Email = _email, Gender = "male"
-                };
-                userRepo.AddItem(newUser);
+                               await _navigation.PushAsync(new WelcomePage());*/
 
-                await _navigation.PushAsync(new WelcomePage());
+
+                var user = userRepo.GetItem(1);
+
+                FirstName = user.First_Name;
+                LastName = user.Last_Name;
             }
             else
             {
@@ -129,6 +135,36 @@ namespace SeniorProjectHealthApplication.ViewModels
                 if (_confirmedPassword != value)
                 {
                     _confirmedPassword = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private DateTime _birthdate = DateTime.Today;
+
+        public DateTime Birthdate
+        {
+            get => _birthdate;
+            set
+            {
+                if (_birthdate != value)
+                {
+                    _birthdate = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private string _selectedGender;
+
+        public string SelectedGender
+        {
+            get => _selectedGender;
+            set
+            {
+                if (_selectedGender != value)
+                {
+                    _selectedGender = value;
                     OnPropertyChanged();
                 }
             }

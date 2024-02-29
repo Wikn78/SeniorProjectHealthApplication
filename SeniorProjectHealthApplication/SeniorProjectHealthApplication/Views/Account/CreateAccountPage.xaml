@@ -31,6 +31,31 @@
                           HorizontalOptions="FillAndExpand" Text="{Binding LastName}" />
             </StackLayout>
 
+               <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                      <Label Text="Select Birthdate: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                             HorizontalTextAlignment="End"
+                             VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                      <DatePicker Date="{Binding Birthdate}" TextColor="Black" BackgroundColor="White"
+                                  VerticalOptions="Center"
+                                  HorizontalOptions="FillAndExpand" />
+               </StackLayout>
+
+               <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                      <Label Text="Gender: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                             HorizontalTextAlignment="End"
+                             VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                      <Picker Title="Select Gender" SelectedItem="{Binding SelectedGender}" TextColor="Black"
+                              BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                             <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                           <x:String>Male</x:String>
+                                           <x:String>Female</x:String>
+                                           <x:String>Other</x:String>
+                                    </x:Array>
+                             </Picker.ItemsSource>
+                      </Picker>
+               </StackLayout>
+               
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
                    <Label Text="Email: " TextColor="White" FontSize="15" FontAttributes="Bold"
                           HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150" />
