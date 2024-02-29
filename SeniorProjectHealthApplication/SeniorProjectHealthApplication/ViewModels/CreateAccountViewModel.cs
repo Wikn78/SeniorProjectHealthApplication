@@ -44,7 +44,8 @@ namespace SeniorProjectHealthApplication.ViewModels
                 var newUser = new Users
                 {
                     Username = _firstName + _lastName, Password = _password, First_Name = _firstName,
-                    Last_Name = _lastName, Email = _email, Gender = "male"
+                    Last_Name = _lastName, Email = _email, Gender = _selectedGender,
+                    Birthday = _birthdate.ToShortDateString()
                 };
                 userRepo.AddItem(newUser);
 
@@ -129,6 +130,36 @@ namespace SeniorProjectHealthApplication.ViewModels
                 if (_confirmedPassword != value)
                 {
                     _confirmedPassword = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private DateTime _birthdate = DateTime.Today;
+
+        public DateTime Birthdate
+        {
+            get => _birthdate;
+            set
+            {
+                if (_birthdate != value)
+                {
+                    _birthdate = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private string _selectedGender;
+
+        public string SelectedGender
+        {
+            get => _selectedGender;
+            set
+            {
+                if (_selectedGender != value)
+                {
+                    _selectedGender = value;
                     OnPropertyChanged();
                 }
             }
