@@ -55,8 +55,10 @@ namespace SeniorProjectHealthApplication.Views
             await Navigation.PushAsync(new Progress());
         }
 
+
         private async void QuickAdd_Tapped(object sender, EventArgs e)
         {
+            // Overlay.IsVisible = !Overlay.IsVisible;
         }
 
         private async void Workouts_Tapped(object sender, EventArgs e)

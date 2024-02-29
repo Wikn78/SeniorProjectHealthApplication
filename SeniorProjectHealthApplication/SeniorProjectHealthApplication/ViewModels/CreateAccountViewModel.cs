@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using SeniorProjectHealthApplication.Models.Database_Structure;
+using SeniorProjectHealthApplication.Models.DB_Repositorys;
 using SeniorProjectHealthApplication.Views;
 using Xamarin.Forms;
 
@@ -7,6 +10,7 @@ namespace SeniorProjectHealthApplication.ViewModels
     public class CreateAccountViewModel : BaseViewModel
     {
         private readonly INavigation _navigation;
+
 
         public CreateAccountViewModel(INavigation navigation)
         {
@@ -31,7 +35,19 @@ namespace SeniorProjectHealthApplication.ViewModels
 
             if (_confirmedPassword == _password)
             {
-                Console.WriteLine("Account Created");
+                string fileName = "Database.db3";
+                string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                string dbPath = Path.Combine(folderPath, fileName);
+
+                var userRepo = new DatabaseManager<Users>(dbPath);
+
+                var newUser = new Users
+                {
+                    Username = _firstName + _lastName, Password = _password, First_Name = _firstName,
+                    Last_Name = _lastName, Email = _email, Gender = "male"
+                };
+                userRepo.AddItem(newUser);
+
                 await _navigation.PushAsync(new WelcomePage());
             }
             else
@@ -39,6 +55,7 @@ namespace SeniorProjectHealthApplication.ViewModels
                 Console.WriteLine("Passwords dont match");
             }
         }
+
 
         #region Create Account Variables
 

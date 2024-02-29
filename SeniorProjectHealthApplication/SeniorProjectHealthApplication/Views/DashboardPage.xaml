@@ -197,7 +197,7 @@
             </ScrollView>
 
             <!-- Log Button-->
-            <local:QuickNavBar VerticalOptions="Center" Grid.Row="1" Grid.ColumnSpan="5" CurrentPage="Logs" />
+            <local:QuickNavBar VerticalOptions="End" Grid.Row="1" Grid.ColumnSpan="5" CurrentPage="Logs" />
             <!-- Bottom part of page -->
 
 
