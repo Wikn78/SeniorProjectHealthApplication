@@ -20,19 +20,19 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Compile Update="Views\Settings\AccountSettings.xaml.cs">
+        <Compile Update="Views\Settings\AccountSettingsPage.xaml.cs">
             <DependentUpon>AccountSettings.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="Views\Workout\WorkoutVideo.xaml.cs">
+        <Compile Update="Views\Workout\WorkoutVideoPage.xaml.cs">
             <DependentUpon>WorkoutVideo.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="Views\Workout\WorkoutScreen.xaml.cs">
+        <Compile Update="Views\Workout\WorkoutScreenPage.xaml.cs">
             <DependentUpon>WorkoutScreen.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="Views\Workout\Workouts.xaml.cs">
+        <Compile Update="Views\Workout\WorkoutsPage.xaml.cs">
             <DependentUpon>Workouts.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
@@ -56,11 +56,11 @@
             <DependentUpon>LoginPage.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="Views\Settings\Goals.xaml.cs">
+        <Compile Update="Views\Settings\GoalsPage.xaml.cs">
             <DependentUpon>Goals.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="Views\Settings\HelpAndSupport-Page.xaml.cs">
+        <Compile Update="Views\Settings\HelpAndSupportPage.xaml.cs">
             <DependentUpon>HelpAndSupport-Page.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
@@ -76,7 +76,7 @@
             <DependentUpon>MealPage.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="Views\Workout\LinktoVideos.xaml.cs">
+        <Compile Update="Views\Workout\LinktoVideosPage.xaml.cs">
             <DependentUpon>LinktoVideos.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
@@ -92,7 +92,7 @@
             <DependentUpon>WelcomePage.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="Views\Progress\Progress.xaml.cs">
+        <Compile Update="Views\Progress\ProgressPage.xaml.cs">
             <DependentUpon>Progress.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>

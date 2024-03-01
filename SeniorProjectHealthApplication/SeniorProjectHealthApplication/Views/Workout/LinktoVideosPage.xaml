@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.LinktoVideosPage"
+             BackgroundColor="{StaticResource UMCMaroon}">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image HorizontalOptions="Center"
+                       Source="Health_Application_Logo.png"
+                       Opacity="0.5"
+                       Grid.Row="0"
+                       HeightRequest="200"
+                       WidthRequest="300"
+                       Grid.Column="0" />
+                <RelativeLayout Grid.Row="0" Grid.Column="0">
+                    <Label Text="           SUPERMAN"
+                           TextColor="{StaticResource UMCGold}"
+                           FontSize="25"
+                           FontAttributes="Bold"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}" />
+                </RelativeLayout>
+                <Image HorizontalOptions="End" VerticalOptions="Start" Source="Turn_off_Button.png" Margin="0,15,10,0"
+                       HeightRequest="30"
+                       WidthRequest="30" />
+                <Image HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
+                       HeightRequest="30"
+                       WidthRequest="30" />
+
+            </Grid>
+
+            <Frame BackgroundColor="{StaticResource UMCGold}"
+                   CornerRadius="20"
+                   Padding="20"
+                   Margin="20"
+                   HeightRequest="150">
+                <Button Text="Play Video"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        FontSize="Large"
+                        CornerRadius="20"
+                        BorderWidth="4"
+                        BorderColor="White"
+                        Padding="20,10"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+            </Frame>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0">
+                    <Entry Placeholder="Reps 1" BackgroundColor="White" />
+                    <Entry Placeholder="Reps 2" BackgroundColor="White" />
+                    <Entry Placeholder="Reps 3" BackgroundColor="White" />
+                </StackLayout>
+
+                <StackLayout Grid.Column="1">
+                    <Label Text="   45sec"
+                           FontSize="30" TextColor="White" />
+                    <Label Text="   45sec" FontSize="30" TextColor="White" />
+                    <Label Text="   60sec" FontSize="30" TextColor="White" />
+
+                </StackLayout>
+            </Grid>
+            <Label Text=" " FontSize="15" />
+            <Button
+                Text="Submit"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="20,10"
+                BackgroundColor="{StaticResource UMCGold}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

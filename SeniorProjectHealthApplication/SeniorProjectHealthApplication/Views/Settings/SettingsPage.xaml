@@ -42,6 +42,9 @@
                 <Button Text="Account" Clicked="Account_Clicked" TextColor="{StaticResource UMCGold}" FontSize="25"
                         BackgroundColor="{StaticResource UMCMaroon}" FontFamily="Arial" BorderColor="Transparent"
                         Margin="0,20, 0, 20" />
+                <Button Text="Goals" Clicked="Goals_Clicked" TextColor="{StaticResource UMCGold}" FontSize="25"
+                        BackgroundColor="{StaticResource UMCMaroon}" FontFamily="Arial" BorderColor="Transparent"
+                        Margin="0,20, 0, 20" />
             </StackLayout>
 
             <!--Bottom Navigation Bar-->

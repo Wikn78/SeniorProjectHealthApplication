@@ -52,7 +52,7 @@ namespace SeniorProjectHealthApplication.Views
 
         private async void Progress_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Progress());
+            await Navigation.PushAsync(new ProgressPage());
         }
 
 
@@ -63,7 +63,7 @@ namespace SeniorProjectHealthApplication.Views
 
         private async void Workouts_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Workouts());
+            await Navigation.PushAsync(new WorkoutsPage());
         }
 
         private async void Recipes_Tapped(object sender, EventArgs e)

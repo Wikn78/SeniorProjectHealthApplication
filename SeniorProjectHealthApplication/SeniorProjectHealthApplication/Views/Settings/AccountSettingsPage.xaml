@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.AccountSettingsPage"
+             BackgroundColor="{StaticResource UMCMaroon}">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image HorizontalOptions="Center"
+                       Source="Health_Application_Logo.png"
+                       Opacity="0.5"
+                       Grid.Row="0"
+                       HeightRequest="200"
+                       WidthRequest="300"
+                       Grid.Column="0" />
+                <RelativeLayout Grid.Row="0" Grid.Column="0">
+                    <Label Text="   ACCOUNT SETTINGS"
+                           TextColor="{StaticResource UMCGold}"
+                           FontSize="25"
+                           FontAttributes="Bold"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}" />
+                </RelativeLayout>
+                <Image HorizontalOptions="End" VerticalOptions="Start" Source="Turn_off_Button.png" Margin="0,15,10,0"
+                       HeightRequest="30"
+                       WidthRequest="30" />
+                <Image HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
+                       HeightRequest="30"
+                       WidthRequest="30" />
+
+            </Grid>
+
+            <Label Text=""
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="10" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+
+                </Grid.ColumnDefinitions>
+
+
+                <Grid.RowDefinitions>
+
+
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+
+                <Image Source="ProfilePicture.png" Aspect="AspectFill" Grid.Column="0" Grid.RowSpan="4"
+                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}" />
+
+
+                <Label Grid.Row="0"
+                       x:Name="FNameLabel"
+                       Text="Stacie"
+
+                       Grid.Column="1"
+                       TextColor="{StaticResource UMCGold}"
+                       FontSize="20" />
+
+                <Label Grid.Row="1"
+                       x:Name="LNameLabel"
+                       Text="Lorens"
+                       LineBreakMode="WordWrap"
+                       Grid.Column="1"
+                       TextColor="{StaticResource UMCGold}"
+                       FontSize="20" />
+
+                <Label Grid.Row="2"
+                       x:Name="EmailLabel"
+                       Text="louis131@crk.umn.edu"
+                       LineBreakMode="TailTruncation"
+                       Grid.Column="1"
+                       TextColor="{StaticResource UMCGold}"
+                       FontSize="20" />
+
+                <Label Grid.Row="3"
+                       x:Name="GenderLabel"
+                       Text="female"
+                       LineBreakMode="WordWrap"
+                       Grid.Column="1"
+                       TextColor="{StaticResource UMCGold}"
+                       FontSize="20" />
+
+                <Label Grid.Row="3"
+                       Text="02/03/2000"
+                       x:Name="BirthdateLabel"
+                       LineBreakMode="WordWrap"
+                       HorizontalTextAlignment="End"
+                       Margin="80,0,0,0"
+                       Grid.Column="1"
+                       TextColor="{StaticResource UMCGold}"
+                       FontSize="20" />
+
+            </Grid>
+            <Label />
+            <Label Text="UPDATE ACCOUNT INFORMATION" TextColor="White" VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand" FontSize="20" />
+            <StackLayout Orientation="Vertical" Padding="5">
+                <!-- Field 1 -->
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="FirstNameInput" Placeholder="First Name" PlaceholderColor="White"
+                           HorizontalOptions="FillAndExpand" />
+                    
+                </StackLayout>
+
+                <!-- Field 2 -->
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="LastNameInput" Placeholder="Last Name" PlaceholderColor="White"
+                           HorizontalOptions="FillAndExpand" />
+                    
+                </StackLayout>
+
+                <!-- Field 3 -->
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="EmailInput" Placeholder="Email" PlaceholderColor="White"
+                           HorizontalOptions="FillAndExpand" />
+                   
+                </StackLayout>
+
+                <!-- Field 4 -->
+                <DatePicker x:Name="BirthdateInput" TextColor="Black" BackgroundColor="Transparent"
+                            VerticalOptions="Center"
+                            HorizontalOptions="FillAndExpand" />
+
+                <!-- Field 5 -->
+                <Picker Title="Select Gender" x:Name="GenderInput" TextColor="Black"
+                        BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                            <x:String>Other</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Update Settings"
+                            BackgroundColor="{StaticResource UMCGold}"
+                            HorizontalOptions="FillAndExpand"
+                            Clicked="UpdateSettings_Clicked" />
+                </StackLayout>
+                
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

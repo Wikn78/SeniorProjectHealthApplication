@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using SeniorProjectHealthApplication.Models.Database_Structure;
 using SQLite;
 
 namespace SeniorProjectHealthApplication.Models.DB_Repositorys
@@ -28,9 +29,22 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
             return _db.Get<T>(id);
         }
 
+
+        public UserAppInfo GetUserAppInfo(int uid)
+        {
+            return _db.Table<UserAppInfo>()
+                .Where(item => item.UID == uid)
+                .OrderByDescending(item => item.Date)
+                .FirstOrDefault();
+        }
+
         public void UpdateItem(T item)
         {
-            _db.Update(item);
+       
+ 
+ 
+          _d
+        b.Update(item);
         }
     }
 }
