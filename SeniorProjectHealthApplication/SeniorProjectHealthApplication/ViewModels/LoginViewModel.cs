@@ -1,4 +1,8 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
+using SeniorProjectHealthApplication.Models.Database_Structure;
+using SeniorProjectHealthApplication.Models.DB_Repositorys;
 using SeniorProjectHealthApplication.Views;
 using Xamarin.Forms;
 
@@ -8,9 +12,9 @@ namespace SeniorProjectHealthApplication.ViewModels
     {
         private readonly INavigation _navigation;
 
-        private string _password;
+        private string _email;
 
-        private string _username;
+        private string _password;
 
         public LoginViewModel(INavigation navigation)
         {
@@ -26,14 +30,14 @@ namespace SeniorProjectHealthApplication.ViewModels
         public Command Register { get; }
 
         // Public property for user's username
-        public string Username
+        public string Email
         {
-            get => _username;
+            get => _email;
             set
             {
-                if (_username != value)
+                if (_email != value)
                 {
-                    _username = value;
+                    _email = value;
                     OnPropertyChanged();
                 }
             }
@@ -56,7 +60,32 @@ namespace SeniorProjectHealthApplication.ViewModels
         private async void ExecuteLogin(object obj)
         {
             //Execute login logic here
-            await _navigation.PushAsync(new DashboardPage());
+
+            string fileName = "Database.db3";
+            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string dbPath = Path.Combine(folderPath, fileName);
+            var userRepo = new DatabaseManager<Users>(dbPath);
+
+            var user = userRepo.GetAllItems().FirstOrDefault(u => u.Email == _email);
+
+            if (user != null)
+            {
+                if (VerifyPassword(_password, user.Password))
+                {
+                    if (user.UID != 0)
+                    {
+                        Xamarin.Essentials.Preferences.Set("userId", user.UID);
+                    }
+
+                    await _navigation.PushAsync(new DashboardPage());
+                }
+            }
+        }
+
+
+        public bool VerifyPassword(string password, string hashedPassword)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
 
         private async void ExecuteRegister(object obj)

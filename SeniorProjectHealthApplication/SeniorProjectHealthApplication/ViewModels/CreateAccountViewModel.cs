@@ -2,6 +2,7 @@
 using System.IO;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using SeniorProjectHealthApplication.Views;
 using Xamarin.Forms;
 
 namespace SeniorProjectHealthApplication.ViewModels
@@ -39,27 +40,32 @@ namespace SeniorProjectHealthApplication.ViewModels
                 string dbPath = Path.Combine(folderPath, fileName);
 
                 var userRepo = new DatabaseManager<Users>(dbPath);
-                /*
-                               var newUser = new Users
-                               {
-                                   Username = _firstName + _lastName, Password = _password, First_Name = _firstName,
-                                   Last_Name = _lastName, Email = _email, Gender = _selectedGender,
-                                   Birthday = _birthdate.ToShortDateString()
-                               };
-                               userRepo.AddItem(newUser);
 
-                               await _navigation.PushAsync(new WelcomePage());*/
+                // making user username fNamelLastNameMMdd
+                var username = _firstName + _lastName + _birthdate.ToString("MMdd");
+                string shortBd = _birthdate.ToShortDateString();
 
+                var newUser = new Users
+                {
+                    // Hashing password
+                    Username = username, Password = HashPassword(_password), First_Name = _firstName,
+                    Last_Name = _lastName, Email = _email, Gender = _selectedGender,
+                    Birthdate = shortBd
+                };
+                userRepo.AddItem(newUser);
 
-                var user = userRepo.GetItem(1);
-
-                FirstName = user.First_Name;
-                LastName = user.Last_Name;
+                await _navigation.PushAsync(new WelcomePage());
             }
             else
             {
                 Console.WriteLine("Passwords dont match");
             }
+        }
+
+
+        private string HashPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password);
         }
 
 

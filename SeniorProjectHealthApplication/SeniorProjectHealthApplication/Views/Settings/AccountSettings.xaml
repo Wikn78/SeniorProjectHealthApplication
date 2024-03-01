@@ -52,47 +52,113 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Image Source="ProfilePicture.png" Aspect="AspectFill" Grid.Column="0"
+                <Grid.RowDefinitions>
+
+
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+
+                <Image Source="ProfilePicture.png" Aspect="AspectFill" Grid.Column="0" Grid.RowSpan="4"
                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}" />
-                <Label
-                    Text="                                                                                                          ID34567                                 Stacie                    Lorens            lou234@crk.umn      female     02/03/2000"
-                    LineBreakMode="WordWrap" Grid.Column="1" TextColor="#FDB836" FontSize="20" />
+
+
+                <Label Grid.Row="0"
+                       x:Name="FNameLabel"
+                       Text="Stacie"
+
+                       Grid.Column="1"
+                       TextColor="{StaticResource UMCGold}"
+                       FontSize="20" />
+
+                <Label Grid.Row="1"
+                       x:Name="LNameLabel"
+                       Text="Lorens"
+                       LineBreakMode="WordWrap"
+                       Grid.Column="1"
+                       TextColor="{StaticResource UMCGold}"
+                       FontSize="20" />
+
+                <Label Grid.Row="2"
+                       x:Name="EmailLabel"
+                       Text="louis131@crk.umn.edu"
+                       LineBreakMode="TailTruncation"
+                       Grid.Column="1"
+                       TextColor="{StaticResource UMCGold}"
+                       FontSize="20" />
+
+                <Label Grid.Row="3"
+                       x:Name="GenderLabel"
+                       Text="female"
+                       LineBreakMode="WordWrap"
+                       Grid.Column="1"
+                       TextColor="{StaticResource UMCGold}"
+                       FontSize="20" />
+
+                <Label Grid.Row="3"
+                       Text="02/03/2000"
+                       x:Name="BirthdateLabel"
+                       LineBreakMode="WordWrap"
+                       HorizontalTextAlignment="End"
+                       Margin="80,0,0,0"
+                       Grid.Column="1"
+                       TextColor="{StaticResource UMCGold}"
+                       FontSize="20" />
 
             </Grid>
-
+            <Label />
             <Label Text="UPDATE ACCOUNT INFORMATION" TextColor="White" VerticalOptions="Start"
                    HorizontalOptions="CenterAndExpand" FontSize="20" />
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Padding="5">
                 <!-- Field 1 -->
                 <StackLayout Orientation="Horizontal">
-                    <Entry x:Name="textField1" Placeholder="First Name" PlaceholderColor="White" WidthRequest="250" />
-                    <Button Text="Update" WidthRequest="150" BackgroundColor="{StaticResource UMCGold}" />
+                    <Entry x:Name="FirstNameInput" Placeholder="First Name" PlaceholderColor="White"
+                           HorizontalOptions="FillAndExpand" />
+                    
                 </StackLayout>
 
                 <!-- Field 2 -->
                 <StackLayout Orientation="Horizontal">
-                    <Entry x:Name="textField2" Placeholder="Last Name" PlaceholderColor="White" WidthRequest="250" />
-                    <Button Text="Update" WidthRequest="150" BackgroundColor="{StaticResource UMCGold}" />
+                    <Entry x:Name="LastNameInput" Placeholder="Last Name" PlaceholderColor="White"
+                           HorizontalOptions="FillAndExpand" />
+                    
                 </StackLayout>
 
                 <!-- Field 3 -->
                 <StackLayout Orientation="Horizontal">
-                    <Entry x:Name="textField3" Placeholder="Email" PlaceholderColor="White" WidthRequest="250" />
-                    <Button Text="Update" WidthRequest="150" BackgroundColor="{StaticResource UMCGold}" />
+                    <Entry x:Name="EmailInput" Placeholder="Email" PlaceholderColor="White"
+                           HorizontalOptions="FillAndExpand" />
+                   
                 </StackLayout>
 
                 <!-- Field 4 -->
-                <StackLayout Orientation="Horizontal">
-                    <Entry x:Name="textField4" Placeholder="Birthdate" PlaceholderColor="White" WidthRequest="250" />
-                    <Button Text="Update" WidthRequest="150" BackgroundColor="{StaticResource UMCGold}" />
-                </StackLayout>
+                <DatePicker x:Name="BirthdateInput" TextColor="Black" BackgroundColor="Transparent"
+                            VerticalOptions="Center"
+                            HorizontalOptions="FillAndExpand" />
 
                 <!-- Field 5 -->
+                <Picker Title="Select Gender" x:Name="GenderInput" TextColor="Black"
+                        BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                            <x:String>Other</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
                 <StackLayout Orientation="Horizontal">
-                    <Entry x:Name="textField5" Placeholder="Gender" PlaceholderColor="White" WidthRequest="250" />
-                    <Button Text="Update" WidthRequest="150" BackgroundColor="{StaticResource UMCGold}" />
+                    <Button Text="Update Settings"
+                            BackgroundColor="{StaticResource UMCGold}"
+                            HorizontalOptions="FillAndExpand"
+                            Clicked="UpdateSettings_Clicked" />
                 </StackLayout>
+                
             </StackLayout>
 
         </StackLayout>

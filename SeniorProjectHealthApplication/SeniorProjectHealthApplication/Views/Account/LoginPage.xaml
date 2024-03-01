@@ -20,10 +20,10 @@
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" Padding="10, 30, 10, 10" VerticalOptions="Center">
-                <Label Text="UserID: " TextColor="White" FontSize="20" FontAttributes="Bold"
+                <Label Text="Email: " TextColor="White" FontSize="20" FontAttributes="Bold"
                        HorizontalTextAlignment="End" VerticalOptions="Center" WidthRequest="100" />
                 <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
-                       HorizontalOptions="FillAndExpand" Text="{Binding Username}" />
+                       HorizontalOptions="FillAndExpand" Text="{Binding Email}" />
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" Padding="10, 0, 10, 30" VerticalOptions="Center">
