@@ -38,6 +38,38 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
                 .FirstOrDefault();
         }
 
+        public FoodLog GetFoodLogInfoByDate(string dateTime)
+        {
+            return _db.Table<FoodLog>()
+                .Where(item => item.Date == dateTime)
+                .OrderByDescending(item => item.Date)
+                .FirstOrDefault();
+        }
+
+        public BreakfastLog GetBreakfastLogInfoByFLID(int fl_id)
+        {
+            return _db
+                .Table<BreakfastLog>().FirstOrDefault(item => item.FL_ID == fl_id);
+        }
+
+        public LunchLog GetLunchLogInfoByFLID(int fl_id)
+        {
+            return _db
+                .Table<LunchLog>().FirstOrDefault(item => item.FL_ID == fl_id);
+        }
+
+        public DinnerLog GetDinnerLogInfoByFLID(int fl_id)
+        {
+            return _db
+                .Table<DinnerLog>().FirstOrDefault(item => item.FL_ID == fl_id);
+        }
+
+        public SnackLog GetSnackLogInfoByFLID(int fl_id)
+        {
+            return _db
+                .Table<SnackLog>().FirstOrDefault(item => item.FL_ID == fl_id);
+        }
+
         public void UpdateItem(T item)
         {
             _db.Update(item);

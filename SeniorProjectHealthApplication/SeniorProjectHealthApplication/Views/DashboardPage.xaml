@@ -105,7 +105,19 @@
                                  Grid.Row="3"
                                  Grid.ColumnSpan="3" Margin="0,0,0,20" />
                         <!-- Bottom part of page -->
+                        <Button
+                            Grid.Column="0"
+                            Grid.Row="3"
+                            TextColor="White"
+                            BackgroundColor="Transparent"
+                            FontSize="18"
+                            Text="&lt;"
+                            Clicked="DecreaseDate_Clicked"
+                            VerticalOptions="End"
+                            HorizontalOptions="CenterAndExpand" />
+                        
                         <Label
+                            x:Name="CurrentDateLabel"
                             Grid.Column="1"
                             Grid.Row="3"
                             TextColor="White"
@@ -114,20 +126,15 @@
                             VerticalOptions="End"
                             HorizontalOptions="CenterAndExpand"
                             Margin="0, 60, 0, 0" />
-                        <Label
-                            Grid.Column="0"
-                            Grid.Row="3"
-                            TextColor="White"
-                            FontSize="18"
-                            Text="&lt;"
-                            VerticalOptions="End"
-                            HorizontalOptions="CenterAndExpand" />
-                        <Label
+
+                        <Button
                             Grid.Column="2"
                             Grid.Row="3"
                             TextColor="White"
+                            BackgroundColor="Transparent"
                             FontSize="18"
                             Text="&gt;"
+                            Clicked="IncreaseDate_Clicked"
                             VerticalOptions="End"
                             HorizontalOptions="CenterAndExpand" />
 
