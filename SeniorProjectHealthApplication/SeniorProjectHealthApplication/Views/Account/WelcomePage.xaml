@@ -11,6 +11,12 @@
                    Opacity="0.5"
                    HeightRequest="200"
                    WidthRequest="300" />
+            <Label Text="WELCOME" FontSize="20" HorizontalOptions="Center" TextColor="{StaticResource UMCGold }"/>
+            <Label Text="TO"    FontSize="20" HorizontalOptions="Center" TextColor="{StaticResource UMCGold }"/>
+            <Label Text="UMC HEALTH APPLICATION" FontSize="20" HorizontalOptions="Center" TextColor="{StaticResource UMCGold }"/>
+
+
+    
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
