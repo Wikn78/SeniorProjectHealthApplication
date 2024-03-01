@@ -40,11 +40,7 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
 
         public void UpdateItem(T item)
         {
-       
- 
- 
-          _d
-        b.Update(item);
+            _db.Update(item);
         }
     }
 }
