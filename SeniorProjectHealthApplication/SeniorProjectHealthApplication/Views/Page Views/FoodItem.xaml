@@ -18,7 +18,7 @@
             <StackLayout Grid.Column="0">
                 <Label
                     Margin="4, 0, 0, 0"
-                    Text="{Binding FoodName}"
+                    Text="{Binding Food_Name}"
                     TextColor="White"
                     VerticalOptions="Center"
                     HorizontalOptions="StartAndExpand" />

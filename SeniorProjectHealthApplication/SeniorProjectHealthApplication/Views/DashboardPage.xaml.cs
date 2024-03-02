@@ -13,7 +13,7 @@ namespace SeniorProjectHealthApplication.Views
     {
         private readonly int _userId;
 
-        DateTime selectedDate;
+        DateTime _selectedDate;
 
 
         public DashboardPage()
@@ -23,7 +23,7 @@ namespace SeniorProjectHealthApplication.Views
             var userId = Xamarin.Essentials.Preferences.Get("userId", 0);
 
             _userId = userId;
-            selectedDate = DateTime.Today;
+            _selectedDate = DateTime.Today;
 
             LoadFoodUserData();
         }
@@ -34,16 +34,16 @@ namespace SeniorProjectHealthApplication.Views
 
             FoodLog fl = await CreateFoodLogIfNotExists();
 
-            CurrentDateLabel.Text = selectedDate.ToShortDateString();
+            CurrentDateLabel.Text = _selectedDate.ToShortDateString();
             // sets the current date so all pages can get it
-            Xamarin.Essentials.Preferences.Set("selectedDate", selectedDate.ToShortDateString());
+            Xamarin.Essentials.Preferences.Set("selectedDate", _selectedDate.ToShortDateString());
         }
 
         private async Task<FoodLog> CreateFoodLogIfNotExists()
         {
             DatabaseManager<FoodLog> foodLogDb = await LoadDatabase<FoodLog>();
 
-            FoodLog fl = foodLogDb.GetFoodLogInfoByDate(selectedDate.ToShortDateString());
+            FoodLog fl = foodLogDb.GetFoodLogInfoByDate(_selectedDate.ToShortDateString(), _userId);
 
             if (fl == null)
             {
@@ -51,34 +51,36 @@ namespace SeniorProjectHealthApplication.Views
                 foodLogDb.AddItem(new FoodLog
                 {
                     UID = _userId,
-                    Date = selectedDate.ToShortDateString()
+                    Date = _selectedDate.ToShortDateString()
                 });
                 // generate food categories
-                DatabaseManager<BreakfastLog> breakfastDb = await LoadDatabase<BreakfastLog>();
-                DatabaseManager<LunchLog> lunchDb = await LoadDatabase<LunchLog>();
-                DatabaseManager<DinnerLog> dinnerDb = await LoadDatabase<DinnerLog>();
-                DatabaseManager<SnackLog> snackDb = await LoadDatabase<SnackLog>();
+                DatabaseManager<FoodLogCategory> foodLogCategoryDb = await LoadDatabase<FoodLogCategory>();
 
-                fl = foodLogDb.GetFoodLogInfoByDate(selectedDate.ToShortDateString());
 
-                breakfastDb.AddItem(new BreakfastLog
+                fl = foodLogDb.GetFoodLogInfoByDate(_selectedDate.ToShortDateString(), _userId);
+
+                foodLogCategoryDb.AddItem(new FoodLogCategory()
                 {
-                    FL_ID = fl.FL_ID,
+                    FoodCatagory = 1,
+                    FL_ID = fl.FL_ID
                 });
 
-                lunchDb.AddItem(new LunchLog
+                foodLogCategoryDb.AddItem(new FoodLogCategory()
                 {
-                    FL_ID = fl.FL_ID,
+                    FoodCatagory = 2,
+                    FL_ID = fl.FL_ID
                 });
 
-                dinnerDb.AddItem(new DinnerLog
+                foodLogCategoryDb.AddItem(new FoodLogCategory()
                 {
-                    FL_ID = fl.FL_ID,
+                    FoodCatagory = 3,
+                    FL_ID = fl.FL_ID
                 });
 
-                snackDb.AddItem(new SnackLog
+                foodLogCategoryDb.AddItem(new FoodLogCategory()
                 {
-                    FL_ID = fl.FL_ID,
+                    FoodCatagory = 4,
+                    FL_ID = fl.FL_ID
                 });
 
 
@@ -107,13 +109,13 @@ namespace SeniorProjectHealthApplication.Views
 
         private void DecreaseDate_Clicked(object sender, EventArgs e)
         {
-            selectedDate = selectedDate.AddDays(-1);
+            _selectedDate = _selectedDate.AddDays(-1);
             LoadFoodUserData();
         }
 
         private void IncreaseDate_Clicked(object sender, EventArgs e)
         {
-            selectedDate = selectedDate.AddDays(1);
+            _selectedDate = _selectedDate.AddDays(1);
             LoadFoodUserData();
         }
     }

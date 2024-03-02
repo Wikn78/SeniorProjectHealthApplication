@@ -2,12 +2,11 @@
 
 namespace SeniorProjectHealthApplication.Models.Database_Structure
 {
-    public class LunchLog
+    public class FoodLogCategory
     {
         [PrimaryKey] [AutoIncrement] public int Id { get; set; }
-
         public int FL_ID { get; set; }
-        public string Food_Name { get; set; }
-        public float Quanity { get; set; }
+
+        public int FoodCatagory { get; set; }
     }
 }

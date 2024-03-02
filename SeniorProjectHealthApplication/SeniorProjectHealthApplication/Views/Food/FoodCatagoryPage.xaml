@@ -24,29 +24,37 @@
                 </StackLayout>
 
                 <Button Text="←"
+                        TextColor="White"
                         BackgroundColor="Transparent"
                         FontSize="Large"
                         Clicked="GoBack_Clicked"
-                        HeightRequest="50"
+                        HeightRequest="100"
                         WidthRequest="50"
                         HorizontalOptions="Start"
                         VerticalOptions="Center" />
             </Grid>
 
 
+
             <!-- Scrollable area -->
             <ScrollView VerticalOptions="FillAndExpand">
 
                 <StackLayout>
-                    <!-- Add your items here -->
-
-                    <views:AddedFoodItem FoodName="Egg" Calories="140" Quantity="2"
-                                         CatagoryID="{Binding Source={x:Reference Lbl_CategoryId}, Path=Text}" />
-                    <views:AddedFoodItem FoodName="Bread" Calories="100" Quantity="1"
-                                         CatagoryID="{Binding Source={x:Reference Lbl_CategoryId}, Path=Text}" />
-                    <views:AddedFoodItem FoodName="Butter" Calories="60" Quantity="0.5"
-                                         CatagoryID="{Binding Source={x:Reference Lbl_CategoryId}, Path=Text}" />
-
+                    <StackLayout>
+                        <CollectionView ItemsSource="{Binding FoodItems}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame Padding="3" BackgroundColor="{StaticResource UMCMaroon}">
+                                        <views:AddedFoodItem FoodName="{Binding Food_Name}"
+                                                             Calories="30"
+                                                             Quantity="{Binding Quantity}"
+                                                             CatagoryID="{Binding CategoryID}" />
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                    
 
                     <!-- Food Items -->
 

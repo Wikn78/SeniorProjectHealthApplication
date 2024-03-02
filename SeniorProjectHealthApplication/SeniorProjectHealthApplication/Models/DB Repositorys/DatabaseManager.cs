@@ -38,37 +38,28 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
                 .FirstOrDefault();
         }
 
-        public FoodLog GetFoodLogInfoByDate(string dateTime)
+        public FoodLog GetFoodLogInfoByDate(string dateTime, int uid)
         {
             return _db.Table<FoodLog>()
-                .Where(item => item.Date == dateTime)
+                .Where(item => item.Date == dateTime).Where(item => item.UID == uid)
                 .OrderByDescending(item => item.Date)
                 .FirstOrDefault();
         }
 
-        public BreakfastLog GetBreakfastLogInfoByFLID(int fl_id)
+        public FoodLogCategory GetFoodLogCategory(int fl_id, int fl_category)
         {
             return _db
-                .Table<BreakfastLog>().FirstOrDefault(item => item.FL_ID == fl_id);
+                .Table<FoodLogCategory>().Where(item => item.FoodCatagory == fl_category)
+                .FirstOrDefault(item => item.FL_ID == fl_id);
         }
 
-        public LunchLog GetLunchLogInfoByFLID(int fl_id)
+        public List<FoodItem> GetFoodItems(int id, int fl_category)
         {
             return _db
-                .Table<LunchLog>().FirstOrDefault(item => item.FL_ID == fl_id);
+                .Table<FoodItem>().Where(item => item.FL_ID == id).Where(item => item.FoodCatagory == fl_category)
+                .ToList();
         }
 
-        public DinnerLog GetDinnerLogInfoByFLID(int fl_id)
-        {
-            return _db
-                .Table<DinnerLog>().FirstOrDefault(item => item.FL_ID == fl_id);
-        }
-
-        public SnackLog GetSnackLogInfoByFLID(int fl_id)
-        {
-            return _db
-                .Table<SnackLog>().FirstOrDefault(item => item.FL_ID == fl_id);
-        }
 
         public void UpdateItem(T item)
         {
