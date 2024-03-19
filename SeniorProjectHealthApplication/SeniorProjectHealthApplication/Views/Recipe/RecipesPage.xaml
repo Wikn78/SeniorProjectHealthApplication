@@ -16,27 +16,54 @@
                     <Editor BackgroundColor="#fff" Placeholder="Search" Margin="30, 20, 30, 0" />
 
                     <!--Breakfast List-->
-                    <Grid>
-                        <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                    <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center"
                                Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">
-                            Breakfast
-                        </Label>
-                        <StackLayout Grid.Row="1" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0">
+                        Breakfast
+                    </Label>
+                    <StackLayout>
+                        <StackLayout  BackgroundColor="{StaticResource UMCGold}" HeightRequest="540"
+                 Margin="20, 10, 20, 0">
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="Recipe_Tapped" NumberOfTapsRequired="1" />
                             </StackLayout.GestureRecognizers>
+                            <CollectionView ItemsSource="{Binding RecipesList}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame Padding="3"  BackgroundColor="{StaticResource UMCMaroon}">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <StackLayout BackgroundColor="{StaticResource UMCGold}" Grid.Column="0">
+                                                    <Label
+                    Margin="4, 0, 0, 0"
+                    Text="{Binding ReceipeName}"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand" />
+                                                    <Image HeightRequest="200" WidthRequest="200"  Source="{Binding RecipePicture}"/>
+                                                    <Label
+                    Margin="4, 0, 0, 0"
+                    Text="{Binding Calories}"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand" />
+                                                    <Label
+                    Margin="4, 0, 0, 0"
+                    Text="{Binding Protein}"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand" />
+                                                </StackLayout>
+                                            </Grid>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
                         </StackLayout>
-
-                        <StackLayout Grid.Row="2" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-
-                        <StackLayout Grid.Row="3" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-
-                        <StackLayout Grid.Row="4" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-                    </Grid>
+                    </StackLayout>
 
                     <!--Lunch List-->
                     <Grid>
@@ -57,44 +84,6 @@
                                      Margin="20, 10, 20, 0" />
                     </Grid>
 
-                    <StackLayout>
-                        <CollectionView ItemsSource="{Binding RecipesList}">
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate>
-                                    <Frame Padding="3"  BackgroundColor="{StaticResource UMCMaroon}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="Auto" />
-                                            </Grid.ColumnDefinitions>
-
-                                            <StackLayout Grid.Column="0">
-                                                <Label
-                    Margin="4, 0, 0, 0"
-                    Text="Smoothie Bowl"
-                    TextColor="White"
-                    VerticalOptions="Center"
-                    HorizontalOptions="StartAndExpand" />
-                                                <Image>
-                                                    <Label
-                    Margin="4, 0, 0, 0"
-                    Text="{Binding Calories}"
-                    TextColor="White"
-                    VerticalOptions="Center"
-                    HorizontalOptions="StartAndExpand" />
-                                                <Label
-                    Margin="4, 0, 0, 0"
-                    Text="{Binding Protein}"
-                    TextColor="White"
-                    VerticalOptions="Center"
-                    HorizontalOptions="StartAndExpand" />
-                                            </StackLayout>
-                                        </Grid>
-                                    </Frame>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
-                    </StackLayout>
                     <!--Dinner List-->
                     <Grid>
                         <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center"

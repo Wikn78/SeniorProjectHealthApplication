@@ -28,8 +28,23 @@ namespace SeniorProjectHealthApplication.ViewModels
             recipesListDB.AddItem(new RecipesList
             {
                 ReceipeName = "Smoothie Bowl",
-                RecipePicture = "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.themodernproper.com%2Fbillowy-turkey%2Fproduction%2Fposts%2F2021%2FSmoothie-Bowl-8.jpeg%3Fw%3D1200%26h%3D1800%26q%3D82%26fm%3Djpg%26fit%3Dcrop%26dm%3D1641225383%26s%3D58ecd9e484aacbe2ccf896b18ce81779&tbnid=lvr0Mzv2m9jD5M&vet=12ahUKEwjp8JbDy_SEAxX91MkDHXbfBhQQMygAegUIARDwAQ..i&imgrefurl=https%3A%2F%2Fthemodernproper.com%2Fhow-to-make-a-smoothie-bowl&docid=VHmhc1pkTDriVM&w=1200&h=1800&q=smoothie%20bowl&ved=2ahUKEwjp8JbDy_SEAxX91MkDHXbfBhQQMygAegUIARDwAQ",
+                RecipePicture = "https://www.eatyourselfskinny.com/wp-content/uploads/2017/08/smoothie-bowl-22.jpg",
                 Calories = 214,
+                Carbs = 47.5,
+                Protein = 2.8,
+                Fat = 2.5,
+                SaturatedFat = 1.6,
+                Sodium = 9,
+                Sugar = 25.9,
+                Ingredients = "Smoothie Bowl\n1 cup organic frozen mixed berries\n1 small ripe banana (sliced and frozen)\n2-3 Tbsp light coconut or almond milk\nToppings\n1 Tbsp shredded unsweetened coconut\n1 Tbsp chia seeds\n1 Tbsp hemp seeds\nGranola\nFruit",
+                Instructions = "N/A"
+            });
+            // Add a Recipe for testing
+            recipesListDB.AddItem(new RecipesList
+            {
+                ReceipeName = "Cereal",
+                RecipePicture = "icon_about.png",
+                Calories = 100,
                 Carbs = 47.5,
                 Protein = 2.8,
                 Fat = 2.5,
