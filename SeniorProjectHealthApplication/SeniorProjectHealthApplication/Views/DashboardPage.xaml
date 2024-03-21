@@ -68,7 +68,7 @@
 
 
                         <Label Grid.Row="1" Grid.Column="1" TextColor="White" VerticalOptions="Center"
-                               HorizontalOptions="Center" Text="1750 cals left" />
+                               HorizontalOptions="Center" x:Name="CaloriesLeft" Text="1750 cals left" />
 
                         <ImageButton Grid.Row="0"
                                      Grid.Column="2"

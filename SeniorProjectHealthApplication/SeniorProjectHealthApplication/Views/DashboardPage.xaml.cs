@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using SeniorProjectHealthApplication.Models;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
 using Xamarin.Forms;
@@ -23,6 +24,7 @@ namespace SeniorProjectHealthApplication.Views
             var userId = Xamarin.Essentials.Preferences.Get("userId", 0);
 
             _userId = userId;
+            // GET THE SELECTED DATE
             _selectedDate = DateTime.Today;
 
             LoadFoodUserData();
@@ -37,6 +39,16 @@ namespace SeniorProjectHealthApplication.Views
             CurrentDateLabel.Text = _selectedDate.ToShortDateString();
             // sets the current date so all pages can get it
             Xamarin.Essentials.Preferences.Set("selectedDate", _selectedDate.ToShortDateString());
+
+            DatabaseManager<UserAppInfo> userInfoDb = await LoadDatabase<UserAppInfo>();
+            DatabaseManager<Users> usersDb = await LoadDatabase<Users>();
+            UserAppInfo userInfo = userInfoDb.GetUserAppInfo(_userId);
+            Users user = usersDb.GetItem(_userId);
+
+            int age = DateTime.Today.Year - DateTime.Parse(user.Birthdate).Year;
+
+            CaloriesLeft.Text = UserDataManager.OnGetUserBmr(user.Gender, userInfo.Height, userInfo.Weight, age, false)
+                .ToString("f0");
         }
 
         private async Task<FoodLog> CreateFoodLogIfNotExists()
