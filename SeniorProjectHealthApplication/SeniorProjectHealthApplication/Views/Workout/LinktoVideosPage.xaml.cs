@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace SeniorProjectHealthApplication.Views
@@ -9,6 +10,11 @@ namespace SeniorProjectHealthApplication.Views
         public LinktoVideosPage()
         {
             InitializeComponent();
+        }
+
+        private async void SupermanVideo_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new WorkoutVideoPage());
         }
     }
 }

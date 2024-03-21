@@ -53,7 +53,8 @@
                         BorderColor="White"
                         Padding="20,10"
                         HorizontalOptions="Center"
-                        VerticalOptions="Center" />
+                        VerticalOptions="Center"
+                        Clicked="SupermanVideo_Clicked"/>
             </Frame>
             <Grid>
                 <Grid.ColumnDefinitions>
