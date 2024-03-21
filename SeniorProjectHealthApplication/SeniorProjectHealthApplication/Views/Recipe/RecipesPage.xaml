@@ -23,9 +23,6 @@
                     <StackLayout>
                         <StackLayout  BackgroundColor="{StaticResource UMCGold}" HeightRequest="540"
                  Margin="20, 10, 20, 0">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="Recipe_Tapped" NumberOfTapsRequired="1" />
-                            </StackLayout.GestureRecognizers>
                             <CollectionView ItemsSource="{Binding RecipesList}">
                                 <CollectionView.ItemTemplate>
                                     <DataTemplate>
@@ -36,27 +33,8 @@
                                                     <ColumnDefinition Width="Auto" />
                                                 </Grid.ColumnDefinitions>
 
-                                                <StackLayout BackgroundColor="{StaticResource UMCGold}" Grid.Column="0">
-                                                    <Label
-                    Margin="4, 0, 0, 0"
-                    Text="{Binding ReceipeName}"
-                    TextColor="White"
-                    VerticalOptions="Center"
-                    HorizontalOptions="StartAndExpand" />
-                                                    <Image HeightRequest="200" WidthRequest="200"  Source="{Binding RecipePicture}"/>
-                                                    <Label
-                    Margin="4, 0, 0, 0"
-                    Text="{Binding Calories}"
-                    TextColor="White"
-                    VerticalOptions="Center"
-                    HorizontalOptions="StartAndExpand" />
-                                                    <Label
-                    Margin="4, 0, 0, 0"
-                    Text="{Binding Protein}"
-                    TextColor="White"
-                    VerticalOptions="Center"
-                    HorizontalOptions="StartAndExpand" />
-                                                </StackLayout>
+                                                <Button HeightRequest="540" BackgroundColor="{StaticResource UMCGold}" BindingContext="{Binding Id}" Clicked="Recipe_Tapped"  ContentLayout="Top,0" Text="{Binding ReceipeName}" ImageSource="{Binding RecipePicture}"  />
+
                                             </Grid>
                                         </Frame>
                                     </DataTemplate>

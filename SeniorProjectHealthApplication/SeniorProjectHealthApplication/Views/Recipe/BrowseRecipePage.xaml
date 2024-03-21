@@ -10,10 +10,8 @@
                 <StackLayout Margin="0,0,0,50">
                     <Grid>
                         <Image WidthRequest="70" HeightRequest="70" HorizontalOptions="Start" Source="exitbutton.png" />
-                        <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="30"
-                               TextColor="White" FontAttributes="Bold" Margin="0, 30, 0, 0">
-                            Food Name Here
-                        </Label>
+                        <Label x:Name="name" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="30"
+                             Text="{Binding Id}"  TextColor="White" FontAttributes="Bold" Margin="0, 30, 0, 0"/>
                     </Grid>
 
                     <Image BackgroundColor="white" HeightRequest="250" Margin="40, 0, 40, 0" />

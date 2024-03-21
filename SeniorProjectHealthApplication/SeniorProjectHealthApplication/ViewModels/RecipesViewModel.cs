@@ -24,36 +24,7 @@ namespace SeniorProjectHealthApplication.ViewModels
             // Load your databases
             recipesListDB = LoadDatabase<RecipesList>();
 
-            // Add a Recipe for testing
-            recipesListDB.AddItem(new RecipesList
-            {
-                ReceipeName = "Smoothie Bowl",
-                RecipePicture = "https://www.eatyourselfskinny.com/wp-content/uploads/2017/08/smoothie-bowl-22.jpg",
-                Calories = 214,
-                Carbs = 47.5,
-                Protein = 2.8,
-                Fat = 2.5,
-                SaturatedFat = 1.6,
-                Sodium = 9,
-                Sugar = 25.9,
-                Ingredients = "Smoothie Bowl\n1 cup organic frozen mixed berries\n1 small ripe banana (sliced and frozen)\n2-3 Tbsp light coconut or almond milk\nToppings\n1 Tbsp shredded unsweetened coconut\n1 Tbsp chia seeds\n1 Tbsp hemp seeds\nGranola\nFruit",
-                Instructions = "N/A"
-            });
-            // Add a Recipe for testing
-            recipesListDB.AddItem(new RecipesList
-            {
-                ReceipeName = "Cereal",
-                RecipePicture = "icon_about.png",
-                Calories = 100,
-                Carbs = 47.5,
-                Protein = 2.8,
-                Fat = 2.5,
-                SaturatedFat = 1.6,
-                Sodium = 9,
-                Sugar = 25.9,
-                Ingredients = "Smoothie Bowl\n1 cup organic frozen mixed berries\n1 small ripe banana (sliced and frozen)\n2-3 Tbsp light coconut or almond milk\nToppings\n1 Tbsp shredded unsweetened coconut\n1 Tbsp chia seeds\n1 Tbsp hemp seeds\nGranola\nFruit",
-                Instructions = "N/A"
-            });
+
 
             // Load your recipes
             var recipes = recipesListDB.GetRecipesList();

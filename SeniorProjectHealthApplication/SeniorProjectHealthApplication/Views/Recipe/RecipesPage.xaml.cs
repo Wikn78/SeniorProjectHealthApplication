@@ -16,7 +16,8 @@ namespace SeniorProjectHealthApplication.Views
         private RecipesViewModel ViewModel => BindingContext as RecipesViewModel;
         private async void Recipe_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BrowseRecipePage());
+            int ID = (int)((Button)sender).BindingContext;
+            await Navigation.PushAsync(new BrowseRecipePage(ID));
         }
     }
 }
