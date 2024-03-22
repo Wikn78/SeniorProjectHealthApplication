@@ -46,9 +46,11 @@ namespace SeniorProjectHealthApplication.Views
             Users user = usersDb.GetItem(_userId);
 
             int age = DateTime.Today.Year - DateTime.Parse(user.Birthdate).Year;
-
+            // Makes BMR
             CaloriesLeft.Text = UserDataManager.OnGetUserBmr(user.Gender, userInfo.Height, userInfo.Weight, age, false)
                 .ToString("f0");
+            
+            
         }
 
         private async Task<FoodLog> CreateFoodLogIfNotExists()

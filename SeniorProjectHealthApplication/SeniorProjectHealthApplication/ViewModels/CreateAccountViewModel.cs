@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
 using SeniorProjectHealthApplication.Views;
@@ -53,7 +54,13 @@ namespace SeniorProjectHealthApplication.ViewModels
                     Birthdate = shortBd
                 };
                 userRepo.AddItem(newUser);
+                // get the uidback from it
+               
 
+                var user = userRepo.GetAllItems().FirstOrDefault(u => u.Email == _email);
+                
+                Xamarin.Essentials.Preferences.Set("userId", user.UID);
+                
                 await _navigation.PushAsync(new WelcomePage());
             }
             else
