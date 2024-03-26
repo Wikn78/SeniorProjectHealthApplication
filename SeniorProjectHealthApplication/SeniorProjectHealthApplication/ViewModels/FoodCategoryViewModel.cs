@@ -8,26 +8,26 @@ using SeniorProjectHealthApplication.Models.DB_Repositorys;
 
 namespace SeniorProjectHealthApplication.ViewModels
 {
-    public class FoodCategoryViewModel : INotifyPropertyChanged
+    public sealed class FoodCategoryViewModel : INotifyPropertyChanged
     {
-        DatabaseManager<FoodLogCategory> foodCatagoryDB;
-        DatabaseManager<FoodItem> foodItemDb;
-        DatabaseManager<FoodLog> foodLogDB;
+        private readonly DatabaseManager<FoodLogCategory> _foodCatagoryDb;
+        private readonly DatabaseManager<FoodItem> _foodItemDb;
+        private readonly DatabaseManager<FoodLog> _foodLogDb;
 
-        public FoodCategoryViewModel(string categoryID)
+        public FoodCategoryViewModel(string categoryId)
         {
             // Load your databases
-            foodCatagoryDB = LoadDatabase<FoodLogCategory>();
-            foodLogDB = LoadDatabase<FoodLog>();
-            foodItemDb = LoadDatabase<FoodItem>();
+            _foodCatagoryDb = LoadDatabase<FoodLogCategory>();
+            _foodLogDb = LoadDatabase<FoodLog>();
+            _foodItemDb = LoadDatabase<FoodItem>();
 
             // Fetch your data
-            var foodLog = foodLogDB.GetFoodLogInfoByDate(Xamarin.Essentials.Preferences.Get("selectedDate", ""),
+            var foodLog = _foodLogDb.GetFoodLogInfoByDate(Xamarin.Essentials.Preferences.Get("selectedDate", ""),
                 Xamarin.Essentials.Preferences.Get("userId", 0));
-            var foodCategory = foodCatagoryDB.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(categoryID));
+            var foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(categoryId));
 
             // Add a food item for testing
-            foodItemDb.AddItem(new FoodItem
+            _foodItemDb.AddItem(new FoodItem
             {
                 FL_ID = foodCategory.Id,
                 Food_Name = "Eggs",
@@ -36,7 +36,7 @@ namespace SeniorProjectHealthApplication.ViewModels
             });
 
             // Load your food items
-            var foodItems = foodCatagoryDB.GetFoodItems(foodCategory.Id, foodCategory.FoodCatagory);
+            var foodItems = _foodCatagoryDb.GetFoodItems(foodCategory.Id, foodCategory.FoodCatagory);
 
             // Assign to your ObservableCollection
             FoodItems = new ObservableCollection<FoodItem>(foodItems);
@@ -73,7 +73,7 @@ namespace SeniorProjectHealthApplication.ViewModels
             return new DatabaseManager<T>(dbPath);
         }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
