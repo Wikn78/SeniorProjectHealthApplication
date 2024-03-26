@@ -4,6 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SeniorProjectHealthApplication.Views.FoodCatagoryPage"
              xmlns:views="clr-namespace:SeniorProjectHealthApplication.Views.Page_Views"
+             xmlns:foodItem="clr-namespace:SeniorProjectHealthApplication.Models.Database_Structure;assembly=SeniorProjectHealthApplication"
              BackgroundColor="{StaticResource UMCMaroon}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
@@ -43,12 +44,11 @@
                     <StackLayout>
                         <CollectionView ItemsSource="{Binding FoodItems}">
                             <CollectionView.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate x:DataType="foodItem:FoodItem">
                                     <Frame Padding="3" BackgroundColor="{StaticResource UMCMaroon}">
                                         <views:AddedFoodItem FoodName="{Binding Food_Name}"
                                                              Calories="30"
-                                                             Quantity="{Binding Quantity}"
-                                                             CatagoryID="{Binding CategoryID}" />
+                                                             Quantity="{Binding Quantity}" />
                                     </Frame>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>

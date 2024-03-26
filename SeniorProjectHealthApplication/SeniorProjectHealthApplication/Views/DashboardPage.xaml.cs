@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Threading.Tasks;
 using SeniorProjectHealthApplication.Models;
 using SeniorProjectHealthApplication.Models.Database_Structure;
@@ -40,22 +39,13 @@ namespace SeniorProjectHealthApplication.Views
             // sets the current date so all pages can get it
             Xamarin.Essentials.Preferences.Set("selectedDate", _selectedDate.ToShortDateString());
 
-            DatabaseManager<UserAppInfo> userInfoDb = await LoadDatabase<UserAppInfo>();
-            DatabaseManager<Users> usersDb = await LoadDatabase<Users>();
-            UserAppInfo userInfo = userInfoDb.GetUserAppInfo(_userId);
-            Users user = usersDb.GetItem(_userId);
-
-            int age = DateTime.Today.Year - DateTime.Parse(user.Birthdate).Year;
-            // Makes BMR
-            CaloriesLeft.Text = UserDataManager.OnGetUserBmr(user.Gender, userInfo.Height, userInfo.Weight, age, false)
-                .ToString("f0");
-            
-            
+            // Gets BMR
+            CaloriesLeft.Text = (await UserDataManager.OnGetUserBmr(false)).ToString("f0");
         }
 
         private async Task<FoodLog> CreateFoodLogIfNotExists()
         {
-            DatabaseManager<FoodLog> foodLogDb = await LoadDatabase<FoodLog>();
+            DatabaseManager<FoodLog> foodLogDb = await UserDataManager.LoadDatabase<FoodLog>();
 
             FoodLog fl = foodLogDb.GetFoodLogInfoByDate(_selectedDate.ToShortDateString(), _userId);
 
@@ -68,7 +58,8 @@ namespace SeniorProjectHealthApplication.Views
                     Date = _selectedDate.ToShortDateString()
                 });
                 // generate food categories
-                DatabaseManager<FoodLogCategory> foodLogCategoryDb = await LoadDatabase<FoodLogCategory>();
+                DatabaseManager<FoodLogCategory> foodLogCategoryDb =
+                    await UserDataManager.LoadDatabase<FoodLogCategory>();
 
 
                 fl = foodLogDb.GetFoodLogInfoByDate(_selectedDate.ToShortDateString(), _userId);
@@ -108,16 +99,6 @@ namespace SeniorProjectHealthApplication.Views
         private async void Account_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SettingsPage());
-        }
-
-
-        private Task<DatabaseManager<T>> LoadDatabase<T>() where T : new()
-        {
-            string fileName = "Database.db3";
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string dbPath = Path.Combine(folderPath, fileName);
-
-            return Task.FromResult(new DatabaseManager<T>(dbPath));
         }
 
 
