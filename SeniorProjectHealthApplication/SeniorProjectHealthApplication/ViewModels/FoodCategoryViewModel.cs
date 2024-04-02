@@ -20,7 +20,7 @@ namespace SeniorProjectHealthApplication.ViewModels
             _foodCatagoryDb = LoadDatabase<FoodLogCategory>();
             _foodLogDb = LoadDatabase<FoodLog>();
             _foodItemDb = LoadDatabase<FoodItem>();
-
+            // set current categoryID
             // Fetch your data
             var foodLog = _foodLogDb.GetFoodLogInfoByDate(Xamarin.Essentials.Preferences.Get("selectedDate", ""),
                 Xamarin.Essentials.Preferences.Get("userId", 0));
@@ -34,7 +34,7 @@ namespace SeniorProjectHealthApplication.ViewModels
                 Unit_Calorie = 70,
                 Quantity = 3,
                 FoodCatagory = 1,
-                Total_Calorie = 70 * 3
+                Total_Calories = 70 * 3
             });
 
             // Load your food items

@@ -42,19 +42,7 @@
 
                 <StackLayout>
                     <StackLayout>
-                        <!-- <CollectionView ItemsSource="{Binding FoodItems}"> -->
-                        <!--     <CollectionView.ItemTemplate> -->
-                        <!--         <DataTemplate x:DataType="foodItem:FoodItem"> -->
-                        <!--             <Frame Padding="3" BackgroundColor="{StaticResource UMCMaroon}"> -->
-                        <!--                 <views:AddedFoodItem FoodName="{Binding Food_Name}" -->
-                        <!--                                      Calories="30" -->
-                        <!--                                      Quantity="{Binding Quantity}" /> -->
-                        <!--             </Frame> -->
-                        <!--         </DataTemplate> -->
-                        <!--     </CollectionView.ItemTemplate> -->
-                        <!-- </CollectionView> -->
-                        
-                        <CollectionView ItemsSource="{Binding FoodItems}">
+                        <CollectionView Margin="5, 5, 5, 5" ItemsSource="{Binding FoodItems}">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="foodItem:FoodItem">
                                     <views:AddedFoodItem/>
