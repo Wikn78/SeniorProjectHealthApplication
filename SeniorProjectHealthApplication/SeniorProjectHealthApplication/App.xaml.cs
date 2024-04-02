@@ -9,7 +9,7 @@ namespace SeniorProjectHealthApplication
         public App()
         {
             InitializeComponent();
-
+            
             DependencyService.Register<MockDataStore>();
             MainPage = new NavigationPage(new LoginPage());
         }
