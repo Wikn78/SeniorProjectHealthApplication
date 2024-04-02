@@ -33,6 +33,20 @@ namespace SeniorProjectHealthApplication.ViewModels
             RecipesList = new ObservableCollection<RecipesList>(recipes);
         }
 
+        public RecipesViewModel(int ID)
+        {
+            // Load your databases
+            recipesListDB = LoadDatabase<RecipesList>();
+
+
+
+            // Load your recipes
+            var recipes = recipesListDB.GetRecipesListByID(ID);
+
+            // Assign to your ObservableCollection
+            RecipesList = new ObservableCollection<RecipesList>(recipes);
+        }
+
         public ObservableCollection<RecipesList> RecipesList { get; set; }
         private DatabaseManager<T> LoadDatabase<T>() where T : new()
         {

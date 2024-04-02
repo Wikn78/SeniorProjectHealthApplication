@@ -7,13 +7,11 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="{StaticResource UMCMaroon}">
             <ScrollView>
-                <!--Search Bar-->
                 <StackLayout Margin="0,0,0,50">
                     <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="35" TextColor="White"
                            FontAttributes="Bold" Margin="0, 30, 0, 0">
                         Recipes
                     </Label>
-                    <Editor BackgroundColor="#fff" Placeholder="Search" Margin="30, 20, 30, 0" />
 
                     <!--Breakfast List-->
                     <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center"
@@ -21,7 +19,7 @@
                         Breakfast
                     </Label>
                     <StackLayout>
-                        <StackLayout  BackgroundColor="{StaticResource UMCGold}" HeightRequest="540"
+                        <StackLayout  HeightRequest="540"
                  Margin="20, 10, 20, 0">
                             <CollectionView ItemsSource="{Binding RecipesList}">
                                 <CollectionView.ItemTemplate>
@@ -33,8 +31,12 @@
                                                     <ColumnDefinition Width="Auto" />
                                                 </Grid.ColumnDefinitions>
 
-                                                <Button HeightRequest="540" BackgroundColor="{StaticResource UMCGold}" BindingContext="{Binding Id}" Clicked="Recipe_Tapped"  ContentLayout="Top,0" Text="{Binding ReceipeName}" ImageSource="{Binding RecipePicture}"  />
-
+                                                <StackLayout BackgroundColor="{StaticResource UMCGold}" >
+                                                    <Label Text="{Binding ReceipeName}">
+                                                    </Label>
+                                                    <Image Source="{Binding RecipePicture}" />
+                                                    <Button HeightRequest="540" BackgroundColor="{StaticResource UMCGold}" BindingContext="{Binding Id}" Clicked="Recipe_Tapped"  ContentLayout="Top,0" Text="{Binding ReceipeName}" ImageSource="{Binding RecipePicture}"  />
+                                                </StackLayout>
                                             </Grid>
                                         </Frame>
                                     </DataTemplate>

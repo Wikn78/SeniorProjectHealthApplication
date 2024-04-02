@@ -11,9 +11,7 @@ namespace SeniorProjectHealthApplication.Views
         public BrowseRecipePage(int RecipeID)
         {
             InitializeComponent();
-            this.BindingContext = new RecipesViewModel();
-            ID = RecipeID;
-            name.Text = ID.ToString();
+            this.BindingContext = new RecipesViewModel(RecipeID);
         }
 
         private RecipesViewModel ViewModel => BindingContext as RecipesViewModel;
