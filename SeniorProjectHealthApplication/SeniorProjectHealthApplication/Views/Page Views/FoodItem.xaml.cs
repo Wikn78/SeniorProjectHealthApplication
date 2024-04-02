@@ -56,7 +56,7 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
 
         private void ViewFoodItem_Tapped(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new ViewFoodItemPage(FoodName, Quantity, CatagoryID, true));
+            Navigation.PushAsync(new ViewFoodItemPage(FoodName, Quantity, 10,CatagoryID, true));
         }
     }
 }
