@@ -9,6 +9,8 @@ namespace SeniorProjectHealthApplication.Models.Database_Structure
         public int FL_ID { get; set; }
         public int FoodCatagory { get; set; }
         public string Food_Name { get; set; }
+        public float Unit_Calorie { get; set; }
+        public float Total_Calorie { get; set; }
         public float Quantity { get; set; }
     }
 }

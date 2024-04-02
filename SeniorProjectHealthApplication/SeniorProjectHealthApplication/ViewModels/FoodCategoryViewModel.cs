@@ -31,7 +31,7 @@ namespace SeniorProjectHealthApplication.ViewModels
             {
                 FL_ID = foodCategory.Id,
                 Food_Name = "Eggs",
-                Quantity = 3,
+                Quantity = 12,
                 FoodCatagory = 1,
             });
 

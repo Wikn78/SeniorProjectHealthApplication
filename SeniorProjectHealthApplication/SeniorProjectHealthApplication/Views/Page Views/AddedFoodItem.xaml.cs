@@ -8,8 +8,8 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddedFoodItem : ContentView
     {
-        public static readonly BindableProperty FoodNameProperty =
-            BindableProperty.Create(nameof(FoodName), typeof(string), typeof(AddedFoodItem));
+        public static readonly BindableProperty Food_NameProperty =
+            BindableProperty.Create(nameof(Food_Name), typeof(string), typeof(AddedFoodItem));
 
         public static readonly BindableProperty CaloriesProperty =
             BindableProperty.Create(nameof(Calories), typeof(int), typeof(AddedFoodItem)); // Assuming Calories is int
@@ -28,10 +28,10 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
             BindingContext = this;
         }
 
-        public string FoodName
+        public string Food_Name
         {
-            get => (string)GetValue(FoodNameProperty);
-            set => SetValue(FoodNameProperty, value);
+            get => (string)GetValue(Food_NameProperty);
+            set => SetValue(Food_NameProperty, value);
         }
 
         public int Calories
@@ -54,7 +54,7 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
 
         private void ViewFoodItem_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ViewFoodItemPage(FoodName, Quantity, CatagoryID, false));
+            Navigation.PushAsync(new ViewFoodItemPage(Food_Name, Quantity, CatagoryID, false));
         }
     }
 }
