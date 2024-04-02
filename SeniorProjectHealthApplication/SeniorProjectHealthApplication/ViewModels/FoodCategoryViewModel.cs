@@ -13,18 +13,27 @@ namespace SeniorProjectHealthApplication.ViewModels
         private readonly DatabaseManager<FoodLogCategory> _foodCatagoryDb;
         private readonly DatabaseManager<FoodItem> _foodItemDb;
         private readonly DatabaseManager<FoodLog> _foodLogDb;
-
+        private string _categoryId;
         public FoodCategoryViewModel(string categoryId)
         {
             // Load your databases
+            Xamarin.Essentials.Preferences.Set("categoryId", categoryId);
+            _categoryId = categoryId;
+
             _foodCatagoryDb = LoadDatabase<FoodLogCategory>();
             _foodLogDb = LoadDatabase<FoodLog>();
             _foodItemDb = LoadDatabase<FoodItem>();
             // set current categoryID
+            if (GetCategoryNumber(categoryId) == 0)
+            {
+                _categoryId = Xamarin.Essentials.Preferences.Get("categoryId", "");
+            }
+            
+            
             // Fetch your data
             var foodLog = _foodLogDb.GetFoodLogInfoByDate(Xamarin.Essentials.Preferences.Get("selectedDate", ""),
                 Xamarin.Essentials.Preferences.Get("userId", 0));
-            var foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(categoryId));
+            var foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(_categoryId));
 
             // Add a food item for testing
             _foodItemDb.AddItem(new FoodItem
