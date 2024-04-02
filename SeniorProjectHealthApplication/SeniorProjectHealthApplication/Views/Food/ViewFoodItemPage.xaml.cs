@@ -9,14 +9,14 @@ namespace SeniorProjectHealthApplication.Views.Food
     {
         private readonly bool _addItem;
 
-        public ViewFoodItemPage(string itemName, float quanity, string catagoryId, bool addItem)
+        public ViewFoodItemPage(string itemName, float quanity, float unitCal, string catagoryId, bool addItem)
         {
             InitializeComponent();
 
             FoodName = itemName;
             Quantiy = quanity;
             CatagoryId = catagoryId;
-
+            
             Lbl_CatagoryId.Text = itemName;
 
             _addItem = addItem;

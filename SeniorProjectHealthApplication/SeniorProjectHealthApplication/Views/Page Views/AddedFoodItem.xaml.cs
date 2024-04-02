@@ -11,8 +11,8 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
         public static readonly BindableProperty Food_NameProperty =
             BindableProperty.Create(nameof(Food_Name), typeof(string), typeof(AddedFoodItem));
 
-        public static readonly BindableProperty CaloriesProperty =
-            BindableProperty.Create(nameof(Calories), typeof(int), typeof(AddedFoodItem)); // Assuming Calories is int
+        public static readonly BindableProperty Total_CaloriesProperty =
+            BindableProperty.Create(nameof(Total_Calories), typeof(int), typeof(AddedFoodItem)); // Assuming Calories is int
 
         public static readonly BindableProperty QuantityProperty =
             BindableProperty.Create(nameof(Quantity), typeof(float), typeof(AddedFoodItem)); // Assuming Quantity is int
@@ -34,10 +34,10 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
             set => SetValue(Food_NameProperty, value);
         }
 
-        public int Calories
+        public int Total_Calories
         {
-            get => (int)GetValue(CaloriesProperty);
-            set => SetValue(CaloriesProperty, value);
+            get => (int)GetValue(Total_CaloriesProperty);
+            set => SetValue(Total_CaloriesProperty, value);
         }
 
         public float Quantity
@@ -54,7 +54,7 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
 
         private void ViewFoodItem_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ViewFoodItemPage(Food_Name, Quantity, CatagoryID, false));
+            Navigation.PushAsync(new ViewFoodItemPage(Food_Name, Quantity, Total_Calories, CatagoryID, false));
         }
     }
 }

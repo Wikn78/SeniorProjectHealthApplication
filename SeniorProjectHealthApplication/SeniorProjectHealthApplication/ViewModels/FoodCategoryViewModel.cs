@@ -31,8 +31,10 @@ namespace SeniorProjectHealthApplication.ViewModels
             {
                 FL_ID = foodCategory.Id,
                 Food_Name = "Eggs",
-                Quantity = 12,
+                Unit_Calorie = 70,
+                Quantity = 3,
                 FoodCatagory = 1,
+                Total_Calorie = 70 * 3
             });
 
             // Load your food items
