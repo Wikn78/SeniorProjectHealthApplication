@@ -30,15 +30,15 @@ namespace SeniorProjectHealthApplication.Views.Food
 
         private void Track_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new FoodCatagoryPage(CatagoryId));
+            Navigation.PushAsync(new FoodCatagoryPage(Xamarin.Essentials.Preferences.Get("categoryId", "breakfast")));
         }
 
         private void GoBack_Clicked(object sender, EventArgs e)
         {
             if (_addItem)
-                Navigation.PushAsync(new AddFoodPage(CatagoryId));
+                Navigation.PushAsync(new AddFoodPage(Xamarin.Essentials.Preferences.Get("categoryId", "breakfast")));
             else
-                Navigation.PushAsync(new FoodCatagoryPage(CatagoryId));
+                Navigation.PushAsync(new FoodCatagoryPage(Xamarin.Essentials.Preferences.Get("categoryId", "breakfast")));
         }
     }
 }

@@ -17,8 +17,7 @@ namespace SeniorProjectHealthApplication.ViewModels
         public FoodCategoryViewModel(string categoryId)
         {
             // Load your databases
-            Xamarin.Essentials.Preferences.Set("categoryId", categoryId);
-            _categoryId = categoryId;
+            
 
             _foodCatagoryDb = LoadDatabase<FoodLogCategory>();
             _foodLogDb = LoadDatabase<FoodLog>();
@@ -27,6 +26,11 @@ namespace SeniorProjectHealthApplication.ViewModels
             if (GetCategoryNumber(categoryId) == 0)
             {
                 _categoryId = Xamarin.Essentials.Preferences.Get("categoryId", "");
+            }
+            else
+            {
+                Xamarin.Essentials.Preferences.Set("categoryId", categoryId);
+                _categoryId = categoryId; 
             }
             
             
