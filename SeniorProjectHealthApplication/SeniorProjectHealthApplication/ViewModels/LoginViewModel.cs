@@ -22,6 +22,26 @@ namespace SeniorProjectHealthApplication.ViewModels
             Register = new Command(ExecuteRegister);
             Login = new Command(ExecuteLogin);
             RecoverPassword = new Command(ExecuteRecoverPassword);
+
+            LoadUserInfo();
+        }
+
+        private async void LoadUserInfo()
+        {
+            var authToken = await Xamarin.Essentials.SecureStorage.GetAsync("AuthToken");
+
+            if (!string.IsNullOrEmpty(authToken))
+            {
+                var userId = int.Parse(authToken);
+                if(userId > 0)
+                {
+                    Xamarin.Essentials.Preferences.Set("userId", userId); 
+                    await _navigation.PushAsync(new DashboardPage());
+                    
+                }
+                
+                
+            }
         }
 
         // Commands for user actions
@@ -77,6 +97,7 @@ namespace SeniorProjectHealthApplication.ViewModels
                         Xamarin.Essentials.Preferences.Set("userId", user.UID);
                     }
 
+                    await Xamarin.Essentials.SecureStorage.SetAsync("AuthToken", user.UID.ToString());
                     await _navigation.PushAsync(new DashboardPage());
                 }
             }

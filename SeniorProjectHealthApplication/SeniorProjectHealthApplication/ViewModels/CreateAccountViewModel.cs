@@ -60,7 +60,8 @@ namespace SeniorProjectHealthApplication.ViewModels
                 var user = userRepo.GetAllItems().FirstOrDefault(u => u.Email == _email);
                 
                 Xamarin.Essentials.Preferences.Set("userId", user.UID);
-                
+                // Sets the id to allow the user force them to enter
+                await Xamarin.Essentials.SecureStorage.SetAsync("AuthToken", user.UID.ToString());
                 await _navigation.PushAsync(new WelcomePage());
             }
             else
