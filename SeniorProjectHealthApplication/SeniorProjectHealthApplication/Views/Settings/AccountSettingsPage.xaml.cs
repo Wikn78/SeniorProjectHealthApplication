@@ -94,5 +94,11 @@ namespace SeniorProjectHealthApplication.Views
 
             LoadUserSettings(_userId);
         }
+
+        private async void OnButtonClicked(object sender, EventArgs e)
+        {
+            await Xamarin.Essentials.SecureStorage.SetAsync("AuthToken", string.Empty);
+            await Navigation.PushAsync(new LoginPage());
+        }
     }
 }

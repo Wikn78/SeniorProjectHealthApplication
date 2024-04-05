@@ -5,7 +5,8 @@
              x:Class="SeniorProjectHealthApplication.Views.CreateAccountPage"
              BackgroundColor="{StaticResource UMCMaroon}"
              Title="Create Account"
-             Shell.NavBarIsVisible="False">
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="10,0,10,0">
 

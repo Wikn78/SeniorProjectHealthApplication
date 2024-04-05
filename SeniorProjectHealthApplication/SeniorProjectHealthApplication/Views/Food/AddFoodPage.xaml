@@ -4,7 +4,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SeniorProjectHealthApplication.Views.Food.AddFoodPage"
              xmlns:views="clr-namespace:SeniorProjectHealthApplication.Views.Page_Views"
-             BackgroundColor="{StaticResource UMCMaroon}">
+             BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">

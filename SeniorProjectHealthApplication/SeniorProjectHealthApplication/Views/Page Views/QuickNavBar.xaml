@@ -2,7 +2,9 @@
 
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SeniorProjectHealthApplication.Views.QuickNavBar">
+             x:Class="SeniorProjectHealthApplication.Views.QuickNavBar"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
 
 
     <StackLayout Orientation="Vertical">

@@ -5,7 +5,9 @@
              xmlns:views="clr-namespace:SeniorProjectHealthApplication.Views;assembly=SeniorProjectHealthApplication"
              xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="SeniorProjectHealthApplication.Views.ProgressPage"
-             BackgroundColor="{StaticResource UMCMaroon}">
+             BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
             <Grid HorizontalOptions="Center" VerticalOptions="Center">
