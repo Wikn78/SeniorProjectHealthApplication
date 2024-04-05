@@ -36,9 +36,10 @@
                              HeightRequest="30"
                              WidthRequest="30" 
                              Clicked="OnButtonClicked"/>
-                <Image HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
-                       HeightRequest="30"
-                       WidthRequest="30" />
+                <ImageButton HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
+                             HeightRequest="30"
+                             WidthRequest="30" 
+                             Clicked="OnBackButtonClicked"/>
 
             </Grid>
 

@@ -94,5 +94,10 @@ namespace SeniorProjectHealthApplication.Views
 
             return Task.FromResult(new DatabaseManager<UserAppInfo>(dbPath));
         }
+
+        private void OnBackButtonClicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
     }
 }

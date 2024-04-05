@@ -100,5 +100,10 @@ namespace SeniorProjectHealthApplication.Views
             await Xamarin.Essentials.SecureStorage.SetAsync("AuthToken", string.Empty);
             await Navigation.PushAsync(new LoginPage());
         }
+
+        private void OnBackButtonClicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
     }
 }
