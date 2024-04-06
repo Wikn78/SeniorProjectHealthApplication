@@ -44,7 +44,10 @@
 
                 <StackLayout>
                     <StackLayout>
-                        <CollectionView Margin="5, 5, 5, 5" ItemsSource="{Binding FoodItems}">
+                        <CollectionView Margin="5" ItemsSource="{Binding FoodItems}">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Vertical" ItemSpacing="3" />
+                            </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="foodItem:FoodItem">
                                     <views:AddedFoodItem/>
