@@ -50,6 +50,7 @@
                     WidthRequest="50"
                     BorderRadius="25"
                     FontSize="20"
+                    Clicked="RemoveButtonClicked"
                     FontAttributes="Bold"
                     VerticalOptions="Center"
                     HorizontalOptions="Center" />

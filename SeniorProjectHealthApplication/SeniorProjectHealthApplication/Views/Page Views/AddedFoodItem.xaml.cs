@@ -1,5 +1,7 @@
 ﻿using System;
+using SeniorProjectHealthApplication.ViewModels;
 using SeniorProjectHealthApplication.Views.Food;
+using SeniorProjectHealthApplication.Models.Database_Structure;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -56,5 +58,16 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
         {
             Navigation.PushAsync(new ViewFoodItemPage(Food_Name, Quantity, Total_Calories, CatagoryID, false));
         }
+
+        private SeniorProjectHealthApplication.Models.Database_Structure.FoodItem foodItem;
+       
+
+        private void RemoveButtonClicked(object sender, EventArgs e)
+        {
+            var viewModel = BindingContext as FoodCategoryViewModel;
+            viewModel?.RemoveFoodItem(foodItem);
+        }
+        
+        
     }
 }

@@ -46,7 +46,7 @@ namespace SeniorProjectHealthApplication.ViewModels
                 Xamarin.Essentials.Preferences.Get("userId", 0));
             foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(_categoryId));
 
-            AddFoodProductDebug();
+            //AddFoodProductDebug();
             
             // Add a food item for testing
             
@@ -116,5 +116,14 @@ namespace SeniorProjectHealthApplication.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        
+        public void RemoveFoodItem(FoodItem item)
+        {
+            FoodItems.Remove(item);
+            // since you are using DatabaseManager to interact with your database,
+            // I guess you also need to remove this item from the database
+           // _foodItemDb.DeleteItem(item);
+        }
+        
     }
 }
