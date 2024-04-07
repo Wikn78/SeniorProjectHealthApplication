@@ -25,7 +25,7 @@ namespace SeniorProjectHealthApplication.Views.Food
 
         private void GoBack_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new FoodCatagoryPage(CategoryID));
+            Navigation.PopAsync();
         }
 
         private void Barcode_Clicked(object sender, EventArgs e)

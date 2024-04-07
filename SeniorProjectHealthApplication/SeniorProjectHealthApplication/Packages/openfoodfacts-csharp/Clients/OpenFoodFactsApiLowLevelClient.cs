@@ -15,7 +15,8 @@ namespace OpenFoodFactsCSharp.Clients
         private const string FoodSearchApiUrl =
             "https://world.openfoodfacts.org/cgi/search.pl?search_terms=";
         private readonly HttpClient _httpClient = new HttpClient();
-
+        //To do
+        // Error check to make sure it doesnt crash the program if it doesnt find a food bt the name
         public async Task<ProductResponse> FetchProductByCodeAsync(string code)
         {
             try
@@ -58,7 +59,7 @@ namespace OpenFoodFactsCSharp.Clients
     
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new HttpRequestException($"Failed to fetch product by code: {foodName}");
+                    return null;
                 }
 
                 var content = await response.Content.ReadAsStringAsync();

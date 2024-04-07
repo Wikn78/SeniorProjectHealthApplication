@@ -57,9 +57,16 @@ namespace SeniorProjectHealthApplication.ViewModels
                     
                 });
             }
-            
-            
-            Console.WriteLine("Balls");
+
+            if (respones.Products.Length == 0)
+            {
+                SearchedFoods.Add(new FoodItem
+                {
+                    Food_Name = "No food found...",
+                    FoodCatagory = 1,
+                    FL_ID = foodCategory.Id,
+                });
+            }
         }
         
         private static int GetCategoryNumber(string categoryID)
