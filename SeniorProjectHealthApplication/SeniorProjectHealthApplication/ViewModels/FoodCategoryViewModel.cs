@@ -2,14 +2,21 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using OpenFoodFactsCSharp.Clients;
+using OpenFoodFactsCSharp.Models;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using SQLitePCL;
 
 namespace SeniorProjectHealthApplication.ViewModels
 {
     public sealed class FoodCategoryViewModel : INotifyPropertyChanged
     {
+        private FoodLog foodLog;
+        private FoodLogCategory foodCategory;
         private readonly DatabaseManager<FoodLogCategory> _foodCatagoryDb;
         private readonly DatabaseManager<FoodItem> _foodItemDb;
         private readonly DatabaseManager<FoodLog> _foodLogDb;
@@ -35,20 +42,14 @@ namespace SeniorProjectHealthApplication.ViewModels
             
             
             // Fetch your data
-            var foodLog = _foodLogDb.GetFoodLogInfoByDate(Xamarin.Essentials.Preferences.Get("selectedDate", ""),
+            foodLog = _foodLogDb.GetFoodLogInfoByDate(Xamarin.Essentials.Preferences.Get("selectedDate", ""),
                 Xamarin.Essentials.Preferences.Get("userId", 0));
-            var foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(_categoryId));
+            foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(_categoryId));
 
+            AddFoodProductDebug();
+            
             // Add a food item for testing
-            _foodItemDb.AddItem(new FoodItem
-            {
-                FL_ID = foodCategory.Id,
-                Food_Name = "Eggs",
-                Unit_Calorie = 70,
-                Quantity = 3,
-                FoodCatagory = 1,
-                Total_Calories = 70 * 3
-            });
+            
 
             // Load your food items
             var foodItems = _foodCatagoryDb.GetFoodItems(foodCategory.Id, foodCategory.FoodCatagory);
@@ -57,6 +58,26 @@ namespace SeniorProjectHealthApplication.ViewModels
             FoodItems = new ObservableCollection<FoodItem>(foodItems);
         }
 
+
+        private async Task AddFoodProductDebug()
+        {
+            
+            OpenFoodFactsApiLowLevelClient wrapper = new OpenFoodFactsApiLowLevelClient();
+
+            ProductResponse productResponse = await wrapper.FetchProductByCodeAsync("034856890089"); // welech fruit snacks
+            
+            _foodItemDb.AddItem(new FoodItem
+            {
+                FL_ID = foodCategory.Id,
+                Food_Name = productResponse.Product.ProductName,
+                Unit_Calorie = (float)productResponse.Product.Nutriments.EnergyKcalServing,
+                Quantity = 2,
+                FoodCatagory = 1,
+                Total_Calories = (float)productResponse.Product.Nutriments.EnergyKcalServing * 2
+            });
+            
+        }
+        
         public ObservableCollection<FoodItem> FoodItems { get; set; }
 
         // Implement Property Changed Event

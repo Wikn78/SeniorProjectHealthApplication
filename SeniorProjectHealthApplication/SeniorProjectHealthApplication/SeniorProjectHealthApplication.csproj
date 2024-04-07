@@ -98,4 +98,8 @@
             <SubType>Code</SubType>
         </Compile>
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Packages\" />
+    </ItemGroup>
 </Project>
