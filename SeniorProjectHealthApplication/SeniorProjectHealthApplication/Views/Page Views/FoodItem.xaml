@@ -26,7 +26,7 @@
                     HorizontalOptions="StartAndExpand" />
                 <Label
                     Margin="4, 0, 0, 0"
-                    Text="{Binding Calories}"
+                    Text="{Binding Total_Calories}"
                     TextColor="White"
                     VerticalOptions="Center"
                     HorizontalOptions="StartAndExpand" />
