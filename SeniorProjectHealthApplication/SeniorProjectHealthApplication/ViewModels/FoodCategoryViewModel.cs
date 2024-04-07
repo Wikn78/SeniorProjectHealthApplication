@@ -75,7 +75,10 @@ namespace SeniorProjectHealthApplication.ViewModels
                 FoodCatagory = 1,
                 Total_Calories = (float)productResponse.Product.Nutriments.EnergyKcalServing * 2
             });
-            
+
+            MultipleProjectResponse projectResponses = await wrapper.FetchProductsByNameAsync("raw chicken breast");
+
+            Console.Write(projectResponses.PageCount);
         }
         
         public ObservableCollection<FoodItem> FoodItems { get; set; }
