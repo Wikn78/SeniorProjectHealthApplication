@@ -64,7 +64,7 @@ namespace SeniorProjectHealthApplication.ViewModels
             
             OpenFoodFactsApiLowLevelClient wrapper = new OpenFoodFactsApiLowLevelClient();
 
-            ProductResponse productResponse = await wrapper.FetchProductByCodeAsync("034856890089"); // welech fruit snacks
+            ProductResponse productResponse = await wrapper.FetchProductByCodeAsync("01289903"); // 034856890089 welech fruit snacks
             
             _foodItemDb.AddItem(new FoodItem
             {
@@ -76,7 +76,7 @@ namespace SeniorProjectHealthApplication.ViewModels
                 Total_Calories = (float)productResponse.Product.Nutriments.EnergyKcalServing * 2
             });
 
-            MultipleProjectResponse projectResponses = await wrapper.FetchProductsByNameAsync("raw chicken breast");
+            MultipleProjectResponse projectResponses = await wrapper.FetchProductsByNameAsync("chicken");
 
             Console.Write(projectResponses.PageCount);
         }
