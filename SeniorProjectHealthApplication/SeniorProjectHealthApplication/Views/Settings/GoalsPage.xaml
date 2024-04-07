@@ -34,15 +34,15 @@
                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}" />
                 </RelativeLayout>
-                
+
                 <ImageButton
-                                               HorizontalOptions="Start"
-                                               VerticalOptions="Start"
-                                               Source="Arrow.png"
-                                               Margin="10,15,15,0"
-                                               HeightRequest="30"
-                                               WidthRequest="30"
-                                               Clicked="OnBackButtonClicked" />
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Source="Arrow.png"
+                    Margin="10,15,15,0"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    Clicked="OnBackButtonClicked" />
             </Grid>
 
             <Label Text=""
@@ -66,7 +66,6 @@
                    TextColor="Black"
                    FontSize="16"
                    FontAttributes="Italic" />
-            
 
 
             <Label Text="    Goal Weight"
@@ -156,7 +155,7 @@
 
                 </Grid>
             </StackLayout>
-            
+
             <Button Text="Submit"
                     Clicked="UpdateGoals_Clicked"
                     VerticalOptions="Start"

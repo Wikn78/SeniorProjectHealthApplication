@@ -1,8 +1,7 @@
-
 using System;
-using OpenFoodFactsCSharp.Models;
-using OpenFoodFactsCSharp.Clients;
 using System.Threading.Tasks;
+using OpenFoodFactsCSharp.Clients;
+using OpenFoodFactsCSharp.Models;
 using OpenFoodFactsCSharp.Services.Interfaces;
 
 namespace OpenFoodFactsCSharp.Services

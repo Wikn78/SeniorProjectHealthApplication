@@ -7,7 +7,6 @@ namespace OpenFoodFactsCSharp.Models
 {
     public class Adjustments
     {
-        [JsonProperty("packaging")]
-        public Packaging Packaging { get; set; }
+        [JsonProperty("packaging")] public Packaging Packaging { get; set; }
     }
 }

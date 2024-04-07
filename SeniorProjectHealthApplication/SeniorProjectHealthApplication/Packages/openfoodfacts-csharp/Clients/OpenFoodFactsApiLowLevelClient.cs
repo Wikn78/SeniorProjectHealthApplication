@@ -1,6 +1,4 @@
-
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -14,7 +12,9 @@ namespace OpenFoodFactsCSharp.Clients
 
         private const string FoodSearchApiUrl =
             "https://world.openfoodfacts.org/cgi/search.pl?search_terms=";
+
         private readonly HttpClient _httpClient = new HttpClient();
+
         //To do
         // Error check to make sure it doesnt crash the program if it doesnt find a food bt the name
         public async Task<ProductResponse> FetchProductByCodeAsync(string code)
@@ -22,13 +22,11 @@ namespace OpenFoodFactsCSharp.Clients
             try
             {
                 var requestUri = $"{ApiUrl}/products/{code}.json";
-                Uri uri = new Uri(requestUri);
+                var uri = new Uri(requestUri);
                 var response = await _httpClient.GetAsync(uri);
-    
+
                 if (!response.IsSuccessStatusCode)
-                {
                     throw new HttpRequestException($"Failed to fetch product by code: {code}");
-                }
 
                 var content = await response.Content.ReadAsStringAsync();
                 var product = JsonConvert.DeserializeObject<ProductResponse>(content);
@@ -54,13 +52,10 @@ namespace OpenFoodFactsCSharp.Clients
                 var Url =
                     "https://world.openfoodfacts.org/cgi/search.pl?search_terms=chicken_breast&search_simple=1&action=process&json=1";
                 var requestUri = $"{FoodSearchApiUrl}{foodNameUpdated}&search_simple=1&action=process&json=1";
-                Uri uri = new Uri(requestUri);
+                var uri = new Uri(requestUri);
                 var response = await _httpClient.GetAsync(uri);
-    
-                if (!response.IsSuccessStatusCode)
-                {
-                    return null;
-                }
+
+                if (!response.IsSuccessStatusCode) return null;
 
                 var content = await response.Content.ReadAsStringAsync();
                 var products = JsonConvert.DeserializeObject<MultipleProjectResponse>(content);
@@ -76,6 +71,5 @@ namespace OpenFoodFactsCSharp.Clients
                 throw;
             }
         }
-        
     }
 }

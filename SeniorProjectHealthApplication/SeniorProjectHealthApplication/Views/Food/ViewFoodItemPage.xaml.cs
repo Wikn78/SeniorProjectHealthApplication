@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,7 +17,7 @@ namespace SeniorProjectHealthApplication.Views.Food
             FoodName = itemName;
             Quantiy = quanity;
             CatagoryId = catagoryId;
-            
+
             Lbl_CatagoryId.Text = itemName;
 
             _addItem = addItem;
@@ -30,15 +31,15 @@ namespace SeniorProjectHealthApplication.Views.Food
 
         private void Track_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new FoodCatagoryPage(Xamarin.Essentials.Preferences.Get("categoryId", "breakfast")));
+            Navigation.PushAsync(new FoodCatagoryPage(Preferences.Get("categoryId", "breakfast")));
         }
 
         private void GoBack_Clicked(object sender, EventArgs e)
         {
             if (_addItem)
-                Navigation.PushAsync(new AddFoodPage(Xamarin.Essentials.Preferences.Get("categoryId", "breakfast")));
+                Navigation.PushAsync(new AddFoodPage(Preferences.Get("categoryId", "breakfast")));
             else
-                Navigation.PushAsync(new FoodCatagoryPage(Xamarin.Essentials.Preferences.Get("categoryId", "breakfast")));
+                Navigation.PushAsync(new FoodCatagoryPage(Preferences.Get("categoryId", "breakfast")));
         }
     }
 }

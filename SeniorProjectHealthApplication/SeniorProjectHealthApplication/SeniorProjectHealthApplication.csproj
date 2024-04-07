@@ -11,7 +11,7 @@
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2"/>
         <PackageReference Include="Microcharts" Version="0.9.5.9"/>
         <PackageReference Include="Microcharts.Forms" Version="1.0.0-preview1"/>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.7"/>
         <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta"/>
         <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6"/>
@@ -100,6 +100,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Packages\" />
+        <Folder Include="Packages\"/>
     </ItemGroup>
 </Project>

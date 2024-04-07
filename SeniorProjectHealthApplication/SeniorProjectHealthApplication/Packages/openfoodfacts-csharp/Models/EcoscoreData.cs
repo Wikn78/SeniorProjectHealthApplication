@@ -7,7 +7,6 @@ namespace OpenFoodFactsCSharp.Models
 {
     public class EcoscoreData
     {
-        [JsonProperty("adjustments")]
-        public Adjustments Adjustments { get; set; }
+        [JsonProperty("adjustments")] public Adjustments Adjustments { get; set; }
     }
 }

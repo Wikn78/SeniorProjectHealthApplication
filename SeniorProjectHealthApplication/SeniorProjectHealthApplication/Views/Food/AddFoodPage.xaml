@@ -155,7 +155,7 @@
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="views:FoodItem">
-                                    <views:AddedFoodItem/>
+                                    <views:AddedFoodItem />
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>

@@ -12,7 +12,8 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
             BindableProperty.Create(nameof(Food_Name), typeof(string), typeof(AddedFoodItem));
 
         public static readonly BindableProperty Total_CaloriesProperty =
-            BindableProperty.Create(nameof(Total_Calories), typeof(int), typeof(AddedFoodItem)); // Assuming Calories is int
+            BindableProperty.Create(nameof(Total_Calories), typeof(int),
+                typeof(AddedFoodItem)); // Assuming Calories is int
 
         public static readonly BindableProperty QuantityProperty =
             BindableProperty.Create(nameof(Quantity), typeof(float), typeof(AddedFoodItem)); // Assuming Quantity is int

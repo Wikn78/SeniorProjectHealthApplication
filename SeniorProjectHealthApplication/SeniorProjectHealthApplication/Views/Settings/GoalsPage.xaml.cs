@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,28 +19,19 @@ namespace SeniorProjectHealthApplication.Views
         {
             InitializeComponent();
 
-            var userId = Xamarin.Essentials.Preferences.Get("userId", 0);
+            var userId = Preferences.Get("userId", 0);
 
             _userId = userId;
 
             // Fill the dropd downs;
-            List<int> weightValuesPounds = new List<int>();
-            for (int i = 50; i <= 400; i++)
-            {
-                weightValuesPounds.Add(i);
-            }
+            var weightValuesPounds = new List<int>();
+            for (var i = 50; i <= 400; i++) weightValuesPounds.Add(i);
 
-            List<int> heightValuesFeet = new List<int>();
-            for (int i = 2; i <= 9; i++)
-            {
-                heightValuesFeet.Add(i);
-            }
+            var heightValuesFeet = new List<int>();
+            for (var i = 2; i <= 9; i++) heightValuesFeet.Add(i);
 
-            List<int> heightValuesInch = new List<int>();
-            for (int i = 0; i <= 11; i++)
-            {
-                heightValuesInch.Add(i);
-            }
+            var heightValuesInch = new List<int>();
+            for (var i = 0; i <= 11; i++) heightValuesInch.Add(i);
 
             GoalWeight.ItemsSource = weightValuesPounds;
             CurrentWeight.ItemsSource = weightValuesPounds;
@@ -54,8 +46,8 @@ namespace SeniorProjectHealthApplication.Views
         private async void UpdateValues()
         {
             // fill with data
-            DatabaseManager<UserAppInfo> userInfoDB = await LoadUserAppInfoDatabase();
-            UserAppInfo userInfo = userInfoDB.GetUserAppInfo(_userId);
+            var userInfoDB = await LoadUserAppInfoDatabase();
+            var userInfo = userInfoDB.GetUserAppInfo(_userId);
 
             GoalWeight.SelectedItem = (int)userInfo.GoalWeight;
             CurrentWeight.SelectedItem = (int)userInfo.Weight;
@@ -66,11 +58,11 @@ namespace SeniorProjectHealthApplication.Views
 
         private async void UpdateGoals_Clicked(object sender, EventArgs e)
         {
-            DatabaseManager<UserAppInfo> userInfoDB = await LoadUserAppInfoDatabase();
+            var userInfoDB = await LoadUserAppInfoDatabase();
 
 
-            int height = (int.Parse(HeightFeet.SelectedItem.ToString()) * 12 +
-                          int.Parse(HeightInch.SelectedItem.ToString()));
+            var height = int.Parse(HeightFeet.SelectedItem.ToString()) * 12 +
+                         int.Parse(HeightInch.SelectedItem.ToString());
 
             userInfoDB.AddItem(new UserAppInfo
             {
@@ -88,9 +80,9 @@ namespace SeniorProjectHealthApplication.Views
 
         private Task<DatabaseManager<UserAppInfo>> LoadUserAppInfoDatabase()
         {
-            string fileName = "Database.db3";
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string dbPath = Path.Combine(folderPath, fileName);
+            var fileName = "Database.db3";
+            var folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var dbPath = Path.Combine(folderPath, fileName);
 
             return Task.FromResult(new DatabaseManager<UserAppInfo>(dbPath));
         }

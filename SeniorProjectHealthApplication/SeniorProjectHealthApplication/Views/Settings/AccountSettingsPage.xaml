@@ -32,14 +32,15 @@
                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}" />
                 </RelativeLayout>
-                <ImageButton HorizontalOptions="End" VerticalOptions="Start" Source="Turn_off_Button.png" Margin="0,15,10,0"
+                <ImageButton HorizontalOptions="End" VerticalOptions="Start" Source="Turn_off_Button.png"
+                             Margin="0,15,10,0"
                              HeightRequest="30"
-                             WidthRequest="30" 
-                             Clicked="OnButtonClicked"/>
+                             WidthRequest="30"
+                             Clicked="OnButtonClicked" />
                 <ImageButton HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
                              HeightRequest="30"
-                             WidthRequest="30" 
-                             Clicked="OnBackButtonClicked"/>
+                             WidthRequest="30"
+                             Clicked="OnBackButtonClicked" />
 
             </Grid>
 
@@ -122,21 +123,21 @@
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="FirstNameInput" Placeholder="First Name" PlaceholderColor="White"
                            HorizontalOptions="FillAndExpand" />
-                    
+
                 </StackLayout>
 
                 <!-- Field 2 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="LastNameInput" Placeholder="Last Name" PlaceholderColor="White"
                            HorizontalOptions="FillAndExpand" />
-                    
+
                 </StackLayout>
 
                 <!-- Field 3 -->
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="EmailInput" Placeholder="Email" PlaceholderColor="White"
                            HorizontalOptions="FillAndExpand" />
-                   
+
                 </StackLayout>
 
                 <!-- Field 4 -->
@@ -162,7 +163,7 @@
                             HorizontalOptions="FillAndExpand"
                             Clicked="UpdateSettings_Clicked" />
                 </StackLayout>
-                
+
             </StackLayout>
 
         </StackLayout>

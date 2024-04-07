@@ -1,6 +1,5 @@
-
-using OpenFoodFactsCSharp.Models;
 using System.Threading.Tasks;
+using OpenFoodFactsCSharp.Models;
 
 namespace OpenFoodFactsCSharp.Services.Interfaces
 {

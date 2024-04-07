@@ -8,21 +8,16 @@ namespace SeniorProjectHealthApplication.Models
     {
         public static async Task<ProductResponse> GetProductByBarCodeAsync(string code)
         {
-            
-            OpenFoodFactsApiLowLevelClient wrapper = new OpenFoodFactsApiLowLevelClient();
+            var wrapper = new OpenFoodFactsApiLowLevelClient();
 
             return await wrapper.FetchProductByCodeAsync(code); // 034856890089 welech fruit snacks
-            
         }
-        
+
         public static async Task<MultipleProjectResponse> GetProductByNameAsync(string foodName)
         {
-            
-            OpenFoodFactsApiLowLevelClient wrapper = new OpenFoodFactsApiLowLevelClient();
+            var wrapper = new OpenFoodFactsApiLowLevelClient();
 
-            return await wrapper.FetchProductsByNameAsync(foodName); 
-            
+            return await wrapper.FetchProductsByNameAsync(foodName);
         }
-        
     }
 }

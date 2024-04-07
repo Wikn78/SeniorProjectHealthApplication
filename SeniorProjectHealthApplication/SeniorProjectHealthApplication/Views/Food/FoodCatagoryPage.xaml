@@ -38,7 +38,6 @@
             </Grid>
 
 
-
             <!-- Scrollable area -->
             <ScrollView VerticalOptions="FillAndExpand">
 
@@ -50,12 +49,12 @@
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="foodItem:FoodItem">
-                                    <views:AddedFoodItem/>
+                                    <views:AddedFoodItem />
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
                     </StackLayout>
-                    
+
 
                     <!-- Food Items -->
 

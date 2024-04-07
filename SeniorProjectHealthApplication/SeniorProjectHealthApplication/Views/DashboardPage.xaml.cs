@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using SeniorProjectHealthApplication.Models;
 using SeniorProjectHealthApplication.Models.Database_Structure;
-using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,14 +13,14 @@ namespace SeniorProjectHealthApplication.Views
     {
         private readonly int _userId;
 
-        DateTime _selectedDate;
+        private DateTime _selectedDate;
 
 
         public DashboardPage()
         {
             InitializeComponent();
 
-            var userId = Xamarin.Essentials.Preferences.Get("userId", 0);
+            var userId = Preferences.Get("userId", 0);
 
             _userId = userId;
             // GET THE SELECTED DATE
@@ -33,11 +33,11 @@ namespace SeniorProjectHealthApplication.Views
         {
             // check if a current date has a food log, if not make one.
 
-            FoodLog fl = await CreateFoodLogIfNotExists();
+            var fl = await CreateFoodLogIfNotExists();
 
             CurrentDateLabel.Text = _selectedDate.ToShortDateString();
             // sets the current date so all pages can get it
-            Xamarin.Essentials.Preferences.Set("selectedDate", _selectedDate.ToShortDateString());
+            Preferences.Set("selectedDate", _selectedDate.ToShortDateString());
 
             // Gets BMR
             CaloriesLeft.Text = (await UserDataManager.OnGetUserBmr(false)).ToString("f0");
@@ -45,9 +45,9 @@ namespace SeniorProjectHealthApplication.Views
 
         private async Task<FoodLog> CreateFoodLogIfNotExists()
         {
-            DatabaseManager<FoodLog> foodLogDb = await UserDataManager.LoadDatabase<FoodLog>();
+            var foodLogDb = await UserDataManager.LoadDatabase<FoodLog>();
 
-            FoodLog fl = foodLogDb.GetFoodLogInfoByDate(_selectedDate.ToShortDateString(), _userId);
+            var fl = foodLogDb.GetFoodLogInfoByDate(_selectedDate.ToShortDateString(), _userId);
 
             if (fl == null)
             {
@@ -58,31 +58,31 @@ namespace SeniorProjectHealthApplication.Views
                     Date = _selectedDate.ToShortDateString()
                 });
                 // generate food categories
-                DatabaseManager<FoodLogCategory> foodLogCategoryDb =
+                var foodLogCategoryDb =
                     await UserDataManager.LoadDatabase<FoodLogCategory>();
 
 
                 fl = foodLogDb.GetFoodLogInfoByDate(_selectedDate.ToShortDateString(), _userId);
 
-                foodLogCategoryDb.AddItem(new FoodLogCategory()
+                foodLogCategoryDb.AddItem(new FoodLogCategory
                 {
                     FoodCatagory = 1,
                     FL_ID = fl.FL_ID
                 });
 
-                foodLogCategoryDb.AddItem(new FoodLogCategory()
+                foodLogCategoryDb.AddItem(new FoodLogCategory
                 {
                     FoodCatagory = 2,
                     FL_ID = fl.FL_ID
                 });
 
-                foodLogCategoryDb.AddItem(new FoodLogCategory()
+                foodLogCategoryDb.AddItem(new FoodLogCategory
                 {
                     FoodCatagory = 3,
                     FL_ID = fl.FL_ID
                 });
 
-                foodLogCategoryDb.AddItem(new FoodLogCategory()
+                foodLogCategoryDb.AddItem(new FoodLogCategory
                 {
                     FoodCatagory = 4,
                     FL_ID = fl.FL_ID

@@ -116,7 +116,7 @@
                             Clicked="DecreaseDate_Clicked"
                             VerticalOptions="End"
                             HorizontalOptions="CenterAndExpand" />
-                        
+
                         <Label
                             x:Name="CurrentDateLabel"
                             Grid.Column="1"
