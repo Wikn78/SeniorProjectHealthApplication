@@ -73,12 +73,26 @@ namespace SeniorProjectHealthApplication.ViewModels
                 });
 
             if (respones.Products.Length == 0)
+            {
+                var response = await FoodDatabaseManager.GetProductByBarCodeAsync("03400908");
+                // SearchedFoods.Add(new FoodItem
+                // {
+                //     FoodCatagory = 1,
+                //     FL_ID = foodCategory.Id,
+                //     Food_Name = response.Product.ProductName,
+                //     Total_Calories = (response.Product.Nutriments.EnergyKcalServing = response.Product.Nutriments.EnergyKcalServing) ?? 0,
+                //     Quantity = 1,
+                //     Unit_Calorie = (response.Product.Nutriments.EnergyKcalServing = response.Product.Nutriments.EnergyKcalServing) ?? 0
+                // });
+
+
                 SearchedFoods.Add(new FoodItem
                 {
                     Food_Name = "No food found...",
                     FoodCatagory = 1,
                     FL_ID = foodCategory.Id
                 });
+            }
         }
 
         private static int GetCategoryNumber(string categoryID)
