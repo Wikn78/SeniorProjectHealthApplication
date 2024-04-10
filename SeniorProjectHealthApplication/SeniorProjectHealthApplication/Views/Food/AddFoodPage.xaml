@@ -149,16 +149,22 @@
                         <!-- You should put the components of the second StackLayout here -->
                         <Label Text="Recent" Margin="10, 10" TextColor="White" />
 
-                        <CollectionView Margin="5" ItemsSource="{Binding SearchedFoods}">
-                            <CollectionView.ItemsLayout>
-                                <LinearItemsLayout Orientation="Vertical" ItemSpacing="3" />
-                            </CollectionView.ItemsLayout>
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate x:DataType="views:FoodItem">
-                                    <views:AddedFoodItem />
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
+                       <CollectionView Margin="5" 
+                                                        ItemsSource="{Binding SearchedFoods}">
+                                             <CollectionView.ItemsLayout>
+                                                 <LinearItemsLayout Orientation="Vertical" 
+                                                                    ItemSpacing="3" />
+                                             </CollectionView.ItemsLayout>
+                                             <CollectionView.ItemTemplate>
+                                                 <DataTemplate>
+                                                     <views:FoodItem Food_Name="{Binding Food_Name}"
+                                                                     Quantity="{Binding Quantity}"
+                                                                     Total_Calories="{Binding Total_Calories}"
+                                                                     FoodCategory="{Binding FoodCategory}"
+                                                                     ProductInformation="{Binding ProductInformation}"/>
+                                                 </DataTemplate>
+                                             </CollectionView.ItemTemplate>
+                                         </CollectionView>
                         <!-- <ListView ItemsSource="{Binding SearchedFoods}"> -->
                         <!--     <ListView.ItemTemplate> -->
                         <!--         <DataTemplate> -->

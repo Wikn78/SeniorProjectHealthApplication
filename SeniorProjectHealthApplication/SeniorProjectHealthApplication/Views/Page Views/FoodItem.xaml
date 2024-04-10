@@ -20,22 +20,27 @@
             <StackLayout Grid.Column="0">
                 <Label
                     Margin="4, 0, 0, 0"
+                    x:Name="FoodName_Lbl"
                     Text="{Binding Food_Name}"
                     TextColor="White"
                     VerticalOptions="Center"
                     HorizontalOptions="StartAndExpand" />
                 <Label
                     Margin="4, 0, 0, 0"
+                    x:Name="TotalCalories_Lbl"
                     Text="{Binding Total_Calories}"
                     TextColor="White"
                     VerticalOptions="Center"
                     HorizontalOptions="StartAndExpand" />
                 <Label
                     Margin="4, 0, 0, 0"
+                    x:Name="Quantity_Lbl"
                     Text="{Binding Quantity}"
                     TextColor="White"
                     VerticalOptions="Center"
                     HorizontalOptions="StartAndExpand" />
+                
+                
             </StackLayout>
 
             <Button Grid.Column="1"

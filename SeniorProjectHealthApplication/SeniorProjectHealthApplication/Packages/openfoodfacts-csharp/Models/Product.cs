@@ -4,6 +4,8 @@ namespace OpenFoodFactsCSharp.Models
 {
     public class Product
     {
+        [JsonProperty("_id")] public string Id { get; set; }
+
         [JsonProperty("languages_codes")] public LanguagesCodes LanguagesCodes { get; set; }
 
         [JsonProperty("nutrient_levels")] public NutrientLevels NutrientLevels { get; set; }

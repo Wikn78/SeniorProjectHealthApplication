@@ -75,7 +75,7 @@ namespace SeniorProjectHealthApplication.ViewModels
                 Food_Name = productResponse.Product.ProductName,
                 Unit_Calorie = (float)productResponse.Product.Nutriments.EnergyKcalServing,
                 Quantity = 2,
-                FoodCatagory = 1,
+                FoodCategory = 1,
                 Total_Calories = (float)productResponse.Product.Nutriments.EnergyKcalServing * 2
             });
 

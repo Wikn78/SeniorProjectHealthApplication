@@ -18,6 +18,7 @@ namespace SeniorProjectHealthApplication.Views
             InitializeComponent();
             BindingContext = new FoodCategoryViewModel(categoryID);
             CategoryID = categoryID;
+            Preferences.Set("currentCategory", categoryID);
             // Display CategoryID on the MealPage, for instance in a Label
             Lbl_CategoryId.Text =
                 CultureInfo.CurrentCulture.TextInfo.ToTitleCase(categoryID.ToLower());

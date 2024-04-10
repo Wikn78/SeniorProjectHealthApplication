@@ -19,8 +19,12 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
             BindableProperty.Create(nameof(Quantity), typeof(float), typeof(AddedFoodItem)); // Assuming Quantity is int
 
 
-        public static readonly BindableProperty CatagoryIDProperty =
-            BindableProperty.Create(nameof(CatagoryID), typeof(string),
+        public static readonly BindableProperty FoodCategoryProperty =
+            BindableProperty.Create(nameof(FoodCategory), typeof(string),
+                typeof(AddedFoodItem)); // Assuming Quantity is int
+
+        public static readonly BindableProperty ProductInformationProperty =
+            BindableProperty.Create(nameof(ProductInformation), typeof(string),
                 typeof(AddedFoodItem)); // Assuming Quantity is int
 
 
@@ -48,16 +52,24 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
             set => SetValue(QuantityProperty, value);
         }
 
-        public string CatagoryID
+        public string FoodCategory
         {
-            get => (string)GetValue(CatagoryIDProperty);
-            set => SetValue(CatagoryIDProperty, value);
+            get => (string)GetValue(FoodCategoryProperty);
+            set => SetValue(FoodCategoryProperty, value);
         }
 
+        public string ProductInformation
+        {
+            get => (string)GetValue(ProductInformationProperty);
+            set => SetValue(ProductInformationProperty, value);
+        }
 
         private void ViewFoodItem_Tapped(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new ViewFoodItemPage(Food_Name, Quantity, 10, CatagoryID, true));
+            Console.WriteLine(
+                $"FoodName: {FoodName_Lbl.Text}   Quantity: {Quantity_Lbl.Text}   Total_Calories: {TotalCalories_Lbl.Text}  Category ID: {FoodCategory}");
+            Navigation.PushAsync(new ViewFoodItemPage(Food_Name, Quantity, Total_Calories, FoodCategory,
+                ProductInformation, true));
         }
     }
 }

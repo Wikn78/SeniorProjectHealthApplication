@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using Newtonsoft.Json;
 using SeniorProjectHealthApplication.Models;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
@@ -34,37 +35,25 @@ namespace SeniorProjectHealthApplication.ViewModels
             SearchedFoods = new ObservableCollection<FoodItem>(_fooditems);
         }
 
-        public ICommand SearchCommand { get; private set; }
-
-        public string SearchText
-        {
-            get => _searchText;
-            set
-            {
-                if (_searchText != value)
-                {
-                    _searchText = value;
-                    OnPropertyChanged(); // Raise a property changed event
-                }
-            }
-        }
-
         public ObservableCollection<FoodItem> SearchedFoods { get; set; }
 
 
         private async void ExecuteSearchCommand()
         {
             SearchedFoods.Clear();
-            var respones = await FoodDatabaseManager.GetProductByNameAsync(SearchText);
+
+            var responses = await FoodDatabaseManager.GetProductByNameAsync(SearchText);
 
             var foodLog = _foodLogDb.GetFoodLogInfoByDate(Preferences.Get("selectedDate", ""),
                 Preferences.Get("userId", 0));
             var foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(_categoryId));
 
-            foreach (var product in respones.Products)
+            foreach (var product in responses.Products)
                 SearchedFoods.Add(new FoodItem
                 {
-                    FoodCatagory = 1,
+                    ProductInformation = JsonConvert.SerializeObject(product), // makes into json
+                    FoodCategory = 1,
+                    Barcode_ID = product.Id,
                     FL_ID = foodCategory.Id,
                     Food_Name = product.ProductName,
                     Total_Calories = (product.Nutriments.EnergyKcalServing = product.Nutriments.EnergyKcalServing) ?? 0,
@@ -72,9 +61,9 @@ namespace SeniorProjectHealthApplication.ViewModels
                     Unit_Calorie = (product.Nutriments.EnergyKcalServing = product.Nutriments.EnergyKcalServing) ?? 0
                 });
 
-            if (respones.Products.Length == 0)
+            if (responses.Products.Length == 0)
             {
-                var response = await FoodDatabaseManager.GetProductByBarCodeAsync("03400908");
+                // var response = await FoodDatabaseManager.GetProductByBarCodeAsync("03400908");
                 // SearchedFoods.Add(new FoodItem
                 // {
                 //     FoodCatagory = 1,
@@ -89,7 +78,7 @@ namespace SeniorProjectHealthApplication.ViewModels
                 SearchedFoods.Add(new FoodItem
                 {
                     Food_Name = "No food found...",
-                    FoodCatagory = 1,
+                    FoodCategory = 1,
                     FL_ID = foodCategory.Id
                 });
             }
@@ -120,6 +109,25 @@ namespace SeniorProjectHealthApplication.ViewModels
 
             return new DatabaseManager<T>(dbPath);
         }
+
+        #region Search Function
+
+        public ICommand SearchCommand { get; private set; }
+
+        public string SearchText
+        {
+            get => _searchText;
+            set
+            {
+                if (_searchText != value)
+                {
+                    _searchText = value;
+                    OnPropertyChanged(); // Raise a property changed event
+                }
+            }
+        }
+
+        #endregion
 
         #region PropertyChanged
 

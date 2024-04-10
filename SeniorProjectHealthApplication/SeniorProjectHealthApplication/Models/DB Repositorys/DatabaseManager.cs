@@ -56,7 +56,7 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
         public List<FoodItem> GetFoodItems(int id, int fl_category)
         {
             return _db
-                .Table<FoodItem>().Where(item => item.FL_ID == id).Where(item => item.FoodCatagory == fl_category)
+                .Table<FoodItem>().Where(item => item.FL_ID == id).Where(item => item.FoodCategory == fl_category)
                 .ToList();
         }
 
