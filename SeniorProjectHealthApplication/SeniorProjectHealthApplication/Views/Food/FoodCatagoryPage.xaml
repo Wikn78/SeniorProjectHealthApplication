@@ -51,6 +51,7 @@
                                 <DataTemplate x:DataType="foodItem:FoodItem">
                                     <views:AddedFoodItem Food_Name="{Binding Food_Name}"
                                                          Quantity="{Binding Quantity}"
+                                                         FI_ID="{Binding FI_ID}"
                                                          Total_Calories="{Binding Total_Calories}"
                                                          ProductInformation="{Binding ProductInformation}"/>
                                 </DataTemplate>
