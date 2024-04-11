@@ -44,7 +44,8 @@
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="CenterAndExpand"
-                    Clicked="Superman_Clicked" />
+                    Command="{Binding OpenWorkoutCommand}" 
+                    CommandParameter="30"/>
             <Label Text="" />
             <Button Text="ABDOMINAL CRUNCH"
                     TextColor="White"
