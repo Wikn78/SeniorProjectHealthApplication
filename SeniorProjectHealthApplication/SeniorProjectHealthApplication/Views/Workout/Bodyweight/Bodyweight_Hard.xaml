@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SeniorProjectHealthApplication.Views.Workout.WorkoutLevels"
-               BackgroundColor="{StaticResource UMCMaroon}">
+             x:Class="SeniorProjectHealthApplication.Views.Workout.Bodyweight.Bodyweight_Hard">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
             <Grid HorizontalOptions="Center" VerticalOptions="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -22,7 +21,7 @@
                        WidthRequest="300"
                        Grid.Column="0" />
                 <RelativeLayout Grid.Row="0" Grid.Column="0">
-                    <Label Text="BODYWEIGHT WORKOUT"
+                    <Label Text="BODYWEIGHT HARD WORKOUT"
                            TextColor="{StaticResource UMCGold}"
                            FontSize="25"
                            FontAttributes="Bold"
@@ -38,26 +37,36 @@
 
             </Grid>
             <Label Text="" />
-            <Button Text="EASY"
-                    TextColor="White"
-                    BackgroundColor="{StaticResource UMCGold}"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" 
-                    Clicked="Easy_Clicked"/>
-            <Label Text="" FontSize="30"/>
-            <Button Text="INTERMEDIATE"
+            <Button Text="BURPEE"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="CenterAndExpand"
-                     Clicked="Intermediate_Clicked" />
-            <Label Text="" FontSize="30" />
-            <Button Text="HARD"
+               />
+            <Label Text="" />
+            <Button Text="PUSH-UP"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand"
-                    Clicked="Hard_Clicked"/>
+                    VerticalOptions="CenterAndExpand" />
+            <Label Text="" />
+            <Button Text="SKATER JUMPS"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+            <Label Text="" />
+            <Button Text="STANDING OBLIQUE CRUNCHES"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+            <Label Text="" />
+            <Button Text="PLANK JACKS"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand" />
             <Label Text="" />
         </StackLayout>
     </ContentPage.Content>

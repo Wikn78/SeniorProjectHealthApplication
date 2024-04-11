@@ -17,9 +17,19 @@ namespace SeniorProjectHealthApplication.Views.Workout
             InitializeComponent();
         }
 
+        private async void Easy_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Bodyweight.Bodyweight_Easy());
+        }
+
         private async void Intermediate_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new WorkoutScreenPage());
+        }
+
+        private async void Hard_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Bodyweight.Bodyweight_Hard());
         }
     }
 }

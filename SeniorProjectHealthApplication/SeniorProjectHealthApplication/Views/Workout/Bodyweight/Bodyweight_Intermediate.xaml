@@ -23,7 +23,7 @@
                        WidthRequest="300"
                        Grid.Column="0" />
                 <RelativeLayout Grid.Row="0" Grid.Column="0">
-                    <Label Text="BODYWEIGHT WORKOUT"
+                    <Label Text="BODYWEIGHT INTERMEDIATE WORKOUT"
                            TextColor="{StaticResource UMCGold}"
                            FontSize="25"
                            FontAttributes="Bold"

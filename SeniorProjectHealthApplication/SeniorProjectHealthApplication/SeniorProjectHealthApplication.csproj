@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
@@ -102,8 +102,21 @@
     </ItemGroup>
 
     <ItemGroup>
+      <EmbeddedResource Update="Views\Workout\Bodyweight\Bodyweight_Easy.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Bodyweight\Bodyweight_Hard.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
       <EmbeddedResource Update="Views\Workout\Bodyweight\Bodyweight_Levels.xaml">
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Views\Workout\Cardiovascular\" />
+      <Folder Include="Views\Workout\HIIT\" />
+      <Folder Include="Views\Workout\Flexibility and Balance\" />
+      <Folder Include="Views\Workout\Strength Training\" />
     </ItemGroup>
 </Project>
