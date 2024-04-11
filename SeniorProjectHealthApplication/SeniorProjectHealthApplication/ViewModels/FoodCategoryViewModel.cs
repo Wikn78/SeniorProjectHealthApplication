@@ -44,7 +44,7 @@ namespace SeniorProjectHealthApplication.ViewModels
             foodLog = _foodLogDb.GetFoodLogInfoByDate(Preferences.Get("selectedDate", ""),
                 Preferences.Get("userId", 0));
             foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(_categoryId));
-
+            Preferences.Set("currentFoodCategory_Id", foodCategory.Id);
             //AddFoodProductDebug();
 
             // Add a food item for testing

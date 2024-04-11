@@ -19,7 +19,7 @@ namespace SeniorProjectHealthApplication.Views.Food
 
         private string _totalCalories, _totalProtein, _totalCarbs, _totalFat;
 
-        public ViewFoodItemPage(string itemName, float quanity, float unitCal, string catagoryId, string productInfo,
+        public ViewFoodItemPage(string categoryId, string productInfo,
             bool addItem)
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace SeniorProjectHealthApplication.Views.Food
 
             FoodName = _product.ProductName;
             Quantity = 1;
-            CatagoryId = catagoryId;
+            CatagoryId = categoryId;
 
             Lbl_CatagoryId.Text = FoodName;
 
@@ -82,22 +82,33 @@ namespace SeniorProjectHealthApplication.Views.Food
 
             if (_addItem)
             {
+                //var currentCategoryString = Preferences.Get("foodCategory_Id", 0);
+                float unitCal = float.Parse(_totalCalories) / Quantity;
+                float totalCal = float.Parse(_totalCalories);
+                int currentCategory = Preferences.Get("foodCategory_Id", 0);
+
                 // add new item
                 foodDb.AddItem(new FoodItem
                 {
                     Food_Name = _product.ProductName,
                     Barcode_ID = "",
-                    FL_ID = 1,
-                    Unit_Calorie = float.Parse(_totalCalories) / Quantity,
-                    Total_Calories = float.Parse(_totalCalories),
+                    FL_ID = Preferences.Get("currentFoodCategory_Id", 0),
+                    Unit_Calorie = unitCal,
+                    Total_Calories = totalCal,
                     Quantity = Quantity,
-                    FoodCategory = int.Parse(Preferences.Get("currentCategory", "")),
+                    FoodCategory = currentCategory,
                     ProductInformation = JsonConvert.SerializeObject(_product)
                 });
             }
             else
             {
                 // update the food in the database of this one
+                foodDb.UpdateFoodItem(new FoodItem()
+                    {
+                        Quantity = Quantity,
+                        Total_Calories = float.Parse(_totalCalories)
+                    },
+                    FoodName);
             }
 
 

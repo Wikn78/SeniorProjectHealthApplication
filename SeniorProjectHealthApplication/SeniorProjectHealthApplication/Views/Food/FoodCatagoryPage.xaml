@@ -49,7 +49,10 @@
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="foodItem:FoodItem">
-                                    <views:AddedFoodItem />
+                                    <views:AddedFoodItem Food_Name="{Binding Food_Name}"
+                                                         Quantity="{Binding Quantity}"
+                                                         Total_Calories="{Binding Total_Calories}"
+                                                         ProductInformation="{Binding ProductInformation}"/>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>

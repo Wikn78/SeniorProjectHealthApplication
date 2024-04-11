@@ -9,6 +9,7 @@ namespace SeniorProjectHealthApplication.Models.Database_Structure
         public int FL_ID { get; set; }
         public string Barcode_ID { get; set; }
         public string ProductInformation { get; set; }
+        public string FoodItemJson { get; set; }
         public int FoodCategory { get; set; }
         public string Food_Name { get; set; }
 

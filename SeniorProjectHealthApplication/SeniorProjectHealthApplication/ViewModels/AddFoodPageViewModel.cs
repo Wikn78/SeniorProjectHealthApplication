@@ -22,6 +22,8 @@ namespace SeniorProjectHealthApplication.ViewModels
         private readonly List<FoodItem> _fooditems = new List<FoodItem>();
         private readonly DatabaseManager<FoodLog> _foodLogDb;
 
+        private int _foodCategoryId;
+
         private string _searchText;
 
         public AddFoodPageViewModel(string categoryId)
@@ -33,6 +35,8 @@ namespace SeniorProjectHealthApplication.ViewModels
             SearchCommand = new Command(ExecuteSearchCommand);
 
             SearchedFoods = new ObservableCollection<FoodItem>(_fooditems);
+            _foodCategoryId = GetCategoryNumber(_categoryId);
+            Preferences.Set("foodCategory_Id", _foodCategoryId);
         }
 
         public ObservableCollection<FoodItem> SearchedFoods { get; set; }
@@ -42,19 +46,20 @@ namespace SeniorProjectHealthApplication.ViewModels
         {
             SearchedFoods.Clear();
 
+
             var responses = await FoodDatabaseManager.GetProductByNameAsync(SearchText);
 
             var foodLog = _foodLogDb.GetFoodLogInfoByDate(Preferences.Get("selectedDate", ""),
                 Preferences.Get("userId", 0));
-            var foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(_categoryId));
+            var foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, _foodCategoryId);
 
             foreach (var product in responses.Products)
                 SearchedFoods.Add(new FoodItem
                 {
                     ProductInformation = JsonConvert.SerializeObject(product), // makes into json
-                    FoodCategory = 1,
+                    FoodCategory = _foodCategoryId,
                     Barcode_ID = product.Id,
-                    FL_ID = foodCategory.Id,
+                    FL_ID = Preferences.Get("currentFoodCategory_Id", 0),
                     Food_Name = product.ProductName,
                     Total_Calories = (product.Nutriments.EnergyKcalServing = product.Nutriments.EnergyKcalServing) ?? 0,
                     Quantity = 1,

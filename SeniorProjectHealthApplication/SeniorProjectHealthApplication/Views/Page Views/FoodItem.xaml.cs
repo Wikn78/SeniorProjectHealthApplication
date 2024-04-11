@@ -68,8 +68,7 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
         {
             Console.WriteLine(
                 $"FoodName: {FoodName_Lbl.Text}   Quantity: {Quantity_Lbl.Text}   Total_Calories: {TotalCalories_Lbl.Text}  Category ID: {FoodCategory}");
-            Navigation.PushAsync(new ViewFoodItemPage(Food_Name, Quantity, Total_Calories, FoodCategory,
-                ProductInformation, true));
+            Navigation.PushAsync(new ViewFoodItemPage(FoodCategory, ProductInformation, true));
         }
     }
 }

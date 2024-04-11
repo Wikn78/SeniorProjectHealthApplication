@@ -1,5 +1,7 @@
 ﻿using System;
-using SeniorProjectHealthApplication.ViewModels;
+using Newtonsoft.Json;
+using OpenFoodFactsCSharp.Models;
+using SeniorProjectHealthApplication.Models;
 using SeniorProjectHealthApplication.Views.Food;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,7 +23,11 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
 
 
         public static readonly BindableProperty CatagoryIDProperty =
-            BindableProperty.Create(nameof(CatagoryID), typeof(string),
+            BindableProperty.Create(nameof(CategoryID), typeof(string),
+                typeof(AddedFoodItem)); // Assuming Quantity is int
+
+        public static readonly BindableProperty ProductInformationProperty =
+            BindableProperty.Create(nameof(ProductInformation), typeof(string),
                 typeof(AddedFoodItem)); // Assuming Quantity is int
 
         private Models.Database_Structure.FoodItem foodItem;
@@ -50,22 +56,31 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
             set => SetValue(QuantityProperty, value);
         }
 
-        public string CatagoryID
+        public string CategoryID
         {
             get => (string)GetValue(CatagoryIDProperty);
             set => SetValue(CatagoryIDProperty, value);
         }
 
+        public string ProductInformation
+        {
+            get => (string)GetValue(ProductInformationProperty);
+            set => SetValue(ProductInformationProperty, value);
+        }
+
         private void ViewFoodItem_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ViewFoodItemPage(Food_Name, Quantity, Total_Calories, CatagoryID, "", false));
+            Navigation.PushAsync(new ViewFoodItemPage(CategoryID, ProductInformation, false));
         }
 
 
-        private void RemoveButtonClicked(object sender, EventArgs e)
+        private async void RemoveButtonClicked(object sender, EventArgs e)
         {
-            var viewModel = BindingContext as FoodCategoryViewModel;
-            viewModel?.RemoveFoodItem(foodItem);
+            Product product = JsonConvert.DeserializeObject<Product>(ProductInformation);
+            // add primary key as a what ever so it works and i dont need to wreite a gay custom thing
+            var foodDb = await UserDataManager.LoadDatabase<Models.Database_Structure.FoodItem>();
+
+            Console.WriteLine("jajajaja");
         }
     }
 }

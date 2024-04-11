@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SQLite;
 
@@ -64,6 +65,18 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
         public void UpdateItem(T item)
         {
             _db.Update(item);
+        }
+
+        public void UpdateFoodItem(FoodItem item, string name)
+        {
+            FoodItem foodItem = _db.Table<FoodItem>().FirstOrDefault(x => x.Food_Name == name);
+            if (Math.Abs(item.Quantity - foodItem.Quantity) > .01f)
+            {
+                foodItem.Quantity = item.Quantity;
+                foodItem.Total_Calories = item.Total_Calories;
+            }
+
+            _db.Update(foodItem);
         }
     }
 }
