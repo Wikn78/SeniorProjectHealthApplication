@@ -3,39 +3,52 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using OpenFoodFactsCSharp.Clients;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using Xamarin.Essentials;
 
 namespace SeniorProjectHealthApplication.ViewModels
 {
     public sealed class FoodCategoryViewModel : INotifyPropertyChanged
     {
+        private readonly string _categoryId;
         private readonly DatabaseManager<FoodLogCategory> _foodCatagoryDb;
         private readonly DatabaseManager<FoodItem> _foodItemDb;
         private readonly DatabaseManager<FoodLog> _foodLogDb;
+        private readonly FoodLogCategory foodCategory;
+        private readonly FoodLog foodLog;
 
         public FoodCategoryViewModel(string categoryId)
         {
             // Load your databases
+
+
             _foodCatagoryDb = LoadDatabase<FoodLogCategory>();
             _foodLogDb = LoadDatabase<FoodLog>();
             _foodItemDb = LoadDatabase<FoodItem>();
             // set current categoryID
+            if (GetCategoryNumber(categoryId) == 0)
+            {
+                _categoryId = Preferences.Get("categoryId", "");
+            }
+            else
+            {
+                Preferences.Set("categoryId", categoryId);
+                _categoryId = categoryId;
+            }
+
+
             // Fetch your data
-            var foodLog = _foodLogDb.GetFoodLogInfoByDate(Xamarin.Essentials.Preferences.Get("selectedDate", ""),
-                Xamarin.Essentials.Preferences.Get("userId", 0));
-            var foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(categoryId));
+            foodLog = _foodLogDb.GetFoodLogInfoByDate(Preferences.Get("selectedDate", ""),
+                Preferences.Get("userId", 0));
+            foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(_categoryId));
+            Preferences.Set("currentFoodCategory_Id", foodCategory.Id);
+            //AddFoodProductDebug();
 
             // Add a food item for testing
-            _foodItemDb.AddItem(new FoodItem
-            {
-                FL_ID = foodCategory.Id,
-                Food_Name = "Eggs",
-                Unit_Calorie = 70,
-                Quantity = 3,
-                FoodCatagory = 1,
-                Total_Calories = 70 * 3
-            });
+
 
             // Load your food items
             var foodItems = _foodCatagoryDb.GetFoodItems(foodCategory.Id, foodCategory.FoodCatagory);
@@ -48,6 +61,28 @@ namespace SeniorProjectHealthApplication.ViewModels
 
         // Implement Property Changed Event
         public event PropertyChangedEventHandler PropertyChanged;
+
+
+        private async Task AddFoodProductDebug()
+        {
+            var wrapper = new OpenFoodFactsApiLowLevelClient();
+
+            var productResponse = await wrapper.FetchProductByCodeAsync("01289903"); // 034856890089 welech fruit snacks
+
+            _foodItemDb.AddItem(new FoodItem
+            {
+                FL_ID = foodCategory.Id,
+                Food_Name = productResponse.Product.ProductName,
+                Unit_Calorie = (float)productResponse.Product.Nutriments.EnergyKcalServing,
+                Quantity = 2,
+                FoodCategory = 1,
+                Total_Calories = (float)productResponse.Product.Nutriments.EnergyKcalServing * 2
+            });
+
+            var projectResponses = await wrapper.FetchProductsByNameAsync("chicken");
+
+            Console.Write(projectResponses.PageCount);
+        }
 
         private static int GetCategoryNumber(string categoryID)
         {
@@ -68,9 +103,9 @@ namespace SeniorProjectHealthApplication.ViewModels
 
         private DatabaseManager<T> LoadDatabase<T>() where T : new()
         {
-            string fileName = "Database.db3";
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string dbPath = Path.Combine(folderPath, fileName);
+            var fileName = "Database.db3";
+            var folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var dbPath = Path.Combine(folderPath, fileName);
 
             return new DatabaseManager<T>(dbPath);
         }
@@ -78,6 +113,14 @@ namespace SeniorProjectHealthApplication.ViewModels
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void RemoveFoodItem(FoodItem item)
+        {
+            FoodItems.Remove(item);
+            // since you are using DatabaseManager to interact with your database,
+            // I guess you also need to remove this item from the database
+            // _foodItemDb.DeleteItem(item);
         }
     }
 }

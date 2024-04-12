@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using Xamarin.Essentials;
 
 namespace SeniorProjectHealthApplication.Models
 {
@@ -10,18 +11,18 @@ namespace SeniorProjectHealthApplication.Models
     {
         public static async Task<float> OnGetUserBmr(bool isMetric)
         {
-            var userId = Xamarin.Essentials.Preferences.Get("userId", 0);
+            var userId = Preferences.Get("userId", 0);
 
-            DatabaseManager<UserAppInfo> userInfoDb = await LoadDatabase<UserAppInfo>();
-            DatabaseManager<Users> usersDb = await LoadDatabase<Users>();
-            UserAppInfo userInfo = userInfoDb.GetUserAppInfo(userId);
-            Users user = usersDb.GetItem(userId);
+            var userInfoDb = await LoadDatabase<UserAppInfo>();
+            var usersDb = await LoadDatabase<Users>();
+            var userInfo = userInfoDb.GetUserAppInfo(userId);
+            var user = usersDb.GetItem(userId);
 
-            float bmr = 0.0f;
+            var bmr = 0.0f;
 
-            float weight = userInfo.Weight;
-            float height = userInfo.Height;
-            int age = GetAge(user.Birthdate);
+            var weight = userInfo.Weight;
+            var height = userInfo.Height;
+            var age = GetAge(user.Birthdate);
 
             if (!isMetric)
             {
@@ -29,18 +30,15 @@ namespace SeniorProjectHealthApplication.Models
                 height *= 2.54f;
             }
 
-            if ("Female" == user.Gender)
-            {
-                return 447.593f + (9.247f * weight) + (3.098f * height) - (4.330f * age);
-            }
+            if ("Female" == user.Gender) return 447.593f + 9.247f * weight + 3.098f * height - 4.330f * age;
 
-            return 88.362f + (13.397f * weight) + (4.799f * height) - (5.677f * age);
+            return 88.362f + 13.397f * weight + 4.799f * height - 5.677f * age;
 
 
             int GetAge(string userBirthdate)
             {
-                DateTime birthdate = DateTime.Parse(user.Birthdate);
-                int userAge = DateTime.Today.Year - birthdate.Year;
+                var birthdate = DateTime.Parse(user.Birthdate);
+                var userAge = DateTime.Today.Year - birthdate.Year;
                 if (birthdate.Date > DateTime.Today.AddYears(-userAge)) userAge--;
 
                 return userAge;
@@ -49,9 +47,9 @@ namespace SeniorProjectHealthApplication.Models
 
         public static Task<DatabaseManager<T>> LoadDatabase<T>() where T : new()
         {
-            string fileName = "Database.db3";
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string dbPath = Path.Combine(folderPath, fileName);
+            var fileName = "Database.db3";
+            var folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var dbPath = Path.Combine(folderPath, fileName);
 
             return Task.FromResult(new DatabaseManager<T>(dbPath));
         }

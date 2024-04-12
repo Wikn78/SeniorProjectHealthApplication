@@ -6,7 +6,8 @@
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="SeniorProjectHealthApplication.Views.DashboardPage"
              BackgroundColor="{StaticResource UMCMaroon}"
-             Shell.NavBarIsVisible="False">
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
         <Grid>
@@ -115,7 +116,7 @@
                             Clicked="DecreaseDate_Clicked"
                             VerticalOptions="End"
                             HorizontalOptions="CenterAndExpand" />
-                        
+
                         <Label
                             x:Name="CurrentDateLabel"
                             Grid.Column="1"

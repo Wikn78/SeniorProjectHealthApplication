@@ -4,6 +4,7 @@ using System.Linq;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
 using SeniorProjectHealthApplication.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SeniorProjectHealthApplication.ViewModels
@@ -36,15 +37,15 @@ namespace SeniorProjectHealthApplication.ViewModels
 
             if (_confirmedPassword == _password)
             {
-                string fileName = "Database.db3";
-                string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-                string dbPath = Path.Combine(folderPath, fileName);
+                var fileName = "Database.db3";
+                var folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                var dbPath = Path.Combine(folderPath, fileName);
 
                 var userRepo = new DatabaseManager<Users>(dbPath);
 
                 // making user username fNamelLastNameMMdd
                 var username = _firstName + _lastName + _birthdate.ToString("MMdd");
-                string shortBd = _birthdate.ToShortDateString();
+                var shortBd = _birthdate.ToShortDateString();
 
                 var newUser = new Users
                 {
@@ -55,12 +56,13 @@ namespace SeniorProjectHealthApplication.ViewModels
                 };
                 userRepo.AddItem(newUser);
                 // get the uidback from it
-               
+
 
                 var user = userRepo.GetAllItems().FirstOrDefault(u => u.Email == _email);
-                
-                Xamarin.Essentials.Preferences.Set("userId", user.UID);
-                
+
+                Preferences.Set("userId", user.UID);
+                // Sets the id to allow the user force them to enter
+                await SecureStorage.SetAsync("AuthToken", user.UID.ToString());
                 await _navigation.PushAsync(new WelcomePage());
             }
             else

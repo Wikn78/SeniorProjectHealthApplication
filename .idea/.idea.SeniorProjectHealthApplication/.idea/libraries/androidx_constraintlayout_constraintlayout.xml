@@ -1,8 +1,8 @@
-﻿<component name="libraryTable">
+<component name="libraryTable">
   <library name="androidx.constraintlayout.constraintlayout">
     <CLASSES>
-      <root url="file://$USER_HOME$/AppData/Local/Temp/JetBrains/xamarinAarPackages/androidx.constraintlayout.constraintlayout/classes.jar" />
-      <root url="file://$USER_HOME$/AppData/Local/Temp/JetBrains/xamarinAarPackages/androidx.constraintlayout.constraintlayout/res" />
+      <root url="file:///var/folders/m9/7vm88_l13vx58zk1c3nbyf7h0000gp/T/JetBrains/xamarinAarPackages/androidx.constraintlayout.constraintlayout/classes.jar" />
+      <root url="file:///var/folders/m9/7vm88_l13vx58zk1c3nbyf7h0000gp/T/JetBrains/xamarinAarPackages/androidx.constraintlayout.constraintlayout/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

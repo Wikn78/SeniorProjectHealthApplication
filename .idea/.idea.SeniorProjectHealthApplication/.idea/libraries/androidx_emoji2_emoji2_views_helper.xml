@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="androidx.emoji2.emoji2-views-helper">
     <CLASSES>
-      <root url="file://$USER_HOME$/AppData/Local/Temp/JetBrains/xamarinAarPackages/androidx.emoji2.emoji2-views-helper/classes.jar" />
-      <root url="file://$USER_HOME$/AppData/Local/Temp/JetBrains/xamarinAarPackages/androidx.emoji2.emoji2-views-helper/res" />
+      <root url="file:///var/folders/m9/7vm88_l13vx58zk1c3nbyf7h0000gp/T/JetBrains/xamarinAarPackages/androidx.emoji2.emoji2-views-helper/classes.jar" />
+      <root url="file:///var/folders/m9/7vm88_l13vx58zk1c3nbyf7h0000gp/T/JetBrains/xamarinAarPackages/androidx.emoji2.emoji2-views-helper/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SQLite;
 
@@ -29,6 +30,11 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
             return _db.Get<T>(id);
         }
 
+        public void DeleteItem(T item)
+        {
+            _db.Delete<T>(item);
+        }
+
 
         public UserAppInfo GetUserAppInfo(int uid)
         {
@@ -56,7 +62,7 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
         public List<FoodItem> GetFoodItems(int id, int fl_category)
         {
             return _db
-                .Table<FoodItem>().Where(item => item.FL_ID == id).Where(item => item.FoodCatagory == fl_category)
+                .Table<FoodItem>().Where(item => item.FL_ID == id).Where(item => item.FoodCategory == fl_category)
                 .ToList();
         }
 
@@ -64,6 +70,18 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
         public void UpdateItem(T item)
         {
             _db.Update(item);
+        }
+
+        public void UpdateFoodItem(FoodItem item, string name)
+        {
+            FoodItem foodItem = _db.Table<FoodItem>().FirstOrDefault(x => x.Food_Name == name);
+            if (Math.Abs(item.Quantity - foodItem.Quantity) > .01f)
+            {
+                foodItem.Quantity = item.Quantity;
+                foodItem.Total_Calories = item.Total_Calories;
+            }
+
+            _db.Update(foodItem);
         }
     }
 }

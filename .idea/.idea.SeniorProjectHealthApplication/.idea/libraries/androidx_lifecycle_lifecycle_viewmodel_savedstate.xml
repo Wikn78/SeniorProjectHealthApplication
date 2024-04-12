@@ -1,7 +1,7 @@
-﻿<component name="libraryTable">
+<component name="libraryTable">
   <library name="androidx.lifecycle.lifecycle-viewmodel-savedstate">
     <CLASSES>
-      <root url="file://$USER_HOME$/AppData/Local/Temp/JetBrains/xamarinAarPackages/androidx.lifecycle.lifecycle-viewmodel-savedstate/classes.jar" />
+      <root url="file:///var/folders/m9/7vm88_l13vx58zk1c3nbyf7h0000gp/T/JetBrains/xamarinAarPackages/androidx.lifecycle.lifecycle-viewmodel-savedstate/classes.jar" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

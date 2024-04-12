@@ -4,6 +4,7 @@ using System.Linq;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
 using SeniorProjectHealthApplication.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SeniorProjectHealthApplication.ViewModels
@@ -22,6 +23,8 @@ namespace SeniorProjectHealthApplication.ViewModels
             Register = new Command(ExecuteRegister);
             Login = new Command(ExecuteLogin);
             RecoverPassword = new Command(ExecuteRecoverPassword);
+
+            LoadUserInfo();
         }
 
         // Commands for user actions
@@ -57,29 +60,40 @@ namespace SeniorProjectHealthApplication.ViewModels
             }
         }
 
+        private async void LoadUserInfo()
+        {
+            var authToken = await SecureStorage.GetAsync("AuthToken");
+
+            if (!string.IsNullOrEmpty(authToken))
+            {
+                var userId = int.Parse(authToken);
+                if (userId > 0)
+                {
+                    Preferences.Set("userId", userId);
+                    await _navigation.PushAsync(new DashboardPage());
+                }
+            }
+        }
+
         private async void ExecuteLogin(object obj)
         {
             //Execute login logic here
 
-            string fileName = "Database.db3";
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string dbPath = Path.Combine(folderPath, fileName);
+            var fileName = "Database.db3";
+            var folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var dbPath = Path.Combine(folderPath, fileName);
             var userRepo = new DatabaseManager<Users>(dbPath);
 
             var user = userRepo.GetAllItems().FirstOrDefault(u => u.Email == _email);
 
             if (user != null)
-            {
                 if (VerifyPassword(_password, user.Password))
                 {
-                    if (user.UID != 0)
-                    {
-                        Xamarin.Essentials.Preferences.Set("userId", user.UID);
-                    }
+                    if (user.UID != 0) Preferences.Set("userId", user.UID);
 
+                    await SecureStorage.SetAsync("AuthToken", user.UID.ToString());
                     await _navigation.PushAsync(new DashboardPage());
                 }
-            }
         }
 
 

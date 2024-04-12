@@ -2,13 +2,22 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SeniorProjectHealthApplication.Views.HelpAndSupport_Page">
+             x:Class="SeniorProjectHealthApplication.Views.HelpAndSupport_Page"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout BackgroundColor="{StaticResource UMCMaroon}">
             <!--Back Button and Log off Button-->
             <Grid>
-                <Image VerticalOptions="CenterAndExpand" Aspect="AspectFit" Grid.Column="0" Grid.Row="0"
-                       Source="backArrow.png" HeightRequest="50" WidthRequest="10" />
+                <ImageButton
+                    VerticalOptions="CenterAndExpand"
+                    Aspect="AspectFit"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Source="backArrow.png"
+                    HeightRequest="50"
+                    WidthRequest="10"
+                    Clicked="OnBackButtonClicked" />
                 <!--Logo and Title-->
                 <Grid HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" Grid.Row="0">
                     <Grid.RowDefinitions>

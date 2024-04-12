@@ -3,7 +3,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SeniorProjectHealthApplication.Views.Food.ViewFoodItemPage"
-             BackgroundColor="{StaticResource UMCMaroon}">
+             BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -38,7 +40,8 @@
 
                 <Entry Grid.Row="1" Grid.Column="0"
                        Margin="5"
-                       Text="1"
+                       Text="{Binding Quantity, Mode=TwoWay}"
+                       TextChanged="OnQuantityTextChanged"
                        VerticalOptions="CenterAndExpand"
                        HorizontalOptions="CenterAndExpand"
                        BackgroundColor="{StaticResource UMCGold}"

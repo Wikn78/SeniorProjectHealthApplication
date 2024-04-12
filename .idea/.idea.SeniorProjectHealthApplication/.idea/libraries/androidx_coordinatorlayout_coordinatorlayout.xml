@@ -1,8 +1,8 @@
-﻿<component name="libraryTable">
+<component name="libraryTable">
   <library name="androidx.coordinatorlayout.coordinatorlayout">
     <CLASSES>
-      <root url="file://$USER_HOME$/AppData/Local/Temp/JetBrains/xamarinAarPackages/androidx.coordinatorlayout.coordinatorlayout/classes.jar" />
-      <root url="file://$USER_HOME$/AppData/Local/Temp/JetBrains/xamarinAarPackages/androidx.coordinatorlayout.coordinatorlayout/res" />
+      <root url="file:///var/folders/m9/7vm88_l13vx58zk1c3nbyf7h0000gp/T/JetBrains/xamarinAarPackages/androidx.coordinatorlayout.coordinatorlayout/classes.jar" />
+      <root url="file:///var/folders/m9/7vm88_l13vx58zk1c3nbyf7h0000gp/T/JetBrains/xamarinAarPackages/androidx.coordinatorlayout.coordinatorlayout/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
