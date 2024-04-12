@@ -19,10 +19,9 @@ namespace SeniorProjectHealthApplication.ViewModels
 
         public ICommand OpenWorkoutCommand { get; set; }
 
-        private void ExecuteOpenWorkout(string workoutId)
+        private async void ExecuteOpenWorkout(string workoutId)
         {
             int id = Int32.Parse(workoutId);
-
 
             var webView = new WebView
             {
@@ -33,6 +32,18 @@ namespace SeniorProjectHealthApplication.ViewModels
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
+
+            var contentPage = new ContentPage { Content = webView };
+
+            // Add a 'Back' Button to close the WebView
+            contentPage.ToolbarItems.Add(new ToolbarItem
+            {
+                Text = "Back",
+                Command = new Command(async () => await Application.Current.MainPage.Navigation.PopModalAsync())
+            });
+
+            // Open WebView as a Modal
+            await Application.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(contentPage));
         }
 
         private DatabaseManager<T> LoadDatabase<T>() where T : new()
