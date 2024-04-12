@@ -24,8 +24,6 @@ namespace SeniorProjectHealthApplication.ViewModels
             // Load your databases
             recipesListDB = LoadDatabase<RecipesList>();
 
-
-
             // Load your recipes
             var recipes = recipesListDB.GetRecipesList();
 
@@ -37,7 +35,6 @@ namespace SeniorProjectHealthApplication.ViewModels
         {
             // Load your databases
             recipesListDB = LoadDatabase<RecipesList>();
-
 
 
             // Load your recipes

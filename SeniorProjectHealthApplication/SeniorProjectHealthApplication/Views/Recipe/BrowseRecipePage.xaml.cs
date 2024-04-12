@@ -1,4 +1,5 @@
 ﻿using SeniorProjectHealthApplication.ViewModels;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,5 +16,10 @@ namespace SeniorProjectHealthApplication.Views
         }
 
         private RecipesViewModel ViewModel => BindingContext as RecipesViewModel;
+
+        private void Add_Recipe(object sender, EventArgs e)
+        {
+            Console.WriteLine("Calories: " + ViewModel.Calories + " Protein: " + ViewModel.Protein + " Carbs: " + ViewModel.Carbs  + " Fat: " + ViewModel.Fat);
+        }
     }
 }

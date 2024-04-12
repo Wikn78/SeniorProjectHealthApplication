@@ -13,11 +13,6 @@
                         Recipes
                     </Label>
 
-                    <!--Breakfast List-->
-                    <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center"
-                               Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">
-                        Breakfast
-                    </Label>
                     <StackLayout>
                         <StackLayout  HeightRequest="540"
                  Margin="20, 10, 20, 0">
@@ -35,7 +30,7 @@
                                                     <Label Text="{Binding ReceipeName}">
                                                     </Label>
                                                     <Image Source="{Binding RecipePicture}" />
-                                                    <Button HeightRequest="540" BackgroundColor="{StaticResource UMCGold}" BindingContext="{Binding Id}" Clicked="Recipe_Tapped"  ContentLayout="Top,0" Text="{Binding ReceipeName}" ImageSource="{Binding RecipePicture}"  />
+                                                    <Button HeightRequest="50" BackgroundColor="{StaticResource UMCGold}" BindingContext="{Binding Id}" Clicked="Recipe_Tapped"  ContentLayout="Top,0" Text="{Binding ReceipeName}" ImageSource="{Binding RecipePicture}"  />
                                                 </StackLayout>
                                             </Grid>
                                         </Frame>
@@ -44,63 +39,6 @@
                             </CollectionView>
                         </StackLayout>
                     </StackLayout>
-
-                    <!--Lunch List-->
-                    <Grid>
-                        <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center"
-                               Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">
-                            Lunch
-                        </Label>
-                        <StackLayout Grid.Row="1" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-
-                        <StackLayout Grid.Row="2" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-
-                        <StackLayout Grid.Row="3" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-
-                        <StackLayout Grid.Row="4" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-                    </Grid>
-
-                    <!--Dinner List-->
-                    <Grid>
-                        <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center"
-                               Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">
-                            Dinner
-                        </Label>
-                        <StackLayout Grid.Row="1" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-
-                        <StackLayout Grid.Row="2" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-
-                        <StackLayout Grid.Row="3" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-
-                        <StackLayout Grid.Row="4" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-                    </Grid>
-
-                    <!--Snack List-->
-                    <Grid>
-                        <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center"
-                               Margin="0,50,0,0" FontSize="32" TextColor="White" FontAttributes="Bold">
-                            Snack
-                        </Label>
-                        <StackLayout Grid.Row="1" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-
-                        <StackLayout Grid.Row="2" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-
-                        <StackLayout Grid.Row="3" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-
-                        <StackLayout Grid.Row="4" BackgroundColor="{StaticResource UMCGold}" HeightRequest="40"
-                                     Margin="20, 10, 20, 0" />
-                    </Grid>
 
 
                 </StackLayout>

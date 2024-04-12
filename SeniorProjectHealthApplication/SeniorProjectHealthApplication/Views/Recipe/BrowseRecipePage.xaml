@@ -19,90 +19,125 @@
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
 
-                                            <StackLayout Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor="{StaticResource UMCGold}" >
-                                                <Label Text="{Binding ReceipeName}">
+                                            <StackLayout Grid.Row="0" Grid.ColumnSpan="4" >
+                                                <Label Text="{Binding ReceipeName}" HorizontalTextAlignment="Center" FontSize="45" TextColor="{StaticResource UMCGold}">
                                                 </Label>
                                                 <Image Source="{Binding RecipePicture}" />
                                             </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Grid>
+
+                    <Grid>
+                        <CollectionView ItemsSource="{Binding RecipesList}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame Padding="3"  BackgroundColor="{StaticResource UMCMaroon}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
 
                                             <!--Nutritional Facts-->
-                                            <Label Grid.Row="1" Grid.ColumnSpan="4" HorizontalOptions="Center"
+                                            <Label Grid.Row="0" Grid.ColumnSpan="4" HorizontalOptions="Center"
                                HorizontalTextAlignment="Center" Margin="0,50,0,0" FontSize="32" TextColor="White"
                                FontAttributes="Bold">
                                                 Nutritional Facts
                                             </Label>
-                                            <StackLayout Grid.Row="2" Grid.Column="0" BackgroundColor="{StaticResource UMCGold}"
+                                            <StackLayout Grid.Row="1" HeightRequest="50" Grid.Column="0" BackgroundColor="{StaticResource UMCGold}"
                                      Margin="5, 10, 5, 0">
-                                                <Label Text="Calories" />
+                                                <Label Text="Calories" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"/>
                                                 <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
                                    FontSize="18" Text="{Binding Calories}" />
                                             </StackLayout>
 
+                                            <StackLayout Grid.Row="1" HeightRequest="50" Grid.Column="1" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                                                <Label Text="Carbs" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"/>
+                                                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18" Text="{Binding Carbs, StringFormat='{}{0}g'}" />
+                                            </StackLayout>
+
+                                            <StackLayout Grid.Row="1" HeightRequest="50" Grid.Column="2" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                                                <Label Text="Protein" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"/>
+                                                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18" Text="{Binding Protein, StringFormat='{}{0}g'}" />
+                                            </StackLayout>
+
+                                            <StackLayout Grid.Row="1" HeightRequest="50" Grid.Column="3" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                                                <Label Text="Fat" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"/>
+                                                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18" Text="{Binding Fat, StringFormat='{}{0}g'}" />
+                                            </StackLayout>
+
+
+                                            <StackLayout Grid.Row="2" Grid.Column="0" BackgroundColor="{StaticResource UMCGold}"
+                                     Margin="5, 10, 5, 0">
+                                                <Label Text="Saturated Fat" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"/>
+                                                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                   FontSize="18" Text="{Binding SaturatedFat, StringFormat='{}{0}g'}" />
+                                            </StackLayout>
+
                                             <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="{StaticResource UMCGold}"
                                      Margin="5, 10, 5, 0">
-                                                <Label Text="Carbs" />
+                                                <Label Text="Sodium" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"/>
                                                 <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
-                                   FontSize="18" Text="{Binding Carbs}" />
+                                   FontSize="18" Text="{Binding Sodium, StringFormat='{}{0}mg'}" />
                                             </StackLayout>
 
                                             <StackLayout Grid.Row="2" Grid.Column="2" BackgroundColor="{StaticResource UMCGold}"
                                      Margin="5, 10, 5, 0">
-                                                <Label Text="Protein" />
+                                                <Label Text="Fiber" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center" />
                                                 <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
-                                   FontSize="18" Text="{Binding Protein}" />
+                                   FontSize="18" Text="{Binding Fiber, StringFormat='{}{0}g'}" />
                                             </StackLayout>
 
                                             <StackLayout Grid.Row="2" Grid.Column="3" BackgroundColor="{StaticResource UMCGold}"
                                      Margin="5, 10, 5, 0">
-                                                <Label Text="Fat" />
+                                                <Label Text="Sugar" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"/>
                                                 <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
-                                   FontSize="18" Text="{Binding Fat}" />
+                                   FontSize="18" Text="{Binding Sugar, StringFormat='{}{0}g'}" />
                                             </StackLayout>
 
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Grid>
 
-                                            <StackLayout Grid.Row="3" Grid.Column="0" BackgroundColor="{StaticResource UMCGold}"
-                                     Margin="5, 10, 5, 0">
-                                                <Label Text="Saturated Fat" />
-                                                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
-                                   FontSize="18" Text="{Binding SaturatedFat}" />
-                                            </StackLayout>
 
-                                            <StackLayout Grid.Row="3" Grid.Column="1" BackgroundColor="{StaticResource UMCGold}"
-                                     Margin="5, 10, 5, 0">
-                                                <Label Text="Sodium" />
-                                                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
-                                   FontSize="18" Text="{Binding Sodium}" />
-                                            </StackLayout>
-
-                                            <StackLayout Grid.Row="3" Grid.Column="2" BackgroundColor="{StaticResource UMCGold}"
-                                     Margin="5, 10, 5, 0">
-                                                <Label Text="Fiber" />
-                                                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
-                                   FontSize="18" Text="{Binding Fiber}" />
-                                            </StackLayout>
-
-                                            <StackLayout Grid.Row="3" Grid.Column="3" BackgroundColor="{StaticResource UMCGold}"
-                                     Margin="5, 10, 5, 0">
-                                                <Label Text="Sugar" />
-                                                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
-                                   FontSize="18" Text="{Binding Sugar}" />
-                                            </StackLayout>
-
+                    <Grid>
+                        <CollectionView ItemsSource="{Binding RecipesList}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame Padding="3"  BackgroundColor="{StaticResource UMCMaroon}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
 
                                             <!--Ingredients-->
-                                            <StackLayout Grid.Row="4" Grid.ColumnSpan="4" BackgroundColor="{StaticResource UMCGold}"
+                                            <StackLayout Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor="{StaticResource UMCGold}"
                                      Margin="5, 50, 10, 0">
-                                                <Label Text="Ingredients" />
-                                                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                                <Label FontSize="25" HorizontalTextAlignment="Center" TextColor="Black" Text="Ingredients" />
+                                                <Label HorizontalOptions="Center" Padding="10" HorizontalTextAlignment="Start" TextColor="Black"
                                    FontSize="18" Text="{Binding Ingredients}" />
                                             </StackLayout>
 
 
                                             <!--Instructions-->
-                                            <StackLayout Grid.Row="5" Grid.ColumnSpan="4" BackgroundColor="{StaticResource UMCGold}"
+                                            <StackLayout Grid.Row="1" Grid.ColumnSpan="4" BackgroundColor="{StaticResource UMCGold}"
                                      Margin="5, 50, 10, 0">
-                                                <Label Text="Instructions" />
-                                                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
+                                                <Label FontSize="25" HorizontalTextAlignment="Center" TextColor="Black" Text="Instructions" />
+                                                <Label HorizontalOptions="Center" Padding="10" HorizontalTextAlignment="Start" TextColor="Black"
                                    FontSize="18" Text="{Binding Instructions}" />
                                             </StackLayout>
 
@@ -112,11 +147,13 @@
                             </CollectionView.ItemTemplate>
                         </CollectionView>
                     </Grid>
+
+
                 </StackLayout>
             </ScrollView>
             <!--Add Food Button-->
             <StackLayout>
-                <Button BackgroundColor="{StaticResource UMCGold}" Text="Add Food" />
+                <Button BackgroundColor="{StaticResource UMCGold}" Text="Add Food" Clicked="Add_Recipe"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
