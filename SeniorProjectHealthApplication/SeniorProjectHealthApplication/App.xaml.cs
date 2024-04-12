@@ -17,12 +17,14 @@ namespace SeniorProjectHealthApplication
             InitializeComponent();
             _dbExerciseDatabase = LoadDatabase<ExerciseDatabase>();
 
-            GenerateExerciseDatabase();
 
-            // check if excersie database exist
-            // if it does skip
             // if not call method to make it
 
+            // Checks for any entries if there isnt any make the table if there is then the table is already there
+            if (_dbExerciseDatabase.CheckTableExists() == 0)
+            {
+                GenerateExerciseDatabase();
+            }
 
             DependencyService.Register<MockDataStore>();
             MainPage = new NavigationPage(new LoginPage());
@@ -40,10 +42,6 @@ namespace SeniorProjectHealthApplication
         {
         }
 
-        private bool ExerciseDatabaseExist()
-        {
-            return false;
-        }
 
         private void GenerateExerciseDatabase()
         {

@@ -29,6 +29,11 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
             return _db.Get<T>(id);
         }
 
+        public int CheckTableExists()
+        {
+            return _db.Table<T>().Count();
+        }
+
 
         public UserAppInfo GetUserAppInfo(int uid)
         {
