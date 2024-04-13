@@ -27,7 +27,7 @@
                                                 </Grid.ColumnDefinitions>
 
                                                 <StackLayout BackgroundColor="{StaticResource UMCGold}" >
-                                                    <Label Text="{Binding ReceipeName}">
+                                                    <Label Text="{Binding ReceipeName}" TextColor="Black" HorizontalTextAlignment="Center" Padding="10" FontSize="25">
                                                     </Label>
                                                     <Image Source="{Binding RecipePicture}" />
                                                     <Button HeightRequest="50" BackgroundColor="{StaticResource UMCGold}" BindingContext="{Binding Id}" Clicked="Recipe_Tapped"  ContentLayout="Top,0" Text="{Binding ReceipeName}" ImageSource="{Binding RecipePicture}"  />
