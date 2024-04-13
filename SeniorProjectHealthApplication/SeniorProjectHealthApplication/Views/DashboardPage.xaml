@@ -68,8 +68,8 @@
                         </Grid.RowDefinitions>
 
 
-                        <Label Grid.Row="1" Grid.Column="1" TextColor="White" VerticalOptions="Center"
-                               HorizontalOptions="Center" x:Name="CaloriesLeft" Text="1750 cals left" />
+                        <Label Grid.Row="1" Grid.Column="1" TextColor="White" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand" x:Name="CaloriesLeft" HorizontalTextAlignment="Center" Text="1750 cals left" />
 
                         <ImageButton Grid.Row="0"
                                      Grid.Column="2"
@@ -81,12 +81,15 @@
                                      Clicked="Account_Clicked" />
 
                         <Image Grid.Row="0" Grid.Column="1" Source="Health_Application_Logo.PNG" />
-                        <Label Grid.Row="1" Grid.Column="0" FontSize="20" HorizontalTextAlignment="Center"
+                        
+                        <Label Grid.Row="1" Grid.Column="0" x:Name="caloriesConsumed_Lbl" FontSize="20" HorizontalTextAlignment="Center"
                                Text="300 consumed" TextColor="White" VerticalOptions="CenterAndExpand"
                                HorizontalOptions="CenterAndExpand" />
+                        
                         <Label Grid.Column="2" Grid.Row="1" FontSize="20" HorizontalTextAlignment="Center"
                                Text="50 burned" TextColor="White" VerticalOptions="CenterAndExpand"
                                HorizontalOptions="CenterAndExpand" />
+                        
                         <pancake:PancakeView Grid.Row="1" Grid.Column="1"
                                              VerticalOptions="CenterAndExpand"
                                              HorizontalOptions="CenterAndExpand"
@@ -98,6 +101,7 @@
                                 <pancake:Border Color="Black" Thickness="2" />
                             </pancake:PancakeView.Border>
                         </pancake:PancakeView>
+                        
                         <BoxView CornerRadius="20" VerticalOptions="Start" BackgroundColor="{StaticResource UMCGold}"
                                  Grid.Row="3"
                                  Grid.ColumnSpan="3" />
@@ -143,6 +147,7 @@
                         <Label
                             Grid.Row="3"
                             Grid.Column="0"
+                            x:Name="CarbsCount_Lbl"
                             Text="24 / 30"
                             TextColor="White"
                             VerticalOptions="Center"
@@ -159,6 +164,7 @@
                         <Label
                             Grid.Row="3"
                             Grid.Column="1"
+                            x:Name="ProteinCount_Lbl"
                             Text="2 / 100"
                             TextColor="White"
                             HorizontalOptions="Center"
@@ -175,6 +181,7 @@
                         <Label
                             Grid.Row="3"
                             Grid.Column="2"
+                            x:Name="FatCount_Lbl"
                             Text="5 / 100"
                             TextColor="White"
                             HorizontalOptions="Center"

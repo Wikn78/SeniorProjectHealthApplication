@@ -30,9 +30,9 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
             return _db.Get<T>(id);
         }
 
-        public void DeleteItem(T item)
+        public void DeleteItem(int id)
         {
-            _db.Delete<T>(item);
+            _db.Delete<T>(id);
         }
 
 

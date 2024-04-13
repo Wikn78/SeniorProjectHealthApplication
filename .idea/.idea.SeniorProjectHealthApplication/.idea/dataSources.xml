@@ -12,7 +12,7 @@
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
     <data-source source="LOCAL" name="Database [2]" uuid="a0616ff0-fd3e-4db2-9493-89bb4dba4703">
-      <driver-ref>sqlite.xerial</driver-ref>
+      <driver-ref>ac84e2de-ca6d-466d-b0da-7f2d9dc46f0a</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$USER_HOME$/Library/Caches/JetBrains/Rider2024.1/device-explorer/Pixel 6 Pro API VanillaIceCream/_/data/data/com.companyname.seniorprojecthealthapplication/files/Database.db3</jdbc-url>
@@ -26,6 +26,18 @@
         </library>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.45.1/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Database [3]" uuid="c4e2da7e-bcd6-46c9-9cab-41cbc049a382">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\winkp\AppData\Local\JetBrains\Rider2023.3\device-explorer\Pixel 5 - API 33\_\data\data\com.companyname.seniorprojecthealthapplication\files\Database.db3</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.43.0/org/xerial/sqlite-jdbc/3.43.0.0/sqlite-jdbc-3.43.0.0.jar</url>
         </library>
       </libraries>
     </data-source>

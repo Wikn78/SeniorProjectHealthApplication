@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using OpenFoodFactsCSharp.Clients;
+using OpenFoodFactsCSharp.Models;
+using SeniorProjectHealthApplication.Models;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
 using Xamarin.Essentials;
@@ -23,11 +28,10 @@ namespace SeniorProjectHealthApplication.ViewModels
         public FoodCategoryViewModel(string categoryId)
         {
             // Load your databases
-
-
             _foodCatagoryDb = LoadDatabase<FoodLogCategory>();
             _foodLogDb = LoadDatabase<FoodLog>();
             _foodItemDb = LoadDatabase<FoodItem>();
+            
             // set current categoryID
             if (GetCategoryNumber(categoryId) == 0)
             {
@@ -45,45 +49,104 @@ namespace SeniorProjectHealthApplication.ViewModels
                 Preferences.Get("userId", 0));
             foodCategory = _foodCatagoryDb.GetFoodLogCategory(foodLog.FL_ID, GetCategoryNumber(_categoryId));
             Preferences.Set("currentFoodCategory_Id", foodCategory.Id);
-            //AddFoodProductDebug();
-
-            // Add a food item for testing
-
-
+            
             // Load your food items
             var foodItems = _foodCatagoryDb.GetFoodItems(foodCategory.Id, foodCategory.FoodCatagory);
 
             // Assign to your ObservableCollection
             FoodItems = new ObservableCollection<FoodItem>(foodItems);
+
+            SetFoodInfo();
+
+
+
         }
 
+
+        private async void SetFoodInfo()
+        {
+            var foodItems = new List<FoodItem>();
+            var foodItemsDb = await UserDataManager.LoadDatabase<FoodItem>();
+            int CurrentFoodLog = Preferences.Get("CurrentFoodLog", 0);
+            var foodCategoryDb = await UserDataManager.LoadDatabase<FoodLogCategory>();
+            var foodCategory = foodCategoryDb.GetAllItems().Where(x => x.FL_ID == CurrentFoodLog).Where(x => x.FoodCatagory == GetCategoryNumber(_categoryId));
+            
+            foreach (var category in foodCategory)
+            {
+                var items = foodItemsDb.GetAllItems().Where(x => x.FL_ID == category.Id);
+                foodItems.AddRange(items);
+            }
+
+            float totalCals = 0, totalProtein= 0, totalCarbs= 0, totalFat= 0;
+            
+            foreach (var foodItem in foodItems)
+            {
+                var product = JsonConvert.DeserializeObject<Product>(foodItem.ProductInformation);
+                totalCals += (product.Nutriments.EnergyKcalServing ?? 0) * foodItem.Quantity;
+                totalProtein += (product.Nutriments.ProteinsServing ?? 0) * foodItem.Quantity;
+                totalCarbs += (product.Nutriments.CarbohydratesServing ?? 0) * foodItem.Quantity;
+                totalFat += (product.Nutriments.FatServing ?? 0) * foodItem.Quantity;
+                
+            }
+
+            TotalCalories = totalCals.ToString("f0") + " cals";
+            TotalProtein = totalProtein.ToString("f0") + " g";
+            TotalCarbs = totalCarbs.ToString("f0") + " g";
+            TotalFats = totalFat.ToString("f0") + " g";
+
+        }
+        
+        
+        private string _totalCalories;
+        public string TotalCalories
+        {
+            get => _totalCalories;
+            set
+            {
+                _totalCalories = value;
+                OnPropertyChanged(nameof(TotalCalories)); // Notify UI of value change
+            }
+        }
+        
+        private string _totalCarbs;
+        public string TotalCarbs
+        {
+            get => _totalCarbs;
+            set
+            {
+                _totalCarbs = value;
+                OnPropertyChanged(nameof(TotalCarbs)); // Notify UI of value change
+            }
+        }
+        
+        private string _totalFats;
+        public string TotalFats
+        {
+            get => _totalFats;
+            set
+            {
+                _totalFats = value;
+                OnPropertyChanged(nameof(TotalFats)); // Notify UI of value change
+            }
+        }
+        
+        private string _totalProtein;
+        public string TotalProtein
+        {
+            get => _totalProtein;
+            set
+            {
+                _totalProtein = value;
+                OnPropertyChanged(nameof(TotalProtein)); // Notify UI of value change
+            }
+        }
+        
+        
         public ObservableCollection<FoodItem> FoodItems { get; set; }
 
         // Implement Property Changed Event
         public event PropertyChangedEventHandler PropertyChanged;
-
-
-        private async Task AddFoodProductDebug()
-        {
-            var wrapper = new OpenFoodFactsApiLowLevelClient();
-
-            var productResponse = await wrapper.FetchProductByCodeAsync("01289903"); // 034856890089 welech fruit snacks
-
-            _foodItemDb.AddItem(new FoodItem
-            {
-                FL_ID = foodCategory.Id,
-                Food_Name = productResponse.Product.ProductName,
-                Unit_Calorie = (float)productResponse.Product.Nutriments.EnergyKcalServing,
-                Quantity = 2,
-                FoodCategory = 1,
-                Total_Calories = (float)productResponse.Product.Nutriments.EnergyKcalServing * 2
-            });
-
-            var projectResponses = await wrapper.FetchProductsByNameAsync("chicken");
-
-            Console.Write(projectResponses.PageCount);
-        }
-
+        
         private static int GetCategoryNumber(string categoryID)
         {
             switch (categoryID)

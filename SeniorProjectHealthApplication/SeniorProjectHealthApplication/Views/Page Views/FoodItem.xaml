@@ -46,11 +46,13 @@
             <Button Grid.Column="1"
                     Margin="5, 0"
                     Text="+"
+                    x:Name="QuickAddButton"
                     BackgroundColor="#333333"
                     HeightRequest="50"
                     WidthRequest="50"
                     BorderRadius="25"
                     FontSize="20"
+                    Clicked="QuickAddFood_Clicked"
                     FontAttributes="Bold"
                     VerticalOptions="Center"
                     HorizontalOptions="Center" />

@@ -84,7 +84,7 @@
                             <Label Grid.Row="0" Grid.Column="0" TextColor="White" Text="Consumed"
                                    VerticalOptions="CenterAndExpand"
                                    HorizontalOptions="CenterAndExpand" />
-                            <Label Grid.Row="0" Grid.Column="2" TextColor="White" Text="350 / 2050"
+                            <Label Grid.Row="0" Grid.Column="2" TextColor="White" Text="{Binding TotalCalories}"
                                    x:Name="Lbl_ConsumedCalories"
                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
 
@@ -101,7 +101,7 @@
                             <Label Grid.Row="2" Grid.Column="0" TextColor="White" Text="Protein"
                                    VerticalOptions="StartAndExpand"
                                    HorizontalOptions="Center" />
-                            <Label Grid.Row="2" Grid.Column="0" TextColor="White" Text="20 / 80"
+                            <Label Grid.Row="2" Grid.Column="0" TextColor="White" Text="{Binding TotalProtein}"
                                    x:Name="Lbl_ProteinTotal"
                                    VerticalOptions="EndAndExpand" HorizontalOptions="Center" />
 
@@ -117,7 +117,7 @@
                             <Label Grid.Row="2" Grid.Column="1" TextColor="White" Text="Carbs"
                                    VerticalOptions="StartAndExpand"
                                    HorizontalOptions="Center" />
-                            <Label Grid.Row="2" Grid.Column="1" TextColor="White" Text="40 / 250"
+                            <Label Grid.Row="2" Grid.Column="1" TextColor="White" Text="{Binding TotalCarbs}"
                                    x:Name="Lbl_CarbTotal"
                                    VerticalOptions="EndAndExpand" HorizontalOptions="Center" />
 
@@ -132,7 +132,7 @@
                             <Label Grid.Row="2" Grid.Column="2" TextColor="White" Text="Fat"
                                    VerticalOptions="StartAndExpand"
                                    HorizontalOptions="Center" />
-                            <Label Grid.Row="2" Grid.Column="2" TextColor="White" Text="2 / 50" x:Name="Lbl_FatTotal"
+                            <Label Grid.Row="2" Grid.Column="2" TextColor="White" Text="{Binding TotalFats}" x:Name="Lbl_FatTotal"
                                    VerticalOptions="EndAndExpand" HorizontalOptions="Center" />
 
                             <ProgressBar Grid.Column="2" Grid.Row="2"

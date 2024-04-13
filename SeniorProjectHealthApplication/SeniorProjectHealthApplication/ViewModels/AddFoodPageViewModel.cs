@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Newtonsoft.Json;
+using OpenFoodFactsCSharp.Models;
 using SeniorProjectHealthApplication.Models;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
@@ -37,6 +39,43 @@ namespace SeniorProjectHealthApplication.ViewModels
             SearchedFoods = new ObservableCollection<FoodItem>(_fooditems);
             _foodCategoryId = GetCategoryNumber(_categoryId);
             Preferences.Set("foodCategory_Id", _foodCategoryId);
+
+            UpdateNutrition();
+
+
+        }
+
+        private async void UpdateNutrition()
+        {
+            var foodItems = new List<FoodItem>();
+            var foodItemsDb = await UserDataManager.LoadDatabase<FoodItem>();
+            int CurrentFoodLog = Preferences.Get("CurrentFoodLog", 0);
+            var foodCategoryDb = await UserDataManager.LoadDatabase<FoodLogCategory>();
+            var foodCategory = foodCategoryDb.GetAllItems().Where(x => x.FL_ID == CurrentFoodLog).Where(x => x.FoodCatagory == GetCategoryNumber(_categoryId));
+            
+            foreach (var category in foodCategory)
+            {
+                var items = foodItemsDb.GetAllItems().Where(x => x.FL_ID == category.Id);
+                foodItems.AddRange(items);
+            }
+            
+
+            float totalCals = 0, totalProtein= 0, totalCarbs= 0, totalFat= 0;
+            
+            foreach (var foodItem in foodItems)
+            {
+                var product = JsonConvert.DeserializeObject<Product>(foodItem.ProductInformation);
+                totalCals += (product.Nutriments.EnergyKcalServing ?? 0) * foodItem.Quantity;
+                totalProtein += (product.Nutriments.ProteinsServing ?? 0) * foodItem.Quantity;
+                totalCarbs += (product.Nutriments.CarbohydratesServing ?? 0) * foodItem.Quantity;
+                totalFat += (product.Nutriments.FatServing ?? 0) * foodItem.Quantity;
+                
+            }
+
+            TotalCalories = totalCals.ToString("f0") + " cals";
+            TotalProtein = totalProtein.ToString("f0") + " g";
+            TotalCarbs = totalCarbs.ToString("f0") + " g";
+            TotalFats = totalFat.ToString("f0") + " g";
         }
 
         public ObservableCollection<FoodItem> SearchedFoods { get; set; }
@@ -115,6 +154,54 @@ namespace SeniorProjectHealthApplication.ViewModels
             return new DatabaseManager<T>(dbPath);
         }
 
+        #region FoodThings
+
+        private string _totalCalories;
+        public string TotalCalories
+        {
+            get => _totalCalories;
+            set
+            {
+                _totalCalories = value;
+                OnPropertyChanged(nameof(TotalCalories)); // Notify UI of value change
+            }
+        }
+        
+        private string _totalCarbs;
+        public string TotalCarbs
+        {
+            get => _totalCarbs;
+            set
+            {
+                _totalCarbs = value;
+                OnPropertyChanged(nameof(TotalCarbs)); // Notify UI of value change
+            }
+        }
+        
+        private string _totalFats;
+        public string TotalFats
+        {
+            get => _totalFats;
+            set
+            {
+                _totalFats = value;
+                OnPropertyChanged(nameof(TotalFats)); // Notify UI of value change
+            }
+        }
+        
+        private string _totalProtein;
+        public string TotalProtein
+        {
+            get => _totalProtein;
+            set
+            {
+                _totalProtein = value;
+                OnPropertyChanged(nameof(TotalProtein)); // Notify UI of value change
+            }
+        }
+
+        #endregion
+        
         #region Search Function
 
         public ICommand SearchCommand { get; private set; }

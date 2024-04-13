@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using OpenFoodFactsCSharp.Models;
 using SeniorProjectHealthApplication.Models;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using Xamarin.Essentials;
@@ -34,13 +38,49 @@ namespace SeniorProjectHealthApplication.Views
             // check if a current date has a food log, if not make one.
 
             var fl = await CreateFoodLogIfNotExists();
-
+            
             CurrentDateLabel.Text = _selectedDate.ToShortDateString();
             // sets the current date so all pages can get it
             Preferences.Set("selectedDate", _selectedDate.ToShortDateString());
+           
+            
+            Preferences.Set("CurrentFoodLog", fl.FL_ID);
+            
+            // gets all food and nutriontion
+            var foodItems = new List<FoodItem>();
+            var foodItemsDb = await UserDataManager.LoadDatabase<FoodItem>();
+            var foodCategoryDb = await UserDataManager.LoadDatabase<FoodLogCategory>();
+            var foodCategorys = foodCategoryDb.GetAllItems().Where(x => x.FL_ID == fl.FL_ID);
+
+            foreach (var category in foodCategorys)
+            {
+               var items = foodItemsDb.GetAllItems().Where(x => x.FL_ID == category.Id);
+               foodItems.AddRange(items);
+            }
+            
+            // Calculate Calories and protein
+
+            float totalCalories = 0f, totalProtein= 0f , totalCarbs = 0f , totalFat= 0f ;
+            
+            
+            foreach (var foodItem in foodItems)
+            {
+                var product = JsonConvert.DeserializeObject<Product>(foodItem.ProductInformation);
+
+                totalCalories += (product.Nutriments.EnergyKcalServing ?? 0) * foodItem.Quantity;
+                totalProtein += (product.Nutriments.ProteinsServing ?? 0) * foodItem.Quantity;
+                totalCarbs += (product.Nutriments.CarbohydratesServing ?? 0) * foodItem.Quantity;
+                totalFat += (product.Nutriments.FatServing ?? 0) * foodItem.Quantity;
+            }
 
             // Gets BMR
-            CaloriesLeft.Text = (await UserDataManager.OnGetUserBmr(false)).ToString("f0");
+            CaloriesLeft.Text = (await UserDataManager.OnGetUserBmr(false) - totalCalories).ToString("f0") + " \n calories left";
+            caloriesConsumed_Lbl.Text = totalCalories.ToString("f0") + " \nconsumed";
+
+            ProteinCount_Lbl.Text = totalProtein.ToString("f0") + "/ 100";
+            CarbsCount_Lbl.Text = totalCarbs.ToString("f0") + "/ 100";
+            FatCount_Lbl.Text = totalFat.ToString("f0") + "/ 100";
+
         }
 
         private async Task<FoodLog> CreateFoodLogIfNotExists()

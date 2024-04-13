@@ -53,7 +53,8 @@
                                                          Quantity="{Binding Quantity}"
                                                          FI_ID="{Binding FI_ID}"
                                                          Total_Calories="{Binding Total_Calories}"
-                                                         ProductInformation="{Binding ProductInformation}"/>
+                                                         ProductInformation="{Binding ProductInformation}"
+                                                         FoodCategory = "{Binding FoodCategory}"/>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
@@ -84,8 +85,8 @@
                                    VerticalOptions="Start" />
                             <Label Grid.Row="0" Grid.Column="1"
                                    TextColor="White"
-                                   Text="300 cal"
-                                   x:Name="Lbl_TotalCalories"
+                                   Text="{Binding TotalCalories}"
+                                   
                                    VerticalOptions="Start"
                                    HorizontalOptions="End" />
 
@@ -96,7 +97,7 @@
                                    VerticalOptions="Start" />
                             <Label Grid.Row="1" Grid.Column="1"
                                    TextColor="White"
-                                   Text="20 g"
+                                   Text="{Binding TotalProtein}"
                                    x:Name="Lbl_TotalProtein"
                                    VerticalOptions="Start"
                                    HorizontalOptions="End" />
@@ -108,7 +109,7 @@
                                    VerticalOptions="Start" />
                             <Label Grid.Row="2" Grid.Column="1"
                                    TextColor="White"
-                                   Text="40 g"
+                                   Text="{Binding TotalCarbs}"
                                    x:Name="Lbl_TotalCarbs"
                                    VerticalOptions="Start"
                                    HorizontalOptions="End" />
@@ -119,7 +120,7 @@
                                    VerticalOptions="Start" />
                             <Label Grid.Row="3" Grid.Column="1"
                                    TextColor="White"
-                                   Text="3 g"
+                                   Text="0 g"
                                    x:Name="Lbl_TotalFiber"
                                    VerticalOptions="Start"
                                    HorizontalOptions="End" />
@@ -142,7 +143,7 @@
                                    VerticalOptions="Start" />
                             <Label Grid.Row="5" Grid.Column="1"
                                    TextColor="White"
-                                   Text="2 g"
+                                   Text="{Binding TotalFats}"
                                    x:Name="Lbl_TotalFat"
                                    VerticalOptions="Start"
                                    HorizontalOptions="End" />

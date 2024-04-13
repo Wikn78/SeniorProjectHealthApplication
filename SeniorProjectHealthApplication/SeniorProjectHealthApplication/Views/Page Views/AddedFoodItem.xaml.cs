@@ -20,8 +20,8 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
             BindableProperty.Create(nameof(Quantity), typeof(float), typeof(AddedFoodItem)); // Assuming Quantity is int
 
 
-        public static readonly BindableProperty CatagoryIDProperty =
-            BindableProperty.Create(nameof(CategoryID), typeof(string),
+        public static readonly BindableProperty FoodCategoryProperty =
+            BindableProperty.Create(nameof(FoodCategory), typeof(string),
                 typeof(AddedFoodItem)); // Assuming Quantity is int
 
         public static readonly BindableProperty ProductInformationProperty =
@@ -58,10 +58,10 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
             set => SetValue(QuantityProperty, value);
         }
 
-        public string CategoryID
+        public string FoodCategory
         {
-            get => (string)GetValue(CatagoryIDProperty);
-            set => SetValue(CatagoryIDProperty, value);
+            get => (string)GetValue(FoodCategoryProperty);
+            set => SetValue(FoodCategoryProperty, value);
         }
 
         public string ProductInformation
@@ -78,7 +78,7 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
 
         private void ViewFoodItem_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ViewFoodItemPage(CategoryID, ProductInformation, false));
+            Navigation.PushAsync(new ViewFoodItemPage(FoodCategory, ProductInformation, false));
         }
 
 
@@ -87,9 +87,8 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
             //Product product = JsonConvert.DeserializeObject<Product>(ProductInformation);
             // add primary key as a what ever so it works and i dont need to wreite a gay custom thing
             var foodDb = await UserDataManager.LoadDatabase<Models.Database_Structure.FoodItem>();
-
-            Models.Database_Structure.FoodItem foodItem = foodDb.GetItem(Int32.Parse(FI_ID));
-            foodDb.DeleteItem(foodItem);
+            foodDb.DeleteItem( Int32.Parse(FI_ID));
+            await Navigation.PushAsync(new FoodCatagoryPage(FoodCategory));
         }
     }
 }

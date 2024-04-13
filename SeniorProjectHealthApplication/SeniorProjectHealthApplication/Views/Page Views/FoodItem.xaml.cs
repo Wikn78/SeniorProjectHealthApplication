@@ -1,5 +1,7 @@
 ﻿using System;
+using SeniorProjectHealthApplication.Models;
 using SeniorProjectHealthApplication.Views.Food;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -69,6 +71,26 @@ namespace SeniorProjectHealthApplication.Views.Page_Views
             Console.WriteLine(
                 $"FoodName: {FoodName_Lbl.Text}   Quantity: {Quantity_Lbl.Text}   Total_Calories: {TotalCalories_Lbl.Text}  Category ID: {FoodCategory}");
             Navigation.PushAsync(new ViewFoodItemPage(FoodCategory, ProductInformation, true));
+        }
+
+        private async void QuickAddFood_Clicked(object sender, EventArgs e)
+        {
+            var foodDb = await UserDataManager.LoadDatabase<Models.Database_Structure.FoodItem>();
+            foodDb.AddItem(new Models.Database_Structure.FoodItem
+            {
+                Food_Name = Food_Name,
+                Barcode_ID = "",
+                FL_ID = Preferences.Get("currentFoodCategory_Id", 0),
+                Unit_Calorie = Total_Calories,
+                Total_Calories = Total_Calories,
+                Quantity = 1,
+                FoodCategory = Preferences.Get("foodCategory_Id", 0),
+                ProductInformation = ProductInformation,
+                
+            });
+            // check mark
+            QuickAddButton.Text = "\u2713";
+
         }
     }
 }
