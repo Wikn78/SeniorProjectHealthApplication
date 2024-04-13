@@ -58,10 +58,10 @@ namespace SeniorProjectHealthApplication.Views.Food
 
         private void UpdateNutrition()
         {
-            _totalCalories = (_product.Nutriments.EnergyKcalServing * Quantity)?.ToString("f0");
-            _totalProtein = (_product.Nutriments.ProteinsServing * Quantity)?.ToString("f0");
-            _totalCarbs = (_product.Nutriments.CarbohydratesServing * Quantity)?.ToString("f0");
-            _totalFat = (_product.Nutriments.CarbohydratesServing * Quantity)?.ToString("f0");
+            _totalCalories = ((_product.Nutriments.EnergyKcalServing != 0 ? _product.Nutriments.EnergyKcalServing : 0) * Quantity)?.ToString("f0");
+            _totalProtein = ((_product.Nutriments.ProteinsServing != 0 ? _product.Nutriments.ProteinsServing : 0) * Quantity)?.ToString("f0");
+            _totalCarbs = ((_product.Nutriments.CarbohydratesServing != 0 ? _product.Nutriments.CarbohydratesServing : 0) * Quantity)?.ToString("f0");
+            _totalFat = ((_product.Nutriments.CarbohydratesServing != 0 ? _product.Nutriments.CarbohydratesServing : 0) * Quantity)?.ToString("f0");
 
             UpdateNutritionLabels();
         }
@@ -82,9 +82,16 @@ namespace SeniorProjectHealthApplication.Views.Food
 
             if (_addItem)
             {
+                float parsedCal = 0;
+                if (!string.IsNullOrWhiteSpace(_totalCalories))
+                {
+                    
+                    parsedCal = float.Parse(_totalCalories);
+                }
+                
                 //var currentCategoryString = Preferences.Get("foodCategory_Id", 0);
-                float unitCal = float.Parse(_totalCalories) / Quantity;
-                float totalCal = float.Parse(_totalCalories);
+                float unitCal = parsedCal / Quantity;
+                float totalCal = parsedCal;
                 int currentCategory = Preferences.Get("foodCategory_Id", 0);
 
                 // add new item
