@@ -1,8 +1,8 @@
-﻿using SeniorProjectHealthApplication.Models.Database_Structure;
+﻿using System;
+using System.IO;
+using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
 using SeniorProjectHealthApplication.ViewModels;
-using System;
-using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -23,15 +23,11 @@ namespace SeniorProjectHealthApplication.Views
 
         private async void Workout_Clicked(int workout_id, object sender, EventArgs e)
         {
-
             var webView = new WebView
             {
                 Source = new UrlWebViewSource
                 {
-                 
-
                     Url = _dbExerciseDatabase.GetItem(10).Exercise_Link
-                   
                 },
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
@@ -53,9 +49,7 @@ namespace SeniorProjectHealthApplication.Views
             string dbPath = Path.Combine(folderPath, fileName);
 
 
-
             return new DatabaseManager<T>(dbPath);
         }
-
     }
 }
