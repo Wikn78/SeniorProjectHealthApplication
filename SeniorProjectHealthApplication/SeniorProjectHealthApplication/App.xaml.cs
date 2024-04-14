@@ -47,7 +47,7 @@ namespace SeniorProjectHealthApplication
         {
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=0
+                //Id=1
                 Exercise_Link = "https://drive.google.com/file/d/1aAMkQec_AxJ1elgcf2Rop7oAklVacX3d/view?usp=drive_link",
                 Exercise_Name = "Plank Jacks"
             });
@@ -55,133 +55,133 @@ namespace SeniorProjectHealthApplication
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=1
+                //Id=2
                 Exercise_Link = "https://drive.google.com/file/d/17M9Ham9e-W0DaBq7DmY3L0DtdWHtOFb9/view?usp=drive_link",
                 Exercise_Name = "Standing Oblique Crunches"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=2
+                //Id=3
                 Exercise_Link = "https://drive.google.com/file/d/1QHNx9e2Vn5K08YBlTfQIZOQYA39xgOdQ/view?usp=drive_link",
                 Exercise_Name = "Burpee"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=3
+                //Id=4
                 Exercise_Link = "https://drive.google.com/file/d/1aq3fsTFro0hSjERZsZCK6w8pmJ4By3SO/view?usp=drive_link",
                 Exercise_Name = "Donkey Kicks"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=4
+                //Id=5
                 Exercise_Link = "https://drive.google.com/file/d/1ZvmHYAVjNuCjnpiT_CpEuivEdHZoN7IW/view?usp=drive_link",
                 Exercise_Name = "Reverse Lunges"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=5
+                //Id=6
                 Exercise_Link = "https://drive.google.com/file/d/1PAE6ANLWVHCJiayT_HVHF0YgBN6Y8PYa/view?usp=drive_link",
                 Exercise_Name = "Abdominal Crunch"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=6
+                //Id=7
                 Exercise_Link = "https://drive.google.com/file/d/1kUFRV7h7_NcEv2sfdGsUb8nK-TlhxoKx/view?usp=drive_link",
                 Exercise_Name = "Superman"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=7
+                //Id=8
                 Exercise_Link = "https://drive.google.com/file/d/1haj5CKHawx793CwvOjw10p-9ZexNqrdS/view?usp=drive_link",
                 Exercise_Name = "Extended Leg Pulses"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=8
+                //Id=9
                 Exercise_Link = "https://drive.google.com/file/d/1e7hvDDJs6cVJu4K5AfCWfnz6G190ywUj/view?usp=drive_link",
                 Exercise_Name = "Side Lunges"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=9
+                //Id=10
                 Exercise_Link = "https://drive.google.com/file/d/13b1XcuscMVc3eN_iF_C7ML6guCpEgZq7/view?usp=drive_link",
                 Exercise_Name = "Lunge"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=10
+                //Id=11
                 Exercise_Link = "https://drive.google.com/file/d/1yooKetk-HmFS2OlcUp8q4kdzfwhcHaPs/view?usp=drive_link",
                 Exercise_Name = "Standing Quad Stretch"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=11
+                //Id=12
                 Exercise_Link = "https://drive.google.com/file/d/1g6Sdola8-EuqPGYuodJeItLi9AGiFKtf/view?usp=drive_link",
                 Exercise_Name = "Forward Fold"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=12
+                //Id=13
                 Exercise_Link = "https://drive.google.com/file/d/1SSC-8bOfscHoOrGqiOI-sL9a2MQWND_z/view?usp=drive_link",
                 Exercise_Name = "Seated Shoulder Squeeze"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=13
+                //Id=14
                 Exercise_Link = "https://drive.google.com/file/d/1kHgfX2W3bAB8hplhwR0FH8kAuKxRZZ_q/view?usp=drive_link",
                 Exercise_Name = "90/90 Stretch"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=14
+                //Id=15
                 Exercise_Link = "https://drive.google.com/file/d/1YmQsm7MAFOzFEx2Y0GTjvnriK9yCgqs4/view?usp=drive_link",
                 Exercise_Name = "Triceps Stretch"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=15
+                //Id=16
                 Exercise_Link = "https://drive.google.com/file/d/16X8n8hRPboZLuRWGsxBIN3qnB0VVRKyb/view?usp=drive_link",
                 Exercise_Name = "Toes on Wall Calf Stretch"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=16
+                //Id=17
                 Exercise_Link = "https://drive.google.com/file/d/1aUF5sUcpwLDDeLnYMyOy4vcb8BAP3WqH/view?usp=drive_link",
                 Exercise_Name = "Piriformis Stretch"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=17
+                //Id=18
                 Exercise_Link = "https://drive.google.com/file/d/1Q48yM1vC212842LQYw35_R8mdRkiDGRB/view?usp=drive_link",
                 Exercise_Name = "Plantar Flexion"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=18
+                //Id=19
                 Exercise_Link = "https://drive.google.com/file/d/1LdLLkuTsnU7CcTCfHC-Jr6kw8ki6VP9I/view?usp=drive_link",
                 Exercise_Name = "Side Leg Raise"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
             {
-                //Id=19
+                //Id=20
                 Exercise_Link = "https://drive.google.com/file/d/1ZBtnUEpP9dRMhqizphZSvlMtsObP4xYW/view?usp=drive_link",
                 Exercise_Name = "Knee Extension"
             });

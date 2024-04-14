@@ -45,7 +45,7 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="CenterAndExpand"
                     Command="{Binding OpenWorkoutCommand}"
-                    CommandParameter="6" />
+                    CommandParameter="7" />
             <Label Text="" />
             <Button Text="ABDOMINAL CRUNCH"
                     TextColor="White"
