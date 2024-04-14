@@ -43,37 +43,41 @@
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="67"
                    />
-            <Label Text="" />
-            <Button Text="SINGLE LEG DEADLIFT"
-                    TextColor="White"
-                    BackgroundColor="{StaticResource UMCGold}"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
             <Label Text="" />
             <Button Text="LUNGE"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="10"/>
             <Label Text="" />
             <Button Text="SQUATS"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="53"/>
             <Label Text="" />
             <Button Text="SIDE LUNGES"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand" 
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="9"/>
             <Label Text="" />
             <Button Text="EXTENDED LEG PULSES"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="8"/>
 
 
         </StackLayout>

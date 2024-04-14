@@ -51,31 +51,41 @@
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="6"/>
             <Label Text="" />
             <Button Text="PLANK"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="41"/>
             <Label Text="" />
             <Button Text="MOUNTAIN CLIMBER"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand" 
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="36"/>
             <Label Text="" />
             <Button Text="REVERSE LUNGES"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="5"/>
             <Label Text="" />
             <Button Text="DONKEY KICKS"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="4"/>
 
 
         </StackLayout>

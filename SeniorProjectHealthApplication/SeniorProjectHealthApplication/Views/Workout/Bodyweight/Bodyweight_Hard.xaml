@@ -43,31 +43,41 @@
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="3"
                />
             <Label Text="" />
             <Button Text="PUSH-UP"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="33"/>
             <Label Text="" />
             <Button Text="SKATER JUMPS"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand" 
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="46"/>
             <Label Text="" />
             <Button Text="STANDING OBLIQUE CRUNCHES"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="2"/>
             <Label Text="" />
             <Button Text="PLANK JACKS"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="1"/>
             <Label Text="" />
         </StackLayout>
     </ContentPage.Content>
