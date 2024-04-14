@@ -1,5 +1,6 @@
 ﻿using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using SeniorProjectHealthApplication.ViewModels;
 using System;
 using System.IO;
 using Xamarin.Forms;
@@ -15,6 +16,8 @@ namespace SeniorProjectHealthApplication.Views
         public WorkoutScreenPage()
         {
             InitializeComponent();
+            BindingContext = new OpenWorkoutViewModel();
+
             _dbExerciseDatabase = LoadDatabase<ExerciseDatabase>();
         }
 
