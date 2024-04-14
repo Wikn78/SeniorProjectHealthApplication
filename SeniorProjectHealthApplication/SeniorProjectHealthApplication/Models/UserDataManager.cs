@@ -11,7 +11,7 @@ namespace SeniorProjectHealthApplication.Models
     {
         public static async Task<float> OnGetUserBmr(bool isMetric)
         {
-            var userId = Preferences.Get("userId", 0);
+            var userId = 3;//Preferences.Get("userId", 0);
 
             var userInfoDb = await LoadDatabase<UserAppInfo>();
             var usersDb = await LoadDatabase<Users>();

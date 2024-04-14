@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.Account.GoalsStartPage"
+             BackgroundColor="{StaticResource UMCMaroon}">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Label Text="Workout Level" TextColor="White" HorizontalTextAlignment="Center"></Label>
+            <Picker Title="Workout Level" BackgroundColor="White" SelectedIndexChanged="WorkoutLevelIndexChange">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>office job</x:String>
+                        <x:String>light movement</x:String>
+                        <x:String>2 / 3 </x:String>
+                        <x:String>4 / 5</x:String>
+                        <x:String>6+</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            
+            
+            
+            <Label x:Name="Lbl_lbPerWeek" TextColor="White" HorizontalTextAlignment="Center"></Label>
+            <Slider
+                x:Name="weightLossSlider"
+                Minimum="0.5"
+                Maximum="4"
+                Value="0"
+                ValueChanged="OnSliderValueChanged"
+                
+                />
+            
+            
+            <Label x:Name="Lbl_weeksToLoose" TextColor="White" HorizontalTextAlignment="Center"></Label>
+            
+            <Label x:Name="Lbl_TotalDef" TextColor="White" HorizontalTextAlignment="Center"></Label>
+            
+            <Label x:Name="Lbl_TotalBurn" TextColor="White" HorizontalTextAlignment="Center"></Label>
+            
+            <Label x:Name="Lbl_TotalEat" TextColor="White" HorizontalTextAlignment="Center"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

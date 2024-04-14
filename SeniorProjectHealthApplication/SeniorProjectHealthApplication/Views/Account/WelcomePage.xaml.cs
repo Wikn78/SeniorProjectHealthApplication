@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using SeniorProjectHealthApplication.Views.Account;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -59,7 +60,7 @@ namespace SeniorProjectHealthApplication.Views
             });
 
 
-            await Navigation.PushAsync(new DashboardPage());
+            await Navigation.PushAsync(new GoalsStartPage(CurrentWeight.SelectedItem.ToString(), GoalWeight.SelectedItem.ToString()));
         }
 
 
