@@ -7,6 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="Views\Workout\Flexibility and Balance\**" />
+      <EmbeddedResource Remove="Views\Workout\Flexibility and Balance\**" />
+      <None Remove="Views\Workout\Flexibility and Balance\**" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
         <PackageReference Include="Microcharts" Version="0.9.5.9" />
@@ -107,12 +113,25 @@
       <EmbeddedResource Update="Views\Workout\Bodyweight\Bodyweight_Levels.xaml">
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Cardiovascular\Cardiovascular.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexbility_Easy.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexibility_Hard.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexiblity_Intermediate.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexiblity_Levels.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Views\Workout\Cardiovascular\" />
       <Folder Include="Views\Workout\HIIT\" />
-      <Folder Include="Views\Workout\Flexibility and Balance\" />
       <Folder Include="Views\Workout\Strength Training\" />
     </ItemGroup>
 </Project>
