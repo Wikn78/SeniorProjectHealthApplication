@@ -7,8 +7,20 @@
     <ContentPage.Content>
         <StackLayout>
             
-            <Label Text="Workout Level" TextColor="White" HorizontalTextAlignment="Center"></Label>
-            <Picker Title="Workout Level" BackgroundColor="White" SelectedIndexChanged="WorkoutLevelIndexChange">
+            
+            <Label Text="Weight Goal" TextColor="White" HorizontalTextAlignment="Center" />
+            <Picker  Title="Weight Goal" BackgroundColor="White" SelectedIndexChanged="WeightGoalIndexChange">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Lose Weight</x:String>
+                                    <x:String>Maintain Weight</x:String>
+                                    <x:String>Gain Weight</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+            
+            <Label Text="Workout Level" TextColor="White" HorizontalTextAlignment="Center" />
+            <Picker  Title="Workout Level" BackgroundColor="White" SelectedIndexChanged="WorkoutLevelIndexChange">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>office job</x:String>
@@ -22,7 +34,7 @@
             
             
             
-            <Label x:Name="Lbl_lbPerWeek" TextColor="White" HorizontalTextAlignment="Center"></Label>
+            <Label x:Name="Lbl_lbPerWeek" TextColor="White" HorizontalTextAlignment="Center" />
             <Slider
                 x:Name="weightLossSlider"
                 Minimum="0.5"
@@ -33,13 +45,49 @@
                 />
             
             
-            <Label x:Name="Lbl_weeksToLoose" TextColor="White" HorizontalTextAlignment="Center"></Label>
+            <Label x:Name="Lbl_weeksToLoose" TextColor="White" HorizontalTextAlignment="Center" />
+
+            <Label x:Name="Lbl_TotalDef" TextColor="White" HorizontalTextAlignment="Center" />
+
+            <Label x:Name="Lbl_TotalBurn" TextColor="White" HorizontalTextAlignment="Center" />
+
+            <Label x:Name="Lbl_TotalEat" TextColor="White" HorizontalTextAlignment="Center" />
+
+
+            <Grid>
+                <!-- Define Columns -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+  
+                <!-- Add content into each column using Grid.Column property -->
+
+                <!-- For Protein -->
+                <StackLayout Grid.Column="0">
+                    <Label Text="Protein" HorizontalTextAlignment="Center" TextColor="White"/>
+                    <Slider x:Name="proteinSlider" ValueChanged="OnMacroSliderChange" Minimum="0" Maximum="100"/>
+                    <Label x:Name="proteinLabel" HorizontalTextAlignment="Center" TextColor="White" Text="" />
+                </StackLayout>
+
+                <!-- For Carbs -->
+                <StackLayout Grid.Column="1">
+                    <Label Text="Carbs" HorizontalTextAlignment="Center" TextColor="White"/>
+                    <Slider x:Name="carbsSlider" ValueChanged="OnMacroSliderChange" Minimum="0" Maximum="100"/>
+                    <Label x:Name="carbsLabel" HorizontalTextAlignment="Center" TextColor="White" Text="" />
+                </StackLayout>
+
+                <!-- For Fats -->
+                <StackLayout Grid.Column="2">
+                    <Label Text="Fats" HorizontalTextAlignment="Center" TextColor="White"/>
+                    <Slider x:Name="fatsSlider" ValueChanged="OnMacroSliderChange" Minimum="0" Maximum="100"/>
+                    <Label x:Name="fatsLabel" HorizontalTextAlignment="Center" TextColor="White" Text="" />
+                </StackLayout>
+            </Grid>
             
-            <Label x:Name="Lbl_TotalDef" TextColor="White" HorizontalTextAlignment="Center"></Label>
             
-            <Label x:Name="Lbl_TotalBurn" TextColor="White" HorizontalTextAlignment="Center"></Label>
-            
-            <Label x:Name="Lbl_TotalEat" TextColor="White" HorizontalTextAlignment="Center"></Label>
+            <Button Text="Save Goals" BackgroundColor="{StaticResource UMCGold}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
