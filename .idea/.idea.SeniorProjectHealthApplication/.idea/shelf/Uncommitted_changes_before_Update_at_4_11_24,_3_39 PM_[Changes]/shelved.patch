@@ -1,0 +1,17 @@
+Index: SeniorProjectHealthApplication/SeniorProjectHealthApplication.Android/Resources/Resource.designer.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/SeniorProjectHealthApplication/SeniorProjectHealthApplication.Android/Resources/Resource.designer.cs b/SeniorProjectHealthApplication/SeniorProjectHealthApplication.Android/Resources/Resource.designer.cs
+--- a/SeniorProjectHealthApplication/SeniorProjectHealthApplication.Android/Resources/Resource.designer.cs	(revision 3e4d8c8eb7bc2f39eb171b2c60fc10e679f904f2)
++++ b/SeniorProjectHealthApplication/SeniorProjectHealthApplication.Android/Resources/Resource.designer.cs	(date 1712867791619)
+@@ -14,7 +14,7 @@
+ {
+ 	
+ 	
+-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.1.0.5")]
++	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.2.2.120")]
+ 	public partial class Resource
+ 	{
+ 		
