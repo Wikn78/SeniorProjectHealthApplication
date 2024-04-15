@@ -374,7 +374,7 @@ namespace SeniorProjectHealthApplication
             {
                 //Id=47
                 Exercise_Link = "https://drive.google.com/file/d/1ukjOykQGGuQ_isCQKOhP5SIKRCQidAuv/view?usp=drive_link",
-                Exercise_Name = "Ankel Hops"
+                Exercise_Name = "Ankle Hops"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
@@ -521,7 +521,7 @@ namespace SeniorProjectHealthApplication
             {
                 //Id=68
                 Exercise_Link = "https://drive.google.com/file/d/1WWIh2HXYQt_bFyxEbaxBWP-ENruu1Lu4/view?usp=drive_link",
-                Exercise_Name = "Squats"
+                Exercise_Name = "Jumping Squats"
             });
         }
 

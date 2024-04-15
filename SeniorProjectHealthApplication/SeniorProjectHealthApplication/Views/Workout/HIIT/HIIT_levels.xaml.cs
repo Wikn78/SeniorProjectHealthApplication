@@ -16,5 +16,20 @@ namespace SeniorProjectHealthApplication.Views.Workout.HIIT
         {
             InitializeComponent();
         }
+
+        private async void Easy_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HIIT.HIIT_easy());
+        }
+
+        private async void Intermediate_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HIIT.HIIT_intermediate());
+        }
+
+        private async void Hard_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HIIT.HIIT_hard());
+        }
     }
 }
