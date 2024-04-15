@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SeniorProjectHealthApplication.ViewModels;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,11 +11,13 @@ namespace SeniorProjectHealthApplication.Views
         public RecipesPage()
         {
             InitializeComponent();
+            this.BindingContext = new RecipesViewModel();
         }
-
+        private RecipesViewModel ViewModel => BindingContext as RecipesViewModel;
         private async void Recipe_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BrowseRecipePage());
+            int ID = (int)((Button)sender).BindingContext;
+            await Navigation.PushAsync(new BrowseRecipePage(ID));
         }
     }
 }

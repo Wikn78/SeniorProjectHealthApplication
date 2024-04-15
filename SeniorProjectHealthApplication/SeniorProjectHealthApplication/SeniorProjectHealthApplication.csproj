@@ -7,16 +7,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3"/>
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2"/>
-        <PackageReference Include="Microcharts" Version="0.9.5.9"/>
-        <PackageReference Include="Microcharts.Forms" Version="1.0.0-preview1"/>
-        <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.7"/>
-        <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta"/>
-        <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6"/>
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622"/>
-        <PackageReference Include="Xamarin.Essentials" Version="1.8.1"/>
-        <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.763-beta"/>
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+        <PackageReference Include="Microcharts" Version="0.9.5.9" />
+        <PackageReference Include="Microcharts.Forms" Version="1.0.0-preview1" />
+        <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.7" />
+        <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
+        <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
+        <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.763-beta" />
     </ItemGroup>
 
     <ItemGroup>
@@ -96,5 +96,11 @@
             <DependentUpon>Progress.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Views\Recipe\AddedRecipe.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
     </ItemGroup>
 </Project>

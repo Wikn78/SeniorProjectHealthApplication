@@ -60,6 +60,20 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
                 .ToList();
         }
 
+        public List<RecipesList> GetRecipesList()
+        {
+            return _db
+                .Table<RecipesList>()
+                .ToList();
+        }
+
+        public List<RecipesList> GetRecipesListByID(int ID)
+        {
+            return _db
+                .Table<RecipesList>()
+                .Where(x => x.Id == ID)
+                .ToList();
+        }
 
         public void UpdateItem(T item)
         {
