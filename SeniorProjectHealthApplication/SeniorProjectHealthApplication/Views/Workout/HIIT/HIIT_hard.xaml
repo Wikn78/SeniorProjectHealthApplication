@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.Workout.HIIT.HIIT_hard"
+                BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout >
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image HorizontalOptions="Center"
+                       Source="Health_Application_Logo.png"
+                       Opacity="0.5"
+                       Grid.Row="0"
+                       HeightRequest="200"
+                       WidthRequest="300"
+                       Grid.Column="0" />
+                <RelativeLayout Grid.Row="0" Grid.Column="0">
+                    <Label Text="             HIIT Hard"
+                           HorizontalTextAlignment="Center"
+                           TextColor="{StaticResource UMCGold}"
+                           FontSize="25"
+                           FontAttributes="Bold"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}" />
+                </RelativeLayout>
+                
+                <ImageButton HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
+                             HeightRequest="30"
+                             WidthRequest="30" Clicked="Main_Clicked"/>
+
+            </Grid>
+            <Label Text="" />
+            <Button Text="BICYCLE CRUNCHES"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="35"
+                   />
+            <Label Text="" />
+            <Button Text="DUMBBELL POWER MAKER"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="34"/>
+            <Label Text="" />
+            <Button Text="PUSH-UP"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="33"/>
+            <Label Text="" />
+            <Button Text="DOUBLE LEG BUTT KICK"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="32"/>
+            <Label Text="" />
+            <Button Text="V-UP CRUNCHES"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="30"/>
+            <Label Text="" />
+            <Button Text="DUMBBELL SQUAT TO OVERHEAD PRESS"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="29"/>
+            <Label Text="" />
+            <Button Text="DUMBBELL CLUSTERS"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="28"/>
+            <Label Text="" />
+            <Button Text="DUMBBELL RENEGADE ROW"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="27"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+   

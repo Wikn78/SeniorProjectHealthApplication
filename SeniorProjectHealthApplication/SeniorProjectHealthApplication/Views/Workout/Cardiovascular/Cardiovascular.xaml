@@ -1,9 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SeniorProjectHealthApplication.Views.WorkoutScreenPage"
-             BackgroundColor="{StaticResource UMCMaroon}">
+             x:Class="SeniorProjectHealthApplication.Views.Workout.Cardiovascular.Cardiovascular"
+             BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
             <Grid HorizontalOptions="Center" VerticalOptions="Center">
@@ -23,60 +24,51 @@
                        WidthRequest="300"
                        Grid.Column="0" />
                 <RelativeLayout Grid.Row="0" Grid.Column="0">
-                    <Label Text="BODYWEIGHT WORKOUT"
+                    <Label Text="CARDIOVASCULAR WORKOUT"
                            TextColor="{StaticResource UMCGold}"
                            FontSize="25"
                            FontAttributes="Bold"
                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}" />
                 </RelativeLayout>
-                <Image HorizontalOptions="End" VerticalOptions="Start" Source="Turn_off_Button.png" Margin="0,15,10,0"
-                       HeightRequest="30"
-                       WidthRequest="30" />
-                <Image HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
-                       HeightRequest="30"
-                       WidthRequest="30" />
+                <ImageButton HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
+                             HeightRequest="30"
+                             WidthRequest="30" Clicked="Main_Clicked"/>
 
             </Grid>
             <Label Text="" />
-            <Button Text="SUPERMAN"
+            <Button Text="TREADMILL"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="CenterAndExpand"
-                    Clicked="Superman_Clicked" />
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="26" />
             <Label Text="" />
-            <Button Text="ABDOMINAL CRUNCH"
+            <Button Text="BIKING"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="25"/>
             <Label Text="" />
-            <Button Text="PLANK"
+            <Button Text="ROWING"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="24"/>
             <Label Text="" />
-            <Button Text="MOUNTAIN CLIMBER"
+            <Button Text="JOGGING"
                     TextColor="White"
                     BackgroundColor="{StaticResource UMCGold}"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand" 
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="23"/>
             <Label Text="" />
-            <Button Text="REVERSE LUNGES"
-                    TextColor="White"
-                    BackgroundColor="{StaticResource UMCGold}"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
-            <Label Text="" />
-            <Button Text="DONKEY KICKS"
-                    TextColor="White"
-                    BackgroundColor="{StaticResource UMCGold}"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand" />
-
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

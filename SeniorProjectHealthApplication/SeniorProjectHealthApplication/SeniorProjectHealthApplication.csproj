@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,6 +7,21 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="Views\Workout\Flexibility and Balance\**" />
+      <EmbeddedResource Remove="Views\Workout\Flexibility and Balance\**" />
+      <None Remove="Views\Workout\Flexibility and Balance\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+<<<<<<< HEAD
+=======
+      <Compile Remove="Views\Workout\Flexibility and Balance\**" />
+      <EmbeddedResource Remove="Views\Workout\Flexibility and Balance\**" />
+      <None Remove="Views\Workout\Flexibility and Balance\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+>>>>>>> refs/heads/ContinueWorkoutVideo
         <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
         <PackageReference Include="Microcharts" Version="0.9.5.9" />
@@ -24,16 +39,14 @@
             <DependentUpon>AccountSettings.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="Views\Workout\WorkoutVideoPage.xaml.cs">
-            <DependentUpon>WorkoutVideo.xaml</DependentUpon>
-            <SubType>Code</SubType>
+        <Compile Update="Views\Workout\Bodyweight\Bodyweight_Levels.xaml.cs">
+          <DependentUpon>Bodyweight_Levels.xaml</DependentUpon>
         </Compile>
-        <Compile Update="Views\Workout\WorkoutScreenPage.xaml.cs">
-            <DependentUpon>WorkoutScreen.xaml</DependentUpon>
-            <SubType>Code</SubType>
+        <Compile Update="Views\Workout\HIIT\HIIT_easy.xaml.cs">
+          <DependentUpon>HIIT_easy.xaml</DependentUpon>
         </Compile>
-        <Compile Update="Views\Workout\WorkoutsPage.xaml.cs">
-            <DependentUpon>Workouts.xaml</DependentUpon>
+        <Compile Update="Views\Workout\WorkoutsMain.xaml.cs">
+            <DependentUpon>WorkoutsMain.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
         <Compile Update="Views\Page Views\DashboardCategory.xaml.cs">
@@ -76,10 +89,6 @@
             <DependentUpon>MealPage.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="Views\Workout\LinktoVideosPage.xaml.cs">
-            <DependentUpon>LinktoVideos.xaml</DependentUpon>
-            <SubType>Code</SubType>
-        </Compile>
         <Compile Update="Views\Settings\NotificationsPage.xaml.cs">
             <DependentUpon>NotificationsPage.xaml</DependentUpon>
             <SubType>Code</SubType>
@@ -99,7 +108,111 @@
     </ItemGroup>
 
     <ItemGroup>
+<<<<<<< HEAD
       <EmbeddedResource Update="Views\Recipe\AddedRecipe.xaml">
+=======
+      <EmbeddedResource Update="Views\Workout\Bodyweight\Bodyweight_Easy.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Bodyweight\Bodyweight_Hard.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Bodyweight\Bodyweight_Levels.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Cardiovascular\Cardiovascular.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexbility_Easy.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexibility_Hard.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexiblity_Intermediate.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexiblity_Levels.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_easy.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_hard.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_intermediate.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_levels.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Strength Training\Strength_Training.xaml">
+>>>>>>> refs/heads/ContinueWorkoutVideo
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+        <PackageReference Include="Microcharts" Version="0.9.5.9" />
+        <PackageReference Include="Microcharts.Forms" Version="1.0.0-preview1" />
+        <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.7" />
+        <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
+        <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
+        <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.763-beta" />
+        <Compile Update="Views\Workout\Bodyweight\Bodyweight_Levels.xaml.cs">
+          <DependentUpon>Bodyweight_Levels.xaml</DependentUpon>
+        <Compile Update="Views\Workout\HIIT\HIIT_easy.xaml.cs">
+          <DependentUpon>HIIT_easy.xaml</DependentUpon>
+        <Compile Update="Views\Workout\WorkoutsMain.xaml.cs">
+            <DependentUpon>WorkoutsMain.xaml</DependentUpon>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Views\Recipe\AddedRecipe.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Views\Workout\Bodyweight\Bodyweight_Easy.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Bodyweight\Bodyweight_Hard.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Bodyweight\Bodyweight_Levels.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Cardiovascular\Cardiovascular.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexbility_Easy.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexibility_Hard.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexiblity_Intermediate.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexiblity_Levels.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_easy.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_hard.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_intermediate.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_levels.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\Strength Training\Strength_Training.xaml">
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
     </ItemGroup>

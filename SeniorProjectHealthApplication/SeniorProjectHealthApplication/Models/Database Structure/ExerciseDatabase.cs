@@ -4,10 +4,13 @@ namespace SeniorProjectHealthApplication.Models.Database_Structure
 {
     public class ExerciseDatabase
     {
-        [PrimaryKey] [AutoIncrement] public int Id { get; set; }
-
         public string Exercise_Name { get; set; }
-        public string Difficulity { get; set; }
-        public string Exercise_Explanation { get; set; }
+        [PrimaryKey]
+        [AutoIncrement]
+        public int Exercise_Id { get; set;}
+
+        public string Exercise_Link { get; set; }
+
+      
     }
 }

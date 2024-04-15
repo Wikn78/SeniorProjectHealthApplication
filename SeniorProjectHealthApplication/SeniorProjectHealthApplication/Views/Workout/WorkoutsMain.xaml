@@ -4,7 +4,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:SeniorProjectHealthApplication.Views;assembly=SeniorProjectHealthApplication"
              x:Class="SeniorProjectHealthApplication.Views.WorkoutsPage"
-             BackgroundColor="{StaticResource UMCMaroon}">
+             BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
 
@@ -19,15 +21,15 @@
                    FontSize="20" />
             <Label Text="" FontSize="5" />
             <Button Text="STRENGTH TRAINING" WidthRequest="250" HeightRequest="60"
-                    BackgroundColor="{StaticResource UMCGold}" />
+                    BackgroundColor="{StaticResource UMCGold}" Clicked="Strength_Clicked" />
             <Label Text="" FontSize="5" />
-            <Button Text="HIIT" WidthRequest="250" HeightRequest="60" BackgroundColor="{StaticResource UMCGold}" />
+            <Button Text="HIIT" WidthRequest="250" HeightRequest="60" BackgroundColor="{StaticResource UMCGold}" Clicked="HIIT_Clicked" />
             <Label Text="" FontSize="5" />
             <Button Text="CARDIOVASCULAR" WidthRequest="250" HeightRequest="60"
-                    BackgroundColor="{StaticResource UMCGold}" />
+                    BackgroundColor="{StaticResource UMCGold}"       Clicked="Cardio_Clicked" />
             <Label Text="" FontSize="5" />
             <Button Text="FLEXIBILITY AND BALANCE" WidthRequest="250" HeightRequest="60"
-                    BackgroundColor="{StaticResource UMCGold}" />
+                    BackgroundColor="{StaticResource UMCGold}"       Clicked="Flexibility_Clicked"/>
             <Label Text="" FontSize="5" />
             <Button Text="BODYWEIGHT" WidthRequest="250" HeightRequest="60" BackgroundColor="{StaticResource UMCGold}"
                     Clicked="BodyWeight_Clicked" />
