@@ -1,12 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SeniorProjectHealthApplication.Views.Workout.Flexbility_and_Balance.Flexbility_Easy">
+             x:Class="SeniorProjectHealthApplication.Views.Workout.Flexbility_and_Balance.Flexbility_Easy"
+               BackgroundColor="{StaticResource UMCMaroon}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image HorizontalOptions="Center"
+                       Source="Health_Application_Logo.png"
+                       Opacity="0.5"
+                       Grid.Row="0"
+                       HeightRequest="200"
+                       WidthRequest="300"
+                       Grid.Column="0" />
+                <RelativeLayout Grid.Row="0" Grid.Column="0">
+                    <Label Text="FLEXIBILITY EASY WORKOUT"
+                           TextColor="{StaticResource UMCGold}"
+                           FontSize="25"
+                           FontAttributes="Bold"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}" />
+                </RelativeLayout>
+                <Image HorizontalOptions="End" VerticalOptions="Start" Source="Turn_off_Button.png" Margin="0,15,10,0"
+                       HeightRequest="30"
+                       WidthRequest="30" />
+                <Image HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
+                       HeightRequest="30"
+                       WidthRequest="30" />
+
+            </Grid>
+            <Label Text="" />
+            <Button Text="HIP EXTENSION"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="21"/>
+            <Label Text="" />
+            <Button Text="KNEE FLEXION"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="22"/>
+            <Label Text="" />
+            <Button Text="KNEE EXTENSION"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="20"/>
+            <Label Text="" />
+            <Button Text="SIDE LEG RAISE"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="19"/>
+            <Label Text="" />
+            <Button Text="PLANTAR FLEXION"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="18"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

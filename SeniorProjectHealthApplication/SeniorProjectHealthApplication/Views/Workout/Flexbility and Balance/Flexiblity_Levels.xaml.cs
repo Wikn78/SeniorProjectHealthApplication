@@ -16,5 +16,20 @@ namespace SeniorProjectHealthApplication.Views.Workout.Flexbility_and_Balance
         {
             InitializeComponent();
         }
+
+        private async void Easy_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Flexbility_and_Balance.Flexbility_Easy());
+        }
+
+        private async void Intermediate_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Flexbility_and_Balance.Flexiblity_Intermediate());
+        }
+
+        private async void Hard_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Flexbility_and_Balance.Flexibility_Hard());
+        }
     }
 }

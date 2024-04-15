@@ -37,6 +37,9 @@
             <DependentUpon>Bodyweight_Intermediate.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Update="Views\Workout\HIIT\HIIT_easy.xaml.cs">
+          <DependentUpon>HIIT_easy.xaml</DependentUpon>
+        </Compile>
         <Compile Update="Views\Workout\WorkoutsMain.xaml.cs">
             <DependentUpon>WorkoutsMain.xaml</DependentUpon>
             <SubType>Code</SubType>
@@ -128,10 +131,21 @@
       <EmbeddedResource Update="Views\Workout\Flexbility and Balance\Flexiblity_Levels.xaml">
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_easy.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_hard.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_intermediate.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Workout\HIIT\HIIT_levels.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Views\Workout\HIIT\" />
       <Folder Include="Views\Workout\Strength Training\" />
     </ItemGroup>
 </Project>

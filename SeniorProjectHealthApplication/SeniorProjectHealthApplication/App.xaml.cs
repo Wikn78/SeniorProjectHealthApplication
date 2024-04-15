@@ -197,7 +197,7 @@ namespace SeniorProjectHealthApplication
             {
                 //Id=22
                 Exercise_Link = "https://drive.google.com/file/d/1ZBtnUEpP9dRMhqizphZSvlMtsObP4xYW/view?usp=drive_link",
-                Exercise_Name = "Knee Extension"
+                Exercise_Name = "Knee Flexion"
             });
 
             _dbExerciseDatabase.AddItem(new ExerciseDatabase
