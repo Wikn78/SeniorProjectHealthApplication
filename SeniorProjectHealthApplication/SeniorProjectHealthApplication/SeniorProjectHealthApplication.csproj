@@ -84,10 +84,6 @@
             <DependentUpon>MealPage.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Update="Views\Workout\LinktoVideosPage.xaml.cs">
-            <DependentUpon>LinktoVideos.xaml</DependentUpon>
-            <SubType>Code</SubType>
-        </Compile>
         <Compile Update="Views\Settings\NotificationsPage.xaml.cs">
             <DependentUpon>NotificationsPage.xaml</DependentUpon>
             <SubType>Code</SubType>
@@ -143,9 +139,8 @@
       <EmbeddedResource Update="Views\Workout\HIIT\HIIT_levels.xaml">
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Views\Workout\Strength Training\" />
+      <EmbeddedResource Update="Views\Workout\Strength Training\Strength_Training.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
     </ItemGroup>
 </Project>
