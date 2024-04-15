@@ -66,31 +66,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android.SeniorProjectHealthApplication.Android.executor": "Debug",
-    "Device#class com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSConnectedDeviceKind#com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSDevicesProvider#Xamarin.iOS: SeniorProjectHealthApplication.iOS": "iPhone",
-    "DeviceKind#com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSDevicesProvider": "Device",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Xamarin.Android.SeniorProjectHealthApplication.Android.executor": "Debug",
-    "Xamarin.iOS.SeniorProjectHealthApplication.iOS.executor": "Debug",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android.SeniorProjectHealthApplication.Android.executor&quot;: &quot;Debug&quot;,
+    &quot;Device#class com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSConnectedDeviceKind#com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSDevicesProvider#Xamarin.iOS: SeniorProjectHealthApplication.iOS&quot;: &quot;iPhone&quot;,
+    &quot;DeviceKind#com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSDevicesProvider&quot;: &quot;Device&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Xamarin.Android.SeniorProjectHealthApplication.Android.executor&quot;: &quot;Debug&quot;,
+    &quot;Xamarin.iOS.SeniorProjectHealthApplication.iOS.executor&quot;: &quot;Debug&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/ethanlouis/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
-      "/Users/ethanlouis/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache",
-      "/Users/ethanlouis/Library/Application Support/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/ethanlouis/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/ethanlouis/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache&quot;,
+      &quot;/Users/ethanlouis/Library/Application Support/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Android.SeniorProjectHealthApplication.Android">
     <configuration name="SeniorProjectHealthApplication.Android" type="XamarinAndroidProject" factoryName="Xamarin.Android">
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication.Android/SeniorProjectHealthApplication.Android.csproj" />
