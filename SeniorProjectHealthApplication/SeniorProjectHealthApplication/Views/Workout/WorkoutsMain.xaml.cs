@@ -1,8 +1,9 @@
-﻿using SeniorProjectHealthApplication.Views.Workout;
+﻿using System;
+using SeniorProjectHealthApplication.Views.Workout;
 using SeniorProjectHealthApplication.Views.Workout.Cardiovascular;
 using SeniorProjectHealthApplication.Views.Workout.Flexbility_and_Balance;
 using SeniorProjectHealthApplication.Views.Workout.HIIT;
-using System;
+using SeniorProjectHealthApplication.Views.Workout.Strength_Training;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -41,9 +42,9 @@ namespace SeniorProjectHealthApplication.Views
         }
 
 
-
-
-
-
+        private async void Strength_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Strength_Training());
+        }
     }
 }

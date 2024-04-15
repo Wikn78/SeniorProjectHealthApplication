@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using SeniorProjectHealthApplication.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +11,12 @@ namespace SeniorProjectHealthApplication.Views.Workout.Bodyweight
         public Bodyweight_Hard()
         {
             InitializeComponent();
+            BindingContext = new OpenWorkoutViewModel();
+        }
+
+        private void Main_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
         }
     }
 }

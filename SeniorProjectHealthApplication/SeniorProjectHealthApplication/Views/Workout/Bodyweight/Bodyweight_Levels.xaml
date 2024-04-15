@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SeniorProjectHealthApplication.Views.Workout.WorkoutLevels"
-               BackgroundColor="{StaticResource UMCMaroon}">
+               BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
             <Grid HorizontalOptions="Center" VerticalOptions="Center">
@@ -29,12 +31,9 @@
                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}" />
                 </RelativeLayout>
-                <Image HorizontalOptions="End" VerticalOptions="Start" Source="Turn_off_Button.png" Margin="0,15,10,0"
-                       HeightRequest="30"
-                       WidthRequest="30" />
-                <Image HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
-                       HeightRequest="30"
-                       WidthRequest="30" />
+                <ImageButton HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
+                             HeightRequest="30"
+                             WidthRequest="30" Clicked="Main_Clicked"/>
 
             </Grid>
             <Label Text="" />

@@ -1,55 +1,22 @@
-﻿using System;
-using System.IO;
-using SeniorProjectHealthApplication.Models.Database_Structure;
-using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using System;
 using SeniorProjectHealthApplication.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace SeniorProjectHealthApplication.Views
+namespace SeniorProjectHealthApplication.Views.Workout.Bodyweight
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WorkoutScreenPage : ContentPage
+    public partial class Bodyweight_Intermediate : ContentPage
     {
-        private readonly DatabaseManager<ExerciseDatabase> _dbExerciseDatabase;
-
-        public WorkoutScreenPage()
+        public Bodyweight_Intermediate()
         {
             InitializeComponent();
             BindingContext = new OpenWorkoutViewModel();
-
-            _dbExerciseDatabase = LoadDatabase<ExerciseDatabase>();
         }
 
-        private async void Workout_Clicked(int workout_id, object sender, EventArgs e)
+        private void Main_Clicked(object sender, EventArgs e)
         {
-            var webView = new WebView
-            {
-                Source = new UrlWebViewSource
-                {
-                    Url = _dbExerciseDatabase.GetItem(10).Exercise_Link
-                },
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-            };
-
-            Content = new StackLayout
-            {
-                Children =
-                {
-                    webView
-                }
-            };
-        }
-
-        private DatabaseManager<T> LoadDatabase<T>() where T : new()
-        {
-            string fileName = "ExerciseDatabase.db3";
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string dbPath = Path.Combine(folderPath, fileName);
-
-
-            return new DatabaseManager<T>(dbPath);
+            Navigation.PopAsync();
         }
     }
 }

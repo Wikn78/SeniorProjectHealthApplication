@@ -33,10 +33,6 @@
         <Compile Update="Views\Workout\Bodyweight\Bodyweight_Levels.xaml.cs">
           <DependentUpon>Bodyweight_Levels.xaml</DependentUpon>
         </Compile>
-        <Compile Update="Views\Workout\Bodyweight\Bodyweight_Intermediate.xaml.cs">
-            <DependentUpon>Bodyweight_Intermediate.xaml</DependentUpon>
-            <SubType>Code</SubType>
-        </Compile>
         <Compile Update="Views\Workout\HIIT\HIIT_easy.xaml.cs">
           <DependentUpon>HIIT_easy.xaml</DependentUpon>
         </Compile>
