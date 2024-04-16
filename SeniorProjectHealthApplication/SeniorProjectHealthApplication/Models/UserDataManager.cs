@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using Xamarin.Essentials;
 
 namespace SeniorProjectHealthApplication.Models
 {
@@ -10,7 +11,7 @@ namespace SeniorProjectHealthApplication.Models
     {
         public static async Task<float> OnGetUserBmr(bool isMetric)
         {
-            var userId = 1; //Preferences.Get("userId", 0);
+            var userId = Preferences.Get("userId", 0);
 
             var userInfoDb = await LoadDatabase<UserAppInfo>();
             var usersDb = await LoadDatabase<Users>();

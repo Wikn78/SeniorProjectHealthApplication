@@ -43,7 +43,13 @@ namespace SeniorProjectHealthApplication.Models.DB_Repositorys
                 .OrderByDescending(item => item.Date)
                 .FirstOrDefault();
         }
-
+        
+        public UserNutrition GetUserNutrition(int uid)
+        {
+            return _db
+                .Table<UserNutrition>()
+                .FirstOrDefault(item => item.Uid == uid);
+        }
         public FoodLog GetFoodLogInfoByDate(string dateTime, int uid)
         {
             return _db.Table<FoodLog>()

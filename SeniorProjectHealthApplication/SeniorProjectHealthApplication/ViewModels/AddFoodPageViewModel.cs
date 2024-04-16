@@ -72,10 +72,15 @@ namespace SeniorProjectHealthApplication.ViewModels
                 
             }
 
+            var userNutDb = await UserDataManager.LoadDatabase<UserNutrition>();
+            var userNut = userNutDb.GetUserNutrition(Preferences.Get("userId", 0));
+            
+            
+            
             TotalCalories = totalCals.ToString("f0") + " cals";
-            TotalProtein = totalProtein.ToString("f0") + " g";
-            TotalCarbs = totalCarbs.ToString("f0") + " g";
-            TotalFats = totalFat.ToString("f0") + " g";
+            TotalProtein = $"{totalProtein:f0} / {userNut.ProteinIntake:f0}";
+            TotalCarbs = $"{totalCarbs:f0} / {userNut.CarbIntake:f0}";
+            TotalFats = $"{totalFat:f0} / {userNut.FatIntake:f0}";
         }
 
         public ObservableCollection<FoodItem> SearchedFoods { get; set; }

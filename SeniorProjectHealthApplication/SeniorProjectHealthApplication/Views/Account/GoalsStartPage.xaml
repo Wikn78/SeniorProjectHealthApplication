@@ -87,7 +87,7 @@
             </Grid>
             
             
-            <Button Text="Save Goals" BackgroundColor="{StaticResource UMCGold}" />
+            <Button Text="Save Goals" Clicked="SaveGoalsClicked" BackgroundColor="{StaticResource UMCGold}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

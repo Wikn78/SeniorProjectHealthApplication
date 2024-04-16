@@ -73,13 +73,16 @@ namespace SeniorProjectHealthApplication.Views
                 totalFat += (product.Nutriments.FatServing ?? 0) * foodItem.Quantity;
             }
 
+            var userNutDb = await UserDataManager.LoadDatabase<UserNutrition>();
+            var userNut = userNutDb.GetUserNutrition(_userId);
+            
             // Gets BMR
-            CaloriesLeft.Text = (await UserDataManager.OnGetUserBmr(false) - totalCalories).ToString("f0") + " \n calories left";
+            CaloriesLeft.Text = (userNut.CaloricIntake - totalCalories).ToString("f0") + " \n calories left";
             caloriesConsumed_Lbl.Text = totalCalories.ToString("f0") + " \nconsumed";
 
-            ProteinCount_Lbl.Text = totalProtein.ToString("f0") + "/ 100";
-            CarbsCount_Lbl.Text = totalCarbs.ToString("f0") + "/ 100";
-            FatCount_Lbl.Text = totalFat.ToString("f0") + "/ 100";
+            ProteinCount_Lbl.Text = $"{totalProtein:f0} / {userNut.ProteinIntake:f0}";
+            CarbsCount_Lbl.Text = $"{totalCarbs:f0} / {userNut.CarbIntake:f0}";
+            FatCount_Lbl.Text = $"{totalFat:f0} / {userNut.FatIntake:f0}";
 
         }
 

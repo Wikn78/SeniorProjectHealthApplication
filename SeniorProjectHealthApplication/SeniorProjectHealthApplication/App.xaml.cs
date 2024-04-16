@@ -12,7 +12,7 @@ namespace SeniorProjectHealthApplication
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage(new GoalsStartPage("270", "210"));
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

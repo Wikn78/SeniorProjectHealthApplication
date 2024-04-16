@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using SeniorProjectHealthApplication.Models;
+using SeniorProjectHealthApplication.Models.Database_Structure;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -102,6 +104,7 @@ namespace SeniorProjectHealthApplication.Views.Account
             _recommendedCaloricIntake = totalCaloriesBurnedPerDay + adjustedIntakeGoal;
 
             // Updating UI
+            UpdateLabels();
             Lbl_TotalDef.Text = $"{weightAdjustment:f0}";
             Lbl_TotalBurn.Text = $"{totalCaloriesBurnedPerDay:f0}";
             Lbl_TotalEat.Text = $"{_recommendedCaloricIntake:f0} estimated intake";
@@ -119,12 +122,23 @@ namespace SeniorProjectHealthApplication.Views.Account
             }
         }
 
+    
+        private bool isSliderValueChangedProgrammatically = false;
+
         private void OnMacroSliderChange(object sender, ValueChangedEventArgs e)
         {
-            var slider = (Slider)sender;
+            // If the event was triggered by code, just ignore it
+            if (isSliderValueChangedProgrammatically)
+            {
+                return;
+            }
 
+            var slider = (Slider)sender;
             var newTotal = proteinSlider.Value + carbsSlider.Value + fatsSlider.Value;
             var change = newTotal - previousTotal;
+
+            // Set this flag to true as we're about to change slider values programmatically
+            isSliderValueChangedProgrammatically = true;
 
             if (slider == proteinSlider)
             {
@@ -138,6 +152,9 @@ namespace SeniorProjectHealthApplication.Views.Account
             {
                 AdjustOtherSlidersEvenly(proteinSlider, carbsSlider, -change);
             }
+
+            // Reset the flag to false after we are done with programmatically changing slider values
+            isSliderValueChangedProgrammatically = false;
 
             previousTotal = proteinSlider.Value + carbsSlider.Value + fatsSlider.Value;
             UpdateLabels();
@@ -159,13 +176,38 @@ namespace SeniorProjectHealthApplication.Views.Account
             if (slider.Value > 100) slider.Value = 100;
         }
 
+        private double _proteinGram, _carbGram, _fatGram;
 
         private void UpdateLabels()
         {
             // Calculate and update your respective percentages here:
-            proteinLabel.Text = $"{proteinSlider.Value}%";
-            carbsLabel.Text = $"{carbsSlider.Value}%";
-            fatsLabel.Text = $"{fatsSlider.Value}%";
+            _proteinGram = (_recommendedCaloricIntake / 4) * (proteinSlider.Value / 100.0f) ;
+            _carbGram = (_recommendedCaloricIntake / 4) * (carbsSlider.Value / 100.0f);
+            _fatGram = (_recommendedCaloricIntake / 9) * (fatsSlider.Value / 100.0f);
+            
+            
+            proteinLabel.Text = $"{_proteinGram:f0}G ({proteinSlider.Value:f1}%)";
+            carbsLabel.Text = $"{_carbGram:f0}G ({carbsSlider.Value:f1}%)";
+            fatsLabel.Text = $"{_fatGram:f0}G ({fatsSlider.Value:f1}%)";
+        }
+
+        private async void SaveGoalsClicked(object sender, EventArgs e)
+        {
+            var userNutritionDb = await UserDataManager.LoadDatabase<UserNutrition>();
+            userNutritionDb.AddItem(new UserNutrition
+            {
+                Uid =  Preferences.Get("userId", 0),
+                CaloricIntake = (float)_recommendedCaloricIntake,
+                Date = DateTime.Today.ToString("d"),
+                ProteinIntake = (float)_proteinGram,
+                FatIntake = (float)_fatGram,
+                CarbIntake = (float)_carbGram,
+                WeightPerWeek = _newValue.ToString("f1")
+                
+            });
+            
+            await Navigation.PushAsync(new DashboardPage());
+
         }
     }
 }
