@@ -32,7 +32,12 @@ namespace SeniorProjectHealthApplication.Views.Account
         private double _activityLevel;
         private double _intakeGoal;
         private double _newValue;
+
+        private double _proteinGram, _carbGram, _fatGram;
         private double _recommendedCaloricIntake;
+
+
+        private bool isSliderValueChangedProgrammatically = false;
         private double previousTotal = 100;
         private double total = 100;
 
@@ -104,7 +109,7 @@ namespace SeniorProjectHealthApplication.Views.Account
             _recommendedCaloricIntake = totalCaloriesBurnedPerDay + adjustedIntakeGoal;
 
             // Updating UI
-            UpdateLabels();
+            UpdateLabels(); //
             Lbl_TotalEat.Text = $"{_recommendedCaloricIntake:f0} estimated intake";
         }
 
@@ -119,9 +124,6 @@ namespace SeniorProjectHealthApplication.Views.Account
                 UpdateCalorieIntake(_newValue);
             }
         }
-
-    
-        private bool isSliderValueChangedProgrammatically = false;
 
         private void OnMacroSliderChange(object sender, ValueChangedEventArgs e)
         {
@@ -174,16 +176,14 @@ namespace SeniorProjectHealthApplication.Views.Account
             if (slider.Value > 100) slider.Value = 100;
         }
 
-        private double _proteinGram, _carbGram, _fatGram;
-
         private void UpdateLabels()
         {
             // Calculate and update your respective percentages here:
-            _proteinGram = (_recommendedCaloricIntake / 4) * (proteinSlider.Value / 100.0f) ;
+            _proteinGram = (_recommendedCaloricIntake / 4) * (proteinSlider.Value / 100.0f);
             _carbGram = (_recommendedCaloricIntake / 4) * (carbsSlider.Value / 100.0f);
             _fatGram = (_recommendedCaloricIntake / 9) * (fatsSlider.Value / 100.0f);
-            
-            
+
+
             proteinLabel.Text = $"{_proteinGram:f0}G ({proteinSlider.Value:f1}%)";
             carbsLabel.Text = $"{_carbGram:f0}G ({carbsSlider.Value:f1}%)";
             fatsLabel.Text = $"{_fatGram:f0}G ({fatsSlider.Value:f1}%)";
@@ -194,18 +194,16 @@ namespace SeniorProjectHealthApplication.Views.Account
             var userNutritionDb = await UserDataManager.LoadDatabase<UserNutrition>();
             userNutritionDb.AddItem(new UserNutrition
             {
-                Uid =  Preferences.Get("userId", 0),
+                Uid = Preferences.Get("userId", 0),
                 CaloricIntake = (float)_recommendedCaloricIntake,
                 Date = DateTime.Today.ToString("d"),
                 ProteinIntake = (float)_proteinGram,
                 FatIntake = (float)_fatGram,
                 CarbIntake = (float)_carbGram,
                 WeightPerWeek = _newValue.ToString("f1")
-                
             });
-            
-            await Navigation.PushAsync(new DashboardPage());
 
+            await Navigation.PushAsync(new DashboardPage());
         }
     }
 }
