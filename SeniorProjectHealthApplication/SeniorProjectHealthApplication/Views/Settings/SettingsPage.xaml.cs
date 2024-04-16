@@ -37,5 +37,10 @@ namespace SeniorProjectHealthApplication.Views
         {
             await Navigation.PushAsync(new GoalsPage());
         }
+
+        private void OnBackButtonClicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
     }
 }

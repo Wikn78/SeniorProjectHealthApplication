@@ -5,7 +5,8 @@
              mc:Ignorable="d"
              x:Class="SeniorProjectHealthApplication.Views.LoginPage"
              BackgroundColor="{StaticResource UMCMaroon}"
-             Shell.NavBarIsVisible="False">
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
 
 

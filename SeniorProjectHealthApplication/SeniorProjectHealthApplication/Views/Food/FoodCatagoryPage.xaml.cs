@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Globalization;
 using SeniorProjectHealthApplication.ViewModels;
 using SeniorProjectHealthApplication.Views.Food;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,17 +11,18 @@ namespace SeniorProjectHealthApplication.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FoodCatagoryPage : ContentPage
     {
-        string CategoryID;
+        private readonly string CategoryID;
 
         public FoodCatagoryPage(string categoryID)
         {
             InitializeComponent();
-            this.BindingContext = new FoodCategoryViewModel(categoryID);
+            BindingContext = new FoodCategoryViewModel(categoryID);
             CategoryID = categoryID;
+            Preferences.Set("currentCategory", categoryID);
             // Display CategoryID on the MealPage, for instance in a Label
             Lbl_CategoryId.Text =
-                System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(categoryID.ToLower());
-            Lbl_FoodDate.Text = Xamarin.Essentials.Preferences.Get("selectedDate", "");
+                CultureInfo.CurrentCulture.TextInfo.ToTitleCase(categoryID.ToLower());
+            Lbl_FoodDate.Text = Preferences.Get("selectedDate", "");
             //Lbl_TotalCalories.Text = ViewModel.TotalCalories.ToString();
         }
 

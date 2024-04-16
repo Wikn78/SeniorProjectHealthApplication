@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using SeniorProjectHealthApplication.Views.Account;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,28 +19,19 @@ namespace SeniorProjectHealthApplication.Views
         {
             InitializeComponent();
 
-            var userId = Xamarin.Essentials.Preferences.Get("userId", 0);
+            var userId = Preferences.Get("userId", 0);
 
             _userId = userId;
 
 
-            List<int> weightValuesPounds = new List<int>();
-            for (int i = 50; i <= 400; i++)
-            {
-                weightValuesPounds.Add(i);
-            }
+            var weightValuesPounds = new List<int>();
+            for (var i = 50; i <= 400; i++) weightValuesPounds.Add(i);
 
-            List<int> heightValuesFeet = new List<int>();
-            for (int i = 2; i <= 9; i++)
-            {
-                heightValuesFeet.Add(i);
-            }
+            var heightValuesFeet = new List<int>();
+            for (var i = 2; i <= 9; i++) heightValuesFeet.Add(i);
 
-            List<int> heightValuesInch = new List<int>();
-            for (int i = 0; i <= 11; i++)
-            {
-                heightValuesInch.Add(i);
-            }
+            var heightValuesInch = new List<int>();
+            for (var i = 0; i <= 11; i++) heightValuesInch.Add(i);
 
 
             GoalWeight.ItemsSource = weightValuesPounds;
@@ -51,9 +44,9 @@ namespace SeniorProjectHealthApplication.Views
 
         private async void UpdateGoals_Clicked(object sender, EventArgs e)
         {
-            DatabaseManager<UserAppInfo> userAppInfoDb = LoadUserAppInfoDatabase();
+            var userAppInfoDb = LoadUserAppInfoDatabase();
 
-            int height = (int.Parse(HeightFeet.SelectedItem.ToString()) * 12) +
+            var height = int.Parse(HeightFeet.SelectedItem.ToString()) * 12 +
                          int.Parse(HeightInch.SelectedItem.ToString());
 
 
@@ -67,15 +60,15 @@ namespace SeniorProjectHealthApplication.Views
             });
 
 
-            await Navigation.PushAsync(new DashboardPage());
+            await Navigation.PushAsync(new GoalsStartPage(CurrentWeight.SelectedItem.ToString(), GoalWeight.SelectedItem.ToString()));
         }
 
 
         private DatabaseManager<UserAppInfo> LoadUserAppInfoDatabase()
         {
-            string fileName = "Database.db3";
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string dbPath = Path.Combine(folderPath, fileName);
+            var fileName = "Database.db3";
+            var folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var dbPath = Path.Combine(folderPath, fileName);
 
             return new DatabaseManager<UserAppInfo>(dbPath);
         }

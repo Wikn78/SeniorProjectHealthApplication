@@ -2,6 +2,7 @@
 using System.IO;
 using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,14 +11,14 @@ namespace SeniorProjectHealthApplication.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AccountSettingsPage : ContentPage
     {
-        private int _userId;
+        private readonly int _userId;
 
         public AccountSettingsPage()
         {
             InitializeComponent();
 
 
-            var userId = Xamarin.Essentials.Preferences.Get("userId", 0);
+            var userId = Preferences.Get("userId", 0);
 
             _userId = userId;
 
@@ -27,7 +28,7 @@ namespace SeniorProjectHealthApplication.Views
 
         private void LoadUserSettings(int userId)
         {
-            DatabaseManager<Users> userDb = LoadUserDatabase();
+            var userDb = LoadUserDatabase();
             var user = userDb.GetItem(userId);
 
 
@@ -44,55 +45,49 @@ namespace SeniorProjectHealthApplication.Views
             EmailInput.Text = user.Email;
             GenderInput.SelectedItem = user.Gender;
 
-            if (DateTime.TryParse(user.Birthdate, out var bDay))
-            {
-                BirthdateInput.Date = bDay;
-            }
+            if (DateTime.TryParse(user.Birthdate, out var bDay)) BirthdateInput.Date = bDay;
         }
 
         private DatabaseManager<Users> LoadUserDatabase()
         {
-            string fileName = "Database.db3";
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string dbPath = Path.Combine(folderPath, fileName);
+            var fileName = "Database.db3";
+            var folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var dbPath = Path.Combine(folderPath, fileName);
 
             return new DatabaseManager<Users>(dbPath);
         }
 
         private void UpdateSettings_Clicked(object sender, EventArgs e)
         {
-            DatabaseManager<Users> userDb = LoadUserDatabase();
+            var userDb = LoadUserDatabase();
             var user = userDb.GetItem(_userId);
 
-            if (user.First_Name != FirstNameInput.Text)
-            {
-                user.First_Name = FirstNameInput.Text.ToLower();
-            }
+            if (user.First_Name != FirstNameInput.Text) user.First_Name = FirstNameInput.Text.ToLower();
 
-            if (user.Last_Name != LastNameInput.Text)
-            {
-                user.Last_Name = LastNameInput.Text.ToLower();
-            }
+            if (user.Last_Name != LastNameInput.Text) user.Last_Name = LastNameInput.Text.ToLower();
 
-            if (user.Email != EmailInput.Text)
-            {
-                user.Email = EmailInput.Text.ToLower();
-            }
+            if (user.Email != EmailInput.Text) user.Email = EmailInput.Text.ToLower();
 
             if (user.Birthdate != BirthdateInput.Date.ToShortDateString())
-            {
                 user.Birthdate = BirthdateInput.Date.ToShortDateString();
-            }
 
-            if (user.Gender != (string)GenderInput.SelectedItem)
-            {
-                user.Gender = (string)GenderInput.SelectedItem;
-            }
+            if (user.Gender != (string)GenderInput.SelectedItem) user.Gender = (string)GenderInput.SelectedItem;
 
 
             userDb.UpdateItem(user);
 
             LoadUserSettings(_userId);
+        }
+
+        private async void OnButtonClicked(object sender, EventArgs e)
+        {
+            await SecureStorage.SetAsync("AuthToken", string.Empty);
+            await Navigation.PushAsync(new LoginPage());
+        }
+
+        private void OnBackButtonClicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
         }
     }
 }

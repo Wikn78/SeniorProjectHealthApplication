@@ -4,6 +4,7 @@ using SeniorProjectHealthApplication.Models.Database_Structure;
 using SeniorProjectHealthApplication.Models.DB_Repositorys;
 using SeniorProjectHealthApplication.Services;
 using SeniorProjectHealthApplication.Views;
+using SeniorProjectHealthApplication.Views.Account;
 using Xamarin.Forms;
 
 namespace SeniorProjectHealthApplication

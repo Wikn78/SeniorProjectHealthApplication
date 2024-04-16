@@ -1,4 +1,5 @@
 ﻿using System;
+using SeniorProjectHealthApplication.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +11,8 @@ namespace SeniorProjectHealthApplication.Views.Food
         public AddFoodPage(string categoryID)
         {
             InitializeComponent();
+            BindingContext = new AddFoodPageViewModel(categoryID);
+
             // Set the CategoryID property when the page is created
             CategoryID = categoryID;
 
@@ -22,7 +25,7 @@ namespace SeniorProjectHealthApplication.Views.Food
 
         private void GoBack_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new FoodCatagoryPage(CategoryID));
+            Navigation.PopAsync();
         }
 
         private void Barcode_Clicked(object sender, EventArgs e)
