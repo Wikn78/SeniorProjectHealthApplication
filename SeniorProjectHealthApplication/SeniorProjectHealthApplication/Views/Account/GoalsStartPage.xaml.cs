@@ -105,8 +105,6 @@ namespace SeniorProjectHealthApplication.Views.Account
 
             // Updating UI
             UpdateLabels();
-            Lbl_TotalDef.Text = $"{weightAdjustment:f0}";
-            Lbl_TotalBurn.Text = $"{totalCaloriesBurnedPerDay:f0}";
             Lbl_TotalEat.Text = $"{_recommendedCaloricIntake:f0} estimated intake";
         }
 
