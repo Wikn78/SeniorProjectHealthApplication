@@ -10,8 +10,8 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Label Text="" FontSize="5" />
-            <BoxView Color="White" WidthRequest="100" HeightRequest="100" CornerRadius="50" />
+            <Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" />  <Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" />    
+            
             <Label Text="1750 Calories left" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"
                    FontSize="20" />
             <Label Text="50 Calories Burned" TextColor="{StaticResource UMCGold}" HorizontalOptions="Center"
@@ -33,7 +33,7 @@
             <Label Text="" FontSize="5" />
             <Button Text="BODYWEIGHT" WidthRequest="250" HeightRequest="60" BackgroundColor="{StaticResource UMCGold}"
                     Clicked="BodyWeight_Clicked" />
-            <views:QuickNavBar Margin="0,10,0,0" VerticalOptions="End" HorizontalOptions='Center' CurrentPage="Logs" />
+            <views:QuickNavBar Margin="0,10,0,0" VerticalOptions="End" HorizontalOptions='End' CurrentPage="Logs" />
 
         </StackLayout>
     </ContentPage.Content>

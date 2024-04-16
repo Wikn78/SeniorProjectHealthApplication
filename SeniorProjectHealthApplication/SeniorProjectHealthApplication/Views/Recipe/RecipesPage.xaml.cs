@@ -12,8 +12,9 @@ namespace SeniorProjectHealthApplication.Views
         public RecipesPage()
         {
             InitializeComponent();
-            this.BindingContext = new RecipesViewModel();
+            BindingContext = new RecipesViewModel();
         }
+
 
         private RecipesViewModel ViewModel => BindingContext as RecipesViewModel;
 

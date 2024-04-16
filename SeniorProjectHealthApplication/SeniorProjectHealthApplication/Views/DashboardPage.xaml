@@ -205,7 +205,7 @@
                                              CategoryID="dinner" />
                     <local:DashboardCategory Grid.Row="4" Padding="2" CategoryName="Snack" ImagePath="snack_icon.png"
                                              CategoryID="snack" />
-                    <local:DashboardCategory Grid.Row="5" Padding="2" CategoryName="Water" />
+                    
                 </Grid>
 
 

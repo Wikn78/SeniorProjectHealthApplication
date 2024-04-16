@@ -154,7 +154,21 @@
             </ScrollView>
             <!--Add Food Button-->
             <StackLayout>
-                <Button BackgroundColor="{StaticResource UMCGold}" Text="Add Food" Clicked="Add_Recipe"/>
+                <Picker 
+                    SelectedItem="{Binding MySelectedItem}"
+                    Title="Select Meal Time" >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Breakfast</x:String>
+                            <x:String>Lunch</x:String>
+                            <x:String>Dinner</x:String>
+                            <x:String>Snack</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                    
+                    
+                </Picker>
+                <Button BackgroundColor="{StaticResource UMCGold}" Text="Add Food" Command="{Binding AddRecipeItemCommand}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
