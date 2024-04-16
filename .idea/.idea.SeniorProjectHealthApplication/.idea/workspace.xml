@@ -16,15 +16,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="016f91a0-57e1-44a8-ba9e-94affb6c2c84" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SeniorProjectHealthApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SeniorProjectHealthApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/ViewModels/RecipesViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/ViewModels/RecipesViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/DashboardPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/DashboardPage.xaml" afterDir="false" />
+    <list default="true" id="016f91a0-57e1-44a8-ba9e-94affb6c2c84" name="Changes" comment="Update navigation and interaction in various parts of the application&#10;&#10;Improved navigation and interactivity in the DashboardPage, BrowseRecipePage, RecipesPage, and WorkoutsMainPage. All the .xaml and .cs files related to these pages are updated with better alignment and more responsive UI elements. Also added an essential AddRecipeItem function in RecipesViewModel, further enhancing the app's usability.">
       <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/DashboardPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/DashboardPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/BrowseRecipePage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/BrowseRecipePage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/BrowseRecipePage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/BrowseRecipePage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/RecipesPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/RecipesPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Workout/WorkoutsMain.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Workout/WorkoutsMain.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +51,8 @@
     <setting file="file://$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Models/DB Repositorys/DatabaseManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/ViewModels/RecipesViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/ViewModels/RecipesViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/DashboardPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/BrowseRecipePage.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/BrowseRecipePage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/RecipesPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -230,7 +225,7 @@
       <workItem from="1713280094143" duration="1399000" />
       <workItem from="1713281517466" duration="430000" />
       <workItem from="1713281951447" duration="14000" />
-      <workItem from="1713281984175" duration="1079000" />
+      <workItem from="1713281984175" duration="2719000" />
     </task>
     <task id="LOCAL-00001" summary="Update Xamarin.Android.Build.Tasks version and store user data&#10;&#10;The Xamarin.Android.Build.Tasks version has been updated in the Resource.designer.cs file from &quot;13.2.1.111&quot; to &quot;13.2.2.120&quot;. Addition of Linq library and important user data like UserID is now being stored in CreateAccountViewModel.cs, which will be used later to customize the user experience. Also added functionality to calculate and display the Basal Metabolic Rate (BMR) in the DashboardPage.xaml.cs file.">
       <option name="closed" value="true" />
@@ -512,7 +507,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713231302811</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Update navigation and interaction in various parts of the application&#10;&#10;Improved navigation and interactivity in the DashboardPage, BrowseRecipePage, RecipesPage, and WorkoutsMainPage. All the .xaml and .cs files related to these pages are updated with better alignment and more responsive UI elements. Also added an essential AddRecipeItem function in RecipesViewModel, further enhancing the app's usability.">
+      <option name="closed" value="true" />
+      <created>1713285152955</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1713285152955</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +525,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Update Android project settings and implement food product api&#10;&#10;This commit updates the Android project settings to support different ABIs and sets the HTTP client handler. Along with these changes, the FoodCategoryViewModel has been modified. It is now capable of fetching food product data from an external API and adding this product to the food list. A new project folder, Packages, has also been added." />
     <MESSAGE value="Add fetching and console printing for raw chicken breast&#10;&#10;In the FoodCategoryViewModel, a fetch operation for &quot;raw chicken breast&quot; product was added. Additionally, the page count of the fetched responses is now getting printed in the console for easier debugging and tracking." />
     <MESSAGE value="Update food item data and include OpenFoodFacts package&#10;&#10;In this commit, the fetching parameters in FoodCategoryViewModel have been updated for more accurate results. Also, the OpenFoodFacts-CSharp.csproj package is newly referenced in the project. Now, it fetches data with a different product code (&quot;01289903&quot; instead of &quot;034856890089&quot;) and searches for &quot;chicken&quot; rather than &quot;raw chicken breast&quot;. This could give better search results for users looking for food items or recipes." />
     <MESSAGE value="Add OpenFoodFacts API handler &amp; related models&#10;&#10;Include API handler for OpenFoodFacts to access nutritional information and the related models including ingredients, packaging, nutrition facts, etc. This will enable the application to fetch detailed health and nutritional information for different foods." />
@@ -547,7 +549,8 @@
     <MESSAGE value="Add AndroidX library references&#10;&#10;This commit adds numerous AndroidX library references to the project. Each added file represents a specific AndroidX library and includes references to the respective classes, Javadocs, and source code." />
     <MESSAGE value="Update Bodyweight_Intermediate.xaml with navigation and UI improvements&#10;&#10;This update refactors the Bodyweight_Intermediate.xaml to improve the user navigation and application interactivity. It aligns the class directive to the proper namespace and replaces the stiff labels with functional buttons, which are now binding to navigation commands. This change enhances the user experience by making UI elements more responsive and navigation more intuitive." />
     <MESSAGE value="Refactor Bodyweight_Intermediate.xaml for improved navigation and UX&#10;&#10;This commit refactors the Bodyweight_Intermediate.xaml to enhance user navigation and interactivity. The class directive has been aligned to the correct namespace, and static labels have been replaced with dynamic buttons bound to navigation commands. This results in a more intuitive and responsive user interface." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor Bodyweight_Intermediate.xaml for improved navigation and UX&#10;&#10;This commit refactors the Bodyweight_Intermediate.xaml to enhance user navigation and interactivity. The class directive has been aligned to the correct namespace, and static labels have been replaced with dynamic buttons bound to navigation commands. This results in a more intuitive and responsive user interface." />
+    <MESSAGE value="Update navigation and interaction in various parts of the application&#10;&#10;Improved navigation and interactivity in the DashboardPage, BrowseRecipePage, RecipesPage, and WorkoutsMainPage. All the .xaml and .cs files related to these pages are updated with better alignment and more responsive UI elements. Also added an essential AddRecipeItem function in RecipesViewModel, further enhancing the app's usability." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update navigation and interaction in various parts of the application&#10;&#10;Improved navigation and interactivity in the DashboardPage, BrowseRecipePage, RecipesPage, and WorkoutsMainPage. All the .xaml and .cs files related to these pages are updated with better alignment and more responsive UI elements. Also added an essential AddRecipeItem function in RecipesViewModel, further enhancing the app's usability." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -38,14 +38,14 @@ namespace SeniorProjectHealthApplication.Views
             // check if a current date has a food log, if not make one.
 
             var fl = await CreateFoodLogIfNotExists();
-            
+
             CurrentDateLabel.Text = _selectedDate.ToShortDateString();
             // sets the current date so all pages can get it
             Preferences.Set("selectedDate", _selectedDate.ToShortDateString());
-           
-            
+
+
             Preferences.Set("CurrentFoodLog", fl.FL_ID);
-            
+
             // gets all food and nutriontion
             var foodItems = new List<FoodItem>();
             var foodItemsDb = await UserDataManager.LoadDatabase<FoodItem>();
@@ -54,15 +54,15 @@ namespace SeniorProjectHealthApplication.Views
 
             foreach (var category in foodCategorys)
             {
-               var items = foodItemsDb.GetAllItems().Where(x => x.FL_ID == category.Id);
-               foodItems.AddRange(items);
+                var items = foodItemsDb.GetAllItems().Where(x => x.FL_ID == category.Id);
+                foodItems.AddRange(items);
             }
-            
+
             // Calculate Calories and protein
 
-            float totalCalories = 0f, totalProtein= 0f , totalCarbs = 0f , totalFat= 0f ;
-            
-            
+            float totalCalories = 0f, totalProtein = 0f, totalCarbs = 0f, totalFat = 0f;
+
+
             foreach (var foodItem in foodItems)
             {
                 var product = JsonConvert.DeserializeObject<Product>(foodItem.ProductInformation);
@@ -75,7 +75,7 @@ namespace SeniorProjectHealthApplication.Views
 
             var userNutDb = await UserDataManager.LoadDatabase<UserNutrition>();
             var userNut = userNutDb.GetUserNutrition(_userId);
-            
+
             // Gets BMR
             CaloriesLeft.Text = (userNut.CaloricIntake - totalCalories).ToString("f0") + " \n calories left";
             caloriesConsumed_Lbl.Text = totalCalories.ToString("f0") + " \nconsumed";
@@ -83,7 +83,6 @@ namespace SeniorProjectHealthApplication.Views
             ProteinCount_Lbl.Text = $"{totalProtein:f0} / {userNut.ProteinIntake:f0}";
             CarbsCount_Lbl.Text = $"{totalCarbs:f0} / {userNut.CarbIntake:f0}";
             FatCount_Lbl.Text = $"{totalFat:f0} / {userNut.FatIntake:f0}";
-
         }
 
         private async Task<FoodLog> CreateFoodLogIfNotExists()
