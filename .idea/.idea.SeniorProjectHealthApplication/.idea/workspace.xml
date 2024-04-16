@@ -16,8 +16,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="016f91a0-57e1-44a8-ba9e-94affb6c2c84" name="Changes" comment="Add AndroidX library references&#10;&#10;This commit adds numerous AndroidX library references to the project. Each added file represents a specific AndroidX library and includes references to the respective classes, Javadocs, and source code.">
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication.csproj" afterDir="false" />
+    <list default="true" id="016f91a0-57e1-44a8-ba9e-94affb6c2c84" name="Changes" comment="Update Bodyweight_Intermediate.xaml with navigation and UI improvements&#10;&#10;This update refactors the Bodyweight_Intermediate.xaml to improve the user navigation and application interactivity. It aligns the class directive to the proper namespace and replaces the stiff labels with functional buttons, which are now binding to navigation commands. This change enhances the user experience by making UI elements more responsive and navigation more intuitive.">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SeniorProjectHealthApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SeniorProjectHealthApplication/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/BrowseRecipePage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/BrowseRecipePage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/BrowseRecipePage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Recipe/BrowseRecipePage.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +49,17 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f55ff5faa05f167faf776e6b4794ba86578679f65d5e031c8dd3f510be8eca/Preferences.shared.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication.Android/Resources/Resource.designer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication.Android/obj/Debug/MonoAndroid,Version=v13.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Models/DB Repositorys/DatabaseManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Models/DB Repositorys/DatabaseManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Models/DB Repositorys/DatabaseManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/ViewModels/RecipesViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Account/GoalsStartPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Account/GoalsStartPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Food/AddFoodPage.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Settings/AccountSettingsPage.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Workout/Bodyweight/Bodyweight_Intermediate.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Workout/Bodyweight/Bodyweight_Intermediate.xaml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -73,32 +82,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android.SeniorProjectHealthApplication.Android.executor": "Debug",
-    "Device#class com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSConnectedDeviceKind#com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSDevicesProvider#Xamarin.iOS: SeniorProjectHealthApplication.iOS": "iPhone",
-    "DeviceKind#com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSDevicesProvider": "Device",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Xamarin.Android.SeniorProjectHealthApplication.Android.executor": "Debug",
-    "Xamarin.iOS.SeniorProjectHealthApplication.iOS.executor": "Debug",
-    "git-widget-placeholder": "dev",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android.SeniorProjectHealthApplication.Android.executor&quot;: &quot;Debug&quot;,
+    &quot;Device#class com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSConnectedDeviceKind#com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSDevicesProvider#Xamarin.iOS: SeniorProjectHealthApplication.iOS&quot;: &quot;iPhone&quot;,
+    &quot;DeviceKind#com.jetbrains.rider.run.xamarin.ios.devices.XamarinIOSDevicesProvider&quot;: &quot;Device&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Xamarin.Android.SeniorProjectHealthApplication.Android.executor&quot;: &quot;Debug&quot;,
+    &quot;Xamarin.iOS.SeniorProjectHealthApplication.iOS.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/ethanlouis/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
-      "/Users/ethanlouis/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache",
-      "/Users/ethanlouis/Library/Application Support/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/ethanlouis/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/ethanlouis/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache&quot;,
+      &quot;/Users/ethanlouis/Library/Application Support/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Android.SeniorProjectHealthApplication.Android">
     <configuration name="SeniorProjectHealthApplication.Android" type="XamarinAndroidProject" factoryName="Xamarin.Android">
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication.Android/SeniorProjectHealthApplication.Android.csproj" />
@@ -482,7 +491,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713225186669</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Update Bodyweight_Intermediate.xaml with navigation and UI improvements&#10;&#10;This update refactors the Bodyweight_Intermediate.xaml to improve the user navigation and application interactivity. It aligns the class directive to the proper namespace and replaces the stiff labels with functional buttons, which are now binding to navigation commands. This change enhances the user experience by making UI elements more responsive and navigation more intuitive.">
+      <option name="closed" value="true" />
+      <created>1713229972889</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1713229972889</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +509,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Add Newtonsoft.Json package and create FoodDatabaseManager&#10;&#10;The Newtonsoft.Json package has been added to the project. This allows for use in the newly added FoodDatabaseManager class, which is required for fetching product data for the food database by using API calls. Also, correspondent updates were made in the views and Models/Product.cs files had been added to represent Product class." />
     <MESSAGE value="Remove FoodDatabaseManager and Product classes&#10;&#10;The FoodDatabaseManager and Product classes in the Models folder of the SeniorProjectHealthApplication have been deleted. This is probably due to changes in the structure of the project or the implementation of functionalities that rendered these classes redundant or obsolete." />
     <MESSAGE value="Update Android project settings and implement food product api&#10;&#10;This commit updates the Android project settings to support different ABIs and sets the HTTP client handler. Along with these changes, the FoodCategoryViewModel has been modified. It is now capable of fetching food product data from an external API and adding this product to the food list. A new project folder, Packages, has also been added." />
     <MESSAGE value="Add fetching and console printing for raw chicken breast&#10;&#10;In the FoodCategoryViewModel, a fetch operation for &quot;raw chicken breast&quot; product was added. Additionally, the page count of the fetched responses is now getting printed in the console for easier debugging and tracking." />
@@ -517,7 +533,8 @@
     <MESSAGE value="Updated workout views and navigation&#10;&#10;Updated various workout views to include back navigation and altered clickable items to ImageButton from Image for enhanced functionality. Also, eliminated superfluous code and restructured certain objects for better readability and maintainability of code. Additionally, fixes were applied to the navigation hierarchy to improve application flow." />
     <MESSAGE value="Add new project settings and update Xamarin.Android.Build.Tasks version&#10;&#10;Added new project settings relevant to deployment and project working environment. Also updated the Xamarin.Android.Build.Tasks version in the Resource.designer.cs file. Additionally, a temporary setting for uncommitted changes was stored." />
     <MESSAGE value="Add AndroidX library references&#10;&#10;This commit adds numerous AndroidX library references to the project. Each added file represents a specific AndroidX library and includes references to the respective classes, Javadocs, and source code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add AndroidX library references&#10;&#10;This commit adds numerous AndroidX library references to the project. Each added file represents a specific AndroidX library and includes references to the respective classes, Javadocs, and source code." />
+    <MESSAGE value="Update Bodyweight_Intermediate.xaml with navigation and UI improvements&#10;&#10;This update refactors the Bodyweight_Intermediate.xaml to improve the user navigation and application interactivity. It aligns the class directive to the proper namespace and replaces the stiff labels with functional buttons, which are now binding to navigation commands. This change enhances the user experience by making UI elements more responsive and navigation more intuitive." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Bodyweight_Intermediate.xaml with navigation and UI improvements&#10;&#10;This update refactors the Bodyweight_Intermediate.xaml to improve the user navigation and application interactivity. It aligns the class directive to the proper namespace and replaces the stiff labels with functional buttons, which are now binding to navigation commands. This change enhances the user experience by making UI elements more responsive and navigation more intuitive." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -526,6 +543,7 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#OpenFoodFactsCSharp.Models.Product" memberName="Nutriments" />
+        <PinnedItemInfo parentTag="Type#SeniorProjectHealthApplication.Views.Account.GoalsStartPage" memberName="_recommendedCaloricIntake" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

@@ -2,7 +2,7 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SeniorProjectHealthApplication.Views.BrowseRecipePage"
+             x:Class="SeniorProjectHealthApplication.Views.Recipe.BrowseRecipePage"
              NavigationPage.HasBackButton="False"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
@@ -22,8 +22,7 @@
                                             </Grid.ColumnDefinitions>
 
                                             <StackLayout Grid.Row="0" Grid.ColumnSpan="4" >
-                                                <Label Text="{Binding ReceipeName}" HorizontalTextAlignment="Center" FontSize="45" TextColor="{StaticResource UMCGold}">
-                                                </Label>
+                                                <Label x:Name="lbl_RecipeName" Text="{Binding ReceipeName}" HorizontalTextAlignment="Center" FontSize="45" TextColor="{StaticResource UMCGold}" />
                                                 <Image Source="{Binding RecipePicture}" />
                                             </StackLayout>
                                         </Grid>
@@ -54,28 +53,28 @@
                                      Margin="5, 10, 5, 0">
                                                 <Label Text="Calories" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"/>
                                                 <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
-                                   FontSize="18" Text="{Binding Calories}" />
+                                   FontSize="18" x:Name="lbl_Calorie" Text="{Binding Calories}" />
                                             </StackLayout>
 
                                             <StackLayout Grid.Row="1" HeightRequest="50" Grid.Column="1" BackgroundColor="{StaticResource UMCGold}"
                                      Margin="5, 10, 5, 0">
                                                 <Label Text="Carbs" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"/>
                                                 <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
-                                   FontSize="18" Text="{Binding Carbs, StringFormat='{}{0}g'}" />
+                                   FontSize="18" x:Name="lbl_Carbs" Text="{Binding Carbs, StringFormat='{}{0}g'}" />
                                             </StackLayout>
 
                                             <StackLayout Grid.Row="1" HeightRequest="50" Grid.Column="2" BackgroundColor="{StaticResource UMCGold}"
                                      Margin="5, 10, 5, 0">
                                                 <Label Text="Protein" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"/>
                                                 <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
-                                   FontSize="18" Text="{Binding Protein, StringFormat='{}{0}g'}" />
+                                   FontSize="18" x:Name="lbl_Protein" Text="{Binding Protein, StringFormat='{}{0}g'}" />
                                             </StackLayout>
 
                                             <StackLayout Grid.Row="1" HeightRequest="50" Grid.Column="3" BackgroundColor="{StaticResource UMCGold}"
                                      Margin="5, 10, 5, 0">
                                                 <Label Text="Fat" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"/>
                                                 <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"
-                                   FontSize="18" Text="{Binding Fat, StringFormat='{}{0}g'}" />
+                                   FontSize="18" x:Name="lbl_Fat" Text="{Binding Fat, StringFormat='{}{0}g'}" />
                                             </StackLayout>
 
 
