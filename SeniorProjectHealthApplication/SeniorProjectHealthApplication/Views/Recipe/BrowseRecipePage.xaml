@@ -21,6 +21,9 @@
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
 
+                                            <Button Text="←" BackgroundColor="Transparent" FontSize="Large" Clicked="GoBack_Clicked" HeightRequest="50" WidthRequest="50" HorizontalOptions="Start" VerticalOptions="Start" />
+                                            <Label Text="
+                                                   "/>
                                             <StackLayout Grid.Row="0" Grid.ColumnSpan="4" >
                                                 <Label x:Name="lbl_RecipeName" Text="{Binding ReceipeName}" HorizontalTextAlignment="Center" FontSize="45" TextColor="{StaticResource UMCGold}" />
                                                 <Image Source="{Binding RecipePicture}" />
