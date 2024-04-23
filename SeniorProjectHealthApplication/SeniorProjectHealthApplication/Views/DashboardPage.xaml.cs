@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using OpenFoodFactsCSharp.Models;
 using SeniorProjectHealthApplication.Models;
 using SeniorProjectHealthApplication.Models.Database_Structure;
+using SeniorProjectHealthApplication.Models.DB_Repositorys;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -76,9 +78,41 @@ namespace SeniorProjectHealthApplication.Views
             var userNutDb = await UserDataManager.LoadDatabase<UserNutrition>();
             var userNut = userNutDb.GetUserNutrition(_userId);
 
+
+            DatabaseManager<WorkoutLog> workoutLogDb;
+
+            try
+            {
+                workoutLogDb = await UserDataManager.LoadDatabase<WorkoutLog>();
+            }
+            catch (Exception e)
+            {
+                // Handle loading database exceptions (e.g. if the database doesn't exist)
+                Debug.WriteLine(e.Message);
+                return;
+            }
+
+            var logs = workoutLogDb.GetAllItems();
+            var currentLog = logs
+                .Where(log => !string.IsNullOrEmpty(log.TimeLogged))
+                .Select(log =>
+                {
+                    DateTime dateTime;
+                    bool parseSucceed = DateTime.TryParse(log.TimeLogged, out dateTime);
+                    return new { Log = log, DateTime = dateTime, ParseSucceed = parseSucceed };
+                })
+                .Where(t => t.ParseSucceed && t.DateTime.Date == _selectedDate.Date)
+                .Select(t => t.Log)
+                .ToList();
+            var totalCals = currentLog.Sum(log => log.CaloriesBurned);
+
+
             // Gets BMR
-            CaloriesLeft.Text = (userNut.CaloricIntake - totalCalories).ToString("f0") + " \n calories left";
+            CaloriesLeft.Text = ((userNut.CaloricIntake - totalCalories) + totalCals).ToString("f0") +
+                                " \n calories left";
             caloriesConsumed_Lbl.Text = totalCalories.ToString("f0") + " \nconsumed";
+            caloriesBurned_lbl.Text = $"{totalCals:f0} burned";
+
 
             ProteinCount_Lbl.Text = $"{totalProtein:f0} / {userNut.ProteinIntake:f0}";
             CarbsCount_Lbl.Text = $"{totalCarbs:f0} / {userNut.CarbIntake:f0}";

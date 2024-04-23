@@ -159,7 +159,10 @@
             <StackLayout>
                 <Picker 
                     SelectedItem="{Binding MySelectedItem}"
-                    Title="Select Meal Time" >
+                    Title="Select Meal Time" 
+                    TitleColor="White"
+                    TextColor="White">
+                    
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Breakfast</x:String>

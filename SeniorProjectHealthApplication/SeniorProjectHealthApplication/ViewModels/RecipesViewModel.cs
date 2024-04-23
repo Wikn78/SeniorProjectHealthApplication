@@ -241,12 +241,12 @@ namespace SeniorProjectHealthApplication.ViewModels
             {
                 Nutriments = new Nutriments
                 {
-                    CarbohydratesServing = (float?)Carbs,
-                    ProteinsServing = (float?)Protein,
-                    FatServing = (float?)Fat,
-                    EnergyKcalServing = (float?)Calories
+                    CarbohydratesServing = (float?)RecipesList[0].Carbs,
+                    ProteinsServing = (float?)RecipesList[0].Protein,
+                    FatServing = (float?)RecipesList[0].Fat,
+                    EnergyKcalServing = (float?)RecipesList[0].Calories
                 },
-                ProductName = RecipeName
+                ProductName = RecipesList[0].ReceipeName
             };
 
             foodDb.AddItem(new FoodItem
@@ -254,8 +254,8 @@ namespace SeniorProjectHealthApplication.ViewModels
                 Food_Name = product.ProductName,
                 Barcode_ID = "0000000",
                 FL_ID = Preferences.Get("currentFoodCategory_Id", 0),
-                Unit_Calorie = (float)Calories,
-                Total_Calories = (float)Calories,
+                Unit_Calorie = (float)product.Nutriments.EnergyKcalServing,
+                Total_Calories = (float)product.Nutriments.EnergyKcalServing,
                 Quantity = 1,
                 FoodCategory = GetFoodCatagory(MySelectedItem),
                 ProductInformation = JsonConvert.SerializeObject(product)

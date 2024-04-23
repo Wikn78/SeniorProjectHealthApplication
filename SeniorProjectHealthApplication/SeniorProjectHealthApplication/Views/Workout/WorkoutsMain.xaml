@@ -9,13 +9,19 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
-
+            
+            <StackLayout Orientation="Horizontal">
+                <Button Text="+" HorizontalOptions="End" WidthRequest="50" HeightRequest="50"
+                        Clicked="AddWorkout_Clicked"/>
+            </StackLayout>
+                
+            
             <Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" />  <Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" />    
             
             <Label Text="1750 Calories left" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"
-                   FontSize="20" />
+                   FontSize="20" x:Name="CaloriesLeft_lbl" />
             <Label Text="50 Calories Burned" TextColor="{StaticResource UMCGold}" HorizontalOptions="Center"
-                   VerticalOptions="Center" FontSize="20" />
+                   VerticalOptions="Center" FontSize="20" x:Name="CaloriesBurned_lbl"/>
             <Label Text="" FontSize="5" />
             <Label Text="VIEW WORKOUT PLANS" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"
                    FontSize="20" />

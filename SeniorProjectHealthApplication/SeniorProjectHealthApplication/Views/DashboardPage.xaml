@@ -86,7 +86,7 @@
                                Text="300 consumed" TextColor="White" VerticalOptions="CenterAndExpand"
                                HorizontalOptions="CenterAndExpand" />
                         
-                        <Label Grid.Column="2" Grid.Row="1" FontSize="20" HorizontalTextAlignment="Center"
+                        <Label Grid.Column="2" Grid.Row="1" FontSize="20" x:Name="caloriesBurned_lbl" HorizontalTextAlignment="Center"
                                Text="50 burned" TextColor="White" VerticalOptions="CenterAndExpand"
                                HorizontalOptions="CenterAndExpand" />
                         
