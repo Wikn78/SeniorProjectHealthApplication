@@ -68,8 +68,8 @@ namespace SeniorProjectHealthApplication.Views
 
             Device.BeginInvokeOnMainThread(() =>
             {
-                CaloriesLeft_lbl.Text = $"{(userNut.CaloricIntake + totalCals):f0}";
-                CaloriesBurned_lbl.Text = $"{totalCals:f0}";
+                CaloriesLeft_lbl.Text = $"{(userNut.CaloricIntake + totalCals):f0} left";
+                CaloriesBurned_lbl.Text = $"{totalCals:f0} burned";
             });
         }
 

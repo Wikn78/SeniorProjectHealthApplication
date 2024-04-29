@@ -7,13 +7,9 @@
              NavigationPage.HasNavigationBar="False">
 
 
-    <StackLayout Orientation="Vertical">
+    <StackLayout >
 
 
-        <ContentView x:Name="Overlay" WidthRequest="300" HeightRequest="300" IsVisible="False"
-                     BackgroundColor="#80000000">
-            <Label Text="This is the overlay" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" />
-        </ContentView>
 
         <!-- Your Grid, now inside a StackLayout -->
         <Grid VerticalOptions="EndAndExpand">

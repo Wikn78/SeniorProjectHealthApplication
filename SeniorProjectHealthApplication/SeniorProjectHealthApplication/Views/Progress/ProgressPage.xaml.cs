@@ -1,5 +1,8 @@
 ﻿using Microcharts;
+using SeniorProjectHealthApplication.Models;
+using SeniorProjectHealthApplication.Models.Database_Structure;
 using SkiaSharp;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,6 +11,8 @@ namespace SeniorProjectHealthApplication.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProgressPage : ContentPage
     {
+        private int _userId;
+
         public ProgressPage()
         {
             InitializeComponent();
@@ -56,8 +61,34 @@ namespace SeniorProjectHealthApplication.Views
                 }
             };
 
-            ChartView1.Chart = new LineChart { Entries = entries1 };
-            ChartView2.Chart = new LineChart { Entries = entries2 };
+
+            //ChartView2.Chart = new LineChart { Entries = entries2 };
+
+            UpdateCharts();
+        }
+
+        private async void UpdateCharts()
+        {
+            var userId = Preferences.Get("userId", 0);
+            _userId = userId;
+
+            var userAppInfoDb = await UserDataManager.LoadDatabase<UserAppInfo>();
+            var userAppInfo = userAppInfoDb.GetUserAppInfoAll(_userId);
+
+            ChartEntry[] weightEntry = new ChartEntry[userAppInfo.Count];
+
+            for (int i = 0; i < userAppInfo.Count; i++)
+            {
+                weightEntry[i] = new ChartEntry(userAppInfo[i].Weight)
+                {
+                    Color = SKColor.Parse("#266489"),
+                    Label = userAppInfo[i].Date,
+                    ValueLabel = userAppInfo[i].Weight.ToString()
+                };
+            }
+
+
+            ChartView1.Chart = new LineChart { Entries = weightEntry };
         }
     }
 }
