@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.PrivacyAndSecurity"
+             BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+
+            <Grid HorizontalOptions="Center"
+                  VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image HorizontalOptions="Center"
+                       Source="Health_Application_Logo.png"
+                       Opacity="0.5"
+                       Grid.Row="0"
+                       HeightRequest="200"
+                       WidthRequest="300"
+                       Grid.Column="0" />
+                <RelativeLayout Grid.Row="0" Grid.Column="0">
+                    <Label Text="PRIVACY AND SECURITY"
+                           TextColor="{StaticResource UMCGold}"
+                           FontSize="25"
+                           FontAttributes="Bold"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}" />
+                </RelativeLayout>
+
+                <ImageButton
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Source="Arrow.png"
+                    Margin="10,15,15,0"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    Clicked="OnBackButtonClicked" />
+
+            </Grid>
+
+            <Label Text=""
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="10" />
+
+            <Label Text="The Software Development Team"
+                   LineBreakMode="WordWrap"
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White" />
+
+            <Label Text="is not responsible for any security"
+                   LineBreakMode="WordWrap"
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White" />
+
+            <Label Text="breaches. There will be efforts to"
+                   LineBreakMode="WordWrap"
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White" />
+
+            <Label Text="respond to any major security"
+                   LineBreakMode="WordWrap"
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White" />
+
+            <Label Text="breaches within 24 hours."
+                   LineBreakMode="WordWrap"
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White" />
+
+            <Label Text=""
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="10" />
+
+            <Label Text="Brief description of security concern:"
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White" />
+
+            <Label Text=""
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="10" />
+
+
+            <Frame BackgroundColor="White" CornerRadius="0" Padding="60" Margin="0,10,0,10">
+                <Entry Placeholder="Enter security concern here"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       VerticalTextAlignment="Start"
+                       TextColor="Black"
+                       FontSize="16"
+                       FontAttributes="Italic"
+                       HeightRequest="{Binding Path=ContentHeight}" />
+            </Frame>
+
+
+            <Label Text=""
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="10" />
+
+            <Button Text="Submit"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    TextColor="White"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Margin="0,10,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

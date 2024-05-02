@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.Workout.Flexbility_and_Balance.Flexibility_Hard"
+               BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image HorizontalOptions="Center"
+                       Source="Health_Application_Logo.png"
+                       Opacity="0.5"
+                       Grid.Row="0"
+                       HeightRequest="200"
+                       WidthRequest="300"
+                       Grid.Column="0" />
+                <RelativeLayout Grid.Row="0" Grid.Column="0">
+                    <Label Text="FLEXIBILITY HARD WORKOUT"
+                           TextColor="{StaticResource UMCGold}"
+                           FontSize="25"
+                           FontAttributes="Bold"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-140}"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}" />
+                </RelativeLayout>
+                <ImageButton HorizontalOptions="Start" VerticalOptions="Start" Source="Arrow.png" Margin="10,15,15,0"
+                             HeightRequest="30"
+                             WidthRequest="30" Clicked="Main_Clicked"/>
+
+            </Grid>
+            <Label Text="" />
+            <Button Text="LUNGE WITH SPINAL TWIST"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="64"
+                   />
+            <Label Text="" />
+            <Button Text="FORWARD FOLD"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="12"/>
+            <Label Text="" />
+            <Button Text="STANDING QUAD STRETCH"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="11"/>
+            <Label Text="" />
+            <Button Text="FIGURE FOUR STRETCH"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="66"/>
+            <Label Text="" />
+            <Button Text="LYING PECTORAL STRETCH"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding OpenWorkoutCommand}"
+                    CommandParameter="65"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

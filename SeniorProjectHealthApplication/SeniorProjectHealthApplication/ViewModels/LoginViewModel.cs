@@ -1,24 +1,124 @@
-﻿using SeniorProjectHealthApplication.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using System.IO;
+using System.Linq;
+using SeniorProjectHealthApplication.Models.Database_Structure;
+using SeniorProjectHealthApplication.Models.DB_Repositorys;
+using SeniorProjectHealthApplication.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SeniorProjectHealthApplication.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        public Command LoginCommand { get; }
+        private readonly INavigation _navigation;
 
-        public LoginViewModel()
+        private string _email;
+
+        private string _password;
+
+        public LoginViewModel(INavigation navigation)
         {
-            LoginCommand = new Command(OnLoginClicked);
+            _navigation = navigation;
+            Register = new Command(ExecuteRegister);
+            Login = new Command(ExecuteLogin);
+            RecoverPassword = new Command(ExecuteRecoverPassword);
+
+            LoadUserInfo();
         }
 
-        private async void OnLoginClicked(object obj)
+        // Commands for user actions
+        public Command Login { get; }
+        public Command RecoverPassword { get; }
+        public Command Register { get; }
+
+        // Public property for user's username
+        public string Email
         {
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-            await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+            get => _email;
+            set
+            {
+                if (_email != value)
+                {
+                    _email = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        // Public property for user's password
+        public string Password
+        {
+            get => _password;
+            set
+            {
+                if (_password != value)
+                {
+                    _password = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private async void LoadUserInfo()
+        {
+            var authToken = await SecureStorage.GetAsync("AuthToken");
+
+            if (!string.IsNullOrEmpty(authToken))
+            {
+                var userId = int.Parse(authToken);
+                if (userId > 0)
+                {
+                    Preferences.Set("userId", userId);
+                    await _navigation.PushAsync(new DashboardPage());
+                }
+            }
+        }
+
+        private async void ExecuteLogin(object obj)
+        {
+            //Execute login logic here
+
+            var fileName = "Database.db3";
+            var folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var dbPath = Path.Combine(folderPath, fileName);
+            var userRepo = new DatabaseManager<Users>(dbPath);
+
+            var user = userRepo.GetAllItems().FirstOrDefault(u => u.Email == _email);
+
+            if (user != null)
+                if (VerifyPassword(_password, user.Password))
+                {
+                    if (user.UID != 0) Preferences.Set("userId", user.UID);
+
+                    await SecureStorage.SetAsync("AuthToken", user.UID.ToString());
+                    await _navigation.PushAsync(new DashboardPage());
+                }
+        }
+
+
+        public bool VerifyPassword(string password, string hashedPassword)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+        }
+
+        private async void ExecuteRegister(object obj)
+        {
+            // Execute account creation logic here
+            try
+            {
+                await _navigation.PushAsync(new CreateAccountPage());
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine("Null reference exception: " + ex.Message);
+                throw;
+            }
+        }
+
+        private async void ExecuteRecoverPassword(object obj)
+        {
+            await _navigation.PushAsync(new ForgotPasswordPage());
         }
     }
 }

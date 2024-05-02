@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:SeniorProjectHealthApplication.Views;assembly=SeniorProjectHealthApplication"
+             x:Class="SeniorProjectHealthApplication.Views.RecipesPage"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource UMCMaroon}">
+            <ScrollView>
+                <StackLayout Margin="0,0,0,50">
+                    <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="35" TextColor="White"
+                           FontAttributes="Bold" Margin="0, 30, 0, 0">
+                        Recipes
+                    </Label>
+
+                    <StackLayout>
+                        <StackLayout  HeightRequest="540"
+                 Margin="20, 10, 20, 0">
+                            <CollectionView ItemsSource="{Binding RecipesList}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame Padding="3"  BackgroundColor="{StaticResource UMCMaroon}">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <StackLayout BackgroundColor="{StaticResource UMCGold}" >
+                                                    <Label Text="{Binding ReceipeName}" TextColor="Black" HorizontalTextAlignment="Center" Padding="10" FontSize="25">
+                                                    </Label>
+                                                    <Image Source="{Binding RecipePicture}" />
+                                                    <Button HeightRequest="50" BackgroundColor="{StaticResource UMCGold}" BindingContext="{Binding Id}" Clicked="Recipe_Tapped"  ContentLayout="Top,0" Text="{Binding ReceipeName}" ImageSource="{Binding RecipePicture}"  />
+                                                </StackLayout>
+                                            </Grid>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                    </StackLayout>
+
+
+                </StackLayout>
+            </ScrollView>
+            <!--Bottom Navigation Bar-->
+            <StackLayout>
+                <views:QuickNavBar Margin="0,10,0,0" VerticalOptions="End" HorizontalOptions='Center'
+                                   CurrentPage="Logs" />
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

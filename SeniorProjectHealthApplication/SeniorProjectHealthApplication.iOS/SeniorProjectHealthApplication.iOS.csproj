@@ -132,8 +132,14 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.3"/>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
+    <PackageReference Include="ZXing.Net.Mobile" Version="3.1.0-beta2" />
+    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="3.1.0-beta2" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -142,4 +148,6 @@
       <Name>SeniorProjectHealthApplication</Name>
     </ProjectReference>
   </ItemGroup>
+  
+
 </Project>

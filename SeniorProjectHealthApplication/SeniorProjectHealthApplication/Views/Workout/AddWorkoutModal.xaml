@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.Workout.AddWorkoutModal">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Add Workout" FontAttributes="Bold" FontSize="30"/>
+            <Entry x:Name="WorkoutEntry" 
+                   Placeholder="Workout time" 
+                   Text="{Binding WorkoutName, Mode=TwoWay}"/>
+            <Picker x:Name="TypePicker" 
+                    Title="Select Type" 
+                    SelectedItem="{Binding SelectedType, Mode=TwoWay}">
+                <Picker.ItemsSource>
+                    <!-- Types should be replaced with your workout types -->
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>low intensity</x:String>
+                        <x:String>medium intensity</x:String>
+                        <x:String>high intensity</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Button Text="Add" Command="{Binding AddCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

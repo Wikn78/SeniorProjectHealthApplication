@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:SeniorProjectHealthApplication.Views;assembly=SeniorProjectHealthApplication"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="SeniorProjectHealthApplication.Views.ProgressPage"
+             BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Text="PROGRESS" FontSize="20" TextColor="{StaticResource UMCGold}" />
+            <StackLayout Grid.Row="1" Spacing="0">
+                <!-- Your Content goes here -->
+                <Grid VerticalOptions="FillAndExpand">                
+                    <forms:ChartView x:Name="ChartView1" HeightRequest="200" WidthRequest="100" />
+                </Grid>
+            </StackLayout>
+        
+            <!-- Navigation Bar -->
+            <views:QuickNavBar Grid.Row="2" VerticalOptions="End" 
+                               HorizontalOptions="CenterAndExpand" 
+                               CurrentPage="Logs" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

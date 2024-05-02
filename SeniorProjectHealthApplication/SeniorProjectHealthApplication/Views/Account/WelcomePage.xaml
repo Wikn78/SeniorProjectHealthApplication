@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.WelcomePage"
+             BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="View tutorial" Clicked="Button_OnClicked" />
+
+            <Image HorizontalOptions="Center"
+                   Source="Health_Application_Logo.png"
+                   Opacity="0.5"
+                   HeightRequest="200"
+                   WidthRequest="300" />
+            <Label Text="WELCOME" FontSize="20" HorizontalOptions="Center" TextColor="{StaticResource UMCGold }" />
+            <Label Text="TO" FontSize="20" HorizontalOptions="Center" TextColor="{StaticResource UMCGold }" />
+            <Label Text="UMC HEALTH APPLICATION" FontSize="20" HorizontalOptions="Center"
+                   TextColor="{StaticResource UMCGold }" />
+
+
+            <Label Text="    Current Weight"
+                   LineBreakMode="WordWrap"
+                   FontSize="20"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start"
+                   TextColor="White" />
+
+            <Picker x:Name="CurrentWeight" Margin="5"
+                    Title="Select a number"
+                    BackgroundColor="White"
+                    HorizontalTextAlignment="Center">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>100</x:Int32>
+                        <x:Int32>200</x:Int32>
+                        <x:Int32>300</x:Int32>
+                        <x:Int32>400</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <Label Text="    Goal Weight"
+                   LineBreakMode="WordWrap"
+                   VerticalOptions="Start"
+                   FontSize="20"
+                   HorizontalOptions="Start"
+                   TextColor="White" />
+            <Picker x:Name="GoalWeight" Margin="5"
+                    Title="Select a number"
+                    BackgroundColor="White"
+                    HorizontalTextAlignment="Center">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>100</x:Int32>
+                        <x:Int32>200</x:Int32>
+                        <x:Int32>300</x:Int32>
+                        <x:Int32>400</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="    Height   feet / inch"
+                   LineBreakMode="WordWrap"
+                   VerticalOptions="Start"
+                   FontSize="20"
+                   HorizontalOptions="Start"
+                   TextColor="White" />
+
+
+            <StackLayout>
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <Picker x:Name="HeightFeet" Margin="5"
+                            Title="feet"
+                            BackgroundColor="White"
+                            HorizontalTextAlignment="Center">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:Int32}">
+                                <x:Int32>100</x:Int32>
+                                <x:Int32>200</x:Int32>
+                                <x:Int32>300</x:Int32>
+                                <x:Int32>400</x:Int32>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Picker x:Name="HeightInch" Margin="5" Grid.Column="1"
+                            Title="inch"
+                            BackgroundColor="White"
+                            HorizontalTextAlignment="Center">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:Int32}">
+                                <x:Int32>100</x:Int32>
+                                <x:Int32>200</x:Int32>
+                                <x:Int32>300</x:Int32>
+                                <x:Int32>400</x:Int32>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                </Grid>
+            </StackLayout>
+
+            <Button Text="Submit"
+                    Clicked="UpdateGoals_Clicked"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"
+                    BackgroundColor="{StaticResource UMCGold}"
+                    TextColor="White"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Margin="0,10,0,0" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

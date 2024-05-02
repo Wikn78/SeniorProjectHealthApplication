@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:SeniorProjectHealthApplication.Views;assembly=SeniorProjectHealthApplication"
+             x:Class="SeniorProjectHealthApplication.Views.WorkoutsPage"
+             BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Button Text="+" HorizontalOptions="End" WidthRequest="50" HeightRequest="50"
+                        Clicked="AddWorkout_Clicked"/>
+            </StackLayout>
+                
+            
+            <Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" />  <Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" /><Label Text="" FontSize="5" />    
+            
+            <Label Text="1750 Calories left" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"
+                   FontSize="20" x:Name="CaloriesLeft_lbl" />
+            <Label Text="50 Calories Burned" TextColor="{StaticResource UMCGold}" HorizontalOptions="Center"
+                   VerticalOptions="Center" FontSize="20" x:Name="CaloriesBurned_lbl"/>
+            <Label Text="" FontSize="5" />
+            <Label Text="VIEW WORKOUT PLANS" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"
+                   FontSize="20" />
+            <Label Text="" FontSize="5" />
+            <Button Text="STRENGTH TRAINING" WidthRequest="250" HeightRequest="60"
+                    BackgroundColor="{StaticResource UMCGold}" Clicked="Strength_Clicked" />
+            <Label Text="" FontSize="5" />
+            <Button Text="HIIT" WidthRequest="250" HeightRequest="60" BackgroundColor="{StaticResource UMCGold}" Clicked="HIIT_Clicked" />
+            <Label Text="" FontSize="5" />
+            <Button Text="CARDIOVASCULAR" WidthRequest="250" HeightRequest="60"
+                    BackgroundColor="{StaticResource UMCGold}"       Clicked="Cardio_Clicked" />
+            <Label Text="" FontSize="5" />
+            <Button Text="FLEXIBILITY AND BALANCE" WidthRequest="250" HeightRequest="60"
+                    BackgroundColor="{StaticResource UMCGold}"       Clicked="Flexibility_Clicked"/>
+            <Label Text="" FontSize="5" />
+            <Button Text="BODYWEIGHT" WidthRequest="250" HeightRequest="60" BackgroundColor="{StaticResource UMCGold}"
+                    Clicked="BodyWeight_Clicked" />
+            <views:QuickNavBar Margin="0,10,0,0" VerticalOptions="End" HorizontalOptions='End' CurrentPage="Logs" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

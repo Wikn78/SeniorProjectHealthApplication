@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:local="clr-namespace:SeniorProjectHealthApplication.Views;assembly=SeniorProjectHealthApplication"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="SeniorProjectHealthApplication.Views.DashboardPage"
+             BackgroundColor="{StaticResource UMCMaroon}"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+
+                <RowDefinition Height="80" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+
+            </Grid.ColumnDefinitions>
+
+
+            <!-- Background Color -->
+            <BoxView Color="{StaticResource UMCMaroon}"
+                     Grid.ColumnSpan="5" />
+
+
+            <ScrollView
+                Grid.Row="0" Grid.ColumnSpan="5">
+
+
+                <!-- Top header of page -->
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="350" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                    </Grid.RowDefinitions>
+
+
+                    <BoxView Color="{StaticResource UMCMaroon}" />
+
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+
+                        <Label Grid.Row="1" Grid.Column="1" TextColor="White" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand" x:Name="CaloriesLeft" HorizontalTextAlignment="Center" Text="1750 cals left" />
+
+                        <ImageButton Grid.Row="0"
+                                     Grid.Column="2"
+                                     HeightRequest="50"
+                                     VerticalOptions="Start"
+                                     HorizontalOptions="End"
+                                     Source="account_icon.png"
+                                     BackgroundColor="Transparent"
+                                     Clicked="Account_Clicked" />
+
+                        <Image Grid.Row="0" Grid.Column="1" Source="Health_Application_Logo.PNG" />
+                        
+                        <Label Grid.Row="1" Grid.Column="0" x:Name="caloriesConsumed_Lbl" FontSize="20" HorizontalTextAlignment="Center"
+                               Text="300 consumed" TextColor="White" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand" />
+                        
+                        <Label Grid.Column="2" Grid.Row="1" FontSize="20" x:Name="caloriesBurned_lbl" HorizontalTextAlignment="Center"
+                               Text="50 burned" TextColor="White" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand" />
+                        
+                        <pancake:PancakeView Grid.Row="1" Grid.Column="1"
+                                             VerticalOptions="CenterAndExpand"
+                                             HorizontalOptions="CenterAndExpand"
+                                             HeightRequest="100"
+                                             WidthRequest="100"
+                                             BackgroundColor="Transparent"
+                                             CornerRadius="20">
+                            <pancake:PancakeView.Border>
+                                <pancake:Border Color="Black" Thickness="2" />
+                            </pancake:PancakeView.Border>
+                        </pancake:PancakeView>
+                        
+                        <BoxView CornerRadius="20" VerticalOptions="Start" BackgroundColor="{StaticResource UMCGold}"
+                                 Grid.Row="3"
+                                 Grid.ColumnSpan="3" />
+
+                        <BoxView CornerRadius="20" VerticalOptions="Center" BackgroundColor="{StaticResource UMCGold}"
+                                 Grid.Row="3"
+                                 Grid.ColumnSpan="3" Margin="0,0,0,20" />
+                        <!-- Bottom part of page -->
+                        <Button
+                            Grid.Column="0"
+                            Grid.Row="3"
+                            TextColor="White"
+                            BackgroundColor="Transparent"
+                            FontSize="18"
+                            Text="&lt;"
+                            Clicked="DecreaseDate_Clicked"
+                            VerticalOptions="End"
+                            HorizontalOptions="CenterAndExpand" />
+
+                        <Label
+                            x:Name="CurrentDateLabel"
+                            Grid.Column="1"
+                            Grid.Row="3"
+                            TextColor="White"
+                            FontSize="18"
+                            Text="02 / 20 / 2024"
+                            VerticalOptions="End"
+                            HorizontalOptions="CenterAndExpand"
+                            Margin="0, 60, 0, 0" />
+
+                        <Button
+                            Grid.Column="2"
+                            Grid.Row="3"
+                            TextColor="White"
+                            BackgroundColor="Transparent"
+                            FontSize="18"
+                            Text="&gt;"
+                            Clicked="IncreaseDate_Clicked"
+                            VerticalOptions="End"
+                            HorizontalOptions="CenterAndExpand" />
+
+
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            x:Name="CarbsCount_Lbl"
+                            Text="24 / 30"
+                            TextColor="White"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center" />
+
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Text="Carbs"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Start" />
+
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            x:Name="ProteinCount_Lbl"
+                            Text="2 / 100"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Text="Protein"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Start" />
+
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            x:Name="FatCount_Lbl"
+                            Text="5 / 100"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            Text="Fats"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Start" />
+
+                    </Grid>
+
+                    <local:DashboardCategory Grid.Row="1" Padding="2" CategoryName="Breakfast"
+                                             ImagePath="breakfest_icon.png" CategoryID="breakfast" />
+                    <local:DashboardCategory Grid.Row="2" Padding="2" CategoryName="Lunch" ImagePath="lunch_icon.png"
+                                             CategoryID="lunch" />
+                    <local:DashboardCategory Grid.Row="3" Padding="2" CategoryName="Dinner" ImagePath="dinner_icon.png"
+                                             CategoryID="dinner" />
+                    <local:DashboardCategory Grid.Row="4" Padding="2" CategoryName="Snack" ImagePath="snack_icon.png"
+                                             CategoryID="snack" />
+                    
+                </Grid>
+
+
+            </ScrollView>
+
+            <!-- Log Button-->
+            <local:QuickNavBar VerticalOptions="End" Grid.Row="1" Grid.ColumnSpan="5" CurrentPage="Logs" />
+            <!-- Bottom part of page -->
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

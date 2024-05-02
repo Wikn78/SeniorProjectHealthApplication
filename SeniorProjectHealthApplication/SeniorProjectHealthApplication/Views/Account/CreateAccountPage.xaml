@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorProjectHealthApplication.Views.CreateAccountPage"
+             BackgroundColor="{StaticResource UMCMaroon}"
+             Title="Create Account"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="10,0,10,0">
+
+
+            <Label />
+
+
+            <Label FontAttributes="Bold" TextColor="{StaticResource UMCGold}" FontSize="25"
+                   Text="REGISTER FOR HEALTH APPLICATION" HorizontalTextAlignment="Center"
+                   VerticalOptions="CenterAndExpand" />
+            <Label />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Label Text="First Name: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                       HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand" Text="{Binding FirstName}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Label Text="Last Name: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                       HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand" Text="{Binding LastName}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Label Text="Select Birthdate: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                       HorizontalTextAlignment="End"
+                       VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                <DatePicker Date="{Binding Birthdate}" TextColor="Black" BackgroundColor="White"
+                            VerticalOptions="Center"
+                            HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Label Text="Gender: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                       HorizontalTextAlignment="End"
+                       VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                <Picker Title="Select Gender" SelectedItem="{Binding SelectedGender}" TextColor="Black"
+                        BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                            <x:String>Other</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Label Text="Email: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                       HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand" Text="{Binding Email}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Label Text="Password: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                       HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand" IsPassword="True" Text="{Binding Password}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Label Text="Confirm Password: " TextColor="White" FontSize="15" FontAttributes="Bold"
+                       HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" WidthRequest="150" />
+                <Entry TextColor="Black" BackgroundColor="White" VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand" IsPassword="True" Text="{Binding ConfirmedPassword}" />
+            </StackLayout>
+
+
+            <Label />
+            <Label />
+            <Label />
+
+            <Button Text="Submit" BackgroundColor="{StaticResource UMCGold}" Command="{Binding CreateAccount}" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
