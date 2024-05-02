@@ -8,6 +8,8 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
+            <Button Text="View tutorial" Clicked="Button_OnClicked" />
+
             <Image HorizontalOptions="Center"
                    Source="Health_Application_Logo.png"
                    Opacity="0.5"

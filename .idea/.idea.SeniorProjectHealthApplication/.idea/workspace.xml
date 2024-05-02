@@ -18,11 +18,7 @@
   <component name="ChangeListManager">
     <list default="true" id="016f91a0-57e1-44a8-ba9e-94affb6c2c84" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SeniorProjectHealthApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SeniorProjectHealthApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Models/DB Repositorys/DatabaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Models/DB Repositorys/DatabaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Page Views/QuickNavBar.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Page Views/QuickNavBar.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Progress/ProgressPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Progress/ProgressPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Progress/ProgressPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Progress/ProgressPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Workout/WorkoutsMain.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Workout/WorkoutsMain.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Account/WelcomePage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Views/Account/WelcomePage.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +50,7 @@
     <setting file="file://$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication.Android/Resources/Resource.designer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Models/DB Repositorys/DatabaseManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Models/DB Repositorys/DatabaseManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/ethanlouis/RiderProjects/SeniorProjectHealthApplication/SeniorProjectHealthApplication/SeniorProjectHealthApplication/Models/DB Repositorys/DatabaseManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SeniorProjectHealthApplication/SeniorProjectHealthApplication/ViewModels/RecipesViewModel.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -244,7 +241,8 @@
       <workItem from="1714410772153" duration="188000" />
       <workItem from="1714410968372" duration="43000" />
       <workItem from="1714411013785" duration="31000" />
-      <workItem from="1714411069765" duration="1013000" />
+      <workItem from="1714411069765" duration="2476000" />
+      <workItem from="1714609606841" duration="1059000" />
     </task>
     <task id="LOCAL-00001" summary="Update Xamarin.Android.Build.Tasks version and store user data&#10;&#10;The Xamarin.Android.Build.Tasks version has been updated in the Resource.designer.cs file from &quot;13.2.1.111&quot; to &quot;13.2.2.120&quot;. Addition of Linq library and important user data like UserID is now being stored in CreateAccountViewModel.cs, which will be used later to customize the user experience. Also added functionality to calculate and display the Basal Metabolic Rate (BMR) in the DashboardPage.xaml.cs file.">
       <option name="closed" value="true" />
@@ -550,7 +548,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713847471550</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Update ProgressPage and DatabaseManager, clean up QuickNavBar&#10;&#10;The changes encompass the addition of the GetUserAppInfoAll method in DatabaseManager.cs. This commit also modifies the layout and functionality of ProgressPage, introducing responsive chart to track weight. Unnecessary content in QuickNavBar.xaml has also been removed.">
+      <option name="closed" value="true" />
+      <created>1714412333439</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1714412333439</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +577,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Add OpenFoodFacts API handler &amp; related models&#10;&#10;Include API handler for OpenFoodFacts to access nutritional information and the related models including ingredients, packaging, nutrition facts, etc. This will enable the application to fetch detailed health and nutritional information for different foods." />
     <MESSAGE value="Add search functionality and remove food item feature&#10;&#10;Implemented a search functionality in the AddFoodPage ViewModel by creating a new SearchCommand. Designed the behavior and binding for the search entry in the XAML page. Moreover, added a feature to remove a specific food item from the list. The remove button click event was handled accordingly to execute the newly defined RemoveFoodItem method in FoodCategory ViewModel, to manage database interactions for the deletion operation." />
     <MESSAGE value="Update search functionality and refactor bindings in AddFood layout&#10;&#10;The update includes changes in event handling from &quot;TextChanged&quot; to &quot;Completed&quot; in the SearchCommand. Also, 'FoodName' and 'Calories' bindings were refactored to 'Food_Name' and 'Total_Calories' respectively. New code to search for foods by name was added to the AddFoodPageViewModel. The layout for displaying the search results was also improved with the implementation of a CollectionView. A new FoodDatabaseManager class was also created to manage food data requests." />
     <MESSAGE value="Update navigation and error handling in food application&#10;&#10;The GoBack_Clicked function in AddFoodPage.xaml.cs now pops the stack instead of navigating to a new FoodCategoryPage. In addition, the AddFoodPageViewModel.cs now handles the case where no products are found, by displaying a &quot;No food found...&quot; message. Lastly, the OpenFoodFactsApiLowLevelClient.cs no longer throws an exception when a product's fetch by code fails, but instead returns null." />
@@ -596,7 +601,8 @@
     <MESSAGE value="Update navigation and interaction in various parts of the application&#10;&#10;Improved navigation and interactivity in the DashboardPage, BrowseRecipePage, RecipesPage, and WorkoutsMainPage. All the .xaml and .cs files related to these pages are updated with better alignment and more responsive UI elements. Also added an essential AddRecipeItem function in RecipesViewModel, further enhancing the app's usability." />
     <MESSAGE value="Update navigation and interactivity across application&#10;&#10;The changes focus on improving navigation and interactivity in different areas of the application, namely the DashboardPage, BrowseRecipePage, RecipesPage, and WorkoutsMainPage. The respective .xaml and .cs files have been updated to enhance UI responsiveness and alignment. Additionally, an AddRecipeItem function was added in RecipesViewModel to boost the usability of the application." />
     <MESSAGE value="Implement workout log and improve UI responsiveness&#10;&#10;In this commit, we introduced the WorkoutLog model and a ViewModel to handle adding workout logs. We improved user interface elements across the DashboardPage, BrowseRecipePage and RecipesPage which resulted in enhanced navigation and application interactivity. In RecipesViewModel, the method for adding a recipe item is updated for improved usability." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement workout log and improve UI responsiveness&#10;&#10;In this commit, we introduced the WorkoutLog model and a ViewModel to handle adding workout logs. We improved user interface elements across the DashboardPage, BrowseRecipePage and RecipesPage which resulted in enhanced navigation and application interactivity. In RecipesViewModel, the method for adding a recipe item is updated for improved usability." />
+    <MESSAGE value="Update ProgressPage and DatabaseManager, clean up QuickNavBar&#10;&#10;The changes encompass the addition of the GetUserAppInfoAll method in DatabaseManager.cs. This commit also modifies the layout and functionality of ProgressPage, introducing responsive chart to track weight. Unnecessary content in QuickNavBar.xaml has also been removed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update ProgressPage and DatabaseManager, clean up QuickNavBar&#10;&#10;The changes encompass the addition of the GetUserAppInfoAll method in DatabaseManager.cs. This commit also modifies the layout and functionality of ProgressPage, introducing responsive chart to track weight. Unnecessary content in QuickNavBar.xaml has also been removed." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
